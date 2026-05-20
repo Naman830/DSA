@@ -19,4 +19,29 @@ function secondLargest(arr) {
   return -1; // if there is no second largest element
 }
 
-console.log(secondLargest([4, 7, 1, 9, 2]));
+// Approach 2 — Better/Optimal Solution (Two Pass)
+// Pass 1: find largest
+// Pass 2: find biggest element smaller than largest
+// TC: O(n) and SC: O(1)
+
+function secondLargest2(arr) {
+  // Find Largest
+  let largest = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      largest = arr[i];
+    }
+  }
+  //   Transverse array
+  let secondLargestElement = -1;
+  for (let i = 0; i < arr.length; i++) {
+    // Condition
+    if (arr[i] > secondLargestElement && arr[i] != largest) {
+      secondLargestElement = arr[i];
+    }
+  }
+  return secondLargestElement;
+}
+
+console.log(secondLargest2([4, 7, 1, 9, 2]));

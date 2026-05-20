@@ -35,11 +35,11 @@ console.log(largestElement2([1, 1, 1, 5, 6, 9, 0, 22, 20, 1, 1]));
 // Can you solve it without sorting?
 
 // Brute Force Approach
-// var findKthLargest = function (nums, k) {
-//   nums.sort((a, b) => a - b);
+var findKthLargest = function (nums, k) {
+  nums.sort((a, b) => a - b);
 
-//   return nums[nums.length - k];
-// };
+  return nums[nums.length - k];
+};
 
-// console.log(findKthLargest(nums, k));
+console.log(findKthLargest(nums, k));
 

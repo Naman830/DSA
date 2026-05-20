@@ -25,3 +25,21 @@ function largestElement2(arr) {
 }
 
 console.log(largestElement2([1, 1, 1, 5, 6, 9, 0, 22, 20, 1, 1]));
+
+
+
+
+// 215. Kth Largest Element in an Array
+// Given an integer array nums and an integer k, return the kth largest element in the array.
+// Note that it is the kth largest element in the sorted order, not the kth distinct element.
+// Can you solve it without sorting?
+
+// Brute Force Approach
+// var findKthLargest = function (nums, k) {
+//   nums.sort((a, b) => a - b);
+
+//   return nums[nums.length - k];
+// };
+
+// console.log(findKthLargest(nums, k));
+

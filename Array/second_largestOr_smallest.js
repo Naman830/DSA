@@ -44,4 +44,25 @@ function secondLargest2(arr) {
   return secondLargestElement;
 }
 
-console.log(secondLargest2([4, 7, 1, 9, 2]));
+// Approach 3 — Optimal Solution
+// Maintain: largest and secondLargest at the same time.
+// TC: O(n) and SC: O(1)
+
+function secondLargest3(arr) {
+  let largest = arr[0];
+  let secondLargElement = -1;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      secondLargElement = largest;
+      largest = arr[i];
+    } else if (arr[i] > secondLargElement && arr[i] != largest) {
+      secondLargElement = arr[i];
+    }
+  }
+  return secondLargElement;
+}
+
+console.log(secondLargest3([4, 7, 1, 9, 2]));
+
+// FOR FINDING THE SECOND SMALLEST ELEMENT, JUST REVERSE THE CONDITIONS IN THE ABOVE FUNCTION.

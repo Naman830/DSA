@@ -1,5 +1,6 @@
 // Approach 1 — Brute Force Solution
 // Sort the array. -------> largest element will be at last index
+// TC: O(n log n) and SC: O(1)
 
 function largestElement(arr) {
   arr.sort((a, b) => a - b);
@@ -10,6 +11,7 @@ console.log(largestElement([1, 2, 6, 2, 6, 8, 1, 1, 1]));
 
 // Approach 2 — Better/Optimal Solution
 // Why sort entire array? ------> Just keep track of maximum.
+// TC: O(n) and SC: O(1)
 
 function largestElement2(arr) {
   let largest = arr[0];

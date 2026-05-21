@@ -33,6 +33,8 @@ function moveZeros(arr) {
 // j → searching non-zero element
 // We swap ONLY when: arr[j] is non-zero
 
+// TC: O(n) and SC: O(1)
+
 function moveZeros(arr) {
   let n = arr.length;
 

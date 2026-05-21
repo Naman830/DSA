@@ -42,7 +42,7 @@ function unionArray2(arr1, arr2) {
   let j = 0;
 
   let ans = [];
-
+  // In this Like if array1(i) is lesser then array2(j[0]) then it store it in answer array and if arra1(i) is greater then array2(j) so that else condition run and j value print in the answer array
   while (i < arr1.length && j < arr2.length) {
     if (arr1[i] <= arr2[j]) {
       if (ans.length === 0 || ans[ans.length - 1] !== arr1[i]) {
@@ -57,6 +57,10 @@ function unionArray2(arr1, arr2) {
     }
   }
 
+  // What if our array(i) iteration is over so remaning element should be there so we check our remaing element in array
+
+  // In this loops runs till the end of the answer array and check if array[i] is not match any number in it so it push it on that position
+  
   // remaining elements of arr1
   while (i < arr1.length) {
     if (ans[ans.length - 1] !== arr1[i]) {

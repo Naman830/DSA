@@ -48,7 +48,7 @@ function reverse(arr, start, end) {
 
 function leftRotateByK2(arr, k) {
   let n = arr.length;
-    k = k % n;
+  k = k % n;
 
   // 1. reverse first k elements
   reverse(arr, 0, k - 1);

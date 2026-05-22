@@ -36,3 +36,25 @@ function missingNumberBrute(arr, N) {
 }
 
 console.log(missingNumberBrute([1, 2, 4, 5], 5));
+
+// BETTER SOLUTION — HASHING
+
+function missingNumberBetter(arr, N) {
+  // Create an array/hash map.
+  let hash = new Array(N + 1).fill(0);
+
+  for (let i = 0; i < arr.length; i++) {
+    // Mark which numbers exist.
+    hash[arr[i]] = 1;
+  }
+
+  for (let i = 1; i <= N; i++) {
+    // Then check which number is absent.
+    if (hash[i] === 0) {
+      // Get answer
+      return i;
+    }
+  }
+}
+
+console.log(missingNumberBetter([1, 2, 4, 5], 5));

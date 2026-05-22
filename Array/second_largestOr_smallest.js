@@ -2,16 +2,17 @@
 // It means: the biggest element AFTER the maximum
 
 // Approach 1 — Brute Force
-// Sort array ----> // Traverse from back ---> // Find first element smaller than largest
 // TC: O(n log n) and SC: O(1)
 
 function secondLargest(arr) {
+  //  Sort array 
   arr.sort((a, b) => a - b);
 
   let largest = arr[arr.length - 1];
 
-  // -2 because we are starting from second last element
+  // -2 because we are starting from second last element // Traverse from back
   for (let i = arr.length - 2; i >= 0; i--) {
+    // Find first element smaller than largest
     if (arr[i] < largest) {
       return arr[i];
     }
@@ -19,9 +20,7 @@ function secondLargest(arr) {
   return -1; // if there is no second largest element
 }
 
-// Approach 2 — Better/Optimal Solution (Two Pass)
-// Pass 1: find largest
-// Pass 2: find biggest element smaller than largest
+// Approach 2 — Better Solution (Two Pass)
 // TC: O(n) and SC: O(1)
 
 function secondLargest2(arr) {
@@ -33,7 +32,7 @@ function secondLargest2(arr) {
       largest = arr[i];
     }
   }
-  //   Transverse array
+  //   Transverse array find biggest element smaller than largest
   let secondLargestElement = -1;
   for (let i = 0; i < arr.length; i++) {
     // Condition

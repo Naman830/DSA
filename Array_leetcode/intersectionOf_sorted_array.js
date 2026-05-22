@@ -1,4 +1,6 @@
+// 349. Intersection of Sorted Arrays
 // Intersection means: Elements that exist in BOTH arrays.
+
 
 // BRUTE FORCE APPROACH
 // Take each element from arr1. Search it completely in arr2.

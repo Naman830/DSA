@@ -102,7 +102,6 @@ console.log(missingNumberXOR([1, 2, 4, 5], 5));
 
 // More better solution 
 function missingNumberXOR2(arr, N) {
-
     // Store XOR result of both:
     // 1. array elements
     // 2. numbers from 1 to N

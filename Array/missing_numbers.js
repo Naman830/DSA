@@ -16,8 +16,8 @@ function missingNumberBrute(arr, N) {
   // FOR number from 1 to N
   for (let i = 1; i <= N; i++) {
     let found = false;
-    //    FOR every element in array
-    //  IF element == number
+    // FOR every element in array
+    // IF element == number
     // found = true
     // BREAK
     for (let j = 0; j < arr.length; j++) {
@@ -38,6 +38,7 @@ function missingNumberBrute(arr, N) {
 console.log(missingNumberBrute([1, 2, 4, 5], 5));
 
 // BETTER SOLUTION — HASHING
+// TC: O(N) & SC: O(1)
 
 function missingNumberBetter(arr, N) {
   // Create an array/hash map.
@@ -58,3 +59,22 @@ function missingNumberBetter(arr, N) {
 }
 
 console.log(missingNumberBetter([1, 2, 4, 5], 5));
+
+// There is 2 OPTIMAL APPROACH
+// 1st is SUM FORMULA
+// TC: O(n) & SC: O(1)
+
+function missingSumOptimal(arr, N) {
+  // Natural number sum formula:
+  let expectedSum = (N * (N + 1)) / 2;
+  let actualSum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    // Find sum of actual array
+    actualSum += arr[i];
+  }
+  // get answer
+  return expectedSum - actualSum;
+}
+console.log(missingSumOptimal([1, 2, 4, 5], 5));
+
+// 2nd is XOR METHOD

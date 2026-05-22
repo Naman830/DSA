@@ -98,3 +98,71 @@ function missingNumberXOR(arr, N) {
 }
 
 console.log(missingNumberXOR([1, 2, 4, 5], 5));
+
+
+// More better solution 
+function missingNumberXOR2(arr, N) {
+
+    // Store XOR result of both:
+    // 1. array elements
+    // 2. numbers from 1 to N
+    let xor = 0;
+
+    // Loop through array
+    for (let i = 0; i < arr.length; i++) {
+
+        /*
+        XOR Logic:
+
+        arr[i]     -> actual array values
+        (i + 1)    -> numbers from 1 to N
+
+        Same numbers cancel each other because:
+        a ^ a = 0
+
+        So all matching numbers disappear.
+
+        Only missing number remains at the end.
+        */
+
+        xor = xor ^ arr[i] ^ (i + 1);
+
+        /*
+        Example:
+        arr = [1,2,4,5]
+
+        Iteration 1:
+        xor = 0 ^ 1 ^ 1 = 0
+
+        Iteration 2:
+        xor = 0 ^ 2 ^ 2 = 0
+
+        Iteration 3:
+        xor = 0 ^ 4 ^ 3 = 7
+
+        Iteration 4:
+        xor = 7 ^ 5 ^ 4 = 6
+        */
+    }
+
+    /*
+    Loop only covers:
+    1 to N-1
+
+    Because array length is one less
+    than total numbers.
+
+    So XOR the last number N separately.
+    */
+
+    return xor ^ N;
+
+    /*
+    Final Step:
+    6 ^ 5 = 3
+
+    Missing number = 3
+    */
+}
+
+console.log(missingNumber([1, 2, 4, 5], 5));

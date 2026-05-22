@@ -87,15 +87,14 @@ function missingNumberXOR(arr, N) {
   let xor1 = 0;
   let xor2 = 0;
 
-  // xor1 = XOR of numbers from 1 to N
-  for (let i = 1; i <= N; i++) {
-    xor1 = xor1 ^ i;
-  }
-  // xor2 = XOR of array elements
+  // XOR array elements
+  // XOR numbers from 1 to N
   for (let i = 0; i < arr.length; i++) {
     xor2 = xor2 ^ arr[i];
+    xor1 = xor1 ^ (i + 1);
   }
-  // Get answer
+  xor1 = xor1 ^ N
   return xor1 ^ xor2;
 }
+
 console.log(missingNumberXOR([1, 2, 4, 5], 5));

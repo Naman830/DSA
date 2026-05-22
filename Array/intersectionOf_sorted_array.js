@@ -28,3 +28,39 @@ function intersectionBrute(arr1, arr2) {
 }
 
 console.log(intersectionBrute([1, 2, 2, 3], [2, 2, 3]));
+
+// OPTIMAL APPROACH — TWO POINTERS
+// TC: O(n + m) and SC: O(1) --> ignoring answer array
+
+// Since arrays are sorted:
+function intersectionOptimal(arr1, arr2) {
+  let n1 = arr1;
+  let n2 = arr2;
+
+  let i = 0;
+  let j = 0;
+  let ans = [];
+
+  while (i < arr1.length && j < arr2.length) {
+    // If: arr1[i] < arr2[j]
+    // Then: arr1[i] can NEVER match future smaller values
+    // so move i (i++)
+    if (n1[i] < n2[j]) {
+      i++;
+      // Similarly:
+      // If: arr1[i] > arr2[j]
+      // Move j. (j++)
+    } else if (n1[i] > n2[j]) {
+      j++;
+      // If equal:
+      // store answer andmove BOTH
+    } else {
+      ans.push(n1[i]);
+      i++;
+      j++;
+    }
+  }
+  return ans;
+}
+
+console.log(intersectionOptimal([1, 2, 2, 3, 5], [2, 2, 3, 4, 5]));

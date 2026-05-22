@@ -78,3 +78,24 @@ function missingSumOptimal(arr, N) {
 console.log(missingSumOptimal([1, 2, 4, 5], 5));
 
 // 2nd is XOR METHOD
+// Think of XOR like "pair cancellation".
+// Same numbers disappear.
+// Only missing survives.
+// TC: O(n) & SC: O(1)
+
+function missingNumberXOR(arr, N) {
+  let xor1 = 0;
+  let xor2 = 0;
+
+  // xor1 = XOR of numbers from 1 to N
+  for (let i = 1; i <= N; i++) {
+    xor1 = xor1 ^ i;
+  }
+  // xor2 = XOR of array elements
+  for (let i = 0; i < arr.length; i++) {
+    xor2 = xor2 ^ arr[i];
+  }
+  // Get answer
+  return xor1 ^ xor2;
+}
+console.log(missingNumberXOR([1, 2, 4, 5], 5));

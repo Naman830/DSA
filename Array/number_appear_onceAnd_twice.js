@@ -36,6 +36,10 @@ console.log(findSingleNumberBrute([1, 1, 2, 3, 3]));
 
 // Approach 2 — Better Solution Using Hashing
 // Store frequency of every number in hashmap.
+// TC: O(n) and SC: O(N)
+
+// In other languages what if number is too big so we use MAP
+// if we use ordered map TC: n log n [it use when elements are too complicates] and Unordermap TC: O(n) [it is fastest but if element are too complex we can use orderd map] TC: O(n/2 + 1)
 
 function findSingleNumberBetter(arr) {
   // Create hashmap to store frequencies

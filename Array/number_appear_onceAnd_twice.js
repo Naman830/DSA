@@ -68,3 +68,31 @@ function findSingleNumberBetter(arr) {
 }
 
 console.log(findSingleNumberBetter([1, 1, 2, 3, 3]));
+
+// Approach 3 — Optimal Solution Using XOR
+// TC: O(n) and SC: O(1)
+
+function findSingleNumberXOR(arr) {
+  // Start with 0
+  let xor = 0;
+
+  // Traverse array
+  for (let i = 0; i < arr.length; i++) {
+    // XOR current element with xor
+    xor = xor ^ arr[i];
+
+    /*
+        Duplicate numbers cancel each other
+        Example:
+        1 ^ 1 = 0
+        3 ^ 3 = 0
+
+        Only unique number remains.
+    */
+  }
+
+  // Return unique number
+  return xor;
+}
+
+console.log(findSingleNumberXOR([1, 1, 2, 3, 3]));

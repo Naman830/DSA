@@ -9,6 +9,7 @@
 // Approach 1 — Brute Force
 // Count how many times it appears
 // If count = 1 → return it
+// TC: O(N²) & SC: O(1)
 
 function findSingleNumberBrute(arr) {
   // Traverse every element
@@ -32,3 +33,6 @@ function findSingleNumberBrute(arr) {
 }
 
 console.log(findSingleNumberBrute([1, 1, 2, 3, 3]));
+
+
+

@@ -39,6 +39,8 @@ for i from 0 to n-1
 
 */
 
+// TC: O(N2) and SC: O(1)
+
 function longestSubarrayBrute(arr, k) {
   // Store maximum length
   let maxLen = 0;
@@ -50,7 +52,7 @@ function longestSubarrayBrute(arr, k) {
 
     // Extend subarray
     for (let j = i; j < arr.length; j++) {
-      // Add current element
+      // Add current element with Sum 
       sum += arr[j];
 
       // Check if sum becomes k

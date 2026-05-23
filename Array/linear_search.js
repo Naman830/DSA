@@ -6,14 +6,13 @@
 // OR
 // array ends
 
-// Best Case: O(1) - when the target is the first element of the array 
+// Best Case: O(1) - when the target is the first element of the array
 // Worst Case: O(n) - when the target is the last element of the array or not present at all
 // SC: O(1)
 
-
 function linearSearch(arr, target) {
   for (let i = 0; i < arr.length; i++) {
-    // 
+    //
     if (arr[i] === target) {
       return i;
     }
@@ -23,4 +22,3 @@ function linearSearch(arr, target) {
 }
 
 console.log(linearSearch([5, 8, 2, 10, 6], 10));
-

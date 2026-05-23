@@ -34,5 +34,33 @@ function findSingleNumberBrute(arr) {
 
 console.log(findSingleNumberBrute([1, 1, 2, 3, 3]));
 
+// Approach 2 — Better Solution Using Hashing
+// Store frequency of every number in hashmap.
 
+function findSingleNumberBetter(arr) {
+  // Create hashmap to store frequencies
+  let freq = {};
 
+  // Count frequency of each number
+  for (let i = 0; i < arr.length; i++) {
+    // If already exists increase count
+    if (freq[arr[i]]) {
+      freq[arr[i]]++;
+    }
+    // Else create new entry
+    else {
+      freq[arr[i]] = 1;
+    }
+  }
+
+  // Traverse hashmap
+  for (let key in freq) {
+    // Find element with frequency 1
+    if (freq[key] === 1) {
+      // key comes as string so convert to number
+      return Number(key);
+    }
+  }
+}
+
+console.log(findSingleNumberBetter([1, 1, 2, 3, 3]));

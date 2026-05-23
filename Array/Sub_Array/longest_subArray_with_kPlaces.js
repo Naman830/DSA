@@ -39,21 +39,32 @@ for i from 0 to n-1
 
 */
 
-function longestSubarray(arr, k) {
-  let maxLength = 0;
-  for (let i = 0; i < arr.length - 1; i++) {
+function longestSubarrayBrute(arr, k) {
+  // Store maximum length
+  let maxLen = 0;
+
+  // Pick starting index
+  for (let i = 0; i < arr.length; i++) {
+    // Sum for current subarray
     let sum = 0;
+
+    // Extend subarray
     for (let j = i; j < arr.length; j++) {
+      // Add current element
       sum += arr[j];
 
+      // Check if sum becomes k
       if (sum === k) {
-        let length = j - i + 1;
+        // Length of subarray
+        let len = j - i + 1;
 
-        maxLength = Math.max(maxLength, length);
+        // Update maximum length
+        maxLen = Math.max(maxLen, len);
       }
     }
   }
-   return maxLength;
+
+  return maxLen;
 }
 
-console.log(longestSubarray([1, 2, 3, 1, 1, 1, 1], 6));
+console.log(longestSubarrayBrute([1, 2, 3, 1, 1, 1, 1], 6));

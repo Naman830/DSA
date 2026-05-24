@@ -102,6 +102,8 @@ while left < right:
 return []
 */
 
+// TC: O(n) & SC: O(1)
+
 function twoSumTwoPointer(nums, target) {
   // Start one pointer from the beginning
   let left = 0;
@@ -135,3 +137,5 @@ function twoSumTwoPointer(nums, target) {
   // If no pair is found
   return [];
 }
+
+console.log(twoSumTwoPointer([2, 7, 11, 15], 9 ));

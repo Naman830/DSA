@@ -34,3 +34,20 @@ function twoSumBrute(nums, target) {
 console.log(twoSumBrute([2, 7, 11, 15], 9));
 
 
+
+// Better Solution Using Hash Map
+// Instead of checking again and again, we store already seen numbers in a map.
+
+// Pseudocode
+/*
+create empty map
+
+for i from 0 to nums.length - 1:
+    current = nums[i]
+    needed = target - current
+
+    if needed exists in map:
+        return [map[needed], i]
+
+    store current with index in map
+*/

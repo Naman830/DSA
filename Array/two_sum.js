@@ -13,6 +13,7 @@ for i from 0 to nums.length - 1:
 */
 // WHY: j = i + 1? Because we do not want to use the same number twice.
 
+// TC: O(n2) & SC: O(1)
 function twoSumBrute(nums, target) {
   // First loop picks the first number
   for (let i = 0; i < nums.length; i++) {
@@ -31,3 +32,5 @@ function twoSumBrute(nums, target) {
 }
 
 console.log(twoSumBrute([2, 7, 11, 15], 9));
+
+

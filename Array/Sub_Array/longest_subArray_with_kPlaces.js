@@ -52,10 +52,12 @@ function longestSubarrayBrute(arr, k) {
 
     // Pick ending point of subarray
     for (let j = i; j < n; j++) {
+      // it help to check direct adding the number
       sum += arr[j];
 
       // If current subarray sum is equal to k
       if (sum === k) {
+        // length help to find the length of the elements it take 
         let length = j - i + 1;
         maxLength = Math.max(maxLength, length);
       }
@@ -66,7 +68,7 @@ function longestSubarrayBrute(arr, k) {
 
 console.log(longestSubarrayBrute([1, 2, 3, 1, 1, 1, 1], 6));
 
-// Better/Optimal Approach Using HashMap
+// Approach 2: Optimal — Prefix Sum + HashMap
 
 // This works even with:
 // negative numbers
@@ -74,9 +76,48 @@ console.log(longestSubarrayBrute([1, 2, 3, 1, 1, 1, 1], 6));
 // zeros
 
 /*
-Store:
-prefixSum → first index
-Why first index?
-Because we want LONGEST subarray.
-Earlier index gives bigger length.
+We use prefix sum. It means:
+sum from index 0 to current index
+
+Suppose current prefix sum is sum.
+We want subarray sum = K.
+
+So: [currentSum - oldPrefixSum = K]
+
+Therefore: [oldPrefixSum = currentSum - K]
+
+So, while moving through array, we check: 
+Has currentSum - K appeared before?
+
+If yes, we found a subarray with sum K.
 */
+
+// PSEUDO CODE
+/* 
+map = empty
+sum = 0
+maxLength = 0
+
+for i from 0 to n-1:
+    sum += arr[i]
+
+    if sum == K:
+        maxLength = i + 1
+
+    remaining = sum - K
+
+    if remaining exists in map:
+        length = i - map[remaining]
+        maxLength = max(maxLength, length)
+
+    if sum does not exist in map:
+        map[sum] = i
+
+return maxLength
+*/
+
+function longestSubarrayWithSumKBetter(arr, k) {
+
+}
+
+console.log(longestSubarrayWithSumKBetter([1, -1, 5, -2, 3], 3));

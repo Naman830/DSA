@@ -48,6 +48,7 @@ return [map[needed], i]
 store current with index in map
 */
 
+// TC: O(n) & SC: O(n)
 function twoSumBetter(nums, target) {
   // Map will store number as key and its index as value
   // Example: numberToIndex.set(2, 0)

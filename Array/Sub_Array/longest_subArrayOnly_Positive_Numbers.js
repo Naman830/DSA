@@ -1,4 +1,3 @@
-
 // Approach: Optimal for Positive Numbers — Sliding Window
 // This works only when array has positive numbers only.
 /*

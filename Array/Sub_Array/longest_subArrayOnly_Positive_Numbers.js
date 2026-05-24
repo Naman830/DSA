@@ -9,7 +9,7 @@ If sum becomes greater than K, shrink from left.
 
 If sum becomes equal to K, update answer.
 */
-// TC: O(n) and SC: O(1)
+// TC: O(2n) and SC: O(1)
 
 // PSEUDDO CODE
 /*

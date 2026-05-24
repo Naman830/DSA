@@ -79,11 +79,8 @@ function twoSumBetter(nums, target) {
 
 console.log(twoSumBetter([2, 7, 11, 15], 9));
 
-
-
 // Slightly Optimal Approach TWO POINTER
 // Two Pointer works directly only when array is sorted
-
 
 // Pseudocode
 /*
@@ -106,35 +103,35 @@ return []
 */
 
 function twoSumTwoPointer(nums, target) {
-    // Start one pointer from the beginning
-    let left = 0;
+  // Start one pointer from the beginning
+  let left = 0;
 
-    // Start another pointer from the end
-    let right = nums.length - 1;
+  // Start another pointer from the end
+  let right = nums.length - 1;
 
-    // Continue until both pointers meet
-    while (left < right) {
-        // Calculate current sum
-        const sum = nums[left] + nums[right];
+  // Continue until both pointers meet
+  while (left < right) {
+    // Calculate current sum
+    const sum = nums[left] + nums[right];
 
-        // If sum is equal to target, answer found
-        if (sum === target) {
-            return [left, right];
-        }
-
-        // If sum is smaller than target,
-        // we need a bigger number, so move left pointer forward
-        else if (sum < target) {
-            left++;
-        }
-
-        // If sum is greater than target,
-        // we need a smaller number, so move right pointer backward
-        else {
-            right--;
-        }
+    // If sum is equal to target, answer found
+    if (sum === target) {
+      return [left, right];
     }
 
-    // If no pair is found
-    return [];
+    // If sum is smaller than target,
+    // we need a bigger number, so move left pointer forward
+    else if (sum < target) {
+      left++;
+    }
+
+    // If sum is greater than target,
+    // we need a smaller number, so move right pointer backward
+    else {
+      right--;
+    }
+  }
+
+  // If no pair is found
+  return [];
 }

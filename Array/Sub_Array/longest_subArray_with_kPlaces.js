@@ -39,34 +39,44 @@ for i from 0 to n-1
 
 */
 
-// TC: O(N2) and SC: O(1)
+// TC: O(N2) Because for every index, we check many subarrays. &
+// SC: O(1)
 
 function longestSubarrayBrute(arr, k) {
-  // Store maximum length
-  let maxLen = 0;
+  let n = arr.length;
+  let maxLength = 0;
 
-  // Pick starting index
-  for (let i = 0; i < arr.length; i++) {
-    // Sum for current subarray
+  // Pick starting point of subarray
+  for (let i = 0; i < n; i++) {
     let sum = 0;
 
-    // Extend subarray
-    for (let j = i; j < arr.length; j++) {
-      // Add current element with Sum 
+    // Pick ending point of subarray
+    for (let j = i; j < n; j++) {
       sum += arr[j];
 
-      // Check if sum becomes k
+      // If current subarray sum is equal to k
       if (sum === k) {
-        // Length of subarray
-        let len = j - i + 1;
-
-        // Update maximum length
-        maxLen = Math.max(maxLen, len);
+        let length = j - i + 1;
+        maxLength = Math.max(maxLength, length);
       }
     }
   }
-
-  return maxLen;
+  return maxLength;
 }
 
 console.log(longestSubarrayBrute([1, 2, 3, 1, 1, 1, 1], 6));
+
+// Better/Optimal Approach Using HashMap
+
+// This works even with:
+// negative numbers
+// positive numbers
+// zeros
+
+/*
+Store:
+prefixSum → first index
+Why first index?
+Because we want LONGEST subarray.
+Earlier index gives bigger length.
+*/

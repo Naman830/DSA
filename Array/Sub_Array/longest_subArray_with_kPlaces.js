@@ -116,8 +116,44 @@ for i from 0 to n-1:
 return maxLength
 */
 
+// TC: 0(n) & SC: O(n)
 function longestSubarrayWithSumKBetter(arr, k) {
+  let prefixSum = 0;
+  let maxLength = 0;
 
+  // Map will store prefixSum -> first index where this prefixSum appeared
+  let map = new Map();
+
+  for (let i = 0; i < arr.length; i++) {
+    // Add current element to prefix sum
+    prefixSum += arr[i];
+
+    // Case 1:
+    // If prefixSum itself is equal to k,
+    // then subarray from index 0 to i has sum k
+    if (prefixSum === k) {
+      maxLength = Math.max(maxLength, i + 1);
+    }
+
+    // Case 2:
+    // We need to find if prefixSum - k appeared before
+    let neededSum = prefixSum - k;
+
+    if (map.has(neededSum)) {
+      let previousIndex = map.get(neededSum);
+      let currentLength = i - previousIndex;
+
+      maxLength = Math.max(maxLength, currentLength);
+    }
+
+    // Store only the first occurrence of prefixSum
+    // Because first occurrence gives longest possible length
+    if (!map.has(prefixSum)) {
+      map.set(prefixSum, i);
+    }
+  }
+
+  return maxLength;
 }
 
 console.log(longestSubarrayWithSumKBetter([1, -1, 5, -2, 3], 3));

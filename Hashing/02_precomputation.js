@@ -3,6 +3,10 @@
 // When we use hashing for this, we store the precomputed data in a:
 // HashMap / Object / Map / Array frequency table
 
+// Maximum array length in function = 10 power 6 
+// Maximum array length in global = 10 power 7
+
+
 /*
 Optimal Pseudocode
 create empty hash map

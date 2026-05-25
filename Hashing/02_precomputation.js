@@ -61,3 +61,28 @@ const arr = [1, 2, 3, 1, 2, 1, 4];
 const queries = [1, 2, 4, 10];
 
 countFrequenciesUsingHashing(arr, queries);
+
+// ================================================================================
+// ================================================================================
+// ================================================================================
+
+/*
+WHAT IS MAP:
+Use Map when you need key-value data.
+
+Example:
+
+Number -> frequency
+Character -> frequency
+Name -> marks
+
+WHAT IS SET:
+Use Set when you only need uniqueness or existence.
+
+Example:
+
+Does this number exist?
+Has this character appeared before?
+Remove duplicates
+
+*/

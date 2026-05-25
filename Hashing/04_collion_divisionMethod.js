@@ -51,25 +51,24 @@ Common methods:
 
 For now, understand collision with the easiest method: Separate Chaining.
 
-10. Separate Chaining
+*/
 
+/*
+10. Separate Chaining
 In separate chaining, every index stores a list.
 
 So if many keys go to the same index, we put them inside the same list.
 
 Example:
-
 tableSize = 10
 keys = 25, 35, 45
 
 Hash:
-
 25 % 10 = 5
 35 % 10 = 5
 45 % 10 = 5
 
 Instead of only one value at index 5, we store a list:
-
 Index 5 -> [25, 35, 45]
 
 Hash table:

@@ -3,9 +3,14 @@
 // When we use hashing for this, we store the precomputed data in a:
 // HashMap / Object / Map / Array frequency table
 
-// Maximum array length in function = 10 power 6 
+// Maximum array length in function = 10 power 6
 // Maximum array length in global = 10 power 7
 
+// SECRET SAUSES
+// Step 1: Create hash table
+// Step 2: Traverse data once
+// Step 3: Store useful information
+// Step 4: Answer queries using hash table
 
 /*
 Optimal Pseudocode

@@ -54,3 +54,22 @@ Here:
 apple  → key
 3      → value
 */
+
+// What is a Key?
+// A key is the thing by which we identify data.
+
+// What is a Value?
+// A value is the data stored against a key.
+
+// Example:
+
+let phoneBook = new Map();
+
+phoneBook.set("Rahul", "9876543210");
+phoneBook.set("Aman", "9123456780");
+
+// Rahul → key
+// 9876543210 → value
+// Here:  If you know the key, you can get the value quickly.
+
+console.log(phoneBook.get("Rahul"));

@@ -36,6 +36,10 @@ We directly answer: 2 [This is the power of hashing.]
 
 */
 
+// ================================================================================
+// ================================================================================
+// ================================================================================
+
 /* 
 What is a Hash Table
 A hash table is a data structure that stores data in key-value form.
@@ -55,6 +59,10 @@ apple  → key
 3      → value
 */
 
+// ================================================================================
+// ================================================================================
+// ================================================================================
+
 // What is a Key?
 // A key is the thing by which we identify data.
 
@@ -73,3 +81,40 @@ phoneBook.set("Aman", "9123456780");
 // Here:  If you know the key, you can get the value quickly.
 
 console.log(phoneBook.get("Rahul"));
+
+// ================================================================================
+// ================================================================================
+// ================================================================================
+
+/* 
+What is a Hash Function?
+A hash function is a function that converts a key into an index.
+
+Example:
+Key: "apple"
+Hash function gives index: 4
+
+Then "apple" is stored at index 4 internally.
+
+Simple example:
+Suppose we have keys:
+
+10, 20, 30
+
+And our hash table size is 7.
+We can use:
+
+hash(key) = key % 7
+
+Now:
+10 % 7 = 3
+20 % 7 = 6
+30 % 7 = 2
+
+So:
+10 stored at index 3
+20 stored at index 6
+30 stored at index 2
+
+This is a simple hash function.
+*/

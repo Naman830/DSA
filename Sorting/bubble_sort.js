@@ -14,6 +14,9 @@ bubbleSort(arr):
     return arr
 */
 
+// Average and Wrost case TC: O(n2) and Best case O(n)
+// SC: O(1);
+
 function bubbleSort(arr) {
   let n = arr.length;
 

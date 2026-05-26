@@ -26,23 +26,34 @@ selectionSort(arr):
 
 */
 
-
-
 function selectionSort(arr) {
+  // Get the length of the array
   let n = arr.length;
 
+  // Outer loop decides the position where the smallest element should come
+  // We go only till n - 2 because the last element will automatically be sorted
   for (let i = 0; i < n - 1; i++) {
-    let minimumIndex = i;
+    // Assume the current index has the minimum element
+    let minIndex = i;
 
-    for (let j = i + 1; j < n ; j++) {
-      if (arr[j] < arr[minimumIndex]) {
-        minimumIndex = j;
+    // Inner loop finds the smallest element in the unsorted part
+    // Unsorted part starts from i + 1
+    for (let j = i + 1; j < n; j++) {
+      // If we find a smaller element,
+      // update minIndex to this new smaller element's index
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j;
       }
     }
+
+    // After finding the minimum element,
+    // swap it with the current position i
     let temp = arr[i];
-    arr[i] = arr[minimumIndex];
-    arr[minimumIndex] = temp;
+    arr[i] = arr[minIndex];
+    arr[minIndex] = temp;
   }
+
+  // Return the sorted array
   return arr;
 }
 
@@ -51,6 +62,3 @@ let nums = [5, 2, 8, 1, 3];
 
 console.log(selectionSort(nums));
 // Output: [1, 2, 3, 5, 8]
-
-
-

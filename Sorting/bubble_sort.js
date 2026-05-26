@@ -20,18 +20,32 @@ bubbleSort(arr):
 function bubbleSort(arr) {
   let n = arr.length;
 
-  // Outer loop controls the passes
+  // Outer loop controls passes
   for (let i = 0; i < n - 1; i++) {
-    // After every pass, the largest element moves to the end
-    // So we reduce the inner loop by i
+    // This variable checks whether any swap happened in current pass
+    let swapped = false;
+
+    // Last i elements are already sorted,
+    // so we do not compare them again
     for (let j = 0; j < n - 1 - i; j++) {
-      // Compare adjacent elements
+      // If current element is greater than next element,
+      // they are in wrong order
       if (arr[j] > arr[j + 1]) {
-        // Swap when elements are in wrong order
+        // Swap adjacent elements
         let temp = arr[j];
         arr[j] = arr[j + 1];
         arr[j + 1] = temp;
+
+        // Mark that swap happened
+        swapped = true;
       }
+    }
+
+    // If no swap happened in this pass,
+    // it means the array is already sorted
+    // So we can stop early
+    if (swapped === false) {
+      break;
     }
   }
 

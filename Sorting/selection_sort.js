@@ -26,6 +26,8 @@ selectionSort(arr):
 
 */
 
+// TC: O(n2) and SC: O(1);
+
 function selectionSort(arr) {
   // Get the length of the array
   let n = arr.length;

@@ -23,3 +23,33 @@ insertionSort(arr):
 
     return arr
 */
+
+function insertionSort(arr) {
+  let n = arr.length;
+
+  // Start from index 1 because index 0 is considered already sorted
+  for (let i = 1; i < n; i++) {
+    // Current element we want to insert at the correct position
+    let current = arr[i];
+
+    // j points to the last element of the sorted part
+    let j = i - 1;
+
+    // Move elements greater than current one step to the right
+    while (j >= 0 && arr[j] > current) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+
+    // Insert current at its correct position
+    arr[j + 1] = current;
+  }
+
+  return arr;
+}
+
+// Example
+let nums = [5, 3, 4, 1, 2];
+
+console.log(insertionSort(nums));
+// Output: [1, 2, 3, 4, 5]

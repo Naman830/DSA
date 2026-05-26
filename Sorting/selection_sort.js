@@ -25,27 +25,3 @@ selectionSort(arr):
     return arr
 
 */
-
-function selectionSort(arr) {
-  let n = arr.length;
-
-  for (let i = 0; i < n - 1; i++) {
-    let minimumIndex = i;
-
-    for (let j = i + 1; j < n ; j++) {
-      if (arr[j] < arr[minimumIndex]) {
-        minimumIndex = j;
-      }
-    }
-    let temp = arr[i];
-    arr[i] = arr[minimumIndex];
-    arr[minimumIndex] = temp;
-  }
-  return arr;
-}
-
-// Example usage
-let nums = [5, 2, 8, 1, 3];
-
-console.log(selectionSort(nums));
-// Output: [1, 2, 3, 5, 8]

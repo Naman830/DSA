@@ -24,6 +24,8 @@ insertionSort(arr):
     return arr
 */
 
+// TC: O(n2) and SC: O(1)
+
 function insertionSort(arr) {
   let n = arr.length;
 

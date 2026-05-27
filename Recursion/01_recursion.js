@@ -43,9 +43,7 @@ function printNumber(n) {
 printNumber(5);
 
 // Stack Space in Recursion
-
-// Stack space means:
-// Extra memory used by recursive function calls. O(n)
+// Stack space means: Extra memory used by recursive function calls. O(n)
 
 /*
 Difference: Time Complexity vs Stack Space
@@ -55,4 +53,25 @@ How many total calls happen.
 
 Stack Space
 How many calls are active at the same time.
+*/
+
+// Recursion Tree and Complexity
+// A recursion tree helps us calculate time complexity.
+
+function solve(n) {
+  if (n === 0) return;
+
+  solve(n - 1);
+  solve(n - 1);
+}
+/*
+TREE:
+             n
+          /     \
+       n-1       n-1
+      /   \     /   \
+   n-2   n-2  n-2   n-2
+
+So time complexity:
+O(2^n)
 */

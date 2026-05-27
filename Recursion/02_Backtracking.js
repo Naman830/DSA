@@ -1,3 +1,5 @@
+// IN THIS I ALSO COVER BACKTRACKING
+
 // 1. Print name Name N times
 
 function nameNtimes(i, n) {
@@ -12,7 +14,28 @@ function nameNtimes(i, n) {
 
 nameNtimes(1, 5);
 
-// Print Numbers from 1 to N
+// What is Backtracking?
+// Go forward using recursion, and while coming back, do some work.
+
+/*
+REAL LIFE ANALOGY
+
+Imagine you go from your house to school.
+House → Street → Market → School
+
+Now while returning:
+School → Market → Street → House
+If you collect something while returning, that is like backtracking.
+*/
+
+/*
+Function goes deeper
+Function reaches base case
+Function starts returning
+Work happens while returning
+*/
+
+// 2. Print Numbers from 1 to N [Backtracking]
 // for N to 1 (just proint before smaller number subtracting)
 
 function print1toN(n) {

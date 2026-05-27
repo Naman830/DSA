@@ -1,6 +1,4 @@
-function infinite() {
-//   console.log("Hello");
-//   infinite();
-// }
+n nameNtimes(i, n) {
+  if (i > n) return;
 
-// infinite();
+  console.log("Naman");

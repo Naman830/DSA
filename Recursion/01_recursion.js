@@ -3,6 +3,10 @@
 // Recursion means:
 // A function calling itself again and again to solve a smaller version of the same problem.
 
+// ====================================================================
+// ====================================================================
+// ====================================================================
+
 /* 
 Real-Life Example of Recursion
 
@@ -24,6 +28,10 @@ When Box 1 is opened, the process stops.
 This is exactly how recursion works.
 */
 
+// ====================================================================
+// ====================================================================
+// ====================================================================
+
 // Basic Structure of Recursion
 function printNumber(n) {
   // Base case: when n becomes 0, stop recursion
@@ -42,6 +50,10 @@ function printNumber(n) {
 
 printNumber(5);
 
+// ====================================================================
+// ====================================================================
+// ====================================================================
+
 // Stack Space in Recursion
 // Stack space means: Extra memory used by recursive function calls. O(n)
 
@@ -54,6 +66,10 @@ How many total calls happen.
 Stack Space
 How many calls are active at the same time.
 */
+
+// ====================================================================
+// ====================================================================
+// ====================================================================
 
 // Recursion Tree and Complexity
 // A recursion tree helps us calculate time complexity.
@@ -74,4 +90,48 @@ TREE:
 
 So time complexity:
 O(2^n)
+*/
+
+// ====================================================================
+// ====================================================================
+// ====================================================================
+
+// Stack Overflow
+// If recursion never stops or goes too deep, stack memory becomes full.
+// This error is called: Stack Overflow
+
+function infinite() {
+  console.log("Hello");
+  infinite();
+}
+
+infinite();
+
+// This function has no base case. So it keeps calling itself forever.
+
+// ====================================================================
+// ====================================================================
+// ====================================================================
+
+// How to Write Recursive Code
+
+/*
+Step 1: Identify the smaller problem
+Ask: Can I solve this problem using a smaller version of the same problem?
+
+Example:
+sum(n) = n + sum(n - 1)
+// ====================================================================
+
+Step 2: Write the base case
+Ask: Where should the recursion stop?
+
+Example:
+if (n === 1) return 1;
+// ====================================================================
+
+Step 3: Write recursive relation
+Ask: How do I connect current answer with smaller answer?
+
+Example: return n + sumOfN(n - 1);
 */

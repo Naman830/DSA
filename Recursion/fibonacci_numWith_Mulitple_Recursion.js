@@ -44,3 +44,21 @@ function fibonacci(n) {
 }
 
 console.log(fibonacci(5)); // Output: 5
+
+/*
+Dry Run of fibonacci(5)
+
+fibonacci(5)
+= fibonacci(4) + fibonacci(3)
+
+fibonacci(4)
+= fibonacci(3) + fibonacci(2)
+
+fibonacci(3)
+= fibonacci(2) + fibonacci(1)
+
+fibonacci(2)
+= fibonacci(1) + fibonacci(0)
+= 1 + 0
+= 1
+*/

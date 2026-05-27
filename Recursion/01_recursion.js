@@ -23,3 +23,21 @@ When Box 1 is opened, the process stops.
 
 This is exactly how recursion works.
 */
+
+// Basic Structure of Recursion
+function printNumber(n) {
+  // Base case: when n becomes 0, stop recursion
+  // [The condition where recursion stops.]
+  if (n === 0) {
+    return;
+  }
+
+  // Work done before recursive call
+  console.log(n);
+
+  // Recursive call with smaller problem
+  // The part where function calls itself with a smaller input.
+  printNumber(n - 1);
+}
+
+printNumber(5);

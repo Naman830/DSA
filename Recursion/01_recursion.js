@@ -71,6 +71,27 @@ How many calls are active at the same time.
 // ====================================================================
 // ====================================================================
 
+// Types of Recursion
+
+/*
+1. Linear Recursion
+One function calls itself one time.
+
+2. Tree Recursion
+One function calls itself more than one time.
+
+3. Tail Recursion
+Recursive call is the last operation in the function.
+
+4. Head Recursion
+Recursive call happens before the main work.
+*/
+
+
+// ====================================================================
+// ====================================================================
+// ====================================================================
+
 // Recursion Tree and Complexity
 // A recursion tree helps us calculate time complexity.
 

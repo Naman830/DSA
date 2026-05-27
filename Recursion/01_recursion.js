@@ -41,3 +41,18 @@ function printNumber(n) {
 }
 
 printNumber(5);
+
+// Stack Space in Recursion
+
+// Stack space means:
+// Extra memory used by recursive function calls. O(n)
+
+/*
+Difference: Time Complexity vs Stack Space
+
+Time Complexity
+How many total calls happen.
+
+Stack Space
+How many calls are active at the same time.
+*/

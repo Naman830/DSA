@@ -42,7 +42,7 @@ merge(left, right):
 */
 
 
-
+// TC: O(n log n) and SC: O(n)
 
 function mergeSort(arr) {
   // Base case:

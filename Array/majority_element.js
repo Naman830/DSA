@@ -88,6 +88,8 @@ if frequency > n / 2:
 return key
 */
 
+// Time: O(n) & Space: O(1)
+
 function majorityElementBetter(nums) {
   let n = nums.length;
 

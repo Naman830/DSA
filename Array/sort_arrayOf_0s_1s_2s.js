@@ -124,7 +124,7 @@ while mid <= high:
 return arr
 */
 
-
+// TC: O(n) & SC: O(1)
 
 function sort012Dutch(arr) {
   let low = 0;

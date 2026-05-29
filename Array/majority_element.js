@@ -149,6 +149,8 @@ else:
 return candidate
 */
 
+// TC: O(n) & SC: O(1)
+
 function majorityElementOptimal(nums) {
   let candidate = null;
   let count = 0;

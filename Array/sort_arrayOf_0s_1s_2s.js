@@ -89,3 +89,14 @@ function sort012(arr) {
 }
 
 console.log(sort012([2, 0, 2, 1, 1, 0]));
+
+// Optimal Solution: Dutch National Flag Algorithm
+
+/*
+We use three pointers: low mid high
+
+0 to low - 1        => all 0s (sorted)
+low to mid - 1      => all 1s (sorted)
+mid to high         => unknown area (unsorted)
+high + 1 to n - 1   => all 2s (sorted)
+*/

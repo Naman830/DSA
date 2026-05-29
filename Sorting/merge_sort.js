@@ -41,7 +41,6 @@ merge(left, right):
     return result
 */
 
-
 // TC: O(n log n) and SC: O(n)
 
 function mergeSort(arr) {

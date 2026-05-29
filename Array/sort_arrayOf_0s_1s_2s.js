@@ -123,3 +123,4 @@ while mid <= high:
 
 return arr
 */
+[arr[low], arr[mid]] = [arr[mid], arr[low]];

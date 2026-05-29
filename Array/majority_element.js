@@ -71,8 +71,6 @@ function majorityElementBrute(nums) {
   return -1;
 }
 
-console.log(majorityElementBrute([2, 2, 1, 1, 1, 2, 2]));
-
 // Approach 2: Better Solution Using Hash Map
 // Instead of counting again and again, store frequency of every element.
 // We use a hash map/object.
@@ -83,9 +81,39 @@ Pseudo Code
 create empty map
 
 for each element in nums:
-    increase its frequency in map
+increase its frequency in map
 
 for each key in map:
-    if frequency > n / 2:
-        return key
+if frequency > n / 2:
+return key
 */
+
+function majorityElementBetter(nums) {
+  let n = nums.length;
+
+  // Map will store element frequency
+  let map = new Map();
+
+  // Count frequency of every element
+  for (let i = 0; i < n; i++) {
+    let num = nums[i];
+
+    if (map.has(num)) {
+      map.set(num, map.get(num) + 1);
+    } else {
+      map.set(num, 1);
+    }
+  }
+
+  // Check which element appears more than n / 2 times
+  for (let [key, value] of map) {
+    if (value > Math.floor(n / 2)) {
+      return key;
+    }
+  }
+
+  // If majority element does not exist
+  return -1;
+}
+
+console.log(majorityElementBetter([2, 2, 1, 1, 1, 2, 2]));

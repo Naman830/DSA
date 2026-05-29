@@ -118,9 +118,6 @@ function majorityElementBetter(nums) {
   return -1;
 }
 
-console.log(majorityElementBetter([2, 2, 1, 1, 1, 2, 2]));
-
-
 // Approach 3: Optimal Solution Moore’s Voting Algorithm
 
 /*
@@ -140,13 +137,44 @@ candidate = null
 count = 0
 
 for each num in nums:
-    if count == 0:
-        candidate = num
-        count = 1
-    else if num == candidate:
-        count++
-    else:
-        count--
+
+if count == 0:
+    candidate = num
+    count = 1
+else if num == candidate:
+    count++
+else:
+    count--
 
 return candidate
 */
+
+function majorityElementOptimal(nums) {
+  let candidate = null;
+  let count = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    let num = nums[i];
+
+    // If count is 0, choose current number as new candidate
+    if (count === 0) {
+      candidate = num;
+      count = 1;
+    }
+
+    // If current number is same as candidate, increase count
+    else if (num === candidate) {
+      count++;
+    }
+
+    // If current number is different from candidate, decrease count
+    else {
+      count--;
+    }
+  }
+
+  // Since problem says majority always exists, candidate is the answer
+  return candidate;
+}
+
+console.log(majorityElementOptimal([2, 2, 1, 1, 1, 2, 2]));

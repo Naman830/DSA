@@ -41,6 +41,9 @@ partition(arr, low, high):
     return i + 1
 */
 
+// wrost case = O(n2) and average, best O(n log n)
+// SC: O(1)
+
 
 function quickSort(arr, low = 0, high = arr.length - 1) {
     // Base condition:

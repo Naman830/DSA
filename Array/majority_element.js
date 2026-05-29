@@ -44,3 +44,29 @@ for i from 0 to n - 1:
     if count > n / 2:
         return nums[i]
 */
+
+function majorityElementBrute(nums) {
+  let n = nums.length;
+
+  // Pick every element one by one
+  for (let i = 0; i < n; i++) {
+    let count = 0;
+
+    // Count how many times nums[i] appears in the array
+    for (let j = 0; j < n; j++) {
+      if (nums[j] === nums[i]) {
+        count++;
+      }
+    }
+
+    // If frequency is more than half of array size
+    if (count > Math.floor(n / 2)) {
+      return nums[i];
+    }
+  }
+
+  // If majority element does not exist
+  return -1;
+}
+
+console.log(majorityElementBrute([2, 2, 1, 1, 1, 2, 2]));

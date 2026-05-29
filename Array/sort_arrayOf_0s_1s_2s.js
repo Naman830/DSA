@@ -123,4 +123,49 @@ while mid <= high:
 
 return arr
 */
-[arr[low], arr[mid]] = [arr[mid], arr[low]];
+
+
+
+function sort012Dutch(arr) {
+  let low = 0;
+  let mid = 0;
+  let high = arr.length - 1;
+
+  // This loop will run until all unknown elements are checked
+  while (mid <= high) {
+    // Case 1: arr[mid] is 0
+    // 0 should be placed on the left side
+    if (arr[mid] === 0) {
+      // Swap arr[low] and arr[mid]
+      [arr[low], arr[mid]] = [arr[mid], arr[low]];
+
+      // Move both low and mid forward
+      low++;
+      mid++;
+    }
+
+    // Case 2: arr[mid] is 1
+    // 1 is already in the correct middle area
+    else if (arr[mid] === 1) {
+      mid++;
+    }
+
+    // Case 3: arr[mid] is 2
+    // 2 should be placed on the right side
+    else {
+      // Swap arr[mid] and arr[high]
+      [arr[mid], arr[high]] = [arr[high], arr[mid]];
+
+      // Reduce high because 2 is placed correctly
+      high--;
+
+      // Important:
+      // Do not increment mid here,
+      // because the swapped element from high is still unknown.
+    }
+  }
+
+  return arr;
+}
+
+console.log(sort012Dutch([2, 0, 2, 1, 1, 0]));

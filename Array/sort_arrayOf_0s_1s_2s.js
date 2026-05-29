@@ -1,7 +1,44 @@
 // This is a very famous DSA problem, also known as:
 // Sort Colors || Dutch National Flag Algorithm
 
-// Brute Force Solution
+// 1. Brute Force Solution
 // Just sort the array using built-in sort. (Like: Merge Sort)
 // TC: O(n log n) and SC: O(1) [Because we are sorting in same array]
 
+// 2. Better Solution: Counting Method
+// Since the array contains only 0, 1, and 2, we can count how many 0s, 1s, and 2s are present.
+
+/*
+PSEUDO_CODE
+
+count0 = 0
+count1 = 0
+count2 = 0
+
+for each element in array:
+    if element == 0:
+        count0++
+    else if element == 1:
+        count1++
+    else:
+        count2++
+
+index = 0
+
+while count0 > 0:
+    arr[index] = 0
+    index++
+    count0--
+
+while count1 > 0:
+    arr[index] = 1
+    index++
+    count1--
+
+while count2 > 0:
+    arr[index] = 2
+    index++
+    count2--
+
+return arr
+*/

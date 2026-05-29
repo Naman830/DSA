@@ -42,3 +42,48 @@ while count2 > 0:
 
 return arr
 */
+
+function sort012(arr) {
+  let count0 = 0;
+  let count1 = 0;
+  let count2 = 0;
+
+  // Step 1: Count number of 0s, 1s and 2s
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 0) {
+      count0++;
+    } else if (arr[i] === 1) {
+      count1++;
+    } else {
+      count2++;
+    }
+  }
+
+  // Step 2: Rewrite the array
+  let index = 0;
+
+  // Fill 0s
+  while (count0 > 0) {
+    arr[index] = 0;
+    index++;
+    count0--;
+  }
+
+  // Fill 1s
+  while (count1 > 0) {
+    arr[index] = 1;
+    index++;
+    count1--;
+  }
+
+  // Fill 2s
+  while (count2 > 0) {
+    arr[index] = 2;
+    index++;
+    count2--;
+  }
+
+  return arr;
+}
+
+console.log(sort012([2, 0, 2, 1, 1, 0]));

@@ -19,12 +19,28 @@ A appears 6 times
 B appears 6 times
 
 Total would become:
-
 6 + 6 = 12
 
 But array size is only 10.
-
 Impossible.
 
 So there can be only one majority element.
+*/
+
+// Approach 1: Brute Force
+// For every element, count how many times it appears in the whole array.
+// If its count is greater than n / 2, return it.
+
+/*
+Pseudo Code
+
+for i from 0 to n - 1:
+    count = 0
+
+    for j from 0 to n - 1:
+        if nums[j] == nums[i]:
+            count++
+
+    if count > n / 2:
+        return nums[i]
 */

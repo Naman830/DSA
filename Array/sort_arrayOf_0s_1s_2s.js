@@ -8,6 +8,8 @@
 // 2. Better Solution: Counting Method
 // Since the array contains only 0, 1, and 2, we can count how many 0s, 1s, and 2s are present.
 
+//TC: O(2N) remove constant O(n) & SC: O(1)
+
 /*
 PSEUDO_CODE
 

@@ -88,7 +88,7 @@ if frequency > n / 2:
 return key
 */
 
-// Time: O(n) & Space: O(1)
+// Time: O(n) & Space: O(n)
 
 function majorityElementBetter(nums) {
   let n = nums.length;
@@ -119,3 +119,17 @@ function majorityElementBetter(nums) {
 }
 
 console.log(majorityElementBetter([2, 2, 1, 1, 1, 2, 2]));
+
+
+// Approach 3: Optimal Solution Moore’s Voting Algorithm
+
+/*
+Imagine elements are voting.
+Majority element has more votes than all other elements combined.
+So even if majority element gets cancelled with other elements, it will still survive at the end.
+
+We maintain two variables:
+candidate: The current possible majority element.
+count: The power/vote count of the candidate.
+*/
+

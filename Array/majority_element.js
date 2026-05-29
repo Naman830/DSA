@@ -72,3 +72,20 @@ function majorityElementBrute(nums) {
 }
 
 console.log(majorityElementBrute([2, 2, 1, 1, 1, 2, 2]));
+
+// Approach 2: Better Solution Using Hash Map
+// Instead of counting again and again, store frequency of every element.
+// We use a hash map/object.
+
+/*
+Pseudo Code
+
+create empty map
+
+for each element in nums:
+    increase its frequency in map
+
+for each key in map:
+    if frequency > n / 2:
+        return key
+*/

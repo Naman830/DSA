@@ -45,6 +45,8 @@ for i from 0 to n - 1:
         return nums[i]
 */
 
+// TC: O(n2) and SC O(1)
+
 function majorityElementBrute(nums) {
   let n = nums.length;
 

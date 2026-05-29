@@ -133,3 +133,20 @@ candidate: The current possible majority element.
 count: The power/vote count of the candidate.
 */
 
+/*
+Pseudo Code
+
+candidate = null
+count = 0
+
+for each num in nums:
+    if count == 0:
+        candidate = num
+        count = 1
+    else if num == candidate:
+        count++
+    else:
+        count--
+
+return candidate
+*/

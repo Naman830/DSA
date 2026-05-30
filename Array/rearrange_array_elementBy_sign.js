@@ -73,7 +73,6 @@ function rearrangeArray(nums) {
 
 console.log(rearrangeArray([3, 1, -2, -5, 2, -4]));
 
-
 // Optimal Approach
 // Instead of storing positives and negatives separately first, we can create the result array directly.
 
@@ -95,3 +94,35 @@ for each number in nums:
 
 return result
 */
+
+function rearrangeArray(nums) {
+  let n = nums.length;
+
+  // This array will store the final rearranged answer
+  let result = new Array(n);
+
+  // Positive numbers should be placed at even indices: 0, 2, 4...
+  let positiveIndex = 0;
+
+  // Negative numbers should be placed at odd indices: 1, 3, 5...
+  let negativeIndex = 1;
+
+  // Traverse every number in the input array
+  for (let num of nums) {
+    if (num > 0) {
+      // Place positive number at current even index
+      result[positiveIndex] = num;
+
+      // Move to next even position
+      positiveIndex += 2;
+    } else {
+      // Place negative number at current odd index
+      result[negativeIndex] = num;
+
+      // Move to next odd position
+      negativeIndex += 2;
+    }
+  }
+
+  return result;
+}

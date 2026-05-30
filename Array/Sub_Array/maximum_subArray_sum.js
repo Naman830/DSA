@@ -110,3 +110,20 @@ Or should I start a new subarray from here?
 So whenever current sum becomes negative, we throw it away.
 Because a negative sum will only reduce the future answer.
 */
+
+/*
+Pseudocode
+
+maxSum = -infinity
+currentSum = 0
+
+for each number in array:
+    currentSum = currentSum + number
+
+    maxSum = maximum(maxSum, currentSum)
+
+    if currentSum < 0:
+        currentSum = 0
+
+return maxSum 
+*/

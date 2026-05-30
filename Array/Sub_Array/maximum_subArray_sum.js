@@ -22,6 +22,9 @@ for start from 0 to n - 1:
 
 return maxSum
 */
+
+// TC: O(n3) and SC: O(1)
+
 function maximumSubarraySumBruteForce(arr) {
   let n = arr.length;
 

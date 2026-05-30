@@ -167,8 +167,8 @@ function maximumSubarrayWithElements(arr) {
   let currentSum = 0;
 
   // These will store final answer subarray indices
-  let start = 0;
-  let end = 0;
+  let start = -1;
+  let end = -1;
 
   // This stores possible starting index of current subarray
   let tempStart = 0;

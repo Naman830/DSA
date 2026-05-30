@@ -32,7 +32,15 @@ function maxProfit(prices):
         mini = minimum(mini, prices[i])
 
     return maxProfit
+
+
+Remember This Trick
+    mini = best buying price so far
+    prices[i] - mini = profit if selling today
+    maxProfit = best profit so far
 */
+
+// TC: O(n) & SC: O(1)
 
 function maxProfit(prices) {
   // mini stores the minimum buying price seen so far

@@ -98,3 +98,15 @@ function maximumSubarraySumBetter(arr) {
 }
 
 console.log(maximumSubarraySumBetter([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+
+// 3. Optimal Approach — Kadane’s Algorithm
+
+/*
+At every index, ask:
+Should I continue the old subarray?
+Or should I start a new subarray from here? 
+
+So whenever current sum becomes negative, we throw it away.
+Because a negative sum will only reduce the future answer.
+*/

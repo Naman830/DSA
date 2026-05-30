@@ -22,3 +22,29 @@ for start from 0 to n - 1:
 
 return maxSum
 */
+function maximumSubarraySumBruteForce(arr) {
+  let n = arr.length;
+
+  // We take -Infinity because array can contain negative numbers also
+  let maxSum = -Infinity;
+
+  // This loop decides the starting index of subarray
+  for (let start = 0; start < n; start++) {
+    // This loop decides the ending index of subarray
+    for (let end = start; end < n; end++) {
+      // Calculate sum from start to end
+      let sum = 0;
+
+      for (let k = start; k <= end; k++) {
+        sum += arr[k];
+      }
+
+      // Update maxSum if current subarray sum is greater
+      maxSum = Math.max(maxSum, sum);
+    }
+  }
+
+  return maxSum;
+}
+
+console.log(maximumSubarraySumBruteForce([-2, 1, -3, 4, -1, 2, 1, -5, 4]));

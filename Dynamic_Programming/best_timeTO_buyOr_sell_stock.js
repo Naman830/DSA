@@ -15,3 +15,21 @@ But the rules change from problem to problem.
 // You can buy only once and sell only once.
 // Find the maximum profit.
 
+/*
+Pseudocode
+
+function maxProfit(prices):
+
+    mini = prices[0]
+    maxProfit = 0
+
+    for i from 1 to n - 1:
+
+        profit = prices[i] - mini
+
+        maxProfit = maximum(maxProfit, profit)
+
+        mini = minimum(mini, prices[i])
+
+    return maxProfit
+*/

@@ -71,7 +71,6 @@ function rearrangeArray(nums) {
   return result;
 }
 
-console.log(rearrangeArray([3, 1, -2, -5, 2, -4]));
 
 // Optimal Approach
 // Instead of storing positives and negatives separately first, we can create the result array directly.
@@ -95,7 +94,9 @@ for each number in nums:
 return result
 */
 
-function rearrangeArray(nums) {
+// TC: O(n) and SC: O(n)
+
+function rearrangeArrayOptimal(nums) {
   let n = nums.length;
 
   // This array will store the final rearranged answer
@@ -126,3 +127,5 @@ function rearrangeArray(nums) {
 
   return result;
 }
+
+console.log(rearrangeArrayOptimal([3, 1, -2, -5, 2, -4]));

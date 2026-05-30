@@ -33,3 +33,27 @@ function maxProfit(prices):
 
     return maxProfit
 */
+
+function maxProfit(prices) {
+  // mini stores the minimum buying price seen so far
+  let mini = prices[0];
+
+  // maxProfit stores the best profit we can make
+  let maxProfit = 0;
+
+  // Start from index 1 because index 0 is already taken as mini
+  for (let i = 1; i < prices.length; i++) {
+    // If we sell today, profit will be:
+    // today's price - lowest price before today
+    let profit = prices[i] - mini;
+
+    // Update maxProfit if today's profit is better
+    maxProfit = Math.max(maxProfit, profit);
+
+    // Update minimum price for future days
+    mini = Math.min(mini, prices[i]);
+  }
+
+  return maxProfit;
+}
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));

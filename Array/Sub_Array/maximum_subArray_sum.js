@@ -127,3 +127,32 @@ for each number in array:
 
 return maxSum 
 */
+
+
+
+function maximumSubarraySum(arr) {
+  // maxSum stores the best answer found so far
+  // We use -Infinity because array can contain all negative numbers
+  let maxSum = -Infinity;
+
+  // currentSum stores the sum of current running subarray
+  let currentSum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    // Add current element to current subarray sum
+    currentSum += arr[i];
+
+    // Update maxSum if currentSum is better
+    maxSum = Math.max(maxSum, currentSum);
+
+    // If currentSum becomes negative,
+    // it will hurt future subarrays, so reset it
+    if (currentSum < 0) {
+      currentSum = 0;
+    }
+  }
+
+  return maxSum;
+}
+
+console.log(maximumSubarraySum([-2, 1, -3, 4, -1, 2, 1, -5, 4]));

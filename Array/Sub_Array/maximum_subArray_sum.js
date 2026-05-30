@@ -51,3 +51,51 @@ function maximumSubarraySumBruteForce(arr) {
 }
 
 console.log(maximumSubarraySumBruteForce([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+
+
+// 2. Better Approach
+// For each starting index, keep adding elements one by one.
+// So instead of recalculating the sum from zero every time, we continue the previous sum.
+
+/*
+Pseudocode
+
+maxSum = -infinity
+
+for start from 0 to n - 1:
+    sum = 0
+
+    for end from start to n - 1:
+        sum = sum + arr[end]
+        maxSum = maximum(maxSum, sum)
+
+return maxSum
+*/
+function maximumSubarraySumBetter(arr) {
+  let n = arr.length;
+
+  // Because numbers can be negative also
+  let maxSum = -Infinity;
+
+  // Pick starting point
+  for (let start = 0; start < n; start++) {
+    
+    // Current sum for subarray starting from index start
+    let sum = 0;
+
+    // Pick ending point
+    for (let end = start; end < n; end++) {
+      
+      // Add current element to sum
+      sum += arr[end];
+
+      // Update maximum sum
+      maxSum = Math.max(maxSum, sum);
+    }
+  }
+
+  return maxSum;
+}
+
+console.log(maximumSubarraySumBetter([-2, 1, -3, 4, -1, 2, 1, -5, 4]));

@@ -99,7 +99,6 @@ function maximumSubarraySumBetter(arr) {
 
 console.log(maximumSubarraySumBetter([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
-
 // 3. Optimal Approach — Kadane’s Algorithm
 
 /*
@@ -128,8 +127,6 @@ for each number in array:
 return maxSum 
 */
 
-
-
 function maximumSubarraySum(arr) {
   // maxSum stores the best answer found so far
   // We use -Infinity because array can contain all negative numbers
@@ -156,3 +153,47 @@ function maximumSubarraySum(arr) {
 }
 
 console.log(maximumSubarraySum([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+// Kadane’s Algorithm With Subarray Also
+// Sometimes interviewer asks: Return the maximum sum and the subarray also.
+// Output
+// maxSum = 6
+// subarray = [4, -1, 2, 1]
+
+function maximumSubarrayWithElements(arr) {
+  let maxSum = -Infinity;
+  let currentSum = 0;
+
+  // These will store final answer subarray indices
+  let start = 0;
+  let end = 0;
+
+  // This stores possible starting index of current subarray
+  let tempStart = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    currentSum += arr[i];
+
+    // If currentSum is greater than maxSum,
+    // update answer and store start/end indices
+    if (currentSum > maxSum) {
+      maxSum = currentSum;
+      start = tempStart;
+      end = i;
+    }
+
+    // If currentSum becomes negative,
+    // reset it and start a new subarray from next index
+    if (currentSum < 0) {
+      currentSum = 0;
+      tempStart = i + 1;
+    }
+  }
+
+  return {
+    maxSum: maxSum,
+    subarray: arr.slice(start, end + 1)
+  };
+}
+
+console.log(maximumSubarrayWithElements([-2, 1, -3, 4, -1, 2, 1, -5, 4]));

@@ -71,6 +71,8 @@ for start from 0 to n - 1:
 return maxSum
 */
 
+// TC: O(n2) AND SC: O(1)
+
 function maximumSubarraySumBetter(arr) {
   let n = arr.length;
 

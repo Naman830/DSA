@@ -127,6 +127,8 @@ for each number in array:
 return maxSum 
 */
 
+// TC: O(n) and SC: O(1)
+
 function maximumSubarraySum(arr) {
   // maxSum stores the best answer found so far
   // We use -Infinity because array can contain all negative numbers
@@ -192,7 +194,7 @@ function maximumSubarrayWithElements(arr) {
 
   return {
     maxSum: maxSum,
-    subarray: arr.slice(start, end + 1)
+    subarray: arr.slice(start, end + 1),
   };
 }
 

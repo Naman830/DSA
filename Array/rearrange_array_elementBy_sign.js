@@ -45,6 +45,8 @@ for i from 0 to positives.length - 1:
 return answer
 */
 
+// TC: O(2n) & SC: O(n)
+
 function rearrangeArray(nums) {
   let positives = [];
   let negatives = [];
@@ -70,3 +72,26 @@ function rearrangeArray(nums) {
 }
 
 console.log(rearrangeArray([3, 1, -2, -5, 2, -4]));
+
+
+// Optimal Approach
+// Instead of storing positives and negatives separately first, we can create the result array directly.
+
+/*
+Pseudocode
+
+create result array of size n
+
+positiveIndex = 0
+negativeIndex = 1
+
+for each number in nums:
+    if number is positive:
+        result[positiveIndex] = number
+        positiveIndex = positiveIndex + 2
+    else:
+        result[negativeIndex] = number
+        negativeIndex = negativeIndex + 2
+
+return result
+*/

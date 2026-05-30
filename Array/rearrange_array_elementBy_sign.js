@@ -44,3 +44,29 @@ for i from 0 to positives.length - 1:
 
 return answer
 */
+
+function rearrangeArray(nums) {
+  let positives = [];
+  let negatives = [];
+
+  // Step 1: Separate positive and negative numbers
+  for (let num of nums) {
+    if (num > 0) {
+      positives.push(num);
+    } else {
+      negatives.push(num);
+    }
+  }
+
+  let result = [];
+
+  // Step 2: Add one positive and one negative alternately
+  for (let i = 0; i < positives.length; i++) {
+    result.push(positives[i]);
+    result.push(negatives[i]);
+  }
+
+  return result;
+}
+
+console.log(rearrangeArray([3, 1, -2, -5, 2, -4]));

@@ -13,3 +13,27 @@ arr = [16, 17, 4, 3, 5, 2]
 Key Rule:
 The last element is always a leader, because there is no element on its right.
 */
+
+// 1. Brute Force Approach
+
+// For every element, check all elements on its right side.
+// If no element on the right is greater than current element, then current element is a leader.
+
+/*
+Pseudo Code
+
+leaders = []
+
+for i from 0 to n - 1:
+    isLeader = true
+
+    for j from i + 1 to n - 1:
+        if arr[j] > arr[i]:
+            isLeader = false
+            break
+
+    if isLeader == true:
+        add arr[i] into leaders
+
+return leaders
+*/

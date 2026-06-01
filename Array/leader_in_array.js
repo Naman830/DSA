@@ -38,6 +38,8 @@ for i from 0 to n - 1:
 return leaders
 */
 
+// TC: O(n^2) & SC: O(n)
+
 function leadersInArray(arr) {
   let n = arr.length;
   let leaders = [];
@@ -67,3 +69,5 @@ function leadersInArray(arr) {
 
 console.log(leadersInArray([16, 17, 4, 3, 5, 2]));
 // Output: [17, 5, 2]
+
+

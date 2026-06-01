@@ -71,3 +71,20 @@ console.log(leadersInArray([16, 17, 4, 3, 5, 2]));
 // Output: [17, 5, 2]
 
 
+//2. Optimal Approach
+// Instead of checking right side again and again, we move from right to left.
+
+/*
+Pseudo Code
+leaders = []
+maxRight = -infinity
+
+for i from n - 1 to 0:
+    if arr[i] >= maxRight:
+        add arr[i] into leaders
+        maxRight = arr[i]
+
+reverse leaders
+
+return leaders
+*/

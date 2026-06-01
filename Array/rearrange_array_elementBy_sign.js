@@ -84,6 +84,8 @@ function rearrangeArrayOptimal(nums) {
 
 console.log(rearrangeArrayOptimal([3, 1, -2, -5, 2, -4]));
 
+// TC: O(n) and SC: O(n)
+
 // Varity 2 positve and negatives are not equal
 
 function rearrangeArrayUnequal(nums) {

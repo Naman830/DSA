@@ -85,3 +85,45 @@ function rearrangeArrayOptimal(nums) {
 console.log(rearrangeArrayOptimal([3, 1, -2, -5, 2, -4]));
 
 // Varity 2 positve and negatives are not equal
+
+function rearrangeArrayUnequal(nums) {
+  let positives = [];
+  let negatives = [];
+
+  // Separate positives and negatives
+  for (let num of nums) {
+    if (num > 0) {
+      positives.push(num);
+    } else {
+      negatives.push(num);
+    }
+  }
+
+  let result = [];
+  let i = 0;
+  let j = 0;
+
+  // Add alternatively while both arrays have elements
+  while (i < positives.length && j < negatives.length) {
+    result.push(positives[i]);
+    result.push(negatives[j]);
+    i++;
+    j++;
+  }
+
+  // Add remaining positives
+  while (i < positives.length) {
+    result.push(positives[i]);
+    i++;
+  }
+
+  // Add remaining negatives
+  while (j < negatives.length) {
+    result.push(negatives[j]);
+    j++;
+  }
+
+  return result;
+}
+
+console.log(rearrangeArrayUnequal([3, 1, -2, -5, 2]));

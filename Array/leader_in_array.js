@@ -37,3 +37,33 @@ for i from 0 to n - 1:
 
 return leaders
 */
+
+function leadersInArray(arr) {
+  let n = arr.length;
+  let leaders = [];
+
+  // Pick every element one by one
+  for (let i = 0; i < n; i++) {
+    let isLeader = true;
+
+    // Check all elements on the right side
+    for (let j = i + 1; j < n; j++) {
+      // If any element on right is greater,
+      // then arr[i] cannot be a leader
+      if (arr[j] > arr[i]) {
+        isLeader = false;
+        break;
+      }
+    }
+
+    // If no greater element found on right side
+    if (isLeader) {
+      leaders.push(arr[i]);
+    }
+  }
+
+  return leaders;
+}
+
+console.log(leadersInArray([16, 17, 4, 3, 5, 2]));
+// Output: [17, 5, 2]

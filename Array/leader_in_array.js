@@ -87,6 +87,8 @@ reverse leaders
 return leaders
 */
 
+// TC: O(n) & SC in wrost case O(n) and best case O(1)
+
 function leadersInArray(arr) {
   let n = arr.length;
   let leaders = [];

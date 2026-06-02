@@ -1,0 +1,31 @@
+// You need to find the length of the longest sequence of numbers that come one after another.
+// Consecutive means numbers are continuous.
+
+// Approach 1: Brute Forces
+/*
+For every number, check:
+
+num
+num + 1
+num + 2
+num + 3
+...
+
+until the next number is not present in the array.
+*//*
+Pseudocode
+
+maxLength = 0
+
+for each num in nums:
+    currentNum = num
+    currentLength = 1
+
+    while currentNum + 1 exists in nums:
+        currentNum++
+        currentLength++
+
+    maxLength = max(maxLength, currentLength)
+
+return maxLength
+*/

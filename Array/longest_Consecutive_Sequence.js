@@ -53,4 +53,62 @@ function longestConsecutive(nums) {
   return maxLength;
 }
 
+
+
+// Approach 2: Better Solution Using Sorting
+// If we sort the array, consecutive numbers come close to each other.
+// Imp point duplicate should be ignored.
+
+/*
+Pseudocode
+
+sort nums
+
+maxLength = 1
+currentLength = 1
+
+for i from 1 to n - 1:
+    if nums[i] == nums[i - 1]:
+        skip duplicate
+
+    else if nums[i] == nums[i - 1] + 1:
+        currentLength++
+
+    else:
+        currentLength = 1
+
+    maxLength = max(maxLength, currentLength)
+
+return maxLength
+*/
+function longestConsecutive(nums) {
+  // Edge case: empty array
+  if (nums.length === 0) return 0;
+
+  // Sort numbers in ascending order
+  nums.sort((a, b) => a - b);
+
+  let maxLength = 1;
+  let currentLength = 1;
+
+  for (let i = 1; i < nums.length; i++) {
+    // If duplicate number comes, ignore it
+    if (nums[i] === nums[i - 1]) {
+      continue;
+    }
+
+    // If current number is exactly previous + 1
+    if (nums[i] === nums[i - 1] + 1) {
+      currentLength++;
+    } else {
+      // Sequence broke, start new sequence
+      currentLength = 1;
+    }
+
+    maxLength = Math.max(maxLength, currentLength);
+  }
+
+  return maxLength;
+}
+
 console.log(longestConsecutive([100, 4, 200, 1, 3, 2]));

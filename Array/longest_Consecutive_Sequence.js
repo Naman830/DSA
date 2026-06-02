@@ -154,6 +154,9 @@ for each num in Set:
 
 return maxLength
 */
+
+// TC: O(n) & SC: O(n)
+
 function longestConsecutive(nums) {
   const numSet = new Set(nums);
   let maxLength = 0;

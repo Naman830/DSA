@@ -113,3 +113,26 @@ function longestConsecutive(nums) {
 }
 
 console.log(longestConsecutive([100, 4, 200, 1, 3, 2]));
+
+
+// Approach 3: Optimal Solution Using HashSet
+/*
+Main Idea
+
+Put all numbers inside a Set.
+
+Why?
+Because searching in a Set is almost:
+
+O(1) Now we can quickly check whether a number exists or not.
+
+Key Interview Trick
+We should only start counting from the first number of a sequence.
+
+How to know a number is the first number?
+If:
+
+num - 1
+
+does not exist, then num is the starting point.
+*/

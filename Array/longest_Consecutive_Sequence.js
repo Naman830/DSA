@@ -114,7 +114,6 @@ function longestConsecutive(nums) {
 
 console.log(longestConsecutive([100, 4, 200, 1, 3, 2]));
 
-
 // Approach 3: Optimal Solution Using HashSet
 /*
 Main Idea
@@ -135,7 +134,7 @@ If:
 num - 1
 
 does not exist, then num is the starting point.
-*//*
+*/ /*
 Pseudocode
 
 create Set from nums
@@ -155,3 +154,25 @@ for each num in Set:
 
 return maxLength
 */
+function longestConsecutive(nums) {
+  const numSet = new Set(nums);
+  let maxLength = 0;
+
+  for (let num of numSet) {
+    // Only start if num is the first number of sequence
+    if (!numSet.has(num - 1)) {
+      let currentNum = num;
+      let currentLength = 1;
+
+      // Move forward while next number exists
+      while (numSet.has(currentNum + 1)) {
+        currentNum++;
+        currentLength++;
+      }
+
+      maxLength = Math.max(maxLength, currentLength);
+    }
+  }
+
+  return maxLength;
+}

@@ -53,8 +53,6 @@ function longestConsecutive(nums) {
   return maxLength;
 }
 
-
-
 // Approach 2: Better Solution Using Sorting
 // If we sort the array, consecutive numbers come close to each other.
 // Imp point duplicate should be ignored.
@@ -81,6 +79,9 @@ for i from 1 to n - 1:
 
 return maxLength
 */
+
+// TC:(n log n) & SC: O(1)
+
 function longestConsecutive(nums) {
   // Edge case: empty array
   if (nums.length === 0) return 0;

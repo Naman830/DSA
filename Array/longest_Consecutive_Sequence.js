@@ -135,4 +135,23 @@ If:
 num - 1
 
 does not exist, then num is the starting point.
+*//*
+Pseudocode
+
+create Set from nums
+
+maxLength = 0
+
+for each num in Set:
+    if num - 1 does not exist:
+        currentNum = num
+        currentLength = 1
+
+        while currentNum + 1 exists:
+            currentNum++
+            currentLength++
+
+        maxLength = max(maxLength, currentLength)
+
+return maxLength
 */

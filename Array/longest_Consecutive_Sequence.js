@@ -30,6 +30,8 @@ for each num in nums:
 return maxLength
 */
 
+// TC: O(n^2) & SC: O(1)
+
 function longestConsecutive(nums) {
   let maxLength = 0;
 

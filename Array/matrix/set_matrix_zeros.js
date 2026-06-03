@@ -72,3 +72,26 @@ console.log(
     [0, 1, 1],
   ]),
 );
+
+// 2. Better Solution
+/*
+We only need to know:
+
+Which rows contain a zero
+Which columns contain a zero
+*/
+
+/*
+Pseudocode
+
+rows = []
+cols = []
+
+find all zeros
+mark rows and cols
+
+again traverse matrix
+set 0 where needed
+*/
+
+

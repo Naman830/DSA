@@ -15,3 +15,21 @@ Keep in Mind
 1. First identify rows/columns that should become zero.
 2. Then update the matrix.
 */
+
+// 1. Brute Force Solution
+/*
+When we find a zero:
+Mark its row and column with a special value (say -Infinity)
+Later convert all markers to 0
+*/
+
+/*
+Pseudocode
+
+for each cell
+    if cell == 0
+        mark row
+        mark column
+
+convert all markers to 0
+*/

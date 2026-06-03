@@ -120,3 +120,28 @@ console.log(
     [0, 1, 1],
   ]),
 );
+
+// 3. Optimal Solution (O(1) Space)
+/*
+Key Observation
+
+Instead of extra arrays:
+rows[]
+cols[]
+
+Use the matrix itself as storage.
+
+Specifically:
+First row → stores column markers
+First column → stores row markers
+
+
+Problem:
+
+Cell (0,0) belongs to:
+first row
+first column
+
+So we need an extra variable:
+col0 [to remember whether first column should become zero.]
+*/

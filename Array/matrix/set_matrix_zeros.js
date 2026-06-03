@@ -37,31 +37,31 @@ convert all markers to 0
 // TC: O(n3) or O((mn)(m+n)) & SC: O(1)
 
 function setZeroesBrute(matrix) {
-  const MARK = -Infinity;
-  let m = matrix.length;
-  let n = matrix[0].length;
+    const MARK = -Infinity;
+    let m = matrix.length;
+    let n = matrix[0].length;
 
-  for (let i = 0; i < m; i++) {
-    for (let j = 0; j < n; j++) {
-      if (matrix[i][j] === 0) {
-        for (let col = 0; col < n; col++) {
-          if (matrix[i][col] !== 0) matrix[i][col] = MARK;
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            if (matrix[i][j] === 0) {
+                for (let col = 0; col < n; col++) {
+                    if (matrix[i][col] !== 0) matrix[i][col] = MARK;
+                }
+
+                for (let row = 0; row < m; row++) {
+                    if (matrix[row][j] !== 0) matrix[row][j] = MARK;
+                }
+            }
         }
+    }
 
-        for (let row = 0; row < m; row++) {
-          if (matrix[row][j] !== 0) matrix[row][j] = MARK;
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            if (matrix[i][j] === MARK) matrix[i][j] = 0;
         }
-      }
     }
-  }
 
-  for (let i = 0; i < m; i++) {
-    for (let j = 0; j < n; j++) {
-      if (matrix[i][j] === MARK) matrix[i][j] = 0;
-    }
-  }
-
-  return matrix;
+    return matrix;
 }
 
 // 2. Better Solution
@@ -88,38 +88,29 @@ set 0 where needed
 // TC: O(m × n) & SC: O(m + n)
 
 function setZeroesBetter(matrix) {
-  const m = matrix.length;
-  const n = matrix[0].length;
+    const m = matrix.length;
+    const n = matrix[0].length;
 
-  const rows = new Array(m).fill(false);
-  const cols = new Array(n).fill(false);
+    const rows = new Array(m).fill(false);
+    const cols = new Array(n).fill(false);
 
-  for (let i = 0; i < m; i++) {
-    for (let j = 0; j < n; j++) {
-      if (matrix[i][j] === 0) {
-        rows[i] = true;
-        cols[j] = true;
-      }
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            if (matrix[i][j] === 0) {
+                rows[i] = true;
+                cols[j] = true;
+            }
+        }
     }
-  }
-  for (let i = 0; i < m; i++) {
-    for (let j = 0; j < n; j++) {
-      if (rows[i] || cols[j]) {
-        matrix[i][j] = 0;
-      }
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            if (rows[i] || cols[j]) {
+                matrix[i][j] = 0;
+            }
+        }
     }
-  }
-  return matrix;
+    return matrix;
 }
-
-console.log(
-  setZeroesBetter([
-    [1, 1, 1],
-    [1, 0, 1],
-    [1, 1, 0],
-    [0, 1, 1],
-  ]),
-);
 
 // 3. Optimal Solution (O(1) Space)
 /*
@@ -153,10 +144,61 @@ col0 = 1
 
 mark rows and columns
 
-traverse backward
+traverse backwardfunction setZeroes(matrix) {
 
 if row marker or column marker is 0
     make cell 0
 
 handle first column
 */
+
+// TC: O(n * m) & SC: O(1)
+
+function setZeroesOptimal(matrix) {
+    const m = matrix.length;
+    const n = matrix[0].length;
+
+    let col0 = 1;
+
+    // Mark rows and columns
+    for (let i = 0; i < m; i++) {
+
+        if (matrix[i][0] === 0)
+            col0 = 0;
+
+        for (let j = 1; j < n; j++) {
+
+            if (matrix[i][j] === 0) {
+                matrix[i][0] = 0;
+                matrix[0][j] = 0;
+            }
+        }
+    }
+
+    // Fill zeros from bottom-right
+    for (let i = m - 1; i >= 0; i--) {
+
+        for (let j = n - 1; j >= 1; j--) {
+
+            if (
+                matrix[i][0] === 0 ||
+                matrix[0][j] === 0
+            ) {
+                matrix[i][j] = 0;
+            }
+        }
+
+        if (col0 === 0)
+            matrix[i][0] = 0;
+    }
+    return matrix;
+}
+
+console.log(
+    setZeroesOptimal([
+        [1, 1, 1],
+        [1, 0, 1],
+        [1, 1, 0],
+        [0, 1, 1],
+    ]),
+);

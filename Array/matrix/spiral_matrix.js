@@ -56,12 +56,14 @@ function spiralOrder(matrix) {
   while (top <= bottom && left <= right) {
     // Traverse Top Row
     for (let col = left; col <= right; col++) {
+      // check which side is moving in this top column is moving
       result.push(matrix[top][col]);
     }
     top++;
 
     // Traverse Right Column
     for (let row = top; row <= bottom; row++) {
+      // in this right row is moving
       result.push(matrix[row][right]);
     }
     right--;
@@ -69,6 +71,7 @@ function spiralOrder(matrix) {
     // Traverse Bottom Row
     if (top <= bottom) {
       for (let col = right; col >= left; col--) {
+        // in this bottom column is moving
         result.push(matrix[bottom][col]);
       }
       bottom--;
@@ -77,6 +80,7 @@ function spiralOrder(matrix) {
     // Traverse Left Column
     if (left <= right) {
       for (let row = bottom; row >= top; row--) {
+        // in this left row is moving
         result.push(matrix[row][left]);
       }
       left++;

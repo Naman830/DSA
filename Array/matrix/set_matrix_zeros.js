@@ -145,3 +145,18 @@ first column
 So we need an extra variable:
 col0 [to remember whether first column should become zero.]
 */
+
+/*
+Pseudocode
+
+col0 = 1
+
+mark rows and columns
+
+traverse backward
+
+if row marker or column marker is 0
+    make cell 0
+
+handle first column
+*/

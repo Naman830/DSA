@@ -64,15 +64,6 @@ function setZeroesBrute(matrix) {
   return matrix;
 }
 
-console.log(
-  setZeroesBrute([
-    [1, 1, 1],
-    [1, 0, 1],
-    [1, 1, 0],
-    [0, 1, 1],
-  ]),
-);
-
 // 2. Better Solution
 /*
 We only need to know:
@@ -94,4 +85,38 @@ again traverse matrix
 set 0 where needed
 */
 
+// TC: O(m × n) & SC: O(m + n)
 
+function setZeroesBetter(matrix) {
+  const m = matrix.length;
+  const n = matrix[0].length;
+
+  const rows = new Array(m).fill(false);
+  const cols = new Array(n).fill(false);
+
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      if (matrix[i][j] === 0) {
+        rows[i] = true;
+        cols[j] = true;
+      }
+    }
+  }
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      if (rows[i] || cols[j]) {
+        matrix[i][j] = 0;
+      }
+    }
+  }
+  return matrix;
+}
+
+console.log(
+  setZeroesBetter([
+    [1, 1, 1],
+    [1, 0, 1],
+    [1, 1, 0],
+    [0, 1, 1],
+  ]),
+);

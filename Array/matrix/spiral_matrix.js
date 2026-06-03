@@ -42,6 +42,8 @@ while top <= bottom and left <= right
 return result
 */
 
+// TC: O(m * n) & SC: O(1)
+
 function spiralOrder(matrix) {
   let result = [];
 

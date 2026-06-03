@@ -33,3 +33,42 @@ for each cell
 
 convert all markers to 0
 */
+
+// TC: O(n3) or O((mn)(m+n)) & SC: O(1)
+
+function setZeroesBrute(matrix) {
+  const MARK = -Infinity;
+  let m = matrix.length;
+  let n = matrix[0].length;
+
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      if (matrix[i][j] === 0) {
+        for (let col = 0; col < n; col++) {
+          if (matrix[i][col] !== 0) matrix[i][col] = MARK;
+        }
+
+        for (let row = 0; row < m; row++) {
+          if (matrix[row][j] !== 0) matrix[row][j] = MARK;
+        }
+      }
+    }
+  }
+
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      if (matrix[i][j] === MARK) matrix[i][j] = 0;
+    }
+  }
+
+  return matrix;
+}
+
+console.log(
+  setZeroesBrute([
+    [1, 1, 1],
+    [1, 0, 1],
+    [1, 1, 0],
+    [0, 1, 1],
+  ]),
+);

@@ -19,3 +19,15 @@ Most interviewers expect:
 In-place rotation
 No extra matrix
 */
+
+// 1. Brute Force Solution
+// Create a new matrix.
+
+/*
+Pseudocode
+create result matrix
+
+for i = 0 to n-1
+    for j = 0 to n-1
+        result[j][n-1-i] = matrix[i][j]
+*/

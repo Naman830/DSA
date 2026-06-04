@@ -48,9 +48,6 @@ function rotateBrute(matrix) {
   return result;
 }
 
-console.log(rotateBrute([[1, 2, 3],[4, 5, 6],[7, 8, 9]]));
-
-
 // 2. Optimal Solution
 /*
 Matrix Transformation
@@ -74,8 +71,37 @@ Step 2: Reverse Every Row
 
 /*
 Pseudocode
+
 transpose matrix
 
 for each row
     reverse row
 */
+
+// TC → O(N²) & Space → O(1)
+
+function rotate(matrix) {
+  const n = matrix.length;
+
+  // Step 1: Transpose
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
+    }
+  }
+
+  // Step 2: Reverse each row
+  for (let row of matrix) {
+    row.reverse();
+  }
+
+  return matrix;
+}
+
+console.log(
+  rotate([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ]),
+);

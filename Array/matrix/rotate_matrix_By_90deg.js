@@ -49,3 +49,25 @@ function rotateBrute(matrix) {
 }
 
 console.log(rotateBrute([[1, 2, 3],[4, 5, 6],[7, 8, 9]]));
+
+
+// 2. Optimal Solution
+/*
+Matrix Transformation
+Transpose + Reverse Rows
+
+Example:
+1 2 3
+4 5 6
+7 8 9
+
+After transpose:
+1 4 7
+2 5 8
+3 6 9
+
+Step 2: Reverse Every Row
+1 4 7 → 7 4 1
+2 5 8 → 8 5 2
+3 6 9 → 9 6 3
+*/

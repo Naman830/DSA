@@ -92,6 +92,10 @@ Has currentSum - K appeared before?
 If yes, we found a subarray with sum K.
 */
 
+/*
+prefix means adding continously and subrating with k and when number appear of any index that is our maxlength of that k number simple 
+*/
+
 // PSEUDO CODE
 /* 
 map = empty

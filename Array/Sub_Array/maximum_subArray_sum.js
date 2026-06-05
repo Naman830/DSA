@@ -100,6 +100,8 @@ At every index, ask:
 Should I continue the old subarray?
 Or should I start a new subarray from here? 
 
+In simple words if our sum < 0 so it will be zero and if ans is < 0 so ans will be zero 
+
 So whenever current sum becomes negative, we throw it away.
 Because a negative sum will only reduce the future answer.
 */

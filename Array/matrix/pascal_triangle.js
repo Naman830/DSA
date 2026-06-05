@@ -247,7 +247,6 @@ function generateRow(rowNumber) {
   for (let col = 1; col < rowNumber; col++) {
     value = value * (rowNumber - col);
     value = value / col;
-
     row.push(value);
   }
 

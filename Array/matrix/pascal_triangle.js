@@ -97,3 +97,54 @@ function findElement(row, col) {
 }
 
 console.log(findElement(5, 3)); // 6
+
+
+// =================================================================================================
+// =================================================================================================
+// =================================================================================================
+
+// 2. Print Nth Row
+/*
+given: n = 5
+Print: 1 4 6 4 1
+
+Brute Force
+For every position:
+4C0
+4C1
+4C2
+4C3
+4C4
+
+Compute nCr each time.
+Complexity: O(n²)
+Not optimal.
+
+Better Observation
+Suppose we already know:
+4C0 = 1
+
+Next element:
+4C1
+
+can be derived from previous.
+Formula:
+next = current * (n-r)/(r+1)
+
+This generates the row sequentially.
+Example
+
+Row:
+n = 5
+
+Actual combination row:
+4C0
+4C1
+4C2
+4C3
+4C4
+*/
+
+function printNthRow(n) {
+
+}

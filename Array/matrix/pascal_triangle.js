@@ -216,3 +216,44 @@ triangle[i-1][j-1]
 +
 triangle[i-1][j]
 */
+
+// Optimal Solution (Most Popular)
+// Generate each row using the efficient nth-row method.
+// TC: O(n²) & SC: O(n²)
+// Generates a single row of Pascal Triangle
+
+function generateRow(rowNumber) {
+  const row = [];
+
+  // First element is always 1
+  let value = 1;
+
+  row.push(value);
+
+  // Generate remaining elements using previous element
+  for (let col = 1; col < rowNumber; col++) {
+    value = value * (rowNumber - col);
+    value = value / col;
+
+    row.push(value);
+  }
+
+  return row;
+}
+function pascalTriangle(n) {
+  // Stores complete triangle
+  const triangle = [];
+
+  // Generate each row one by one
+  for (let row = 1; row <= n; row++) {
+    // Create current row
+    const currentRow = generateRow(row);
+
+    // Add row into final triangle
+    triangle.push(currentRow);
+  }
+
+  return triangle;
+}
+
+console.log(pascalTriangle(5));

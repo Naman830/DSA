@@ -1,3 +1,1 @@
-sum += arr[j]
-            maxSum = Math.max(maxSum, sum)
-        }
+ map.set(prefix, (map.get(prefix) || 0) + 1)

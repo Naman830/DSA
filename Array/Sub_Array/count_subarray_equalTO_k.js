@@ -67,6 +67,7 @@ console.log(countSubarraysBrute([1, 2, 3, -3, 3, 1, 1, 1, 4, 2, -3, 3], 3));
 
 /*
 Pseudocode
+
 map = {0:1}
 
 prefix = 0
@@ -83,3 +84,27 @@ for num in arr
 
 return count
 */
+
+// TC: O(n) AND SC: O(n)
+
+function countSubarraysOptimal(arr, k) {
+  let map = new Map();
+
+  map.set(0, 1);
+
+  let prefix = 0;
+  let count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    prefix += arr[i];
+
+    if (map.has(prefix - k)) {
+      count += map.get(prefix - k);
+    }
+    map.set(prefix, (map.get(prefix) || 0) + 1);
+  }
+
+  return count;
+}
+
+console.log(countSubarraysOptimal([1, 2, 3, -3, 3, 1, 1, 1, 4, 2, -3, 3], 3));

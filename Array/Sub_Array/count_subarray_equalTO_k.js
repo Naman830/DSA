@@ -40,3 +40,24 @@ for i from 0 to n-1
 
 return count
 */
+
+// TC: O(n2) & SC: O(1)
+
+function countSubarraysBrute(arr, k) {
+  let count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    let sum = 0;
+    // Always start from i not from 0
+    for (let j = i; j < arr.length; j++) {
+      sum += arr[j];
+
+      if (sum === k) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+console.log(countSubarraysBrute([1, 2, 3, -3, 3, 1, 1, 1, 4, 2, -3, 3], 3));

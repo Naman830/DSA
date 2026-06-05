@@ -44,3 +44,27 @@ Type 3
 Print the entire triangle.
 */
 
+// =================================================================================================
+// =================================================================================================
+// =================================================================================================
+// 1. Given Row and Column, Find Element
+/*
+Given:
+row = 5
+col = 3
+Find the element.
+
+Pascal Triangle follows:
+element = (row-1)C(col-1)
+
+Optimal Solution
+Instead of factorial:
+nCr = n!/(r!(n-r)!)
+
+use multiplication.
+Formula:
+nCr = n/r * (n-1)/(r-1) * ...
+
+4C2 = (4×3)/(2×1)
+Ans= 6
+*/

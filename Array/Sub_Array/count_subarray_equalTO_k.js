@@ -61,3 +61,25 @@ function countSubarraysBrute(arr, k) {
 }
 
 console.log(countSubarraysBrute([1, 2, 3, -3, 3, 1, 1, 1, 4, 2, -3, 3], 3));
+
+// Optimal Solution (Prefix Sum + HashMap)
+// formula: currentPrefix - previousPrefix = k
+
+/*
+Pseudocode
+map = {0:1}
+
+prefix = 0
+count = 0
+
+for num in arr
+
+    prefix += num
+
+    if map contains (prefix-k)
+        count += map[prefix-k]
+
+    map[prefix]++
+
+return count
+*/

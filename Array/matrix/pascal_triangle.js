@@ -1,4 +1,17 @@
 /*
+One-Line Memory Trick
+
+Type 1 (Find Element)
+→ (row-1)C(col-1)
+
+Type 2 (Nth Row)
+→ Generate combinations sequentially
+
+Type 3 (Entire Triangle)
+→ Generate every row using Type 2
+*/
+
+/*
 Almost every Pascal Triangle question is secretly based on nCr (Combination Formula).
 
 The key formula is:

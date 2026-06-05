@@ -98,7 +98,6 @@ function findElement(row, col) {
 
 console.log(findElement(5, 3)); // 6
 
-
 // =================================================================================================
 // =================================================================================================
 // =================================================================================================
@@ -145,6 +144,38 @@ Actual combination row:
 4C4
 */
 
-function printNthRow(n) {
+// TC: O(n) & SC: O(n)
 
+function printNthRow(n) {
+  // Stores complete row
+  const row = [];
+
+  // First element of every row is always 1
+  let value = 1;
+
+  row.push(value);
+
+  // Generate remaining elements
+  for (let col = 1; col < n; col++) {
+    /*
+        Formula:
+
+        nextElement =
+        currentElement * (n - col) / col
+
+        Example:
+        4C1 -> 4C2
+
+        4 * 3 / 2 = 6
+        */
+
+    value = value * (n - col);
+    value = value / col;
+
+    row.push(value);
+  }
+
+  return row;
 }
+
+console.log(printNthRow(5));

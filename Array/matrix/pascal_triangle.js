@@ -71,20 +71,28 @@ Ans= 6
 
 // Time  : O(col) & Space : O(1)
 
-// Returns nCr in O(r)
+// Function to calculate nCr efficiently
 function nCr(n, r) {
+  // Stores final answer
   let result = 1;
 
+  // Calculate:
+  // nCr = (n * (n-1) * (n-2) ...) / (r * (r-1) ...)
   for (let i = 0; i < r; i++) {
+    // Multiply numerator part
     result = result * (n - i);
+
+    // Divide denominator part
     result = result / (i + 1);
   }
 
   return result;
 }
 
-// Find element at given row and column
+// Find element at a specific row and column
 function findElement(row, col) {
+  // Pascal Triangle follows:
+  // element = (row-1)C(col-1)
   return nCr(row - 1, col - 1);
 }
 

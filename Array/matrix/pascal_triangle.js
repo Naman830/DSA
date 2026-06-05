@@ -68,3 +68,24 @@ nCr = n/r * (n-1)/(r-1) * ...
 4C2 = (4×3)/(2×1)
 Ans= 6
 */
+
+// Time  : O(col) & Space : O(1)
+
+// Returns nCr in O(r)
+function nCr(n, r) {
+  let result = 1;
+
+  for (let i = 0; i < r; i++) {
+    result = result * (n - i);
+    result = result / (i + 1);
+  }
+
+  return result;
+}
+
+// Find element at given row and column
+function findElement(row, col) {
+  return nCr(row - 1, col - 1);
+}
+
+console.log(findElement(5, 3)); // 6

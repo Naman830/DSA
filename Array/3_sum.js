@@ -24,3 +24,20 @@ We only return one.
 
 This problem is: Sorting + Two Pointers
 */
+
+// 1. Brute Force Solution
+// Try every triplet.
+// If sum = 0
+// Store it.
+// Use a Set to remove duplicates.
+
+/*
+Pseudocode
+
+for i
+    for j
+        for k
+
+            if sum == 0
+                store triplet
+*/

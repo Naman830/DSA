@@ -30,3 +30,16 @@ for i
                 if sum == target
                     store answer
 */
+
+// 2. Optimal Solution (Sorting + Two Pointers)
+/*
+Steps
+Sort array.
+Fix first element using i.
+Fix second element using j.
+Use left and right pointers.
+If sum matches target:
+Save quadruplet.
+Skip duplicates.
+Move pointers accordingly.
+*/

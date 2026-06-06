@@ -178,3 +178,26 @@ function majorityElementOptimal(nums) {
 }
 
 console.log(majorityElementOptimal([1, 1, 1, 3, 3, 2, 2, 2]));
+
+
+/*
+Boyer-Moore Voting Algorithm
+Recognition clue:
+
+When question says:
+Find element occurring more than n/2
+Find element occurring more than n/3
+Find element occurring more than n/k
+
+Think:
+Frequency threshold problem
++
+Need O(1) space
+
+Then Boyer-Moore is likely the intended solution.
+For:
+
+> n/2  → keep 1 candidate
+> n/3  → keep 2 candidates
+> n/k  → keep (k-1) candidates
+*/

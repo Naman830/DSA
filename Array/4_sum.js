@@ -13,7 +13,20 @@ Output:
   [-2,0,0,2],
   [-1,0,0,1]
 ]
+*/
 
-Fix 2 numbers
-Use Two Pointers for remaining 2 numbers
+// 1. Brute Force Solution
+/*
+Time  : O(n⁴)
+Space : O(1)
+
+Pseudocode
+
+for i
+    for j
+        for k
+            for l
+
+                if sum == target
+                    store answer
 */

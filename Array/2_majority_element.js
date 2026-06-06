@@ -91,3 +91,39 @@ function majorityElement(nums) {
 
   return result;
 }
+
+// 3. Optimal Solution (Boyer-Moore Voting Algorithm)
+
+/*
+Pseudocode
+
+candidate1 = null
+candidate2 = null
+
+count1 = 0
+count2 = 0
+
+for num in nums
+
+    if num == candidate1
+        count1++
+
+    else if num == candidate2
+        count2++
+
+    else if count1 == 0
+        candidate1 = num
+        count1 = 1
+
+    else if count2 == 0
+        candidate2 = num
+        count2 = 1
+
+    else
+        count1--
+        count2--
+
+Verify candidates
+
+return answer
+*/

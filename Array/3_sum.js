@@ -105,3 +105,17 @@ Space = O(n)
 
 Good but still duplicate handling becomes messy.
 */
+
+// 3. Optimal Solution
+/*
+Step 1: Sort Array
+Duplicates become adjacent
+Two pointers become possible
+
+Step 2: Fix One Number
+
+Step 3: Use Two Pointers
+left = i + 1
+right = n - 1
+
+*/

@@ -43,3 +43,36 @@ Save quadruplet.
 Skip duplicates.
 Move pointers accordingly.
 */
+
+/*
+Pseudocode
+
+sort array
+
+for i
+
+    skip duplicate i
+
+    for j
+
+        skip duplicate j
+
+        left = j + 1
+        right = n - 1
+
+        while left < right
+
+            sum = nums[i] + nums[j] + nums[left] + nums[right]
+
+            if sum == target
+                add answer
+                skip duplicates
+                left++
+                right--
+
+            else if sum < target
+                left++
+
+            else
+                right--
+*/

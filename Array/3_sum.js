@@ -82,3 +82,26 @@ function threeSumBrute(nums) {
 }
 
 console.log(threeSumBrute([-1, 0, 1, 2, -1, -4]));
+
+
+
+// 2. Better Solution
+/*
+Idea
+Fix one element.
+
+Then solve remaining as Two Sum using HashSet.
+
+For every i:
+target = -nums[i]
+
+Find: nums[j] + nums[k] = target
+
+using HashSet.
+
+Complexity
+Time  = O(n²)
+Space = O(n)
+
+Good but still duplicate handling becomes messy.
+*/

@@ -41,3 +41,24 @@ for each element
     if count > n/3
         add to answer
 */
+
+// Time: O(n²) & Space: O(1)
+
+function majorityElementBrute(nums) {
+  const result = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    let count = 0;
+    for (let j = 0; j < nums.length; j++) {
+      if (nums[j] === nums[i]) {
+        count++;
+      }
+    }
+    if (count > Math.floor(nums.length / 3) && !result.includes(nums[i])) {
+      result.push(nums[i]);
+    }
+  }
+  return result;
+}
+
+console.log(majorityElementBrute([1, 1, 1, 3, 3, 2, 2, 2]));

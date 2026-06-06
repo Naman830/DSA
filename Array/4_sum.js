@@ -143,3 +143,22 @@ function fourSum(nums, target) {
 
 // Example
 console.log(fourSum([1, 0, -1, 0, -2, 2], 0));
+
+/*
+Pattern Recognition
+
+This belongs to:
+k-Sum Pattern
+
+2Sum -> HashMap / Two Pointers
+3Sum -> Fix 1 + Two Pointers
+4Sum -> Fix 2 + Two Pointers
+kSum -> Fix (k-2) numbers + Two Pointers
+
+Recognition hint:
+Find unique combinations
+Target sum given
+Array can be sorted
+
+Think: Sort + Two Pointers
+*/

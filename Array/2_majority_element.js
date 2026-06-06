@@ -61,8 +61,6 @@ function majorityElementBrute(nums) {
   return result;
 }
 
-console.log(majorityElementBrute([1, 1, 1, 3, 3, 2, 2, 2]));
-
 // Better Solution (HashMap)
 /*
 Idea
@@ -73,3 +71,23 @@ Steps
 2. Traverse map.
 3. Add elements whose frequency > n/3.
 */
+
+// TC: O(n) & SC: O(n)
+
+function majorityElement(nums) {
+  const map = new Map();
+
+  for (let num of nums) {
+    map.set(num, (map.get(num) || 0) + 1);
+  }
+
+  const result = [];
+
+  for (let [num, freq] of map) {
+    if (freq > Math.floor(nums.length / 3)) {
+      result.push(num);
+    }
+  }
+
+  return result;
+}

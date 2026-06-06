@@ -50,18 +50,14 @@ Pseudocode
 sort array
 
 for i
-
     skip duplicate i
-
     for j
-
         skip duplicate j
 
         left = j + 1
         right = n - 1
 
         while left < right
-
             sum = nums[i] + nums[j] + nums[left] + nums[right]
 
             if sum == target
@@ -76,3 +72,63 @@ for i
             else
                 right--
 */
+
+function fourSum(nums, target) {
+  // Sort array for two-pointer technique
+  nums.sort((a, b) => a - b);
+
+  const result = [];
+
+  // Select first number
+  for (let i = 0; i < nums.length - 3; i++) {
+    // Skip duplicate first numbers
+    if (i > 0 && nums[i] === nums[i - 1]) continue;
+
+    // Select second number
+    for (let j = i + 1; j < nums.length - 2; j++) {
+      // Skip duplicate second numbers
+      if (j > i + 1 && nums[j] === nums[j - 1]) continue;
+
+      // Two pointers for remaining two numbers
+      let left = j + 1;
+      let right = nums.length - 1;
+
+      while (left < right) {
+        const sum = nums[i] + nums[j] + nums[left] + nums[right];
+
+        // Found valid quadruplet
+        if (sum === target) {
+          result.push([nums[i], nums[j], nums[left], nums[right]]);
+
+          // Skip duplicate third numbers
+          while (left < right && nums[left] === nums[left + 1]) {
+            left++;
+          }
+
+          // Skip duplicate fourth numbers
+          while (left < right && nums[right] === nums[right - 1]) {
+            right--;
+          }
+
+          left++;
+          right--;
+        }
+
+        // Need larger sum
+        else if (sum < target) {
+          left++;
+        }
+
+        // Need smaller sum
+        else {
+          right--;
+        }
+      }
+    }
+  }
+
+  return result;
+}
+
+// Example
+console.log(fourSum([1, 0, -1, 0, -2, 2], 0));

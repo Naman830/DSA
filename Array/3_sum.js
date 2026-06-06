@@ -121,7 +121,7 @@ Store it.
 Move both pointers.
 */
 
-// TC: O(n) & SC: O(1)
+// TC: O(n²) & SC: O(1)
 
 function threeSum(nums) {
   // Final answer array

@@ -28,3 +28,16 @@ count2
 
 Because there can be at most 2 majority elements.
 */
+
+// 1. Brute Force Solution
+/*
+Pseudocode
+
+ans = []
+
+for each element
+    count frequency
+
+    if count > n/3
+        add to answer
+*/

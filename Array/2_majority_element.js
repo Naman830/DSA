@@ -62,3 +62,14 @@ function majorityElementBrute(nums) {
 }
 
 console.log(majorityElementBrute([1, 1, 1, 3, 3, 2, 2, 2]));
+
+// Better Solution (HashMap)
+/*
+Idea
+Store frequencies in a HashMap.
+
+Steps
+1. Count frequency of every number.
+2. Traverse map.
+3. Add elements whose frequency > n/3.
+*/

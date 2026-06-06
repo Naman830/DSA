@@ -73,6 +73,17 @@ for i
                 right--
 */
 
+/*
+Time Complexity
+Sorting      : O(n log n)
+Outer loops  : O(n²)
+Two pointers : O(n)
+
+Overall      : O(n³)
+Space Complexity
+O(1)
+*/
+
 function fourSum(nums, target) {
   // Sort array for two-pointer technique
   nums.sort((a, b) => a - b);

@@ -169,49 +169,44 @@ return result
 
 // TC: O(n log n) & SC: O(n)
 function mergeIntervals(intervals) {
+  // Edge case
+  if (intervals.length <= 1) {
+    return intervals;
+  }
 
-    // Edge case
-    if (intervals.length <= 1) {
-        return intervals;
+  // Sort intervals by start value
+  intervals.sort((a, b) => a[0] - b[0]);
+
+  const result = [];
+
+  // Add first interval
+  result.push(intervals[0]);
+
+  // Process remaining intervals
+  for (let i = 1; i < intervals.length; i++) {
+    const current = intervals[i];
+
+    // Last merged interval
+    const last = result[result.length - 1];
+
+    // Overlap exists
+    if (current[0] <= last[1]) {
+      // Extend the ending point
+      last[1] = Math.max(last[1], current[1]);
+    } else {
+      // No overlap
+      result.push(current);
     }
+  }
 
-    // Sort intervals by start value
-    intervals.sort((a, b) => a[0] - b[0]);
-
-    const result = [];
-
-    // Add first interval
-    result.push(intervals[0]);
-
-    // Process remaining intervals
-    for (let i = 1; i < intervals.length; i++) {
-
-        const current = intervals[i];
-
-        // Last merged interval
-        const last = result[result.length - 1];
-
-        // Overlap exists
-        if (current[0] <= last[1]) {
-
-            // Extend the ending point
-            last[1] = Math.max(last[1], current[1]);
-
-        } else {
-
-            // No overlap
-            result.push(current);
-        }
-    }
-
-    return result;
+  return result;
 }
 
 console.log(
-    mergeIntervals([
-        [1, 3],
-        [2, 6],
-        [8, 10],
-        [15, 18]
-    ])
+  mergeIntervals([
+    [1, 3],
+    [2, 6],
+    [8, 10],
+    [15, 18],
+  ]),
 );

@@ -59,3 +59,19 @@ Instead of keeping both:
 [1-------------6]
 
 */
+
+// 1. Brute Force Solution
+// For every interval: Check all remaining intervals.
+// If overlap exists: Merge them. [Repeat until no merges are possible.]
+
+/*
+Pseudocode
+
+for every interval i
+
+    for every interval j
+
+        if overlap
+
+            merge
+*/

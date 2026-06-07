@@ -70,3 +70,23 @@ function mergeArrays(arr1, arr2) {
   return [arr1, arr2];
 }
 console.log(mergeArrays([1, 4, 8, 10], [2, 3, 9]));
+
+
+// 2. Optimal Solution (Gap Method)
+// Pattern: Shell Sort Idea
+
+/*
+use gap formula: 
+gap = ceil(totalLength/2)
+
+Compare elements that are gap distance apart.
+
+If out of order:
+swap
+
+Keep reducing gap.
+
+Eventually:
+gap = 1
+and everything becomes sorted.
+*/

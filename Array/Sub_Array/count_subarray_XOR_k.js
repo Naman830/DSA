@@ -67,3 +67,17 @@ function subarraysWithXorKBrute(arr, k) {
   return count;
 }
 console.log(subarraysWithXorKBrute([4, 2, 2, 6, 4], 6));
+
+// 2. Optimal Solution (Prefix XOR + HashMap)
+// Store frequency of every prefix XOR.
+
+/*
+At each index:
+prefixXOR ^= arr[i]
+
+Now find:
+required = prefixXOR ^ k
+
+If required existed before:
+count += frequency(required)
+*/

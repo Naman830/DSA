@@ -64,6 +64,8 @@ Instead of keeping both:
 // For every interval: Check all remaining intervals.
 // If overlap exists: Merge them. [Repeat until no merges are possible.]
 
+// TC: O(n²) & O(n)
+
 /*
 Pseudocode
 
@@ -75,3 +77,49 @@ for every interval i
 
             merge
 */
+function mergeIntervalsBrute(intervals) {
+    // Sort first so overlapping intervals come together
+    intervals.sort((a, b) => a[0] - b[0]);
+
+    const result = [];
+
+    for (let i = 0; i < intervals.length; i++) {
+
+        // Current interval boundaries
+        let start = intervals[i][0];
+        let end = intervals[i][1];
+
+        // Keep merging with all overlapping intervals
+        for (let j = i + 1; j < intervals.length; j++) {
+
+            // Overlap exists
+            if (intervals[j][0] <= end) {
+
+                // Extend the end point
+                end = Math.max(end, intervals[j][1]);
+
+                // Move i forward because this interval is merged
+                i = j;
+
+            } else {
+                break;
+            }
+        }
+
+        result.push([start, end]);
+    }
+
+    return result;
+}
+
+console.log(
+    mergeIntervalsBrute([
+        [1, 3],
+        [2, 6],
+        [8, 10],
+        [15, 18]
+    ])
+);
+
+// Output:
+// [[1,6],[8,10],[15,18]]

@@ -3,26 +3,6 @@ It is similar as count subbaray equal to k
 
 Given an array and an integer K, count the number of subarrays whose XOR is equal to K.
 
-
-Intuition
-
-currentXOR = prefixXOR
-
-We need:
-previousPrefix ^ currentXOR = K
-
-Take XOR with currentXOR on both sides:
-previousPrefix = currentXOR ^ K
-
-This is the whole trick.
-
-Observation
-
-If: currentXOR = px
-Then we need a previous prefix XOR equal to:
-px ^ K
-
-If such prefix XOR occurred before, then a subarray exists.
 */
 
 // 1. Brute Force Solution
@@ -80,4 +60,26 @@ required = prefixXOR ^ k
 
 If required existed before:
 count += frequency(required)
+*/
+
+/*
+Pseudocode
+
+map = {0 : 1}
+
+prefixXOR = 0
+count = 0
+
+for each num
+
+    prefixXOR ^= num
+
+    required = prefixXOR ^ k
+
+    if required exists
+        count += map[required]
+
+    map[prefixXOR]++
+
+return count
 */

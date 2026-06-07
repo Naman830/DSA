@@ -111,7 +111,10 @@ while gap > 0
 
     gap = ceil(gap/2)
 */
-
+/*
+Time  : O((n+m) log(n+m))
+Space : O(1)
+*/
 function mergeSortedArraysGap(arr1, arr2) {
   const n = arr1.length;
   const m = arr2.length;

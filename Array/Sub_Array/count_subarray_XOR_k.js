@@ -44,3 +44,26 @@ for i = 0 to n-1
 
 return count
 */
+
+// Complexity
+// Time  : O(n²)
+// Space : O(1)
+
+function subarraysWithXorKBrute(arr, k) {
+  let count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    let xor = 0;
+
+    for (let j = i; j < arr.length; j++) {
+      xor ^= arr[j];
+
+      if (xor === k) {
+        count++;
+      }
+    }
+  }
+
+  return count;
+}
+console.log(subarraysWithXorKBrute([4, 2, 2, 6, 4], 6));

@@ -90,3 +90,26 @@ Eventually:
 gap = 1
 and everything becomes sorted.
 */
+
+/*
+Pseudocode
+
+gap = ceil((n+m)/2)
+
+while gap > 0
+
+    left = 0
+    right = left + gap
+
+    while right < n+m
+
+         compare and swap
+
+         left++
+         right++
+
+    if gap == 1
+         break
+
+    gap = ceil(gap/2)
+*/

@@ -83,3 +83,33 @@ for each num
 
 return count
 */
+
+// TC: O(n) & SC: O(n)
+
+function subarraysWithXorK(arr, k) {
+  const map = new Map();
+
+  // Handles subarrays starting from index 0
+  map.set(0, 1);
+
+  let prefixXOR = 0;
+  let count = 0;
+
+  for (let num of arr) {
+    // Build current prefix XOR
+    prefixXOR ^= num;
+
+    // Find the XOR value needed previously
+    const required = prefixXOR ^ k;
+
+    // If found, all its occurrences form valid subarrays
+    if (map.has(required)) {
+      count += map.get(required);
+    }
+
+    // Store current prefix XOR frequency
+    map.set(prefixXOR, (map.get(prefixXOR) || 0) + 1);
+  }
+
+  return count;
+}

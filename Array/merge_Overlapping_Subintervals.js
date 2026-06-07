@@ -144,3 +144,25 @@ Step 5
 
 Otherwise push current interval.
 */
+
+/*
+Pseudocode
+
+sort intervals
+
+result = [first interval]
+
+for each interval
+
+    last = result[last index]
+
+    if currentStart <= lastEnd
+
+        lastEnd = max(lastEnd,currentEnd)
+
+    else
+
+        add current interval
+
+return result
+*/

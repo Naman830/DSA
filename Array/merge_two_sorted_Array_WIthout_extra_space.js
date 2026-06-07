@@ -69,8 +69,6 @@ function mergeArrays(arr1, arr2) {
 
   return [arr1, arr2];
 }
-console.log(mergeArrays([1, 4, 8, 10], [2, 3, 9]));
-
 
 // 2. Optimal Solution (Gap Method)
 // Pattern: Shell Sort Idea
@@ -113,3 +111,54 @@ while gap > 0
 
     gap = ceil(gap/2)
 */
+
+function mergeSortedArraysGap(arr1, arr2) {
+  const n = arr1.length;
+  const m = arr2.length;
+
+  // Calculate next gap
+  const nextGap = (gap) => {
+    if (gap <= 1) return 0;
+    return Math.ceil(gap / 2);
+  };
+
+  let gap = nextGap(n + m);
+
+  while (gap > 0) {
+    let left = 0;
+    let right = left + gap;
+
+    while (right < n + m) {
+      let leftValue, rightValue;
+
+      // Case 1: Both pointers inside arr1
+      if (left < n && right < n) {
+        if (arr1[left] > arr1[right]) {
+          [arr1[left], arr1[right]] = [arr1[right], arr1[left]];
+        }
+      }
+
+      // Case 2: One pointer in arr1, one in arr2
+      else if (left < n && right >= n) {
+        if (arr1[left] > arr2[right - n]) {
+          [arr1[left], arr2[right - n]] = [arr2[right - n], arr1[left]];
+        }
+      }
+
+      // Case 3: Both pointers inside arr2
+      else {
+        if (arr2[left - n] > arr2[right - n]) {
+          [arr2[left - n], arr2[right - n]] = [arr2[right - n], arr2[left - n]];
+        }
+      }
+
+      left++;
+      right++;
+    }
+
+    gap = nextGap(gap);
+  }
+
+  return [arr1, arr2];
+}
+console.log(mergeSortedArraysGap([1, 4, 8, 10], [2, 3, 9]));

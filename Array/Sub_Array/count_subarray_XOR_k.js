@@ -46,7 +46,6 @@ function subarraysWithXorKBrute(arr, k) {
 
   return count;
 }
-console.log(subarraysWithXorKBrute([4, 2, 2, 6, 4], 6));
 
 // 2. Optimal Solution (Prefix XOR + HashMap)
 // Store frequency of every prefix XOR.
@@ -113,3 +112,4 @@ function subarraysWithXorK(arr, k) {
 
   return count;
 }
+console.log(subarraysWithXorK([4, 2, 2, 6, 4], 6));

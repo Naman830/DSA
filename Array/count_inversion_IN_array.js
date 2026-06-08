@@ -47,3 +47,18 @@ function countInversions(arr) {
 }
 
 console.log(countInversions([5, 3, 2, 4, 1])); // 8
+
+
+// Optimal Solution (Merge Sort)
+// mid - leftPointer + 1 [key trick]
+
+/*
+Merge Sort already divides array into sorted halves.
+
+While merging:
+Left Half  -> Sorted
+Right Half -> Sorted
+
+We can efficiently count inversions.
+Eventually all inversions are counted during merge operations.
+*/

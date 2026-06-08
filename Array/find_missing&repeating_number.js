@@ -282,3 +282,88 @@ check which exists twice
 
 return [repeating, missing]
 */
+// XOR Solution
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+
+function findMissingRepeatingXOR(arr) {
+  const n = arr.length;
+
+  let xor = 0;
+
+  // XOR all array elements
+  for (const num of arr) {
+    xor ^= num;
+  }
+
+  // XOR numbers from 1 to n
+  for (let i = 1; i <= n; i++) {
+    xor ^= i;
+  }
+
+  /*
+    After the above two loops:
+
+    xor = missing ^ repeating
+
+    Because every other number cancels out:
+    a ^ a = 0
+    0 ^ b = b
+  */
+
+  // Find the rightmost set bit
+  // This bit is different in missing and repeating
+  const setBit = xor & -xor;
+
+  let bucket1 = 0;
+  let bucket2 = 0;
+
+  // Divide array elements into two groups
+  // based on the setBit
+  for (const num of arr) {
+    if (num & setBit) {
+      bucket1 ^= num;
+    } else {
+      bucket2 ^= num;
+    }
+  }
+
+  // Divide numbers from 1 to n into the same groups
+  for (let i = 1; i <= n; i++) {
+    if (i & setBit) {
+      bucket1 ^= i;
+    } else {
+      bucket2 ^= i;
+    }
+  }
+
+  /*
+    After XORing both groups:
+
+    bucket1 = one of {missing, repeating}
+    bucket2 = the other one
+
+    We don't know which is which yet.
+  */
+
+  let count = 0;
+
+  // Check if bucket1 exists twice in the array
+  for (const num of arr) {
+    if (num === bucket1) {
+      count++;
+    }
+  }
+
+  // If bucket1 appears twice,
+  // then it is the repeating number
+  if (count === 2) {
+    return [bucket1, bucket2];
+  }
+
+  // Otherwise bucket2 is repeating
+  return [bucket2, bucket1];
+}
+
+console.log(findMissingRepeatingXOR([4, 3, 6, 2, 1, 1]));
+// Output: [1, 5]

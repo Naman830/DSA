@@ -38,7 +38,7 @@ return [repeating, missing]
 
 // TC: O(n²) & SC: O(1)
 
-function findMissingRepeating(arr) {
+function findMissingRepeatingBrute(arr) {
   const n = arr.length;
 
   let missing = -1;
@@ -59,7 +59,6 @@ function findMissingRepeating(arr) {
 
   return [repeating, missing];
 }
-
 
 // Approach 2: Better Solution (Hashing)
 /*
@@ -84,3 +83,26 @@ for i from 1 to n
     if freq[i] == 2
         repeating = i
 */
+// TC: O(n) & SC: O(n)
+
+function findMissingRepeatingBetter(arr) {
+  const n = arr.length;
+
+  const freq = new Array(n + 1).fill(0);
+
+  for (const num of arr) {
+    freq[num]++;
+  }
+
+  let missing = -1;
+  let repeating = -1;
+
+  for (let i = 1; i <= n; i++) {
+    if (freq[i] === 0) missing = i;
+    if (freq[i] === 2) repeating = i;
+  }
+
+  return [repeating, missing];
+}
+
+console.log(findMissingRepeatingBetter([4, 3, 6, 2, 1, 1]));

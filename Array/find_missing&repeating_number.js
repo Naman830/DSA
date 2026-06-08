@@ -262,3 +262,23 @@ Step 4
 Check array frequency.
 Whichever appears twice is repeating.
 */
+
+/*
+Pseudocode
+
+xor all array elements
+
+xor with numbers 1 to n
+
+find rightmost set bit
+
+divide numbers into two groups
+
+xor both groups
+
+get two candidates
+
+check which exists twice
+
+return [repeating, missing]
+*/

@@ -105,7 +105,6 @@ function findMissingRepeatingBetter(arr) {
   return [repeating, missing];
 }
 
-console.log(findMissingRepeatingBetter([4, 3, 6, 2, 1, 1]));
 
 // Approach 3: THERE ARE TWO APPROACHES WITH MATHEMATICS AND XOR METHOD IN INTERVIEW DON'T TELL XOR METHOD BECAUSE IT IS TOO COMPLICATED AND TAKE YOUR LOT OF TIME SO THAT SHOW ONLY MATHEMATICS METHOD
 
@@ -155,3 +154,25 @@ Solve:
 x = (S + P)/2
 y = P - x
 */
+
+/*
+Pseudocode
+
+find actual sum
+find actual square sum
+
+S = actualSum - expectedSum
+
+squareDiff = actualSquareSum - expectedSquareSum
+
+P = squareDiff / S
+repeating = (S + P)/2
+
+missing = P - repeating
+*/
+
+function findMissingRepeatingMath(arr) {
+
+}
+
+console.log(findMissingRepeatingBetter([4, 3, 6, 2, 1, 1]));

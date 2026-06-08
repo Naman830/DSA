@@ -59,3 +59,28 @@ function findMissingRepeating(arr) {
 
   return [repeating, missing];
 }
+
+
+// Approach 2: Better Solution (Hashing)
+/*
+Store frequency of every number.
+
+Then check:
+Frequency = 2 → Repeating
+Frequency = 0 → Missing
+
+Pseudocode
+
+freq array of size n+1
+
+for every number
+    freq[number]++
+
+for i from 1 to n
+
+    if freq[i] == 0
+        missing = i
+
+    if freq[i] == 2
+        repeating = i
+*/

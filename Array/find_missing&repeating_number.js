@@ -22,6 +22,7 @@ Count = 2 → Repeating
 
 /*
 Pseudocode
+
 for num from 1 to n
 
     count frequency of num
@@ -34,3 +35,27 @@ for num from 1 to n
 
 return [repeating, missing]
 */
+
+// TC: O(n²) & SC: O(1)
+
+function findMissingRepeating(arr) {
+  const n = arr.length;
+
+  let missing = -1;
+  let repeating = -1;
+
+  for (let num = 1; num <= n; num++) {
+    let count = 0;
+
+    for (let i = 0; i < n; i++) {
+      if (arr[i] === num) {
+        count++;
+      }
+    }
+
+    if (count === 0) missing = num;
+    if (count === 2) repeating = num;
+  }
+
+  return [repeating, missing];
+}

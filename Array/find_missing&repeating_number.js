@@ -105,7 +105,6 @@ function findMissingRepeatingBetter(arr) {
   return [repeating, missing];
 }
 
-
 // Approach 3: THERE ARE TWO APPROACHES WITH MATHEMATICS AND XOR METHOD IN INTERVIEW DON'T TELL XOR METHOD BECAUSE IT IS TOO COMPLICATED AND TAKE YOUR LOT OF TIME SO THAT SHOW ONLY MATHEMATICS METHOD
 
 // Approach 3: Mathematical Solution
@@ -171,8 +170,49 @@ repeating = (S + P)/2
 missing = P - repeating
 */
 
-function findMissingRepeatingMath(arr) {
+// TC: O(n) & SC: O(1)
 
+function findMissingRepeatingMath(arr) {
+  const n = arr.length;
+
+  let actualSum = 0;
+  let actualSquareSum = 0;
+
+  // Calculate:
+  // 1. Sum of all array elements
+  // 2. Sum of squares of all array elements
+  for (const num of arr) {
+    actualSum += num;
+    actualSquareSum += num * num;
+  }
+
+  // Expected sum of numbers from 1 to n
+  const expectedSum = (n * (n + 1)) / 2;
+
+  // Expected sum of squares from 1 to n
+  const expectedSquareSum = (n * (n + 1) * (2 * n + 1)) / 6;
+
+  // S = repeating - missing
+  const S = actualSum - expectedSum;
+
+  // squareDiff = repeating² - missing²
+  const squareDiff = actualSquareSum - expectedSquareSum;
+
+  // P = repeating + missing
+  // Because:
+  // repeating² - missing²
+  // = (repeating - missing)(repeating + missing)
+  const P = squareDiff / S;
+
+  // Solve the equations:
+  // repeating - missing = S
+  // repeating + missing = P
+  const repeating = (S + P) / 2;
+
+  // missing = P - repeating
+  const missing = P - repeating;
+
+  return [repeating, missing];
 }
 
-console.log(findMissingRepeatingBetter([4, 3, 6, 2, 1, 1]));
+console.log(findMissingRepeatingMath([4, 3, 6, 2, 1, 1]));

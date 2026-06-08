@@ -216,3 +216,49 @@ function findMissingRepeatingMath(arr) {
 }
 
 console.log(findMissingRepeatingMath([4, 3, 6, 2, 1, 1]));
+
+// Approach 4: XOR METHOD
+/*
+Step 1
+Compute:
+
+xor =
+(all array elements)
+^
+(1 to n)
+
+Result:
+xor = missing ^ repeating
+
+Suppose:
+missing = 5
+repeating = 1
+
+xor = 5 ^ 1
+
+
+Step 2
+Find rightmost set bit.
+
+bitNo = xor & -xor;
+This bit differs between missing and repeating.
+
+Step 3
+Split numbers into two groups based on that bit.
+
+Group 1:
+bit set
+
+Group 2:
+bit not set
+
+Do XOR separately.
+
+Eventually we get:
+bucket1 = one answer
+bucket2 = other answer
+
+Step 4
+Check array frequency.
+Whichever appears twice is repeating.
+*/

@@ -27,7 +27,23 @@ for i = 0 to n-1
             count++
 
 return count
-
-
 */
 
+// TC: O(n²) & SC: O(1)
+
+function countInversions(arr) {
+  let count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    // Compare current element with all elements after it
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] > arr[j]) {
+        count++;
+      }
+    }
+  }
+
+  return count;
+}
+
+console.log(countInversions([5, 3, 2, 4, 1])); // 8

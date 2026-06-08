@@ -108,3 +108,50 @@ function findMissingRepeatingBetter(arr) {
 console.log(findMissingRepeatingBetter([4, 3, 6, 2, 1, 1]));
 
 // Approach 3: THERE ARE TWO APPROACHES WITH MATHEMATICS AND XOR METHOD IN INTERVIEW DON'T TELL XOR METHOD BECAUSE IT IS TOO COMPLICATED AND TAKE YOUR LOT OF TIME SO THAT SHOW ONLY MATHEMATICS METHOD
+
+// Approach 3: Mathematical Solution
+/*
+
+Let
+x = Repeating Number
+y = Missing Number
+
+Expected Sum
+1+2+3+⋯+n= n(n+1) / 2
+
+Let:
+actualSum = array sum
+expectedSum = n(n+1)/2
+
+Then:
+actualSum - expectedSum 
+= x - y
+
+Let:
+x - y = S [it become our first equation that we use in future]
+
+Sum of Squares 
+Expected:
+1² + 2² + ... + n²
+
+Formula: n(n+1)(2n+1)/6
+
+Now:
+actualSquareSum - expectedSquareSum
+
+= x² - y²
+
+Using:
+x² - y² = (x-y)(x+y) [now we have our 2nd equation]
+
+Therefore:
+x + y = P
+
+Now we have:
+x - y = S
+x + y = P
+
+Solve:
+x = (S + P)/2
+y = P - x
+*/

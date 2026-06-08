@@ -19,3 +19,18 @@ Count how many times it appears.
 Count = 0 → Missing
 Count = 2 → Repeating
 */
+
+/*
+Pseudocode
+for num from 1 to n
+
+    count frequency of num
+
+    if count == 0
+        missing = num
+
+    if count == 2
+        repeating = num
+
+return [repeating, missing]
+*/

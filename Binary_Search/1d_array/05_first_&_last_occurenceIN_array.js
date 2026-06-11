@@ -29,4 +29,32 @@ function firstLastOccurrenceBrute(arr, x) {
   return [first, last];
 }
 
-console.log(firstLastOccurrenceBrute([1, 2, 2, 2, 3, 4], 2));
+// 2. Optimal Solution
+// for first and last occurence but use only single mean for one
+
+// TC: O(log n) & SC: O(1)
+
+function findOccurrence(arr, x) {
+  let low = 1;
+  let high = arr.length - 1;
+  let ans = -1;
+
+  while (low <= high) {
+    const mid = low + Math.floor((high - low) / 2);
+
+    if (arr[mid] === x) {
+      ans = mid;
+      // for first occurence use this
+      high = mid - 1;
+      // for last occurence
+      // low = mid + 1;
+    } else if (arr[mid] < x) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
+  }
+  return ans;
+}
+
+console.log(findOccurrence([1, 2, 2, 2, 3, 4], 2));

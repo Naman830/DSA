@@ -36,3 +36,26 @@ Why Binary Search is Fast
 Because every iteration removes half the elements.
 Time Complexity: O(log n)
 */
+
+// 1. Iterative Binary Search
+// Keep shrinking the search space using a loop.
+/*
+Pseudocode
+
+low = 0
+high = n - 1
+
+while low <= high
+    mid = (low + high) / 2
+
+    if arr[mid] == target
+        return mid
+
+    else if arr[mid] < target
+        low = mid + 1
+
+    else
+        high = mid - 1
+
+return -1
+*/

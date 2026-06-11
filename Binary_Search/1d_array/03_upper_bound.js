@@ -38,3 +38,5 @@ function upperBound(arr, x) {
 
   return ans;
 }
+
+console.log(upperBound([1, 2, 4, 4, 5, 7], 2));

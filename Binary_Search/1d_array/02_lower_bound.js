@@ -34,3 +34,7 @@ function lowerBound(arr, x) {
 
   return ans;
 }
+
+console.log(lowerBound([1, 2, 4, 4, 5, 7], 2));
+
+// 2. Search Insert Position is the similar problem of lower bound just paste the code and get the answer

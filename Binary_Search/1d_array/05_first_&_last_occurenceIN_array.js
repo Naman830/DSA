@@ -58,3 +58,23 @@ function findOccurrence(arr, x) {
 }
 
 console.log(findOccurrence([1, 2, 2, 2, 3, 4], 2));
+
+// FOR BOTH UPPER AND LOWER BOUND TOGETHER IS TOO LONG BUT HERE IS PSEUDO CODE OF
+/*
+FUNCTION searchRange(arr, x)
+    lb = lowerBound(arr, x)
+
+    // If lower bound is outside array
+    // OR value at lower bound is not x,
+    // then x does not exist
+    IF lb == length(arr) OR arr[lb] != x
+        RETURN [-1, -1]
+
+    // First index having value > x
+    ub = upperBound(arr, x)
+    firstOccurrence = lb
+
+    // Last occurrence is just before upper bound
+    lastOccurrence = ub - 1
+    RETURN [firstOccurrence, lastOccurrence]
+*/

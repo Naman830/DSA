@@ -89,12 +89,11 @@ function binarySearchIte(arr, target) {
   return -1;
 }
 
-console.log(binarySearchIte([2, 4, 6, 8, 10, 12, 14], 10));
-
 // 2. Recursive Binary Search
 // Instead of using a loop, let the function search smaller halves recursively.
 /*
 Pseudocode
+
 binarySearch(low, high)
 
 if low > high
@@ -111,3 +110,29 @@ if target < arr[mid]
 else
     search right half
 */
+
+// Complexity
+// Time  : O(log n)
+// Space : O(log n)
+
+function binarySearch(arr, target, low = 0, high = arr.length - 1) {
+  // Base case: element not found
+  if (low > high) {
+    return -1;
+  }
+
+  const mid = Math.floor((low + high) / 2);
+
+  // Target found
+  if (arr[mid] === target) {
+    return mid;
+  }
+
+  // Search left half
+  if (target < arr[mid]) {
+    return binarySearch(arr, target, low, mid - 1);
+  }
+
+  // Search right half
+  return binarySearch(arr, target, mid + 1, high);
+}

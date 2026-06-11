@@ -9,6 +9,8 @@ Page 1 → No
 Page 2 → No
 ...
 Very slow
+
+
 Binary Search Approach
 Open the dictionary from the middle.
 Suppose middle word is "Lion".
@@ -17,6 +19,20 @@ Open the middle of the remaining right half.
 Repeat until found.
 
 Every step removes half of the remaining pages.
-
 This is exactly how Binary Search works.
+
+*/
+
+/*
+Why Binary Search is Fast
+
+| Elements  | Maximum Checks |
+| --------- | -------------- |
+| 10        | 4              |
+| 100       | 7              |
+| 1000      | 10             |
+| 1,000,000 | 20             |
+
+Because every iteration removes half the elements.
+Time Complexity: O(log n)
 */

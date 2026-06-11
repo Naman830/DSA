@@ -7,6 +7,9 @@ Whenever we find an element that is >= x:
 It can be a possible answer.
 But there may be another valid answer on the left side.
 So store it and move left.
+
+Time: O(log n)
+Space: O(1)
 */
 
 function lowerBound(arr, x) {

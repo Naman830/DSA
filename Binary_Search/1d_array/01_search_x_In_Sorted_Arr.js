@@ -61,6 +61,7 @@ return -1
 
 // Time  : O(log n)
 // Space : O(1)
+
 function binarySearchIte(arr, target) {
   let low = 0;
   let high = arr.length - 1;
@@ -89,3 +90,24 @@ function binarySearchIte(arr, target) {
 }
 
 console.log(binarySearchIte([2, 4, 6, 8, 10, 12, 14], 10));
+
+// 2. Recursive Binary Search
+// Instead of using a loop, let the function search smaller halves recursively.
+/*
+Pseudocode
+binarySearch(low, high)
+
+if low > high
+    return -1
+
+mid = (low + high) / 2
+
+if arr[mid] == target
+    return mid
+
+if target < arr[mid]
+    search left half
+
+else
+    search right half
+*/

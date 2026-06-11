@@ -9,11 +9,20 @@ Always use:
 const mid = low + Math.floor((high - low) / 2);
 
 to avoid overflow.
-7. Binary Search complexity is:
-
-O(log n)
-
+7. Binary Search complexity is: O(log n)
 which is much faster than linear search O(n).
+
+Use Binary Search when you see:
+Type 1: Search in Sorted Array
+Find X in sorted array
+
+Type 2: First/Last Occurrence
+Find first index of target
+Find last index of target
+
+Type 3: Answer Search
+Minimum possible value
+Maximum possible value
 */
 
 // Binary Search is a searching algorithm used on a sorted array.

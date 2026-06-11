@@ -156,3 +156,36 @@ function binarySearch(arr, target, low = 0, high = arr.length - 1) {
 }
 
 // Overflow Case (Very Important for Interviews)
+/*
+Most beginners calculate:
+mid = Math.floor((low + high) / 2);
+
+Problem
+Suppose:
+low  = 2,000,000,000
+high = 2,100,000,000
+
+Then:
+low + high
+= 4,100,000,000
+
+This may exceed the maximum integer limit in some languages like C++, Java, etc.
+This is called Integer Overflow.
+
+Safe Formula
+Instead use:
+mid = low + Math.floor((high - low) / 2);
+
+Why?
+(high - low)
+is always much smaller than
+
+(low + high)
+
+So overflow cannot occur.
+
+Interview Standard Formula
+const mid = low + Math.floor((high - low) / 2);
+
+Use this everywhere in Binary Search problems.
+*/

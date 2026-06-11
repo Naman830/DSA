@@ -41,7 +41,6 @@ Time Complexity: O(log n)
 // Keep shrinking the search space using a loop.
 /*
 Pseudocode
-
 low = 0
 high = n - 1
 
@@ -59,3 +58,31 @@ while low <= high
 
 return -1
 */
+function binarySearchIte(arr, target) {
+  let low = 0;
+  let high = arr.length - 1;
+
+  while (low <= high) {
+    // Find middle index
+    const mid = Math.floor((low + high) / 2);
+
+    // Target found
+    if (arr[mid] === target) {
+      return mid;
+    }
+
+    // Search in right half
+    if (arr[mid] < target) {
+      low = mid + 1;
+    }
+    // Search in left half
+    else {
+      high = mid - 1;
+    }
+  }
+
+  // Target not present
+  return -1;
+}
+
+console.log(binarySearchIte([2, 4, 6, 8, 10, 12, 14], 10));

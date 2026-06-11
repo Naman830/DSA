@@ -58,6 +58,9 @@ while low <= high
 
 return -1
 */
+
+// Time  : O(log n)
+// Space : O(1)
 function binarySearchIte(arr, target) {
   let low = 0;
   let high = arr.length - 1;

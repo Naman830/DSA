@@ -1,3 +1,21 @@
+/*
+Key Takeaways
+Binary Search requires a sorted array.
+Compare with the middle element.
+Remove half of the search space every step.
+Iterative version uses O(1) space.
+Recursive version uses O(log n) stack space.
+Always use:
+const mid = low + Math.floor((high - low) / 2);
+
+to avoid overflow.
+7. Binary Search complexity is:
+
+O(log n)
+
+which is much faster than linear search O(n).
+*/
+
 // Binary Search is a searching algorithm used on a sorted array.
 /*
 Imagine you are searching for the word "Monkey" in a dictionary.
@@ -136,3 +154,5 @@ function binarySearch(arr, target, low = 0, high = arr.length - 1) {
   // Search right half
   return binarySearch(arr, target, mid + 1, high);
 }
+
+// Overflow Case (Very Important for Interviews)

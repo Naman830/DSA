@@ -3,6 +3,7 @@ Given a sorted array and a target element x, find:
 The first occurrence of x
 The last occurrence of x
 
+Input:
 arr = [1, 2, 2, 2, 3, 4]
 x = 2
 
@@ -31,7 +32,6 @@ function firstLastOccurrenceBrute(arr, x) {
 
 // 2. Optimal Solution
 // for first and last occurence but use only single mean for one
-
 // TC: O(log n) & SC: O(1)
 
 function findOccurrence(arr, x) {

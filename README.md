@@ -2,6 +2,11 @@
 Learning DSA from striverr A-Z series
 
 My routine for study is 
-1 hour revision morning
-1 hour learning new dsa topic morning
 
+Morning
+1 hour revision 
+1 hour learning new dsa topic 
+
+Evening 
+20-40 min revision of new dsa learning topic
+1 hour new dsa topic 

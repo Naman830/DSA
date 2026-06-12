@@ -10,3 +10,5 @@ Morning
 Evening 
 20-40 min revision of new dsa learning topic
 1 hour new dsa topic 
+
+Total estimated: 4 hour Dsa

@@ -18,6 +18,8 @@ The minimum element is exactly where the rotation happened.
 So whenever we find a completely sorted range, we can update our answer and stop searching that range.
 */
 
+// BestCase = O(1) and other case O(log n) & SC: O(1)
+
 function findMin(nums) {
   let low = 0;
   let high = nums.length - 1;

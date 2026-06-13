@@ -5,7 +5,7 @@
 // TC: O(n log n) and SC: O(1)
 
 function secondLargest(arr) {
-  //  Sort array 
+  //  Sort array
   arr.sort((a, b) => a - b);
 
   let largest = arr[arr.length - 1];

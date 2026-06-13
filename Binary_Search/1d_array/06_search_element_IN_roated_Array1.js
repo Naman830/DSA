@@ -19,8 +19,12 @@ One of them must be sorted.
 
 // For interview first you will tell that we do it from linear searcha and then tell we can do it from binary search
 
-// Solution
+/*
+Time Complexity: O(log n)
+Space Complexity: O(1)
+*/
 
+// Solution
 function search(arr, target) {
   let low = 0;
   let high = arr.length - 1;

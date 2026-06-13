@@ -31,7 +31,7 @@ high--;
 This removes duplicates from both ends.
 */
 
-// TC: O(log n) & SC: O(1)
+// TC: O(log n) || Worst (many duplicates) O(n) & SC: O(1)
 
 // CODE IS FULLY SIMILAR TO PREVIOUS CODE
 function search(nums, target) {

@@ -60,3 +60,18 @@ function findMin(nums) {
 }
 
 console.log(findMin([4, 5, 6, 7, 1, 2, 3]));
+
+// for duplicate add this statemment
+/*
+// Duplicate case
+    if (
+      nums[low] === nums[mid] &&
+      nums[mid] === nums[high]
+    ) {
+      ans = Math.min(ans, nums[mid]);
+
+      low++;
+      high--;
+      continue;
+    }
+*/

@@ -31,6 +31,8 @@ high--;
 This removes duplicates from both ends.
 */
 
+// TC: O(log n) & SC: O(1)
+
 // CODE IS FULLY SIMILAR TO PREVIOUS CODE
 function search(nums, target) {
   let low = 0;

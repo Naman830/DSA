@@ -97,3 +97,18 @@ function singleNonDuplicate(nums) {
     }
   }
 }
+
+// 2. Better Solution (XOR)
+/*
+Time: O(n);
+Space: O(1);
+*/
+function singleNonDuplicate(nums) {
+  let xor = 0;
+
+  for (const num of nums) {
+    xor ^= num;
+  }
+
+  return xor;
+}

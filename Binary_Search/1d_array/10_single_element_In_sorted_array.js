@@ -72,3 +72,35 @@ function singleNonDuplicate(nums) {
 }
 
 // Optimal Solution (Binary Search)
+// Check which side follows the correct pairing pattern.
+/*
+Pseudocode
+
+if n == 1
+    return nums[0]
+
+if first element unique
+    return nums[0]
+
+if last element unique
+    return nums[n-1]
+
+low = 1
+high = n-2
+
+while low <= high
+
+    mid = (low + high) / 2
+
+    if nums[mid] != nums[mid-1]
+       and nums[mid] != nums[mid+1]
+          return nums[mid]
+
+    if (mid is odd and nums[mid] == nums[mid-1])
+       OR
+       (mid is even and nums[mid] == nums[mid+1])
+
+          low = mid + 1
+    else
+          high = mid - 1
+*/

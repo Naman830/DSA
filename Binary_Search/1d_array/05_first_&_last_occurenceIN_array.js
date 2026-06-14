@@ -1,7 +1,7 @@
 /*
 Given a sorted array and a target element x, find:
-The first occurrence of x
-The last occurrence of x
+The first occurrence of x duplicate
+The last occurrence of x in duplicate
 
 Input:
 arr = [1, 2, 2, 2, 3, 4]

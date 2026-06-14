@@ -104,3 +104,57 @@ while low <= high
     else
           high = mid - 1
 */
+
+function singleNonDuplicate(nums) {
+  const n = nums.length;
+
+  // Only one element exists
+  if (n === 1) return nums[0];
+
+  // Single element at start
+  if (nums[0] !== nums[1]) return nums[0];
+
+  // Single element at end
+  if (nums[n - 1] !== nums[n - 2]) return nums[n - 1];
+
+  let low = 1;
+  let high = n - 2;
+
+  while (low <= high) {
+    // Find middle index
+    const mid = low + Math.floor((high - low) / 2);
+
+    // Found the single element
+    if (nums[mid] !== nums[mid - 1] && nums[mid] !== nums[mid + 1]) {
+      return nums[mid];
+    }
+
+    /**
+     * BEFORE the single element:
+     *
+     * even index -> first occurrence
+     * odd index  -> second occurrence
+     *
+     * Examples:
+     * Index: 0 1 2 3
+     * Value: 1 1 2 2
+     *
+     * If this pattern is correct,
+     * the single element must be on the right side.
+     */
+    if (
+      (mid % 2 === 0 && nums[mid] === nums[mid + 1]) ||
+      (mid % 2 === 1 && nums[mid] === nums[mid - 1])
+    ) {
+      low = mid + 1;
+    }
+    // Pattern broken => answer on left side
+    else {
+      high = mid - 1;
+    }
+  }
+
+  return -1;
+}
+
+console.log(singleNonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8]));

@@ -77,3 +77,23 @@ value: 4 4 5 5
 nums[odd] == nums[odd+1]
 This change lets us apply Binary Search
 */
+
+// 1. Brute Force Solution [Use HashMap.]
+/*
+Time  : O(n)
+Space : O(n)
+*/
+
+function singleNonDuplicate(nums) {
+  const freq = new Map();
+
+  for (const num of nums) {
+    freq.set(num, (freq.get(num) || 0) + 1);
+  }
+
+  for (const [num, count] of freq) {
+    if (count === 1) {
+      return num;
+    }
+  }
+}

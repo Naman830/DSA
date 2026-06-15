@@ -34,3 +34,21 @@ for each index i
     if nums[i] > left AND nums[i] > right
         return i
 */
+
+// TC: BEST CASE: O(1) & O(n) && SC: O(1)
+
+var findPeakElement = function (nums) {
+  const n = nums.length;
+
+  for (let i = 0; i < n; i++) {
+    const left = i === 0 ? Number.NEGATIVE_INFINITY : nums[i - 1];
+
+    const right = i === n - 1 ? Number.NEGATIVE_INFINITY : nums[i + 1];
+
+    if (nums[i] > left && nums[i] > right) {
+      return i;
+    }
+  }
+
+  return -1;
+};

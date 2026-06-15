@@ -52,3 +52,43 @@ var findPeakElement = function (nums) {
 
   return -1;
 };
+
+// 2. Optimal Solution (Binary Search)
+
+/*
+Look at:
+nums[mid]
+nums[mid+1]
+
+Only compare these two.
+
+Situation 1
+
+nums[mid] < nums[mid+1]
+1 2 3 4 5
+    ^
+We are climbing upward.
+A peak must exist on the right side.
+Move right.
+low = mid + 1;
+
+
+Situation 2
+nums[mid] > nums[mid+1]
+5 4 3 2 1
+    ^
+We are moving downward.
+Peak exists on left side including mid.
+Move left.
+high = mid;
+
+Why high = mid?
+Because mid itself might be the peak.
+
+Example:
+1 5 3
+  ^
+If we do:
+high = mid - 1;
+we lose the peak.
+*/

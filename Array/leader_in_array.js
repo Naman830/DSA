@@ -67,7 +67,6 @@ function leadersInArray(arr) {
   return leaders;
 }
 
-
 //2. Optimal Approach
 // Instead of checking right side again and again, we move from right to left.
 
@@ -115,5 +114,5 @@ function leadersInArray(arr) {
   return leaders;
 }
 
-console.log(leadersInArrayOptimal([16, 17, 4, 3, 5, 2]));
+console.log(leadersInArray([16, 17, 4, 3, 5, 2]));
 // Output: [17, 5, 2]

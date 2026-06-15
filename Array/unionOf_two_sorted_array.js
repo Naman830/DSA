@@ -60,7 +60,7 @@ function unionArray2(arr1, arr2) {
   // What if our array(i) iteration is over so remaning element should be there so we check our remaing element in array
 
   // In this loops runs till the end of the answer array and check if array[i] is not match any number in it so it push it on that position
-  
+
   // remaining elements of arr1
   while (i < arr1.length) {
     if (ans[ans.length - 1] !== arr1[i]) {

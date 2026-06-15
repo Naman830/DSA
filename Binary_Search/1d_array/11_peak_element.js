@@ -92,6 +92,7 @@ If we do:
 high = mid - 1;
 we lose the peak.
 */
+// TC: O(log n) & SC: O(1)
 
 var findPeakElement = function (nums) {
   let low = 0;

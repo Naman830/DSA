@@ -19,3 +19,18 @@ Peak is 3
 because:
 2 < 3 > -∞
 */
+
+// 1. Brute Force Solution (Linear Search)
+// Simply check every element.
+// If an element is greater than both neighbors, it is a peak.
+
+/*
+Pseudocode
+for each index i
+
+    left  = nums[i-1] if exists else -∞
+    right = nums[i+1] if exists else -∞
+
+    if nums[i] > left AND nums[i] > right
+        return i
+*/

@@ -1,3 +1,4 @@
+// TC: O(n) && SC: O(1)
 function removeElement(nums, val) {
   let i = 0;
   let n = nums.length;

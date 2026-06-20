@@ -27,7 +27,12 @@ Use Binary Search
  * Otherwise returns -1
  */
 
-// BETTER APPROACH
+/*
+Time: O(log m)
+Space: O(1)
+*/
+
+// BINARY SEARCH BETTER APPROACH
 function nthRoot(n, m) {
   // Search space for root
   let low = 1;

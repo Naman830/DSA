@@ -32,6 +32,11 @@ for speed from 1 to maxPile
 
 // 2. Optimal Solution
 
+/*
+TC = O(checkFunction × log(searchSpace))
+Tc: O(n × log(maxPile)) & sc: O(1)
+*/
+
 function minEatingSpeed(piles, h) {
   // Minimum possible speed is 1 banana/hour
   let low = 1;

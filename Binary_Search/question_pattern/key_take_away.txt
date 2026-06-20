@@ -21,3 +21,4 @@ Floor
 Ceil
 Minimum possible answer
 Maximum possible answer
+Smallest answer satisfying a condition

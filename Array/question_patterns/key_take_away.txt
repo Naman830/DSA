@@ -1,0 +1,44 @@
+1. Is array sorted?
+YES
+
+Pair → Two Pointers
+Search → Binary Search
+Remove Duplicates → Two Pointers
+First/Last Occurrence → Binary Search
+
+============================================================================
+============================================================================
+
+2. Is question about Subarray?
+
+Keywords:
+Subarray
+Longest
+Shortest
+Continuous
+Contiguous
+Window
+
+Think: → Sliding Window / Prefix Sum
+
+============================================================================
+============================================================================
+
+3. Is question asking COUNT?
+
+Keywords:
+Count
+Frequency
+Occurrences
+How many
+
+Think: HashMap, Prefix Sum
+
+
+============================================================================
+============================================================================
+
+4. Is question asking SUM?
+
+Think: → Prefix Sum + HashMap + kadane
+

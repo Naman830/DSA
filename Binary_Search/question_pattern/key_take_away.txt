@@ -1,0 +1,23 @@
+1. In Binary Search, we use an answer variable when we are not searching for an exact value, but instead searching for the best possible candidate.
+
+No answer variable
+
+When searching for:
+"Does target exist?"
+"Find target index"
+
+====================================================================
+====================================================================
+
+Use answer variable
+When searching for:
+
+Best valid candidate
+First occurrence
+Last occurrence
+Lower Bound
+Upper Bound
+Floor
+Ceil
+Minimum possible answer
+Maximum possible answer

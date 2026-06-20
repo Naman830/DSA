@@ -79,6 +79,11 @@ can overflow.
 So we multiply manually and stop early.
 */
 
+/*
+Time: O(n × log m)
+Space: O(1)
+*/
+
 function nthRootOptimal(n, m) {
   // Binary search on the answer (possible root values)
   let low = 1;

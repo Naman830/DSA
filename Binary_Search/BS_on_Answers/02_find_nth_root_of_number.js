@@ -78,3 +78,36 @@ mid ** n
 can overflow.
 So we multiply manually and stop early.
 */
+
+function nthRootOptimal(n, m) {
+  // Binary search on the answer (possible root values)
+  let low = 1;
+  let high = m;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+
+    // Calculate mid^n and stop early if it exceeds m
+    let ans = 1;
+    for (let i = 0; i < n; i++) {
+      ans *= mid;
+      if (ans > m) break;
+    }
+
+    if (ans === m) {
+      // Exact nth root found
+      return mid;
+    } else if (ans < m) {
+      // Need a larger root
+      low = mid + 1;
+    } else {
+      // Need a smaller root
+      high = mid - 1;
+    }
+  }
+
+  // m does not have an integer nth root
+  return -1;
+}
+
+console.log(nthRootOptimal(3, 27));

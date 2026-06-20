@@ -29,8 +29,6 @@ Hence: Binary Search on Answer
 
 /*
 Pseudocode
-
-
 low = 1
 high = n
 ans = 0
@@ -48,3 +46,29 @@ while(low <= high)
 
 return ans
 */
+
+// TC: O(log n) && SC: O(1)
+
+function squareRoot(n) {
+  let low = 1;
+  let high = n;
+  let ans = 0;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+
+    // Valid answer
+    if (mid * mid <= n) {
+      ans = mid; // store candidate
+      low = mid + 1; // try bigger answer
+    } else {
+      high = mid - 1; // move left
+    }
+  }
+
+  return ans;
+}
+
+console.log(squareRoot(28)); // 5
+console.log(squareRoot(36)); // 6
+console.log(squareRoot(25)); // 5

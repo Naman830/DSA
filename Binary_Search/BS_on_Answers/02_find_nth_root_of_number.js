@@ -65,3 +65,16 @@ function nthRoot(n, m) {
 }
 
 console.log(nthRoot(3, 27));
+
+/*
+Better Version (Avoid Overflow)
+
+In interviews, they may ask:
+m = 10^18
+
+Then:
+mid ** n
+
+can overflow.
+So we multiply manually and stop early.
+*/

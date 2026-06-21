@@ -1,4 +1,6 @@
 /*
+simple we have to find the square root of number which is <= n 
+
 1. Most beginners think: Binary Search works only on arrays.
 Wrong.
 2. Binary Search works whenever: Search Space is sorted.

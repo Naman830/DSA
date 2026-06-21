@@ -1,4 +1,6 @@
 /*
+Simple we have to find the given root is possible given number
+
 Suppose:
 m = 64
 n = 3

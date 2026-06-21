@@ -1,4 +1,6 @@
 /*
+Simple find the minimum hours in which koko can finish the pile 
+
 Koko has some piles of bananas.
 
 piles = [3,6,7,11]

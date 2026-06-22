@@ -104,3 +104,66 @@ Return low
 Time: O(n * log(maxBloomDay))
 Space: O(1)
 */
+
+function minDays(bloomDay, m, k) {
+  let n = bloomDay.length;
+
+  // Step 1: Not enough flowers to make m bouquets
+  if (m * k > n) return -1;
+
+  // Step 2: Define binary search range
+  let low = Math.min(...bloomDay);
+  let high = Math.max(...bloomDay);
+
+  // Step 3: Binary Search on days
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+
+    // Check if we can make m bouquets in 'mid' days
+    if (canMakeBouquets(mid, bloomDay, m, k)) {
+      // Possible answer, try finding a smaller day
+      high = mid - 1;
+    } else {
+      // Need more days
+      low = mid + 1;
+    }
+  }
+
+  // Step 4: low points to the minimum valid day
+  return low;
+}
+
+function canMakeBouquets(day, bloomDay, m, k) {
+  let flowers = 0; // Consecutive bloomed flowers
+  let bouquets = 0; // Total bouquets formed
+
+  for (let bloom of bloomDay) {
+    // Flower has bloomed by 'day'
+    if (bloom <= day) {
+      flowers++;
+
+      // Form a bouquet when we get k adjacent flowers
+      if (flowers === k) {
+        bouquets++;
+        flowers = 0;
+      }
+    } else {
+      // Adjacency breaks
+      flowers = 0;
+    }
+  }
+
+  return bouquets >= m;
+}
+
+let bloomDay = [1, 10, 3, 10, 2];
+let m = 3;
+let k = 1;
+
+console.log(minDays(bloomDay, m, k)); // 3
+
+// Example 2
+console.log(minDays([1, 10, 3, 10, 2], 3, 2)); // -1
+
+// Example 3
+console.log(minDays([7, 7, 7, 7, 12, 7, 7], 2, 3)); // 12

@@ -81,3 +81,21 @@ function canMakeBouquets(day, bloomDay, m, k) {
   // Return true if at least m bouquets can be made
   return bouquets >= m;
 }
+
+// 2. Optimal Solution (Binary Search on Answer)
+
+/*
+Search Space:
+[min(bloomDay), max(bloomDay)]
+
+Check(mid):
+Can we make at least m bouquets in mid days?
+
+If Yes:
+    high = mid - 1   // Search for a smaller answer
+
+If No:
+    low = mid + 1    // Need more days
+
+Return low
+*/

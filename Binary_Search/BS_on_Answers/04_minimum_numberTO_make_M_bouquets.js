@@ -99,3 +99,8 @@ If No:
 
 Return low
 */
+
+/*
+Time: O(n * log(maxBloomDay))
+Space: O(1)
+*/

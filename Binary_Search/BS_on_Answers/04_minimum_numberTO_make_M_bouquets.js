@@ -30,17 +30,54 @@ Can definitely make 3 bouquets.
 
 // 1. Brute Force Solution
 /*
-Try every day from:
-1 → max(bloomDay)
-
-For each day:
-Check if m bouquets can be formed.
-First valid day = answer.
-
-Helper Function
-For a given day:
-Count adjacent bloomed flowers.
-Whenever count reaches k:
-1 bouquet formed
-Reset count.
+Time = O(maxDay × n)
+Space = O(1)
 */
+
+function minDays(bloomDay, m, k) {
+  // Find the maximum bloom day
+  let maxDay = Math.max(...bloomDay);
+
+  // Try every day from 1 to maxDay
+  for (let day = 1; day <= maxDay; day++) {
+    // If we can make m bouquets on this day,
+    // this is the minimum valid day
+    if (canMakeBouquets(day, bloomDay, m, k)) {
+      return day;
+    }
+  }
+
+  // If no day can form m bouquets
+  return -1;
+}
+
+function canMakeBouquets(day, bloomDay, m, k) {
+  // Count consecutive bloomed flowers
+  let flowers = 0;
+
+  // Count total bouquets formed
+  let bouquets = 0;
+
+  // Traverse all flowers
+  for (let i = 0; i < bloomDay.length; i++) {
+    // Flower has bloomed by the given day
+    if (bloomDay[i] <= day) {
+      flowers++;
+
+      // If we collected k adjacent flowers,
+      // form one bouquet
+      if (flowers === k) {
+        bouquets++;
+
+        // Reset for next bouquet
+        flowers = 0;
+      }
+    } else {
+      // Broken adjacency, reset count
+      flowers = 0;
+    }
+  }
+
+  // Return true if at least m bouquets can be made
+  return bouquets >= m;
+}

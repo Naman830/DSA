@@ -27,3 +27,20 @@ Suppose day = 10
 Now all flowers bloom.
 Can definitely make 3 bouquets.
 */
+
+// 1. Brute Force Solution
+/*
+Try every day from:
+1 → max(bloomDay)
+
+For each day:
+Check if m bouquets can be formed.
+First valid day = answer.
+
+Helper Function
+For a given day:
+Count adjacent bloomed flowers.
+Whenever count reaches k:
+1 bouquet formed
+Reset count.
+*/

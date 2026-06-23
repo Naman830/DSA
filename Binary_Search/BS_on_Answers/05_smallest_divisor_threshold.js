@@ -34,4 +34,6 @@ sum = 1+1+2+3 = 7
 Not valid.
 
 So answer = 5
+
+You can search the answer bettween 1 to max number in the array 
 */

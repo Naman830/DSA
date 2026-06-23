@@ -62,6 +62,7 @@ for divisor = 1 to maxVal
 // 2. Optimal Solution (Binary Search)
 
 // TC: O(n * log m) && SC: O(1)
+
 function smallestDivisor(nums, threshold) {
   // Smallest possible divisor
   let low = 1;

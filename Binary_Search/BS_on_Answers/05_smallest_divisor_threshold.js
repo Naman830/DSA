@@ -58,3 +58,45 @@ for divisor = 1 to maxVal
     if sum <= threshold
         return divisor
 */
+
+// 2. Optimal Solution (Binary Search)
+
+// TC: O(n * log m) && SC: O(1)
+function smallestDivisor(nums, threshold) {
+  // Smallest possible divisor
+  let low = 1;
+
+  // Largest possible divisor
+  let high = Math.max(...nums);
+
+  // Store the smallest valid divisor found so far
+  let ans = high;
+
+  // Binary Search on divisor
+  while (low <= high) {
+    // Find middle divisor
+    let mid = Math.floor((low + high) / 2);
+
+    // Calculate sum using current divisor
+    let sum = 0;
+
+    for (let num of nums) {
+      sum += Math.ceil(num / mid);
+    }
+
+    // Current divisor is valid
+    if (sum <= threshold) {
+      ans = mid; // Store answer
+      high = mid - 1; // Try to find a smaller valid divisor
+    }
+    // Current divisor is too small
+    else {
+      low = mid + 1; // Move towards larger divisors
+    }
+  }
+
+  return ans;
+}
+
+// Example
+console.log(smallestDivisor([1, 2, 5, 9], 6)); // 5

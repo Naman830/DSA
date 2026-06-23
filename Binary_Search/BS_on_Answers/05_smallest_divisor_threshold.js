@@ -41,11 +41,15 @@ Key: You can search the answer bettween 1 to max number in the array
 // 1. Brute Force Solution
 
 /*
+Time  : O(max(nums) * n)
+Space : O(1)
+*/
+
+/*
 Pseudocode
 maxVal = maximum element
 
 for divisor = 1 to maxVal
-
     sum = 0
 
     for every number

@@ -35,5 +35,22 @@ Not valid.
 
 So answer = 5
 
-You can search the answer bettween 1 to max number in the array 
+Key: You can search the answer bettween 1 to max number in the array 
+*/
+
+// 1. Brute Force Solution
+
+/*
+Pseudocode
+maxVal = maximum element
+
+for divisor = 1 to maxVal
+
+    sum = 0
+
+    for every number
+        sum += ceil(num/divisor)
+
+    if sum <= threshold
+        return divisor
 */

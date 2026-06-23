@@ -12,3 +12,5 @@ Evening
 1 hour new dsa topic 
 
 Total estimated: 4 hour Dsa
+
+Bettween 19 june to 28 june I did nothing good in dsa

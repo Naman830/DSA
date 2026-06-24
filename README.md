@@ -14,3 +14,5 @@ Evening
 Total estimated: 4 hour Dsa
 
 Bettween 19 june to 28 june I did nothing good in dsa
+
+This series is also for leetcode question 

@@ -13,4 +13,5 @@ Evening
 
 Total estimated: 4 hour Dsa
 
-Bettween 19 june to 28 june I did nothing good in dsa
+Bettween 19 june to 28 june I did nothing good in dsa. 
+Now I will increase my working pattern and more focus 

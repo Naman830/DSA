@@ -116,3 +116,11 @@ function aggressiveCowsBinarySearch(stalls, cows) {
 }
 
 console.log(aggressiveCowsBinarySearch(stalls, cows));
+
+/*
+Time Complexity: O(NlogN) + O(N * log(max(stalls[])-min(stalls[])))
+
+, where N = size of the array, max(stalls[]) = maximum element in stalls[] array, min(stalls[]) = minimum element in stalls[] array.
+
+Space Complexity: O(1) 
+*/

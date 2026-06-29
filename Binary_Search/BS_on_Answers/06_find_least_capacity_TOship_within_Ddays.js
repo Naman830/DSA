@@ -85,3 +85,8 @@ function BinarySearchForShip(weight, d) {
 }
 
 console.log(BinarySearchForShip(weights, d));
+
+/*
+TC: O(N * log(S)), where N is number of packages and S is the search space (sum_weights - max_weight).
+SC: O(1)
+*/

@@ -29,6 +29,7 @@ We maximize the minimum distance.
 // The basic idea is to test every possible distance between 1 and the difference between the farthest and nearest stalls.
 
 // Function to check if cows can be placed with min distance d
+// If every two cows must be at least d distance apart, can I place all the cows?
 function canPlace(stalls, cows, d) {
   // Place first cow at first stall
   let count = 1;
@@ -72,10 +73,46 @@ function aggressiveCows(stalls, cows) {
 
 let stalls = [1, 2, 8, 4, 9];
 let cows = 3;
-console.log(aggressiveCows(stalls, cows));
 
 /*
 Time Complexity: O(NlogN) + O(N *(max(stalls[])-min(stalls[]))), where N = size of the array, max(stalls[]) = maximum element in stalls[] array, min(stalls[]) = minimum element in stalls[] array.
 
 Space Complexity: O(1)
 */
+
+// 2. Binary Search
+/*
+Always place the first cow in the first stall.
+Always get high as answer
+*/
+
+function aggressiveCowsBinarySearch(stalls, cows) {
+  // Sort stalls
+  stalls.sort((a, b) => a - b);
+
+  // Define search space
+  let low = 1;
+  let high = stalls[stalls.length - 1] - stalls[0];
+  let ans = 0;
+
+  // Binary search
+  while (low <= high) {
+    // Find mid distance
+    let mid = Math.floor((low + high) / 2);
+
+    // If placement possible
+    if (canPlace(stalls, cows, mid)) {
+      // Store answer
+      ans = mid;
+      // Try larger distance
+      low = mid + 1;
+    } else {
+      // Try smaller distance
+      high = mid - 1;
+    }
+  }
+  // Return result
+  return ans;
+}
+
+console.log(aggressiveCowsBinarySearch(stalls, cows));

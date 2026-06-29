@@ -56,3 +56,5 @@ function missingKBinary(vec, k) {
 }
 
 console.log(missingKBinary(vec, k));
+
+// TC: log(n) && SC: O(1)

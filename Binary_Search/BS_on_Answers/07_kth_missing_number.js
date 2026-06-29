@@ -7,8 +7,7 @@ Result: 1
 Explanation: The missing numbers are 1, 2, 3, 5, 6, 8, 11, 12, ……, and so on. Since 'k' is 1, the first missing element is 1.
 */
 
-// 1. Brute force
-
+// 1. Brute forc
 function MissingKFinder(vec, k) {
   for (let i = 0; i < vec.length; i++) {
     if (vec[i] <= k) {
@@ -23,3 +22,5 @@ function MissingKFinder(vec, k) {
 const vec = [4, 7, 9, 10];
 const k = 4;
 console.log(MissingKFinder(vec, k));
+
+// TC: O(n) & SC: O(1)

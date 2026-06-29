@@ -24,3 +24,11 @@ const k = 4;
 console.log(MissingKFinder(vec, k));
 
 // TC: O(n) & SC: O(1)
+
+// 2. Optimal Solution BINARY SEARCH
+/*
+formula = low + k (to find missing no.)
+
+low: tells us how many array elements are smaller than the answer.
+k: is the number of missing values we want. 
+*/

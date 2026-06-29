@@ -52,7 +52,7 @@ function missingKBinary(vec, k) {
     }
   }
 
-  return k + high + 1; // Compute final result
+  return low + k; // Compute final result
 }
 
 console.log(missingKBinary(vec, k));

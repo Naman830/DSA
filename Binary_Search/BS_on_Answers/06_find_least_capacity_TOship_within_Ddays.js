@@ -59,7 +59,7 @@ function shipWithinDays(weights, d) {
 console.log(daysNeeded([5, 4, 5, 2, 3, 4, 5, 6], 5));
 
 /*
-Time Complexity: O((sum_weights - max_weight) * N), where N is the number of packages. For each capacity between max weight and total sum, we simulate shipping over N packages.
+Time Complexity: O((sum_weights - max_weight) * N), where N is the number of packages.
 
 Space Complexity: O(1), only constant extra space is used.
 */

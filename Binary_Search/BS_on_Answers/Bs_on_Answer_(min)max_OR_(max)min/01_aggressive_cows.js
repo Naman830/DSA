@@ -33,6 +33,10 @@ We maximize the minimum distance.
 function canPlace(stalls, cows, d) {
   // Place first cow at first stall
   let count = 1;
+
+  // This variable remembers:
+  // Where was the last cow placed?
+  // Every future stall will be compared against lastPos.
   let lastPlaced = stalls[0];
 
   // Try placing the remaining cows

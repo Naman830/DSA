@@ -45,10 +45,43 @@ function shipWithinDays(weights, d) {
   return right;
 }
 
-console.log(daysNeeded([5, 4, 5, 2, 3, 4, 5, 6], 5));
+const weights = [5, 4, 5, 2, 3, 4, 5, 6];
+const d = 5;
+
+console.log(daysNeeded(weights, d));
 
 /*
 Time Complexity: O((sum_weights - max_weight) * N), where N is the number of packages.
 
 Space Complexity: O(1), only constant extra space is used.
 */
+
+// 2. Binary Search
+
+function BinarySearchForShip(weight, d) {
+  // Calculate minimum capacity as max weight in packages
+  let left = Math.max(...weights);
+  // Calculate maximum capacity as sum of all weights
+  let right = weights.reduce((a, b) => a + b, 0);
+
+  // Binary search between left and right capacity values
+  while (left < right) {
+    // Calculate mid value to test
+    let mid = Math.floor(left + (right - left) / 2);
+    // Calculate how many days needed for capacity mid
+    let needed = this.daysNeeded(weights, mid);
+
+    // If days needed is less or equal to allowed days,
+    // try to find smaller capacity on left side
+    if (needed <= d) {
+      right = mid;
+    } else {
+      // Else, need more capacity, search on right side
+      left = mid + 1;
+    }
+  }
+  // Return minimum capacity found
+  return left;
+}
+
+console.log(BinarySearchForShip(weights, d));

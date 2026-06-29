@@ -73,3 +73,9 @@ function aggressiveCows(stalls, cows) {
 let stalls = [1, 2, 8, 4, 9];
 let cows = 3;
 console.log(aggressiveCows(stalls, cows));
+
+/*
+Time Complexity: O(NlogN) + O(N *(max(stalls[])-min(stalls[]))), where N = size of the array, max(stalls[]) = maximum element in stalls[] array, min(stalls[]) = minimum element in stalls[] array.
+
+Space Complexity: O(1)
+*/

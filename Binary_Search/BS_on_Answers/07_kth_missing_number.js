@@ -21,7 +21,6 @@ function MissingKFinder(vec, k) {
 
 const vec = [4, 7, 9, 10];
 const k = 4;
-console.log(MissingKFinder(vec, k));
 
 // TC: O(n) & SC: O(1)
 
@@ -32,3 +31,28 @@ formula = low + k (to find missing no.)
 low: tells us how many array elements are smaller than the answer.
 k: is the number of missing values we want. 
 */
+
+function missingKBinary(vec, k) {
+  // Function to return the k-th missing number
+  // Start by setting two markers: one at the beginning and one at the end of the list.
+  let low = 0;
+  let high = vec.length - 1;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+
+    // Count how many numbers are missing up to that middle position by subtracting the expected number from the actual number found at that point.
+
+    let missing = vec[mid] - (mid + 1);
+
+    if (missing < k) {
+      low = mid + 1; // Move right
+    } else {
+      high = mid - 1; // Move left
+    }
+  }
+
+  return k + high + 1; // Compute final result
+}
+
+console.log(missingKBinary(vec, k));

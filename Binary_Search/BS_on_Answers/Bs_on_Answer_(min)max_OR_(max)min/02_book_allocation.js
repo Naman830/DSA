@@ -162,3 +162,15 @@ function bookAllocationBinary(arr, m) {
 }
 
 console.log(bookAllocationBinary(books, students));
+
+/*
+The search space is:
+
+maxBook → totalPages
+Binary Search takes:
+
+O(log(sum - maxBook))
+
+Overall: O(n × log(sum - maxBook))
+Space Complexity ---> O(1)
+*/

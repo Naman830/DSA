@@ -47,6 +47,33 @@ Distances:
 
 Maximum distance = 2
 Answer = 2
+*/
 
+// 1. Brute Force Solution
+/*
+Pseudocode
+Find the interval with the largest current section.
+Add one gas station to that interval.
+Update its largest section.
 
+extraStations[] = 0
+
+Repeat k times
+    maxGap = -1
+    index = -1
+
+    For every interval
+
+        currentGap =
+        originalGap /
+        (extraStations[i] + 1)
+
+        if currentGap > maxGap
+
+             maxGap = currentGap
+             index = i
+
+    extraStations[index]++
+    
+Return maximum current gap
 */

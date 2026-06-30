@@ -99,8 +99,6 @@ function bookAllocation(arr, m) {
 const books = [25, 46, 28, 49, 24];
 const students = 4;
 
-console.log(bookAllocation(books, students));
-
 /*
 Time Complexity
 countStudents() → O(n)
@@ -130,3 +128,37 @@ While low <= high
 
 Return answer
 */
+
+function bookAllocationBinary(arr, m) {
+  // Impossible case
+  if (m > arr.length) return -1;
+
+  // Search space
+  let low = Math.max(...arr);
+  let high = arr.reduce((sum, page) => sum + page, 0);
+
+  let answer = -1;
+
+  while (low <= high) {
+    // Middle value (candidate answer)
+    const mid = low + Math.floor((high - low) / 2);
+
+    // Students required if each student
+    // can read at most mid pages
+    const studentsNeeded = countStudents(arr, mid);
+
+    if (studentsNeeded <= m) {
+      // Allocation is possible.
+      // Try to minimize the answer.
+      answer = mid;
+      high = mid - 1;
+    } else {
+      // Need more pages per student.
+      low = mid + 1;
+    }
+  }
+
+  return answer;
+}
+
+console.log(bookAllocationBinary(books, students));

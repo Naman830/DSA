@@ -109,3 +109,24 @@ Overall: O((sum - maxBook) × n)
 
 Space Complexity ---> O(1)
 */
+
+// 2. Binary Search Solution (Optimal)
+
+/*
+Pseudo Code
+low = maximum book pages
+high = total pages
+
+While low <= high
+    mid = (low + high) / 2
+    studentsNeeded = countStudents(mid)
+
+    If studentsNeeded <= m
+        answer = mid
+        high = mid - 1
+
+    Else
+        low = mid + 1
+
+Return answer
+*/

@@ -185,3 +185,15 @@ function minimiseMaxDistanceBinary(stations, k) {
   return high;
 }
 console.log(minimiseMaxDistanceBinary(stations1, k1));
+
+/*
+Time
+Let
+n = number of stations
+Binary search runs for about 60 iterations to reach 1e-6 precision.
+O(60 × n)
+
+≈ O(n)
+(More formally: O(n × log(range / precision)).)
+Space: O(1)
+*/

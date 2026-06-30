@@ -24,5 +24,17 @@ We want
 The minimum possible value of the maximum pages assigned to any student.
 
 SIMPLE: We want the student who gets the most pages to still have as few pages as possible.
+*/
 
+// -=======================================================================
+// -=======================================================================
+// -=======================================================================
+// -=======================================================================
+
+// 1. Brute Force Solution
+/*
+The answer (maximum pages assigned to a student) can only lie between:
+
+Maximum pages in a single book (minimum possible answer)
+Sum of all pages (maximum possible answer)
 */

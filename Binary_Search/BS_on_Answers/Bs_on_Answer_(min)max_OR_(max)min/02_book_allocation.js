@@ -38,3 +38,16 @@ The answer (maximum pages assigned to a student) can only lie between:
 Maximum pages in a single book (minimum possible answer)
 Sum of all pages (maximum possible answer)
 */
+
+/*
+Pseudo Code
+Find maxBook
+Find totalPages
+
+For pages = maxBook to totalPages
+
+    studentsNeeded = countStudents(pages)
+
+    If studentsNeeded <= m
+        return pages
+*/

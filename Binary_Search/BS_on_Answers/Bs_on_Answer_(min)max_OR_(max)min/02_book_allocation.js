@@ -51,3 +51,52 @@ For pages = maxBook to totalPages
     If studentsNeeded <= m
         return pages
 */
+
+// Returns how many students are required if
+// each student can read at most maxPages.
+function countStudents(arr, maxPages) {
+  let students = 1; // First student
+  let currentPages = 0; // Pages assigned to current student
+
+  for (let pages of arr) {
+    // Assign book to current student if possible
+    if (currentPages + pages <= maxPages) {
+      currentPages += pages;
+    } else {
+      // Otherwise assign the book to a new student
+      students++;
+      currentPages = pages;
+    }
+  }
+
+  return students;
+}
+
+function bookAllocation(arr, m) {
+  // Impossible if students are more than books
+  if (m > arr.length) return -1;
+
+  // Lowest possible answer
+  let low = Math.max(...arr);
+
+  // Highest possible answer
+  let high = arr.reduce((sum, page) => sum + page, 0);
+
+  // Check every possible answer one by one
+  for (let pages = low; pages <= high; pages++) {
+    const studentsNeeded = countStudents(arr, pages);
+
+    // First valid answer is the minimum possible answer
+    if (studentsNeeded <= m) {
+      return pages;
+    }
+  }
+
+  return -1;
+}
+
+// Example
+const books = [25, 46, 28, 49, 24];
+const students = 4;
+
+console.log(bookAllocation(books, students));

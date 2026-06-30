@@ -134,3 +134,8 @@ const stations1 = [1, 2, 3, 4, 5];
 const k1 = 4;
 
 console.log(minimiseMaxDistance(stations1, k1));
+
+/*
+Time Complexity: O(n × k)
+Space Complexity: O(n)
+*/

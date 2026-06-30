@@ -100,3 +100,12 @@ const books = [25, 46, 28, 49, 24];
 const students = 4;
 
 console.log(bookAllocation(books, students));
+
+/*
+Time Complexity
+countStudents() → O(n)
+We check every value from maxBook to sum
+Overall: O((sum - maxBook) × n)
+
+Space Complexity ---> O(1)
+*/

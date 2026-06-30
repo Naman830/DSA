@@ -133,9 +133,55 @@ function minimiseMaxDistance(stations, k) {
 const stations1 = [1, 2, 3, 4, 5];
 const k1 = 4;
 
-console.log(minimiseMaxDistance(stations1, k1));
-
 /*
 Time Complexity: O(n × k)
 Space Complexity: O(n)
 */
+
+// 2. Optimal Solution (Binary Search)
+
+// Returns how many stations are needed so that
+// every section length is <= maxDistance
+function requiredStations(stations, maxDistance) {
+  let required = 0;
+
+  for (let i = 0; i < stations.length - 1; i++) {
+    // Length of current interval
+    const gap = stations[i + 1] - stations[i];
+
+    // Minimum stations required in this interval
+    required += Math.ceil(gap / maxDistance) - 1;
+  }
+
+  return required;
+}
+
+function minimiseMaxDistanceBinary(stations, k) {
+  // Binary search range
+  let low = 0;
+  let high = 0;
+
+  // Largest existing gap
+  for (let i = 0; i < stations.length - 1; i++) {
+    high = Math.max(high, stations[i + 1] - stations[i]);
+  }
+
+  // Precision up to 6 decimal places
+  while (high - low > 1e-6) {
+    const mid = low + (high - low) / 2;
+
+    // Stations required for this maximum distance
+    const needed = requiredStations(stations, mid);
+
+    if (needed <= k) {
+      // Possible -> try smaller maximum distance
+      high = mid;
+    } else {
+      // Not possible -> increase the allowed distance
+      low = mid;
+    }
+  }
+
+  return high;
+}
+console.log(minimiseMaxDistanceBinary(stations1, k1));

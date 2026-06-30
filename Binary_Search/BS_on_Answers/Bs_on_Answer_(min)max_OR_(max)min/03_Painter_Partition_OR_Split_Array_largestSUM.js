@@ -72,3 +72,15 @@ const nums = [7, 2, 5, 10, 8];
 const k = 2;
 
 console.log(splitArray(nums, k)); // 18
+
+/*
+Time Complexity:
+countSubarrays() -> O(n)
+Binary Search -> O(log(sum - maxElement))
+
+Overall:
+O(n × log(sum - maxElement))
+
+Space Complexity:
+O(1)
+*/

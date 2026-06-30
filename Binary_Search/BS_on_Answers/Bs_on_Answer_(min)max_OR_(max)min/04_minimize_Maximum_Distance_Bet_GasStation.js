@@ -1,4 +1,19 @@
 /*
+SHORT SUMMARY 
+
+We are minimizing
+    Largest Distance
+NOT
+    Average Distance
+NOT
+    Total Distance
+
+Always think:
+"What is the biggest gap after placing new stations?
+That biggest gap should be as small as possible.
+*/
+
+/*
 You are given:
 
 A sorted array stations[] representing the positions of existing gas stations.
@@ -32,4 +47,6 @@ Distances:
 
 Maximum distance = 2
 Answer = 2
+
+
 */

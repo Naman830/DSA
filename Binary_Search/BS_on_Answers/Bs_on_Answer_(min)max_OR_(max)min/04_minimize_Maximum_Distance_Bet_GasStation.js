@@ -77,3 +77,60 @@ Repeat k times
     
 Return maximum current gap
 */
+
+/**
+ * Brute Force Solution
+ *
+ * Idea:
+ * Always place the next gas station in the interval
+ * which currently has the largest distance.
+ */
+
+function minimiseMaxDistance(stations, k) {
+  const n = stations.length;
+
+  // Stores how many extra gas stations are added
+  // between stations[i] and stations[i + 1]
+  const extraStations = new Array(n - 1).fill(0);
+
+  // Place k gas stations one by one
+  for (let gas = 0; gas < k; gas++) {
+    let maxGap = -1;
+    let maxIndex = -1;
+
+    // Find the interval having the largest current gap
+    for (let i = 0; i < n - 1; i++) {
+      // Original distance of this interval
+      const gap = stations[i + 1] - stations[i];
+
+      // Current largest section after inserting stations
+      const currentGap = gap / (extraStations[i] + 1);
+
+      if (currentGap > maxGap) {
+        maxGap = currentGap;
+        maxIndex = i;
+      }
+    }
+
+    // Place one more station in that interval
+    extraStations[maxIndex]++;
+  }
+
+  // Find the final maximum distance
+  let answer = 0;
+
+  for (let i = 0; i < n - 1; i++) {
+    const gap = stations[i + 1] - stations[i];
+    const currentGap = gap / (extraStations[i] + 1);
+
+    answer = Math.max(answer, currentGap);
+  }
+
+  return answer;
+}
+
+// Example
+const stations1 = [1, 2, 3, 4, 5];
+const k1 = 4;
+
+console.log(minimiseMaxDistance(stations1, k1));

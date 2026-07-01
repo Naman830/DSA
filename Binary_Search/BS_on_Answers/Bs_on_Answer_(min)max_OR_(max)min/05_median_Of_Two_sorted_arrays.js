@@ -91,6 +91,23 @@ Finding the median: O(1)
 
 Overall: O(n + m)
 
-Space Complexity
+Space Complexity 
 Extra merged array: O(n + m)
- */
+*/
+
+// 2. Binary Search
+
+/*
+Algorithm
+
+Binary search on smaller array.
+Choose partition.
+Compute partition of second array.
+Find
+
+leftMax1 <= rightMin2
+leftMax2 <= rightMin1
+
+Check validity. true ---> answer found
+Return median.
+*/

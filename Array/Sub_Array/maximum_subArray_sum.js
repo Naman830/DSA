@@ -162,11 +162,13 @@ function maximumSubarrayWithElements(arr) {
   let maxSum = -Infinity;
   let currentSum = 0;
 
+  // whenever sum is zero we have new start and end
   // These will store final answer subarray indices
   let start = -1;
   let end = -1;
 
   // This stores possible starting index of current subarray
+  // where we start our subarray
   let tempStart = 0;
 
   for (let i = 0; i < arr.length; i++) {

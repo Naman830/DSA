@@ -104,3 +104,18 @@ return false
 TC: O(m × n)
 SC: O(1)
 */
+
+/*
+2. Better (Binary Search Every Row)
+
+for every row
+    perform binary search
+
+if found
+    return true
+
+return false
+
+TC: O(m × log n)
+SC: O(1)
+*/

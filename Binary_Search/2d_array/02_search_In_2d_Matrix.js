@@ -128,3 +128,11 @@ const matrix = [
 
 console.log(searchMatrix(matrix, 16)); // true
 console.log(searchMatrix(matrix, 13)); // false
+
+/*
+| Complexity | Value                   |
+| ---------- | ----------------------- |
+| Time       | **O(log(rows × cols))** |
+| Space      | **O(1)**                |
+
+*/

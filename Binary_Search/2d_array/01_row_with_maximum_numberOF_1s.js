@@ -56,8 +56,6 @@ const matrix = [
   [1, 1, 1, 1],
 ];
 
-console.log(rowWithMax1s(matrix)); // 3
-
 /*
 Time Complexity: O(n × m)
 Space Complexity: O(1)
@@ -78,3 +76,61 @@ This is where Binary Search helps.
 
 We can use Upper Bound, lower bound or first occurence to find 1s
 */
+
+/**
+ * Binary Search Solution
+ * Time  : O(n × log m)
+ * Space : O(1)
+ */
+
+// Returns the index of the first 1 in a sorted row
+function firstOne(matrixRow) {
+  let low = 0;
+  let high = matrixRow.length - 1;
+
+  // If no 1 exists, this value remains unchanged
+  let answer = matrixRow.length;
+
+  while (low <= high) {
+    const mid = Math.floor((low + high) / 2);
+
+    if (matrixRow[mid] === 1) {
+      // Found a 1, store its position
+      answer = mid;
+
+      // Search further on the left
+      high = mid - 1;
+    } else {
+      // Value is 0, so first 1 must be on the right
+      low = mid + 1;
+    }
+  }
+
+  return answer;
+}
+
+function rowWithMax1sBinary(matrix) {
+  const cols = matrix[0].length;
+
+  let maxOnes = 0;
+  let answer = -1;
+
+  // Process every row
+  for (let i = 0; i < matrix.length; i++) {
+    // Find first occurrence of 1
+    const firstIndex = firstOne(matrix[i]);
+
+    // Number of 1s in current row
+    const ones = cols - firstIndex;
+
+    // Update answer if current row has more 1s
+    if (ones > maxOnes) {
+      maxOnes = ones;
+      answer = i;
+    }
+  }
+
+  return answer;
+}
+
+console.log(rowWithMax1sBinary(matrix)); // 3

@@ -57,3 +57,8 @@ const matrix = [
 ];
 
 console.log(rowWithMax1s(matrix)); // 3
+
+/*
+Time Complexity: O(n × m)
+Space Complexity: O(1)
+*/

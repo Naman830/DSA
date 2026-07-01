@@ -18,3 +18,18 @@ Left Part | Right Part
 contains exactly half of the elements?
 If yes, Median can be calculated directly.
 */
+
+// 1. Brute force Approach
+// Merge them into a new sorted array.
+// Find the median from the merged array.
+
+/*
+Pseudocode
+Merge arrays
+
+If odd
+    return middle
+
+Else
+    return average of middle two
+*/

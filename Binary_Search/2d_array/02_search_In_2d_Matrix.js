@@ -16,5 +16,19 @@ Example:
 Equivalent:
 [1,3,5,7,10,11,16,20,23,30,34,60]
 
+--------------------------------------------------
+Index Conversion
+--------------------------------------------------
+This is how we can convert our 1d index of mid to 2d index 
 
+row = Math.floor(index / cols)
+col = index % cols
+
+Example:
+index = 6, cols = 4
+
+row = 6 / 4 = 1
+col = 6 % 4 = 2
+
+matrix[1][2] = 16
 */

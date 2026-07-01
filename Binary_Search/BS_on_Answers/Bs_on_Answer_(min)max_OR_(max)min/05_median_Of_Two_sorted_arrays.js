@@ -82,8 +82,6 @@ var findMedianSortedArrays = function (nums1, nums2) {
   return (mid1 + mid2) / 2;
 };
 
-console.log(findMedianSortedArrays([1, 2], [3, 4]));
-
 /*
 Time Complexity
 Merging both arrays: O(n + m)
@@ -98,6 +96,8 @@ Extra merged array: O(n + m)
 // 2. Binary Search
 
 /*
+We always perform Binary Search on the smaller array, and we calculate the partition of the larger array automatically. 
+
 Algorithm
 
 Binary search on smaller array.
@@ -110,4 +110,19 @@ leftMax2 <= rightMin1
 
 Check validity. true ---> answer found
 Return median.
+*/
+
+/*
+const left1 = cut1 === 0 ? -Infinity : nums1[cut1 - 1];
+
+is exactly the same as:
+
+let left1;
+if (cut1 === 0) {
+  // No element exists on the left side
+  left1 = -Infinity;
+} else {
+  // Take the element just before the partition
+  left1 = nums1[cut1 - 1];
+}
 */

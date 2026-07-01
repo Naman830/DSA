@@ -32,3 +32,22 @@ col = 6 % 4 = 2
 
 matrix[1][2] = 16
 */
+
+/*
+Brute Force
+
+Idea
+Check every element one by one.
+
+Algorithm
+for every row
+    for every column
+        if element == target
+            return true
+
+return false
+
+Time: O(rows × cols)
+
+Space: O(1)
+*/

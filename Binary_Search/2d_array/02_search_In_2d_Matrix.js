@@ -48,6 +48,27 @@ for every row
 return false
 
 Time: O(rows × cols)
+Space: O(1)
+*/
+
+/*
+Better Solution (Row-wise Binary Search)
+
+Idea
+Since every row is sorted:
+
+Check if target can lie in the current row. check index[0] and last index if target lie bettwen it perform Binary Search on that row.
+
+Algorithm
+for every row
+
+    if target is between first and last element
+
+        Binary Search in that row
+
+return false
+
+Time: O(rows × log(cols))
 
 Space: O(1)
 */

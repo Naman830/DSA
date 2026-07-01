@@ -90,3 +90,17 @@ console.log(searchMatrix(matrix, 15)); // false
 Time: O(m + n)
 Space: O(1)
 */
+
+/*
+1. Brute Force
+
+for every row
+    for every column
+        if current == target
+            return true
+
+return false
+
+TC: O(m × n)
+SC: O(1)
+*/

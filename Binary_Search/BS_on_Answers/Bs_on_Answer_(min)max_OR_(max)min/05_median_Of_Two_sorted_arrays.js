@@ -188,3 +188,14 @@ var findMedianSortedArraysBinary = function (nums1, nums2) {
 };
 
 console.log(findMedianSortedArraysBinary([1, 2], [3, 4]));
+
+/*
+Time Complexity
+Merging both arrays: O(n + m)
+Finding the median: O(1)
+
+Overall: O(n + m)
+
+Space Complexity
+Extra merged array: O(n + m)
+*/

@@ -34,3 +34,54 @@ Why?
 
 =========================================================
 */
+// 1. Optimal Binary Search
+/**
+ * Search in a 2D Matrix II
+ * Time: O(rows + cols)
+ * Space: O(1)
+ */
+
+function searchMatrix(matrix, target) {
+  const rows = matrix.length;
+  const cols = matrix[0].length;
+
+  // Start from the top-right corner
+  let row = 0;
+  let col = cols - 1;
+
+  // Continue while we are inside the matrix
+  while (row < rows && col >= 0) {
+    // Current element
+    const current = matrix[row][col];
+
+    // Target found
+    if (current === target) {
+      return true;
+    }
+
+    // Current value is too large
+    // Move left to get smaller values
+    if (current > target) {
+      col--;
+    }
+    // Current value is too small
+    // Move down to get larger values
+    else {
+      row++;
+    }
+  }
+
+  // Target not found
+  return false;
+}
+
+// Example
+const matrix = [
+  [1, 4, 7, 11],
+  [2, 5, 8, 12],
+  [3, 6, 9, 16],
+  [10, 13, 14, 17],
+];
+
+console.log(searchMatrix(matrix, 8)); // true
+console.log(searchMatrix(matrix, 15)); // false

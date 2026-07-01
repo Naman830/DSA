@@ -85,3 +85,8 @@ const matrix = [
 
 console.log(searchMatrix(matrix, 8)); // true
 console.log(searchMatrix(matrix, 15)); // false
+
+/*
+Time: O(m + n)
+Space: O(1)
+*/

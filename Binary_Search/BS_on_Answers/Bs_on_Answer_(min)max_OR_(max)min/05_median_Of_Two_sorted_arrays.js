@@ -126,3 +126,65 @@ if (cut1 === 0) {
   left1 = nums1[cut1 - 1];
 }
 */
+
+var findMedianSortedArraysBinary = function (nums1, nums2) {
+  // Always binary search on the smaller array
+  if (nums1.length > nums2.length) {
+    return findMedianSortedArrays(nums2, nums1);
+  }
+
+  const n1 = nums1.length;
+  const n2 = nums2.length;
+
+  const total = n1 + n2;
+
+  // Number of elements that should be on the left side
+  const leftSize = Math.floor((total + 1) / 2);
+
+  let low = 0;
+  let high = n1;
+
+  while (low <= high) {
+    // Partition in the first (smaller) array
+    const cut1 = Math.floor((low + high) / 2);
+
+    // Partition in the second array
+    const cut2 = leftSize - cut1;
+
+    // Largest value on the left side of nums1
+    const left1 = cut1 === 0 ? -Infinity : nums1[cut1 - 1];
+
+    // Smallest value on the right side of nums1
+    const right1 = cut1 === n1 ? Infinity : nums1[cut1];
+
+    // Largest value on the left side of nums2
+    const left2 = cut2 === 0 ? -Infinity : nums2[cut2 - 1];
+
+    // Smallest value on the right side of nums2
+    const right2 = cut2 === n2 ? Infinity : nums2[cut2];
+
+    // Check if the partition is correct
+    if (left1 <= right2 && left2 <= right1) {
+      // Odd total length
+      if (total % 2 === 1) {
+        return Math.max(left1, left2);
+      }
+
+      // Even total length
+      return (Math.max(left1, left2) + Math.min(right1, right2)) / 2;
+    }
+
+    // Too many elements taken from nums1
+    if (left1 > right2) {
+      high = cut1 - 1;
+    }
+    // Too few elements taken from nums1
+    else {
+      low = cut1 + 1;
+    }
+  }
+
+  return -1;
+};
+
+console.log(findMedianSortedArraysBinary([1, 2], [3, 4]));

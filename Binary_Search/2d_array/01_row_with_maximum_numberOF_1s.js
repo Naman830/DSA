@@ -62,3 +62,19 @@ console.log(rowWithMax1s(matrix)); // 3
 Time Complexity: O(n × m)
 Space Complexity: O(1)
 */
+
+// 2. Binary Search Solution
+/*
+Since every row is sorted,
+0 0 0 1 1 1
+If we know the first position of 1, then
+
+Number of 1s = total columns - firstOneIndex
+
+So the main task becomes:
+Find the first occurrence of 1 in every row.
+
+This is where Binary Search helps.
+
+We can use Upper Bound, lower bound or first occurence to find 1s
+*/

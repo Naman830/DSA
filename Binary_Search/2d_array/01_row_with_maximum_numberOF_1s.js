@@ -134,3 +134,9 @@ function rowWithMax1sBinary(matrix) {
 }
 
 console.log(rowWithMax1sBinary(matrix)); // 3
+
+/*
+Time Complexity: O(n * m)
+
+Space Complexity;: O(1)
+*/

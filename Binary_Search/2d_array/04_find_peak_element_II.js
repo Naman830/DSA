@@ -51,3 +51,8 @@ Time Complexity: O(m × n)
 
 Space Complexity: O(1)
 */
+
+// 1. Binary Search Solution (Optimal)
+// Compare only Left and Right.
+// No need to compare Top and Bottom because:
+// We already selected the largest element in that column, so Top and Bottom can never be larger.

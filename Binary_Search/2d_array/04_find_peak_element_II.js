@@ -27,4 +27,27 @@ Since
 9 > 2
 
 So yes, 9 is a Peak.
+
+There may be multiple peaks you can return any one.
+*/
+
+/*
+1. Brute Force ✅
+
+Check every cell and compare it with its 4 neighbours.
+
+Pseudo Code
+for every row
+    for every column
+
+        if current > top
+        and current > bottom
+        and current > left
+        and current > right
+
+            return current position
+
+Time Complexity: O(m × n)
+
+Space Complexity: O(1)
 */

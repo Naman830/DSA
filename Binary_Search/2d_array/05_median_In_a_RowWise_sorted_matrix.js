@@ -71,6 +71,7 @@ Instead, we binary search on the value.
  * Since the row is sorted,
  * this index is also equal to the number of elements <= target.
  */
+
 function upperBound(arr, target) {
   let low = 0;
   let high = arr.length - 1;
@@ -99,6 +100,7 @@ function upperBound(arr, target) {
 /**
  * Returns the median of a row-wise sorted matrix.
  */
+
 function median(matrix) {
   const rows = matrix.length;
   const cols = matrix[0].length;
@@ -168,3 +170,11 @@ const matrix = [
 ];
 
 console.log("Answer =", median(matrix));
+
+/*
+Time:
+O(R × log(C) × log(Max-Min))
+
+Space:
+O(1)
+*/

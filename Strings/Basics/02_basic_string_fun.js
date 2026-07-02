@@ -1,4 +1,4 @@
-// MEANING OF STRING
+// A. MEANING OF STRING
 // A string is simply a sequence of characters.
 // Think of it like a word or sentence where each letter has its own position (index).
 
@@ -17,8 +17,23 @@ console.log(str[3]); // l
 
 // =================================================================
 // =================================================================
-// =================================================================
-// FOR FINDING LENGTH OF STRING
 
+// B. FOR FINDING LENGTH OF STRING
 let str2 = "coding";
 console.log(str2.length); // 6
+
+// =================================================================
+// =================================================================
+
+// C. Strings are Immutable
+// You cannot change a character directly. ❌ Wrong
+
+let str3 = "cat";
+str3[0] = "b";
+console.log(str3); // cat
+
+// Nothing changes. Instead create a new string.
+
+let str4 = "cat";
+str4 = "b" + str4.slice(1);
+console.log(str4); // bat

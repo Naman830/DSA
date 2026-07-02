@@ -43,5 +43,10 @@ console.log(str4); // bat
 
 const str5 = "Naman";
 console.log(str5.trim()); // trim remove the nearby space
+
 console.log(str5.indexOf("m")); // index of help to find index of chracter
 console.log(str5.lastIndexOf("n")); // what if there is multiple chracter we can check last index of chracter
+
+// We can also check Boolean Values
+console.log(str5.startsWith("n")); // true
+console.log(str5.endsWith("m")); //false

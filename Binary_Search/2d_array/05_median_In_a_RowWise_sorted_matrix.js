@@ -51,3 +51,10 @@ Total           : O((R × C) log(R × C))
 
 Space           : O(R × C)
 */
+
+// 1. Binary Search Solution (Optimal)
+/*
+The biggest mistake most people make is trying to binary search on the matrix indices.
+We don't binary search on rows or columns.
+Instead, we binary search on the value.
+*/

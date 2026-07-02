@@ -121,3 +121,9 @@ const matrix = [
 ];
 
 console.log(findPeakGrid(matrix)); // [1, 1]
+
+/*
+Binary Search
+TC: O(m × log n)
+SC: O(1)
+*/

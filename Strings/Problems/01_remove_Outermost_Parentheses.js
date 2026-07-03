@@ -68,3 +68,8 @@ function removeOuterParentheses(s) {
 console.log(removeOuterParentheses("(()())(())")); // "()()()"
 console.log(removeOuterParentheses("(()())(())(()(()))")); // "()()()()(())"
 console.log(removeOuterParentheses("()()")); // ""
+
+/*
+TC: O(n)
+SC: O(n)
+*/

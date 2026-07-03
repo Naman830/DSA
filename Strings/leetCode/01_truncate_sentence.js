@@ -63,3 +63,8 @@ function truncateSentenceOptimal(s, k) {
 console.log(truncateSentenceOptimal("Hello how are you Contestant", 4));
 console.log(truncateSentenceOptimal("What is the solution", 2));
 console.log(truncateSentenceOptimal("I love coding", 3));
+
+/*
+TC: O(n)
+SC: O(1)
+*/

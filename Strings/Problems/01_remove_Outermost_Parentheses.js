@@ -29,3 +29,42 @@ Join the remaining parts.
 
 This works but requires identifying every primitive first.
 */
+/*
+LeetCode 1021 - Remove Outermost Parentheses (Brute Force)
+
+Approach:
+1. Find each primitive valid parentheses string.
+2. Remove its first and last parentheses.
+3. Append the remaining part to the answer.
+*/
+
+function removeOuterParentheses(s) {
+  let balance = 0;
+  let start = 0;
+  let result = "";
+
+  for (let i = 0; i < s.length; i++) {
+    // Update balance
+    if (s[i] === "(") {
+      balance++;
+    } else {
+      balance--;
+    }
+
+    // Found one primitive
+    if (balance === 0) {
+      // Remove outermost parentheses
+      result += s.substring(start + 1, i);
+
+      // Next primitive starts here
+      start = i + 1;
+    }
+  }
+
+  return result;
+}
+
+// Test Cases
+console.log(removeOuterParentheses("(()())(())")); // "()()()"
+console.log(removeOuterParentheses("(()())(())(()(()))")); // "()()()()(())"
+console.log(removeOuterParentheses("()()")); // ""

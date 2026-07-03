@@ -34,11 +34,6 @@ function truncateSentence(s, k) {
   return s.split(" ").slice(0, k).join(" ");
 }
 
-// Test Cases
-console.log(truncateSentence("Hello how are you Contestant", 4));
-console.log(truncateSentence("What is the solution", 2));
-console.log(truncateSentence("I love coding", 3));
-
 /*
 Time: O(n)
 Space: O(n)
@@ -50,3 +45,21 @@ It traverses the string only once.
 No extra array is created.
 Uses constant extra memory.
 */
+
+function truncateSentenceOptimal(s, k) {
+  let space = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === " ") {
+      space++;
+      if (space === k) {
+        return s.slice(0, i);
+      }
+    }
+  }
+  return s;
+}
+
+// Test Cases
+console.log(truncateSentenceOptimal("Hello how are you Contestant", 4));
+console.log(truncateSentenceOptimal("What is the solution", 2));
+console.log(truncateSentenceOptimal("I love coding", 3));

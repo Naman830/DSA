@@ -101,18 +101,29 @@ function removeOuterParenthesesOptimal(s) {
   let result = "";
 
   for (let ch of s) {
+    // Opening bracket
     if (ch === "(") {
+      // If already inside another pair,
+      // keep this bracket
       if (depth > 0) {
         result += ch;
       }
+
       depth++;
-    } else {
+    }
+
+    // Closing bracket
+    else {
       depth--;
+
+      // If still inside after decreasing,
+      // keep this bracket
       if (depth > 0) {
         result += ch;
       }
     }
   }
+
   return result;
 }
 

@@ -120,3 +120,8 @@ function removeOuterParenthesesOptimal(s) {
 console.log(removeOuterParenthesesOptimal("(()())(())")); // "()()()"
 console.log(removeOuterParenthesesOptimal("(()())(())(()(()))")); // "()()()()(())"
 console.log(removeOuterParenthesesOptimal("()()")); // ""
+
+/*
+TC: O(n)
+SC: O(n)
+*/

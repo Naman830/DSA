@@ -87,5 +87,18 @@ const aciiValues = "Yoo chico Yoo Jordan";
 // I can Check the specific ACII Value
 console.log(aciiValues.charCodeAt(0));
 
-// We can check the chracter code value
+// We can check the chracter code value like 'A, B, C...'
 console.log(String.fromCharCode(65));
+
+// =================================================================
+// =================================================================
+
+// STRING COMPARISION
+// If they are equal it show zero if not so -1
+const one = "happy";
+const two = "happy";
+console.log(one.localeCompare(two));
+
+// We check Existence of chracter in line by includes() true or false
+const checkExistence = "Hey jordan how are you";
+console.log(checkExistence.includes("jordan"));

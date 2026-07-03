@@ -50,3 +50,9 @@ SC: O(n)
 Why O(n²)?
 Because every slice() creates a new string.
 */
+
+// 1. Optimal Approach
+// Instead of checking every prefix, start from the end of the string.
+// If the current digit is odd, then everything before it forms the largest odd number.
+// Return the substring immediately.
+// If no odd digit is found, return "".

@@ -35,17 +35,49 @@ function reverseWords(s) {
   return s.trim().split(/\s+/).reverse().join(" ");
 }
 
-// Test Cases
-console.log(reverseWords("the sky is blue"));
-// blue is sky the
-
-console.log(reverseWords("  hello world  "));
-// world hello
-
-console.log(reverseWords("a good   example"));
-// example good a
-
 /*
 TC: O(n)
 SC: O(n)
 */
+
+// 2. Optimal Approach (Without Using split() / reverse())
+function reverseWordsOptimal(s) {
+  let result = "";
+  let i = s.length - 1;
+
+  // Run loopp for reverse order
+  while (i >= 0) {
+    // Skip spaces
+    while (i >= 0 && s[i] === " ") {
+      i--;
+    }
+
+    // edge case
+    if (i < 0) break;
+
+    let j = i;
+
+    // Find the beginning of the current word
+    while (j >= 0 && s[j] !== " ") {
+      j--;
+    }
+
+    // Add a space before the next word (except for the first one)
+    if (result.length > 0) {
+      result += " ";
+    }
+
+    // Append the current word
+    result += s.substring(j + 1, i + 1);
+
+    // Move to the previous word
+    i = j;
+  }
+
+  return result;
+}
+
+// Test Cases
+console.log(reverseWordsOptimal("the sky is blue"));
+console.log(reverseWordsOptimal("  hello world  "));
+console.log(reverseWordsOptimal("a good   example"));

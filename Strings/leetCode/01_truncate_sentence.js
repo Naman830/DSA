@@ -22,3 +22,12 @@ There are no extra spaces at the beginning or end.
 You only need the first k words.
 Ignore all remaining words.
 */
+
+/*
+1. Brute Force Solution 
+Split the sentence into an array of words.
+Take the first k words.
+Join them back into a sentence.
+
+
+*/

@@ -61,3 +61,7 @@ console.log(str6.substring(13, -1)); // if you add -1 so it work reverse
 
 // Similar is slice we use it previously
 console.log(str6.slice(13));
+
+// Converting Number into string
+const convertedNumber = 123;
+console.log(String(convertedNumber));

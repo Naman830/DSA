@@ -73,3 +73,12 @@ function largestOddNumberOptimal(num) {
 console.log(largestOddNumberOptimal("52")); // "5"
 console.log(largestOddNumberOptimal("35427")); // "35427"
 console.log(largestOddNumberOptimal("4206")); // ""
+
+/*
+| Case    | Time                       | Space |
+| ------- | -------------------------- | ----- |
+| Best    | O(1) *(last digit is odd)* | O(1)* |
+| Average | O(n)                       | O(1)* |
+| Worst   | O(n)                       | O(1)* |
+
+*/

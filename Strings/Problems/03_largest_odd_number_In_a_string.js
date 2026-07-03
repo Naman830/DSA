@@ -42,3 +42,11 @@ function largestOddNumber(num) {
 console.log(largestOddNumber("52")); // "5"
 console.log(largestOddNumber("35427")); // "35427"
 console.log(largestOddNumber("4206")); // ""
+
+/*
+TC: O(n²)
+SC: O(n)
+
+Why O(n²)?
+Because every slice() creates a new string.
+*/

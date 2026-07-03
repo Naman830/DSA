@@ -102,3 +102,12 @@ console.log(one.localeCompare(two));
 // We check Existence of chracter in line by includes() true or false
 const checkExistence = "Hey jordan how are you";
 console.log(checkExistence.includes("jordan"));
+
+// Splitting && Joining String
+
+// It split for seprate words and we can also split specific words
+console.log(checkExistence.split(" "));
+
+// For joining array and also pass values
+const joinArr = ["apple", "banana", "chicu"];
+console.log(joinArr.join(" and "));

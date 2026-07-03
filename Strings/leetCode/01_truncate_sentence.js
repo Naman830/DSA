@@ -30,12 +30,6 @@ Take the first k words.
 Join them back into a sentence.
 */
 
-/*
-Problem:
-Given a sentence s and an integer k,
-return the first k words.
-*/
-
 function truncateSentence(s, k) {
   return s.split(" ").slice(0, k).join(" ");
 }
@@ -46,6 +40,13 @@ console.log(truncateSentence("What is the solution", 2));
 console.log(truncateSentence("I love coding", 3));
 
 /*
-TimeL O(n)
+Time: O(n)
 Space: O(n)
+*/
+
+// 2. OPtimal Solution
+/*
+It traverses the string only once.
+No extra array is created.
+Uses constant extra memory.
 */

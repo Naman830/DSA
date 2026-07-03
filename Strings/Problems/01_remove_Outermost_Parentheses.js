@@ -12,4 +12,9 @@ Primitive 2: (())
 Remove outermost -> ()
 
 Output: "()()()"
+
+Key Observations
+The string is always valid.
+It may contain multiple primitive strings.
+A primitive is the smallest valid parentheses string that cannot be divided into two valid parts. 
 */

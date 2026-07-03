@@ -16,3 +16,8 @@ function palidrome(s) {
 let s = "race a car";
 
 console.log(palidrome(s));
+
+/*
+TC: O(n)
+SC: O(1)
+*/

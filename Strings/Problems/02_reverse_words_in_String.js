@@ -81,3 +81,8 @@ function reverseWordsOptimal(s) {
 console.log(reverseWordsOptimal("the sky is blue"));
 console.log(reverseWordsOptimal("  hello world  "));
 console.log(reverseWordsOptimal("a good   example"));
+
+/*
+TC: O(n)
+SC: O(n)
+ */

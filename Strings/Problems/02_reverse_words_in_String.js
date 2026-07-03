@@ -44,3 +44,8 @@ console.log(reverseWords("  hello world  "));
 
 console.log(reverseWords("a good   example"));
 // example good a
+
+/*
+TC: O(n)
+SC: O(n)
+*/

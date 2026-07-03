@@ -18,3 +18,14 @@ The string is always valid.
 It may contain multiple primitive strings.
 A primitive is the smallest valid parentheses string that cannot be divided into two valid parts. 
 */
+
+/*
+3. Brute Force Idea
+Approach
+
+Find each primitive separately.
+Remove its first ( and last ).
+Join the remaining parts.
+
+This works but requires identifying every primitive first.
+*/

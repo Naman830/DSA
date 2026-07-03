@@ -65,3 +65,11 @@ console.log(str6.slice(13));
 // Converting Number into string
 const convertedNumber = 123;
 console.log(String(convertedNumber));
+
+// Converting Object by using json and stringly else it show the error of object Object
+const convertedObject = { name: "Naman" };
+console.log(JSON.stringify(convertedObject));
+
+// Convert Object string into original arry
+const jsonString = '{"name": "Alice", "age": 25, "isAdmin": true}';
+console.log(JSON.parse(jsonString));

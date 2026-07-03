@@ -77,3 +77,15 @@ console.log(JSON.parse(jsonString));
 // Converting Uppercase and lowerCase
 console.log(str6.toUpperCase());
 console.log(str6.toLowerCase());
+
+// =================================================================
+// =================================================================
+// Every single chracter javascript choose upper or lower is ACII value
+
+const aciiValues = "Yoo chico Yoo Jordan";
+
+// I can Check the specific ACII Value
+console.log(aciiValues.charCodeAt(0));
+
+// We can check the chracter code value
+console.log(String.fromCharCode(65));

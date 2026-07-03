@@ -28,6 +28,19 @@ Ignore all remaining words.
 Split the sentence into an array of words.
 Take the first k words.
 Join them back into a sentence.
-
-
 */
+
+/*
+Problem:
+Given a sentence s and an integer k,
+return the first k words.
+*/
+
+function truncateSentence(s, k) {
+  return s.split(" ").slice(0, k).join(" ");
+}
+
+// Test Cases
+console.log(truncateSentence("Hello how are you Contestant", 4));
+console.log(truncateSentence("What is the solution", 2));
+console.log(truncateSentence("I love coding", 3));

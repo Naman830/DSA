@@ -73,3 +73,7 @@ console.log(JSON.stringify(convertedObject));
 // Convert Object string into original arry
 const jsonString = '{"name": "Alice", "age": 25, "isAdmin": true}';
 console.log(JSON.parse(jsonString));
+
+// Converting Uppercase and lowerCase
+console.log(str6.toUpperCase());
+console.log(str6.toLowerCase());

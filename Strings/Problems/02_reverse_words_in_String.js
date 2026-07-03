@@ -15,3 +15,11 @@ Rules:
 2. Multiple spaces between words should become only one space.
 3. Extra spaces at the beginning and end should be removed.
 */
+
+// 1. Brute Force
+/*
+Remove unnecessary spaces.
+Split the string into words.
+Reverse the array.
+Join using one space.
+*/

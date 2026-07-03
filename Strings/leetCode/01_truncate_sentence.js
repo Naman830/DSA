@@ -44,3 +44,8 @@ function truncateSentence(s, k) {
 console.log(truncateSentence("Hello how are you Contestant", 4));
 console.log(truncateSentence("What is the solution", 2));
 console.log(truncateSentence("I love coding", 3));
+
+/*
+TimeL O(n)
+Space: O(n)
+*/

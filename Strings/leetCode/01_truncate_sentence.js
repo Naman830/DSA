@@ -1,0 +1,24 @@
+/*
+You are given a sentence (a string containing words separated by a single space) and an integer k.
+Your task is to return only the first k words from the sentence.
+Think of it like this:
+
+Sentence:
+"I love programming in JavaScript"
+
+k = 3
+
+Take only first 3 words:
+"I"
+"love"
+"programming"
+
+Answer:
+"I love programming"
+
+Key Observation
+Words are separated by exactly one space.
+There are no extra spaces at the beginning or end.
+You only need the first k words.
+Ignore all remaining words.
+*/

@@ -73,3 +73,25 @@ console.log(removeOuterParentheses("()()")); // ""
 TC: O(n)
 SC: O(n)
 */
+
+// 2. Optimal Idea
+/*
+Dry Run
+
+Input
+(()())
+
+Start
+depth = 0
+answer = ""
+
+| Character | Depth Before | Action                   | Depth After | Answer |
+| --------- | ------------ | ------------------------ | ----------- | ------ |
+| (         | 0            | Skip (outermost)         | 1           | ""     |
+| (         | 1            | Keep                     | 2           | "("    |
+| )         | 2            | Keep                     | 1           | "()"   |
+| (         | 1            | Keep                     | 2           | "()("  |
+| )         | 2            | Keep                     | 1           | "()()" |
+| )         | 1            | Skip (outermost closing) | 0           | "()()" |
+
+*/

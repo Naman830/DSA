@@ -54,7 +54,6 @@ console.log(str5.endsWith("m")); //false
 // =================================================================
 // =================================================================
 const str6 = "Hello my name is Naman Singla";
-
 // Extracting substring
 console.log(str6.substring(13)); // substring take start and end number [if you keep end number empty it work till end]
 console.log(str6.substring(13, -1)); // if you add -1 so it work reverse

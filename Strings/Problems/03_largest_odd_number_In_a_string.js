@@ -38,11 +38,6 @@ function largestOddNumber(num) {
   return answer;
 }
 
-// Test Cases
-console.log(largestOddNumber("52")); // "5"
-console.log(largestOddNumber("35427")); // "35427"
-console.log(largestOddNumber("4206")); // ""
-
 /*
 TC: O(n²)
 SC: O(n)
@@ -56,3 +51,25 @@ Because every slice() creates a new string.
 // If the current digit is odd, then everything before it forms the largest odd number.
 // Return the substring immediately.
 // If no odd digit is found, return "".
+
+function largestOddNumberOptimal(num) {
+  // Traverse from the end
+  for (let i = num.length - 1; i >= 0; i--) {
+    // Convert character into number
+    const digit = Number(num[i]);
+
+    // Check if digit is odd
+    if (digit % 2 !== 0) {
+      // Return everything from index 0 to i
+      return num.slice(0, i + 1);
+    }
+  }
+
+  // No odd digit found
+  return "";
+}
+
+// Test Cases
+console.log(largestOddNumberOptimal("52")); // "5"
+console.log(largestOddNumberOptimal("35427")); // "35427"
+console.log(largestOddNumberOptimal("4206")); // ""

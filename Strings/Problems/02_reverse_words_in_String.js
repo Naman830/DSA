@@ -23,3 +23,24 @@ Split the string into words.
 Reverse the array.
 Join using one space.
 */
+
+/*
+LeetCode 151 - Reverse Words in a String
+
+Given a string s, reverse the order of words.
+Remove extra spaces.
+*/
+
+function reverseWords(s) {
+  return s.trim().split(/\s+/).reverse().join(" ");
+}
+
+// Test Cases
+console.log(reverseWords("the sky is blue"));
+// blue is sky the
+
+console.log(reverseWords("  hello world  "));
+// world hello
+
+console.log(reverseWords("a good   example"));
+// example good a

@@ -14,6 +14,10 @@ When to Use (Recognize These Signals)
 5. Words like: "pair", "sum equals target", "container", "trapping water"
 */
 
+// ====================================================================================
+// ====================================================================================
+// ====================================================================================
+
 // Pattern 1: Opposite Ends (Converging)
 // Pointers start at both ends, move toward center.
 
@@ -32,3 +36,20 @@ while left < right:
 */
 
 // Used for: Two Sum (sorted array), Palindrome check, Container With Most Water, Trapping Rain Water, Reverse array/string
+
+// ====================================================================================
+// ====================================================================================
+// ====================================================================================
+
+// Pattern 2: Same Direction (Fast-Slow / Slow catches up)
+// Both pointers start at 0, move forward at different rates.
+
+/*
+slow = 0
+for fast in range(n):
+    if condition(arr[fast]):
+        arr[slow] = arr[fast]
+        slow++
+*/
+
+// Used for: Remove duplicates, Move zeroes to end, Partitioning (Dutch national flag), Linked list cycle detection

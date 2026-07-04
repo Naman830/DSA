@@ -78,3 +78,22 @@ Am I filtering/compacting in-place? → Fast-slow pattern
 Are there two separate sorted inputs? → Two-array pattern
 Need a fixed-size window? → That's Sliding Window, not this (common confusion point)
 */
+
+// ====================================================================================
+// ====================================================================================
+
+// Common Mistakes
+/*
+Forgetting left < right vs left <= right — off-by-one bugs
+Moving both pointers when only one should move
+Not handling duplicate values (skip duplicates when needed, e.g. 3Sum)
+*/
+
+// ====================================================================================
+// ====================================================================================
+
+// Time/Space
+/*
+Time: O(n) or O(n log n) if sorting needed first
+Space: O(1) extra (this is the main win vs brute force)
+*/

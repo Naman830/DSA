@@ -15,11 +15,6 @@ class Node {
 // LINKED LIST CLASS
 // ---------------------------------------------
 class LinkedList {
-  constructor() {
-    // Initially, the linked list is empty.
-    this.head = null;
-  }
-
   // -------------------------------------------
   // FIND LENGTH OF LINKED LIST
   // -------------------------------------------

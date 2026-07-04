@@ -24,3 +24,21 @@
 // - Browser history (prev/next page navigation)
 // - Music playlist (next/previous song)
 // - Undo functionality in editors
+
+// ---------------------------------------------
+// 3. "CLASS" IN JAVASCRIPT (equivalent of struct/class in C++/Java)
+// ---------------------------------------------
+// JS doesn't have "struct", only objects & classes.
+// We use a class to define what a single Node looks like.
+
+class Node {
+  constructor(value) {
+    this.value = value; // stores the actual data
+    this.next = null; // pointer to next node, initially empty
+  }
+}
+
+// Example: creating one node manually
+const firstNode = new Node(10);
+console.log(firstNode);
+// Output: Node { value: 10, next: null }

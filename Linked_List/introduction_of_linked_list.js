@@ -75,3 +75,5 @@ console.log(firstNode);
 //   - Non-contiguous memory (nodes scattered, linked via pointers)
 //   - No random access -> to reach 3rd node, must traverse from head -> O(n)
 //   - Insertion/deletion is FAST (no shifting, just change pointers) -> O(1)
+
+// see the 1d_linked_list to start your future understanding of linked list for basic of code like traversing and etc...

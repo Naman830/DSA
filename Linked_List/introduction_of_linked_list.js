@@ -50,3 +50,15 @@ console.log(firstNode);
 // Linked List: each node is stored ANYWHERE in memory (non-contiguous),
 // connected only through "next" pointers/references.
 // Extra memory is used per node to store the "next" reference (unlike arrays).
+
+// ---------------------------------------------
+// 5. DIFFERENCE BETWEEN NODE & NODE* (pointer to node)
+// ---------------------------------------------
+// In C++/Java, "Node" is the object, and "Node*" (or a reference) is a
+// POINTER that stores the ADDRESS of a Node.
+//
+// In JavaScript, we don't manually deal with pointers/addresses.
+// Every object (including a Node) is automatically handled by REFERENCE.
+// So when we write: `this.next = someNode`
+// -> "next" is not storing the node itself, it's referencing/pointing to it,
+//    JS handles this "pointer-like" behavior internally for us.

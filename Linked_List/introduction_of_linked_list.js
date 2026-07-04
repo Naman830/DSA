@@ -42,3 +42,11 @@ class Node {
 const firstNode = new Node(10);
 console.log(firstNode);
 // Output: Node { value: 10, next: null }
+
+// ---------------------------------------------
+// 4. MEMORY SPACE USED
+// ---------------------------------------------
+// Array: elements sit in one continuous memory block (fixed pre-allocated size in most languages)
+// Linked List: each node is stored ANYWHERE in memory (non-contiguous),
+// connected only through "next" pointers/references.
+// Extra memory is used per node to store the "next" reference (unlike arrays).

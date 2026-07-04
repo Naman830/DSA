@@ -13,3 +13,22 @@ When to Use (Recognize These Signals)
 5. Merging two sorted arrays
 5. Words like: "pair", "sum equals target", "container", "trapping water"
 */
+
+// Pattern 1: Opposite Ends (Converging)
+// Pointers start at both ends, move toward center.
+
+/*
+left = 0
+right = n-1
+
+while left < right:
+    if condition_met(arr[left], arr[right]):
+        do something
+        left++; right--
+    elif need_bigger_sum:
+        left++
+    else:
+        right--
+*/
+
+// Used for: Two Sum (sorted array), Palindrome check, Container With Most Water, Trapping Rain Water, Reverse array/string

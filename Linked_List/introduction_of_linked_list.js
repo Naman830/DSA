@@ -62,3 +62,16 @@ console.log(firstNode);
 // So when we write: `this.next = someNode`
 // -> "next" is not storing the node itself, it's referencing/pointing to it,
 //    JS handles this "pointer-like" behavior internally for us.
+
+// ---------------------------------------------
+// 6. ARRAY vs LINKED LIST
+// ---------------------------------------------
+// Array:
+//   - Fixed/contiguous memory
+//   - Fast random access -> arr[3] is O(1)
+//   - Insertion/deletion in middle is SLOW (needs shifting) -> O(n)
+//
+// Linked List:
+//   - Non-contiguous memory (nodes scattered, linked via pointers)
+//   - No random access -> to reach 3rd node, must traverse from head -> O(n)
+//   - Insertion/deletion is FAST (no shifting, just change pointers) -> O(1)

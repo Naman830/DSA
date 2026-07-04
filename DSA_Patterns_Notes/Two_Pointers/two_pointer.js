@@ -39,7 +39,6 @@ while left < right:
 
 // ====================================================================================
 // ====================================================================================
-// ====================================================================================
 
 // Pattern 2: Same Direction (Fast-Slow / Slow catches up)
 // Both pointers start at 0, move forward at different rates.
@@ -56,7 +55,6 @@ for fast in range(n):
 
 // ====================================================================================
 // ====================================================================================
-// ====================================================================================
 
 // Pattern 3: Two Pointers on Two Different Arrays
 
@@ -68,3 +66,15 @@ while i < len(A) and j < len(B):
 */
 
 // Used for: Merge two sorted arrays, Intersection of two arrays
+
+// ====================================================================================
+// ====================================================================================
+
+// Decision Checklist (30 sec gut check)
+
+/*
+Is it sorted or sortable? → Opposite ends pattern
+Am I filtering/compacting in-place? → Fast-slow pattern
+Are there two separate sorted inputs? → Two-array pattern
+Need a fixed-size window? → That's Sliding Window, not this (common confusion point)
+*/

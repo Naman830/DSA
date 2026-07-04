@@ -97,3 +97,17 @@ Not handling duplicate values (skip duplicates when needed, e.g. 3Sum)
 Time: O(n) or O(n log n) if sorting needed first
 Space: O(1) extra (this is the main win vs brute force)
 */
+
+// ====================================================================================
+// ====================================================================================
+/*
+PROBLEMS TO SOLVE:
+I will add two pointer approach line wise in this series
+
+1. Two Sum II (sorted array)
+2. Valid Palindrome
+3. Remove Duplicates from Sorted Array
+4. Container With Most Water
+5. 3Sum
+6. Trapping Rain Water
+*/

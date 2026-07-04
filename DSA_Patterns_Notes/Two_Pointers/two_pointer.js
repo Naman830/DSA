@@ -53,3 +53,18 @@ for fast in range(n):
 */
 
 // Used for: Remove duplicates, Move zeroes to end, Partitioning (Dutch national flag), Linked list cycle detection
+
+// ====================================================================================
+// ====================================================================================
+// ====================================================================================
+
+// Pattern 3: Two Pointers on Two Different Arrays
+
+/*
+i = 0, j = 0
+while i < len(A) and j < len(B):
+    compare A[i], B[j]
+    move i or j (or both) accordingly
+*/
+
+// Used for: Merge two sorted arrays, Intersection of two arrays

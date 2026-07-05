@@ -85,3 +85,12 @@ head = list.insertAtK(head, 25, 2);
 
 console.log("After inserting 25 at index 2:");
 list.print(head);
+
+/*
+| Case    | Time                      | Space    |
+| ------- | ------------------------- | -------- |
+| Best    | **O(1)** (insert at head) | **O(1)** |
+| Average | **O(k)**                  | **O(1)** |
+| Worst   | **O(n)**                  | **O(1)** |
+
+*/

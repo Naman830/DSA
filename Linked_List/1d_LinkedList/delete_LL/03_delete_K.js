@@ -89,3 +89,14 @@ head = list.deleteKth(head, 3);
 
 console.log("After:");
 list.print(head);
+
+/*
+| Case    | Complexity              |
+| ------- | ----------------------- |
+| Best    | **O(1)** (when `k = 1`) |
+| Average | **O(k)**                |
+| Worst   | **O(n)**                |
+
+
+SC: O(1)
+*/

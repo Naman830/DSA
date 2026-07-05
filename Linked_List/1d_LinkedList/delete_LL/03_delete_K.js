@@ -15,3 +15,77 @@ Special case:
 If k = 1, simply delete the head.
 If k is greater than the length of the list, nothing should happen (or return the original list).
  */
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  // Delete kth node
+  deleteKth(head, k) {
+    // Empty list
+    if (head === null) {
+      return null;
+    }
+
+    // Delete head
+    if (k === 1) {
+      return head.next;
+    }
+
+    let current = head;
+    let count = 1;
+
+    // Reach the (k-1)th node
+    while (current !== null && count < k - 1) {
+      current = current.next;
+      count++;
+    }
+
+    // If k is greater than length
+    if (current === null || current.next === null) {
+      return head;
+    }
+
+    // Skip the kth node
+    current.next = current.next.next;
+
+    return head;
+  }
+
+  // Print linked list
+  print(head) {
+    let current = head;
+    const result = [];
+
+    while (current !== null) {
+      result.push(current.value);
+      current = current.next;
+    }
+
+    console.log(result.join(" -> "));
+  }
+}
+
+// --------------------
+// Test
+// --------------------
+
+const list = new LinkedList();
+
+let head = new Node(10);
+head.next = new Node(20);
+head.next.next = new Node(30);
+head.next.next.next = new Node(40);
+head.next.next.next.next = new Node(50);
+
+console.log("Before:");
+list.print(head);
+
+head = list.deleteKth(head, 3);
+
+console.log("After:");
+list.print(head);

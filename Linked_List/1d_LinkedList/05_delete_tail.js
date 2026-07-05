@@ -84,3 +84,13 @@ head = list.deleteTail(head);
 
 console.log("After deleting tail:");
 list.print(head);
+
+/*
+| Case    | Complexity                  |
+| ------- | --------------------------- |
+| Best    | **O(1)** (single-node list) |
+| Average | **O(n)**                    |
+| Worst   | **O(n)**                    |
+
+SC: O(1)
+*/

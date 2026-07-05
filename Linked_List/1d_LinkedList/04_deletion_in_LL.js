@@ -67,3 +67,8 @@ head = list.deleteHead(head);
 
 console.log("After deleting head:");
 list.print(head);
+
+/*
+TC: O(1)
+SC: O(1)
+*/

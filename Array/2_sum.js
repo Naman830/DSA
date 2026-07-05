@@ -138,4 +138,4 @@ function twoSumTwoPointer(nums, target) {
   return [];
 }
 
-console.log(twoSumTwoPointer([2, 7, 11, 15], 9 ));
+console.log(twoSumTwoPointer([2, 7, 11, 15], 9));

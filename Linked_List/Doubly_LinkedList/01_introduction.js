@@ -114,3 +114,15 @@ Extra memory is required for the prev pointer.
 More pointer updates during insertion and deletion.
 Slightly more complex than a Singly Linked List.
 */
+
+/*
+| Operation       | Best                 | Average  | Worst    |
+| --------------- | -------------------- | -------- | -------- |
+| Traverse        | **O(1)** (head only) | **O(n)** | **O(n)** |
+| Search          | **O(1)**             | **O(n)** | **O(n)** |
+| Access kth node | **O(1)** (head/tail) | **O(n)** | **O(n)** |
+
+Space Complexity:
+O(n) for storing n nodes.
+Each node uses extra space for one additional pointer (prev).
+*/

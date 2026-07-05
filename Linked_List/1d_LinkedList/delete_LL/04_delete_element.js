@@ -61,3 +61,14 @@ list.print(head);
 head = list.deleteElement(head, 30);
 
 list.print(head);
+
+/*
+| Case    | Complexity                             |
+| ------- | -------------------------------------- |
+| Best    | **O(1)** (if the value is at the head) |
+| Average | **O(n)**                               |
+| Worst   | **O(n)**                               |
+
+
+SC: O(1)
+*/

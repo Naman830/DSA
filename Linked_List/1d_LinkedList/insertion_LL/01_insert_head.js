@@ -69,3 +69,5 @@ list.insertHead(20);
 list.insertHead(10);
 
 list.print();
+
+// TC: O(1) AND SC: O(1)

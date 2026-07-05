@@ -1,7 +1,9 @@
 // Introduction to Doubly Linked List (JavaScript)
 
 /*
+// ===========================================================================================
 1. What is a Doubly Linked List?
+// ===========================================================================================
 
 A Doubly Linked List (DLL) is a type of linked list where each node stores three things:
 
@@ -25,4 +27,19 @@ Here,
 20's next = 30
 30's previous = 20
 30's next = null
+*/
+
+// ===========================================================================================
+// Singly vs Doubly Linked List
+// ===========================================================================================
+
+/*
+| Singly Linked List        | Doubly Linked List            |
+| ------------------------- | ----------------------------- |
+| One pointer (`next`)      | Two pointers (`prev`, `next`) |
+| Can move only forward     | Can move forward & backward   |
+| Uses less memory          | Uses more memory              |
+| Deleting a node is harder | Deleting is easier            |
+| Simpler implementation    | Slightly more complex         |
+
 */

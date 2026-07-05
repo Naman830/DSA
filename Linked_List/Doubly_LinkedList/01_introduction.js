@@ -101,3 +101,16 @@ null ←  │ 10 │ prev:null │ next ──────┼──────�
                  └──────────────── │ 30 │ prev ◄───────┐ next:null│
                                    └─────────────────────────────┘
 */
+
+/*
+Advantages
+Traverse in both directions.
+Easier insertion before or after any node.
+Easier deletion because the previous node is directly available.
+Used in browser history, undo/redo operations, music playlists, and LRU caches.
+
+Disadvantages
+Extra memory is required for the prev pointer.
+More pointer updates during insertion and deletion.
+Slightly more complex than a Singly Linked List.
+*/

@@ -41,5 +41,41 @@ Here,
 | Uses less memory          | Uses more memory              |
 | Deleting a node is harder | Deleting is easier            |
 | Simpler implementation    | Slightly more complex         |
-
 */
+
+// ===========================================================================================
+// Creating a node for a Doubly Linked List
+// ===========================================================================================
+
+class Node {
+  constructor(value) {
+    this.value = value; // Store data
+    this.prev = null; // Previous node
+    this.next = null; // Next node
+  }
+}
+
+// Creating the Doubly Linked List
+class DoublyLinkedList {
+  constructor() {
+    this.head = null;
+  }
+}
+
+const list = new DoublyLinkedList();
+
+const first = new Node(10);
+const second = new Node(20);
+const third = new Node(30);
+
+// Connect nodes
+first.next = second;
+second.prev = first;
+
+second.next = third;
+third.prev = second;
+
+// Set head
+list.head = first;
+
+console.log(list);

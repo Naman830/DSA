@@ -86,3 +86,14 @@ list.print(head);
 head = list.insertTail(head, 50);
 
 list.print(head);
+
+/*
+| Case    | Time                        |
+| ------- | --------------------------- |
+| Best    | **O(1)** (if list is empty) |
+| Average | **O(n)**                    |
+| Worst   | **O(n)**                    |
+
+
+SC: O(1)
+*/

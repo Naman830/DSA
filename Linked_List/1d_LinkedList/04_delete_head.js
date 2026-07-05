@@ -23,7 +23,7 @@ class LinkedList {
   // Delete the head node
   deleteHead(head) {
     // If the list is empty
-    if (head === null) {
+    if (head === null || head.next === null) {
       return null;
     }
 

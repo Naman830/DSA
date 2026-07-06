@@ -66,3 +66,13 @@ head = list.deleteTail(head);
 
 console.log("After Deletion:");
 list.print(head);
+
+/*
+| Case    | Time                              |
+| ------- | --------------------------------- |
+| Best    | **O(1)** (empty list or one node) |
+| Average | **O(n)**                          |
+| Worst   | **O(n)**                          |
+
+SC: O(1)
+*/

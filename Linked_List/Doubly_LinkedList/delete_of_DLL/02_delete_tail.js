@@ -74,3 +74,13 @@ head = dll.deleteTail(head);
 
 console.log("After Deletion:");
 dll.print(head);
+
+/*
+| Case    | Time                        |
+| ------- | --------------------------- |
+| Best    | **O(1)** (if only one node) |
+| Average | **O(n)**                    |
+| Worst   | **O(n)**                    |
+
+SC: O(1)
+ */

@@ -85,3 +85,6 @@ head = dll.deleteHead(head);
 
 console.log("After Deletion:");
 dll.print(head);
+
+// TC: O(1)
+// SC: O(1)

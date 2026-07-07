@@ -17,3 +17,15 @@ Empty list
 Only one node
 Two or more nodes
 */
+
+/*
+OPTIMAL APPROACH IDEA
+
+Idea
+Reach the tail.
+Let: tail = last node
+
+prevNode = node before tail
+Create a new node.
+Connect all four pointers properly.
+*/

@@ -117,3 +117,12 @@ head = dll.insertKth(head, 3, 25);
 
 console.log("After:");
 dll.print(head);
+
+/*
+| Case    | Time                      | Space    |
+| ------- | ------------------------- | -------- |
+| Best    | **O(1)** (insert at head) | **O(1)** |
+| Average | **O(k)**                  | **O(1)** |
+| Worst   | **O(n)**                  | **O(1)** |
+
+*/

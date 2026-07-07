@@ -47,3 +47,6 @@ console.log(replaceElements([17, 18, 5, 4, 6, 1]));
 
 console.log(replaceElements([400]));
 // [-1]
+
+// TC = O(n2)
+// SC = O(1)

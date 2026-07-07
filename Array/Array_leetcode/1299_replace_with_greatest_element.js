@@ -61,3 +61,30 @@ Before updating maxRight, replace the current element with it.
 
 This avoids scanning the right side multiple times.
 */
+
+function replaceElements(arr) {
+  let maxRight = -1;
+
+  // Traverse from right to left
+  for (let i = arr.length - 1; i >= 0; i--) {
+    const current = arr[i]; // Store current value
+
+    arr[i] = maxRight; // Replace with greatest on right
+
+    maxRight = Math.max(maxRight, current); // Update max seen so far
+  }
+
+  return arr;
+}
+
+// Test Cases
+console.log(replaceElements([17, 18, 5, 4, 6, 1]));
+// [18, 6, 6, 6, 1, -1]
+
+console.log(replaceElements([400]));
+// [-1]
+
+console.log(replaceElements([10, 9, 8, 7]));
+// [9, 8, 7, -1]
+
+// TC: O(n) && SC: O(1)

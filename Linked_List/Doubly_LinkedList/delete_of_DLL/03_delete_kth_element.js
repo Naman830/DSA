@@ -14,3 +14,29 @@ Delete tail
 Delete middle node
 Invalid k
 */
+
+/*
+PSEUDO CODE
+
+If head is null
+    return null
+
+If k == 1
+    delete head
+
+Move current to kth node
+
+If current not found
+    return head
+
+prev = current.prev
+next = current.next
+
+If prev exists
+    prev.next = next
+
+If next exists
+    next.prev = prev
+
+return head
+*/

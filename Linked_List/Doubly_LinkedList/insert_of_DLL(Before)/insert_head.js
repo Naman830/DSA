@@ -74,3 +74,12 @@ head = dll.insertHead(head, 10);
 
 console.log("After Insertion:");
 dll.print(head);
+
+/*
+| Case    | Time | Space |
+| ------- | ---- | ----- |
+| Best    | O(1) | O(1)  |
+| Average | O(1) | O(1)  |
+| Worst   | O(1) | O(1)  |
+
+*/

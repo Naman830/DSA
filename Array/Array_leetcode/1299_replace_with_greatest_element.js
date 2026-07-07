@@ -50,3 +50,14 @@ console.log(replaceElements([400]));
 
 // TC = O(n2)
 // SC = O(1)
+
+// 2.. Optimal Approach
+/*
+Instead of repeatedly searching the right side:
+
+Start from the last element.
+Keep track of the maximum element seen so far (maxRight).
+Before updating maxRight, replace the current element with it.
+
+This avoids scanning the right side multiple times.
+*/

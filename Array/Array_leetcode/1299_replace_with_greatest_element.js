@@ -15,4 +15,10 @@ Think about each position separately.
 
 Output
 [18, 6, 6, 6, 1, -1]
+
+Every element depends only on the elements to its right.
+Ignore all elements on the left.
+The last element will always become -1.
+The array size does not change.
+Only the values are replaced.
 */

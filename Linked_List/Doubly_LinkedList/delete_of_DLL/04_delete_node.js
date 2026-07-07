@@ -72,3 +72,8 @@ while (current !== null) {
   console.log(current.value);
   current = current.next;
 }
+
+/*
+TC: O(1)
+SC: O(1)
+*/

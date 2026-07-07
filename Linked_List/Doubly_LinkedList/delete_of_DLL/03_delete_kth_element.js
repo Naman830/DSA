@@ -141,3 +141,13 @@ head = dll.deleteKth(head, 3);
 
 console.log("After Deleting 3rd Node:");
 dll.print(head);
+
+/*
+| Case    | Time                    |
+| ------- | ----------------------- |
+| Best    | **O(1)** (when `k = 1`) |
+| Average | **O(k)**                |
+| Worst   | **O(n)**                |
+
+SC: O(1)
+ */

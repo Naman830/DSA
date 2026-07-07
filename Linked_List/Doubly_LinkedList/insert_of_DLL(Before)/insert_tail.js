@@ -120,3 +120,12 @@ head = dll.insertBeforeTail(head, 25);
 
 console.log("After:");
 dll.print(head);
+
+/*
+| Case    | Time | Space |
+| ------- | ---- | ----- |
+| Best    | O(n) | O(1)  |
+| Average | O(n) | O(1)  |
+| Worst   | O(n) | O(1)  |
+
+*/

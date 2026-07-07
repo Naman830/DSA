@@ -67,3 +67,6 @@ insertBeforeNode(second, 15);
 
 console.log("After:");
 print(head);
+
+//  TC: O(1)
+// SC: O(1)

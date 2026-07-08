@@ -24,11 +24,17 @@ Notice:
 Node values don't matter.
 Only their positions matter.
 
-
 Key Observations
 We must rearrange nodes.
 Do not create new nodes.
 Maintain the relative order of odd nodes.
 Maintain the relative order of even nodes.
 Use O(1) extra space.
+*/
+
+/*
+1. BRUTE FORCE APPROACH
+Connect all odd-position nodes.
+Connect all even-position nodes.
+Finally make the last node point to null.
 */

@@ -24,3 +24,14 @@ We must keep track of the carry.
 The linked lists can have different lengths.
 If a carry remains after the last nodes, create one more node.
 */
+
+/*
+1. Brute Force Approach
+
+Convert both linked lists into integers, add them, then convert the result back into a linked list.
+
+Why isn't this good?
+If the linked list contains 100 digits, JavaScript's Number cannot store it safely.
+
+So this solution fails for very large inputs.
+*/

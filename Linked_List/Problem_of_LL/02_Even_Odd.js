@@ -267,3 +267,5 @@ head = obj.oddEvenList(head);
 
 console.log("After:");
 obj.print(head);
+
+// TC: O(n) && SC: O(1)

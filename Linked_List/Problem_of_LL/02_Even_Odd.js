@@ -23,4 +23,12 @@ Output:
 Notice:
 Node values don't matter.
 Only their positions matter.
+
+
+Key Observations
+We must rearrange nodes.
+Do not create new nodes.
+Maintain the relative order of odd nodes.
+Maintain the relative order of even nodes.
+Use O(1) extra space.
 */

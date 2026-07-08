@@ -34,11 +34,6 @@ Use O(1) extra space.
 
 /*
 1. BRUTE FORCE APPROACH
-Connect all odd-position nodes.
-Connect all even-position nodes.
-Finally make the last node point to null.
-*/
-
 /*
 LeetCode 328 - Odd Even Linked List (Brute Force)
 
@@ -140,3 +135,5 @@ head = obj.oddEvenList(head);
 
 console.log("After Rearranging:");
 obj.print(head);
+
+// TC: O(n) && SC: O(n)

@@ -137,3 +137,30 @@ console.log("After Rearranging:");
 obj.print(head);
 
 // TC: O(n) && SC: O(n)
+
+// 2. Optimal Approach
+/*
+EXPLANATION:-
+
+Instead of creating new lists, we'll rearrange the existing pointers.
+
+We'll maintain:
+odd
+even
+evenHead
+
+Why?
+Because after finishing the odd list,
+
+Odd List
+↓
+1 → 3 → 5
+
+Even List
+↓
+2 → 4
+
+Finally,
+5.next = evenHead
+Done.
+*/

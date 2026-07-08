@@ -46,6 +46,7 @@ Approach:
 6. Attach the even list after the odd list.
 */
 
+/*
 class Node {
   constructor(value) {
     this.value = value;
@@ -136,6 +137,9 @@ head = obj.oddEvenList(head);
 console.log("After Rearranging:");
 obj.print(head);
 
+
+*/
+
 // TC: O(n) && SC: O(n)
 
 // 2. Optimal Approach
@@ -186,3 +190,80 @@ while even != null AND even.next != null
 odd.next = evenHead
 return head
 */
+
+/*
+LeetCode 328 - Odd Even Linked List
+
+Rearrange the linked list so that:
+1st node -> 3rd node -> 5th node -> ...
+followed by
+2nd node -> 4th node -> 6th node -> ...
+
+Only node positions matter, not node values.
+*/
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Solution {
+  oddEvenList(head) {
+    // Empty list or single node
+    if (head === null || head.next === null) {
+      return head;
+    }
+
+    // Initialize odd and even pointers
+    let odd = head;
+    let even = head.next;
+
+    // Save the head of even list
+    const evenHead = even;
+
+    // Rearrange pointers
+    while (even !== null && even.next !== null) {
+      odd.next = even.next;
+      odd = odd.next;
+
+      even.next = odd.next;
+      even = even.next;
+    }
+
+    // Connect odd list with even list
+    odd.next = evenHead;
+
+    return head;
+  }
+
+  print(head) {
+    let current = head;
+    let result = [];
+
+    while (current !== null) {
+      result.push(current.value);
+      current = current.next;
+    }
+
+    console.log(result.join(" -> "));
+  }
+}
+
+// Test Case
+let head = new Node(1);
+head.next = new Node(2);
+head.next.next = new Node(3);
+head.next.next.next = new Node(4);
+head.next.next.next.next = new Node(5);
+
+const obj = new Solution();
+
+console.log("Before:");
+obj.print(head);
+
+head = obj.oddEvenList(head);
+
+console.log("After:");
+obj.print(head);

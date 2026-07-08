@@ -126,3 +126,8 @@ s.print(answer);
 
 // Output:
 // 7 0 8
+
+/*
+TC: O(max(n, m))
+SC: O(max(n, m))
+*/

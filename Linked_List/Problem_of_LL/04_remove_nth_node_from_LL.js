@@ -38,6 +38,8 @@ class Node {
 // Time  : O(2N)
 // Space : O(1)
 // ----------------------------------------------------
+
+/*
 function removeNthFromEnd(head, n) {
   // If list is empty
   if (head === null) {
@@ -94,6 +96,45 @@ function removeNthFromEnd(head, n) {
   return head;
 }
 
+*/
+
+// 1. Approach 2 (Optimal)
+// We use === Fast Pointer, Slow Pointer
+/*
+Keep a gap of n nodes between them.
+When Fast reaches the end,
+Slow automatically reaches the node before the one to delete.
+*/
+
+// ------------------------------
+// Create Linked List
+// ------------------------------
+
+var removeNthFromEnd = function (head, n) {
+  // Create a dummy node before the head
+  let dummy = new Node(0);
+  dummy.next = head;
+
+  let fast = dummy;
+  let slow = dummy;
+
+  // Move fast pointer n + 1 steps ahead
+  for (let i = 0; i <= n; i++) {
+    fast = fast.next;
+  }
+
+  // Move both pointers until fast reaches the end
+  while (fast !== null) {
+    fast = fast.next;
+    slow = slow.next;
+  }
+
+  // Remove the target node
+  slow.next = slow.next.next;
+
+  return dummy.next;
+};
+
 // ------------------------------
 // Print Linked List
 // ------------------------------
@@ -108,9 +149,6 @@ function printList(head) {
   console.log("NULL");
 }
 
-// ------------------------------
-// Create Linked List
-// ------------------------------
 let head = new Node(1);
 head.next = new Node(2);
 head.next.next = new Node(3);
@@ -124,12 +162,3 @@ head = removeNthFromEnd(head, 2);
 
 console.log("\nFinal List");
 printList(head);
-
-// 1. Approach 2 (Optimal)
-// We use === Fast Pointer, Slow Pointer
-
-/*
-Keep a gap of n nodes between them.
-When Fast reaches the end,
-Slow automatically reaches the node before the one to delete.
- */

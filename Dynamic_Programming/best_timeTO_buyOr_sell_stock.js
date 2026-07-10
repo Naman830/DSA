@@ -42,26 +42,52 @@ Remember This Trick
 
 // TC: O(n) & SC: O(1)
 
+/*
+Best Time to Buy and Sell Stock
+
+You are given an array where:
+prices[i] = stock price on day i
+
+You can:
+- Buy only one stock.
+- Sell only one stock.
+- Buy must happen before selling.
+
+Return the maximum profit.
+If no profit is possible, return 0.
+*/
+
 function maxProfit(prices) {
-  // mini stores the minimum buying price seen so far
-  let mini = prices[0];
+  // Assume the first day's price is the cheapest initially
+  let minimumPrice = prices[0];
 
-  // maxProfit stores the best profit we can make
-  let maxProfit = 0;
+  // Maximum profit we have found so far
+  let maximumProfit = 0;
 
-  // Start from index 1 because index 0 is already taken as mini
+  // Start checking from the second day
   for (let i = 1; i < prices.length; i++) {
-    // If we sell today, profit will be:
-    // today's price - lowest price before today
-    let profit = prices[i] - mini;
+    // Profit if we buy at the cheapest price
+    // and sell on the current day
+    let currentProfit = prices[i] - minimumPrice;
 
-    // Update maxProfit if today's profit is better
-    maxProfit = Math.max(maxProfit, profit);
+    // If current profit is greater, update maximum profit
+    if (currentProfit > maximumProfit) {
+      maximumProfit = currentProfit;
+    }
 
-    // Update minimum price for future days
-    mini = Math.min(mini, prices[i]);
+    // If today's price is smaller than the minimum price,
+    // then update the minimum buying price
+    if (prices[i] < minimumPrice) {
+      minimumPrice = prices[i];
+    }
   }
 
-  return maxProfit;
+  // Return the best profit found
+  return maximumProfit;
 }
-console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+
+// Test Cases
+console.log(maxProfit([7, 1, 5, 3, 6, 4])); // 5
+console.log(maxProfit([7, 6, 4, 3, 1])); // 0
+console.log(maxProfit([2, 4, 1])); // 2
+console.log(maxProfit([1, 2])); // 1

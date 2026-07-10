@@ -176,3 +176,8 @@ head = obj.sortListOptiml(head);
 
 console.log("After:");
 obj.print(head);
+
+/*
+Time : O(N)
+Space : O(1)
+*/

@@ -133,3 +133,5 @@ list.reverseBruteForce();
 
 console.log("Reversed Linked List:");
 list.print();
+
+// TC: O(2N) & SC: O(N)

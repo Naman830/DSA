@@ -98,8 +98,13 @@ class Solution {
 */
 
 /*
-Time : O(N)
+Time : O(2N or more due to running multiple loops )
 Space : O(1)
+
+Suppose interview says
+
+"You are NOT allowed to modify node values."
+Then this solution becomes invalid.
 */
 
 // Approach 2 : Optimal (Rearranging Nodes)

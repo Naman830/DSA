@@ -36,6 +36,7 @@ class Node {
   }
 }
 
+/*
 class Solution {
   sortList(head) {
     if (head === null) return head;
@@ -94,6 +95,71 @@ class Solution {
   }
 }
 
+*/
+
+/*
+Time : O(N)
+Space : O(1)
+*/
+
+// Approach 2 : Optimal (Rearranging Nodes)
+// Instead of changing values,
+// We'll create three separate linked lists
+
+class Solution {
+  sortListOptiml(head) {
+    if (head === null || head.next === null) {
+      return head;
+    }
+
+    // Dummy nodes
+    let zeroDummy = new Node(-1);
+    let oneDummy = new Node(-1);
+    let twoDummy = new Node(-1);
+
+    // Tail pointers
+    let zero = zeroDummy;
+    let one = oneDummy;
+    let two = twoDummy;
+
+    let current = head;
+
+    while (current !== null) {
+      if (current.value === 0) {
+        zero.next = current;
+        zero = zero.next;
+      } else if (current.value === 1) {
+        one.next = current;
+        one = one.next;
+      } else {
+        two.next = current;
+        two = two.next;
+      }
+
+      current = current.next;
+    }
+
+    // Connect the three lists
+    zero.next = oneDummy.next !== null ? oneDummy.next : twoDummy.next;
+    one.next = twoDummy.next;
+    two.next = null;
+
+    return zeroDummy.next;
+  }
+
+  print(head) {
+    let current = head;
+    let result = [];
+
+    while (current !== null) {
+      result.push(current.value);
+      current = current.next;
+    }
+
+    console.log(result.join(" -> "));
+  }
+}
+
 let head = new Node(0);
 head.next = new Node(0);
 head.next.next = new Node(2);
@@ -106,13 +172,7 @@ const obj = new Solution();
 console.log("Before:");
 obj.print(head);
 
-head = obj.sortList(head);
+head = obj.sortListOptiml(head);
 
 console.log("After:");
 obj.print(head);
-
-/*
-Time : O(N)
-Space : O(1)
-
-*/

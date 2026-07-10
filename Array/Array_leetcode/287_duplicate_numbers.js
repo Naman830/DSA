@@ -59,4 +59,47 @@ function findDuplicate(nums) {
 }
 
 console.log(findDuplicate([1, 3, 4, 2, 2])); // 2
+
 console.log(findDuplicate([3, 1, 3, 4, 2])); // 3
+
+// 2. Optimal Approach (Floyd's Tortoise and Hare - Cycle Detection)
+// Think of every array index as a node and every value as a pointer to the next node.
+
+/*
+Example
+nums = [1,3,4,2,2]
+
+Let's draw it.
+
+Index : 0 1 2 3 4
+Value : 1 3 4 2 2
+
+Connections become
+0 → 1
+1 → 3
+3 → 2
+2 → 4
+4 → 2
+
+Visual
+
+0
+|
+v
+1
+|
+v
+3
+|
+v
+2 --->4
+^     |
+|_____|
+
+Notice
+
+2 → 4 → 2 → 4 → 2 ...
+
+A cycle is formed.
+The duplicate number is exactly where the cycle begins.
+*/

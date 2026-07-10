@@ -102,4 +102,9 @@ Notice
 
 A cycle is formed.
 The duplicate number is exactly where the cycle begins.
+
+WHY EVERYTIME WE GOT CYCLE
+Every value is between 1 and n.
+That means every value points to another valid index.
+Since there are n + 1 positions but only n possible destinations, some node must be reached more than once, creating a cycle.
 */

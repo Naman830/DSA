@@ -18,7 +18,17 @@ The minimum element is exactly where the rotation happened.
 So whenever we find a completely sorted range, we can update our answer and stop searching that range.
 */
 
-// BestCase = O(1) and other case O(log n) & SC: O(1)
+/*
+Find Minimum in Rotated Sorted Array
+
+Time Complexity:
+Best    : O(1)
+Average : O(log n)
+Worst   : O(log n)
+
+Space Complexity:
+O(1)
+*/
 
 function findMin(nums) {
   let low = 0;
@@ -28,11 +38,9 @@ function findMin(nums) {
   let ans = Infinity;
 
   while (low <= high) {
-    // Calculate middle index
     const mid = low + Math.floor((high - low) / 2);
 
-    // If current search space is already sorted,
-    // nums[low] is the minimum in this range.
+    // Entire search space is already sorted
     if (nums[low] <= nums[high]) {
       ans = Math.min(ans, nums[low]);
       break;
@@ -40,18 +48,18 @@ function findMin(nums) {
 
     // Left half is sorted
     if (nums[low] <= nums[mid]) {
-      // Minimum of this sorted half is nums[low]
+      // Smallest element in left half is nums[low]
       ans = Math.min(ans, nums[low]);
 
       // Search in right half
       low = mid + 1;
     }
-    // Right half is sorted
+    // Right half contains the rotation point
     else {
-      // nums[mid] is the smallest in this sorted part
+      // Mid itself can be the minimum
       ans = Math.min(ans, nums[mid]);
 
-      // Search in left half
+      // Search in left half including mid
       high = mid - 1;
     }
   }
@@ -59,7 +67,12 @@ function findMin(nums) {
   return ans;
 }
 
-console.log(findMin([4, 5, 6, 7, 1, 2, 3]));
+// Test Cases
+console.log(findMin([4, 5, 6, 7, 1, 2, 3])); // 1
+console.log(findMin([3, 4, 5, 1, 2])); // 1
+console.log(findMin([11, 13, 15, 17])); // 11
+console.log(findMin([2, 1])); // 1
+console.log(findMin([1])); // 1
 
 // for duplicate add this statemment
 /*

@@ -7,3 +7,5 @@ That duplicate number may appear more than twice.
 
 Your task is to return the duplicate number without modifying the array.
 */
+
+// 1. Brute Force Approach

@@ -28,3 +28,56 @@ while count1 > 0
 while count2 > 0
     node.data = 2
 */
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Solution {
+  sortList(head) {
+    if (head === null) return head;
+
+    let zero = 0;
+    let one = 0;
+    let two = 0;
+
+    let temp = head;
+
+    // Count frequency
+    while (temp !== null) {
+      if (temp.val === 0) zero++;
+      else if (temp.val === 1) one++;
+      else two++;
+
+      temp = temp.next;
+    }
+
+    temp = head;
+
+    // Fill 0's
+    while (zero > 0) {
+      temp.val = 0;
+      zero--;
+      temp = temp.next;
+    }
+
+    // Fill 1's
+    while (one > 0) {
+      temp.val = 1;
+      one--;
+      temp = temp.next;
+    }
+
+    // Fill 2's
+    while (two > 0) {
+      temp.val = 2;
+      two--;
+      temp = temp.next;
+    }
+
+    return head;
+  }
+}

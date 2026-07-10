@@ -23,36 +23,104 @@ So how do we find the node from the end?
 
 // 1. Approach 1 (Brute Force)
 
-/*
-Approach 1 (Brute Force)
+// ------------------------------
+// Definition of Linked List Node
+// ------------------------------
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
 
-Step 1
-Count total nodes.
+// ----------------------------------------------------
+// Remove Nth Node From End (Brute Force)
+// Time  : O(2N)
+// Space : O(1)
+// ----------------------------------------------------
+function removeNthFromEnd(head, n) {
+  // If list is empty
+  if (head === null) {
+    return null;
+  }
 
-1 → 2 → 3 → 4 → 5
-Length = 5
+  // --------------------------
+  // Step 1 : Find Length
+  // --------------------------
+  let length = 0;
+  let temp = head;
 
-Step 2
-Find which node to remove from the front.
+  while (temp !== null) {
+    length++;
+    temp = temp.next;
+  }
 
-Formula
-Position from front = Length - n + 1
+  console.log("Length of Linked List =", length);
 
-Example
-Length = 5
-n = 2
+  // --------------------------
+  // Step 2 : Find Position
+  // from beginning
+  // --------------------------
+  let deletePosition = length - n + 1;
 
-5 - 2 + 1 = 4
+  console.log("Delete Position =", deletePosition);
 
-Remove 4th node.
-1
-2
-3
-4 ❌
-5
+  // --------------------------
+  // Step 3 : Delete Head
+  // --------------------------
+  if (deletePosition === 1) {
+    console.log("Deleting Head Node =", head.data);
+    return head.next;
+  }
 
-Step 3- connect the previous node to next next node 
+  // --------------------------
+  // Step 4 : Reach Previous Node
+  // --------------------------
+  let current = head;
 
-Time Complexity O(N) + O(N) = O(2N)
-Space: O(1)
-*/
+  for (let i = 1; i < deletePosition - 1; i++) {
+    console.log("Moving to Node =", current.data);
+    current = current.next;
+  }
+
+  console.log("Previous Node =", current.data);
+  console.log("Deleting Node =", current.next.data);
+
+  // --------------------------
+  // Step 5 : Delete Node
+  // --------------------------
+  current.next = current.next.next;
+
+  return head;
+}
+
+// ------------------------------
+// Print Linked List
+// ------------------------------
+function printList(head) {
+  let temp = head;
+
+  while (temp !== null) {
+    process.stdout.write(temp.data + " -> ");
+    temp = temp.next;
+  }
+
+  console.log("NULL");
+}
+
+// ------------------------------
+// Create Linked List
+// ------------------------------
+let head = new Node(1);
+head.next = new Node(2);
+head.next.next = new Node(3);
+head.next.next.next = new Node(4);
+head.next.next.next.next = new Node(5);
+
+console.log("Original List");
+printList(head);
+
+head = removeNthFromEnd(head, 2);
+
+console.log("\nFinal List");
+printList(head);

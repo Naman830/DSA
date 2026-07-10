@@ -13,8 +13,6 @@ Your task is to return the duplicate number without modifying the array.
 // If any count becomes greater than 1, return that element.
 
 /*
-Find the Duplicate Number
-Brute Force
 Time : O(n²)
 Space : O(1)
 */
@@ -32,6 +30,31 @@ function findDuplicate(nums) {
     if (count > 1) {
       return nums[i];
     }
+  }
+}
+
+console.log(findDuplicate([1, 3, 4, 2, 2])); // 2
+console.log(findDuplicate([3, 1, 3, 4, 2])); // 3
+
+// 2. Better Approach (Hash Set)
+// Keep inserting numbers into a Set.
+// Before inserting, check if it already exists.
+// If yes, that's the duplicate.
+
+/*
+Time : O(n)
+Space : O(n)
+*/
+
+function findDuplicate(nums) {
+  const set = new Set();
+
+  for (let num of nums) {
+    if (set.has(num)) {
+      return num;
+    }
+
+    set.add(num);
   }
 }
 

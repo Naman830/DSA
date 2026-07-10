@@ -108,3 +108,23 @@ Every value is between 1 and n.
 That means every value points to another valid index.
 Since there are n + 1 positions but only n possible destinations, some node must be reached more than once, creating a cycle.
 */
+
+// Floyd's Algorithm
+/*
+Use two pointers.
+
+Slow Pointer
+Moves one step.
+slow = nums[slow]
+
+Fast Pointer
+Moves two steps.
+fast = nums[ nums[fast] ]
+
+Eventually they meet inside the cycle.
+
+Phase 2
+Move one pointer back to the beginning.
+Now both move one step.
+Where they meet again is the duplicate number.
+ */

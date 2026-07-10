@@ -48,8 +48,8 @@ class Solution {
 
     // Count frequency
     while (temp !== null) {
-      if (temp.val === 0) zero++;
-      else if (temp.val === 1) one++;
+      if (temp.value === 0) zero++;
+      else if (temp.value === 1) one++;
       else two++;
 
       temp = temp.next;
@@ -59,25 +59,54 @@ class Solution {
 
     // Fill 0's
     while (zero > 0) {
-      temp.val = 0;
+      temp.value = 0;
       zero--;
       temp = temp.next;
     }
 
     // Fill 1's
     while (one > 0) {
-      temp.val = 1;
+      temp.value = 1;
       one--;
       temp = temp.next;
     }
 
     // Fill 2's
     while (two > 0) {
-      temp.val = 2;
+      temp.value = 2;
       two--;
       temp = temp.next;
     }
 
     return head;
   }
+
+  print(head) {
+    let current = head;
+    let result = [];
+
+    while (current !== null) {
+      result.push(current.value);
+      current = current.next;
+    }
+
+    console.log(result.join(" -> "));
+  }
 }
+
+let head = new Node(0);
+head.next = new Node(0);
+head.next.next = new Node(2);
+head.next.next.next = new Node(2);
+head.next.next.next.next = new Node(1);
+head.next.next.next.next.next = new Node(1);
+
+const obj = new Solution();
+
+console.log("Before:");
+obj.print(head);
+
+head = obj.sortList(head);
+
+console.log("After:");
+obj.print(head);

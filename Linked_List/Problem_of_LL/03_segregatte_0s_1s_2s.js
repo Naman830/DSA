@@ -110,3 +110,9 @@ head = obj.sortList(head);
 
 console.log("After:");
 obj.print(head);
+
+/*
+Time : O(N)
+Space : O(1)
+
+*/

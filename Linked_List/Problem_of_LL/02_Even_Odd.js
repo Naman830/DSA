@@ -91,7 +91,7 @@ class Solution {
       evenNodes[i].next = evenNodes[i + 1];
     }
 
-    // Connect the last odd node to the first even node
+    // Connect the last odd node [from last] to the even node [first of even node]
     oddNodes[oddNodes.length - 1].next =
       evenNodes.length > 0 ? evenNodes[0] : null;
 
@@ -225,7 +225,30 @@ class Solution {
 
     // Rearrange pointers
     while (even !== null && even.next !== null) {
+      /*
+      becomes --> 1.next = 3;
+
+        Now the list looks like
+          1 → 3 → 4 → 5 → 6
+          2 → 3 → 4 → 5 → 6
+      */
       odd.next = even.next;
+
+      /*
+Before
+
+odd
+ ↓
+1 → 3
+
+After
+      odd
+       ↓
+1 → 3 → 4 → 5
+
+Why move odd?
+Because 3 is now the last node in the odd list.
+*/
       odd = odd.next;
 
       even.next = odd.next;

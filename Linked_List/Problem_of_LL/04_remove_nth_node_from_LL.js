@@ -162,3 +162,5 @@ head = removeNthFromEnd(head, 2);
 
 console.log("\nFinal List");
 printList(head);
+
+// tc: O(n) & sc: O(1)

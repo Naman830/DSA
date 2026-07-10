@@ -124,3 +124,12 @@ head = removeNthFromEnd(head, 2);
 
 console.log("\nFinal List");
 printList(head);
+
+// 1. Approach 2 (Optimal)
+// We use === Fast Pointer, Slow Pointer
+
+/*
+Keep a gap of n nodes between them.
+When Fast reaches the end,
+Slow automatically reaches the node before the one to delete.
+ */

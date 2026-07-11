@@ -23,16 +23,6 @@ head.next = null
 
 return newHead
 */
-/*
-Problem:
-Reverse a Singly Linked List using Recursion.
-
-Input:
-1 -> 2 -> 3 -> 4 -> 5
-
-Output:
-5 -> 4 -> 3 -> 2 -> 1
-*/
 
 // Node class
 class Node {
@@ -115,3 +105,5 @@ list.head = list.reverse(list.head);
 
 console.log("\nReversed List:");
 list.print();
+
+// TC: O(n) & SC: O(n)

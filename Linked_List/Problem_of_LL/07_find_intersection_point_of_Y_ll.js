@@ -21,3 +21,8 @@ After the intersection, both lists share the exact same nodes.
 If no intersection exists, return null.
 The linked lists should not be modified.
 */
+
+// Approach 1 — Hashing
+// Store every node of the first linked list inside a Set.
+// Then traverse the second linked list.
+// The first node already present inside the Set is the intersection node.

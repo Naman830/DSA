@@ -112,3 +112,23 @@ headB.next.next = node8;
 const answer = getIntersectionNode(headA, headB);
 
 console.log(answer ? answer.value : null);
+
+// Approach 2 — Length Difference (Better)
+/*
+Pseudocode
+Find length of List A
+
+Find length of List B
+
+Calculate difference
+
+Move pointer of longer list
+difference times
+
+Now move both pointers together
+
+If both pointers become same
+      return node
+
+return null
+*/

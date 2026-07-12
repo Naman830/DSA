@@ -14,4 +14,10 @@ List A
           /
       5 → 6
 List B
+
+Key Observations
+Compare node references, not values.
+After the intersection, both lists share the exact same nodes.
+If no intersection exists, return null.
+The linked lists should not be modified.
 */

@@ -78,7 +78,7 @@ function reverse(head) {
   return prev;
 }
 
-// Add one to the linked list
+// Add one to the linked list Optimal Solution with reverse linked list
 function addOne(head) {
   // Step 1: Reverse the list
   head = reverse(head);
@@ -105,6 +105,39 @@ function addOne(head) {
   return reverse(head);
 }
 
+// Solution with recursion
+function addOneRecursion(head) {
+  // Recursive helper function
+  function helper(node) {
+    // Base case: reached beyond the last node,
+    // return carry = 1 because we want to add one.
+    if (node === null) return 1;
+
+    // Get carry from the next node
+    let carry = helper(node.next);
+
+    // Add carry to current node
+    let sum = node.val + carry;
+
+    // Update current digit
+    node.val = sum % 10;
+
+    // Return carry to previous node
+    return Math.floor(sum / 10);
+  }
+
+  let carry = helper(head);
+
+  // If carry remains, create a new head
+  if (carry > 0) {
+    let newHead = new ListNode(carry);
+    newHead.next = head;
+    return newHead;
+  }
+
+  return head;
+}
+
 // Print linked list
 function printList(head) {
   let result = [];
@@ -123,7 +156,7 @@ head1.next = new ListNode(2);
 head1.next.next = new ListNode(9);
 
 printList(head1);
-head1 = addOne(head1);
+head1 = addOneRecursion(head1);
 printList(head1);
 
 // ---------- Test Case 2 ----------
@@ -132,7 +165,7 @@ head2.next = new ListNode(9);
 head2.next.next = new ListNode(9);
 
 printList(head2);
-head2 = addOne(head2);
+head2 = addOneRecursion(head2);
 printList(head2);
 
 /*
@@ -146,3 +179,5 @@ printList(head2);
 
 // Time Complexity = O(n)
 // Space Complexity = O(n) (recursive call stack)
+
+// Solution add in previous function

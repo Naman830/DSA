@@ -38,3 +38,13 @@ Suppose
 It won't fit inside normal integer types.
 So this approach fails for very large numbers.
 */
+
+// 2. Better Approach (Using Stack)
+/*
+Push all nodes into a stack.
+Now pop from the stack (right to left).
+This lets us process digits from the end.
+
+Time: O(n)
+Space: O(n)
+*/

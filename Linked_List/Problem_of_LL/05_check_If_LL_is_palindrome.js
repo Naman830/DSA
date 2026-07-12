@@ -125,3 +125,11 @@ const ans = obj.isPalindrome(head);
 
 console.log(ans);
 obj.print(head);
+
+/*
+| Approach            | Time     | Space    |
+| ------------------- | -------- | -------- |
+| Using Array         | **O(n)** | **O(n)** |
+| Reverse Second Half | **O(n)** | **O(1)** |
+
+*/

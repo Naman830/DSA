@@ -180,4 +180,9 @@ If both pointers become same
       return node
 
 return null
+
+| Approach          | Time     | Space    | Recommended                            |
+| ----------------- | -------- | -------- | -------------------------------------- |
+| Length Difference | O(N + M) | **O(1)** | ✅ Better for interviews and production |
+
 */

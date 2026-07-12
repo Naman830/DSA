@@ -23,6 +23,85 @@ The linked lists should not be modified.
 */
 
 // Approach 1 — Hashing
-// Store every node of the first linked list inside a Set.
-// Then traverse the second linked list.
-// The first node already present inside the Set is the intersection node.
+/*
+Approach:
+1. Store every node of the first linked list in a Set.
+2. Traverse the second linked list.
+3. If a node already exists inside the Set,
+   that node is the intersection point.
+4. Otherwise return null.
+*/
+
+// ----------------------
+// Node Class
+// ----------------------
+
+class ListNode {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+// ----------------------
+// Function to find intersection
+// ----------------------
+
+function getIntersectionNode(headA, headB) {
+  // Stores nodes of first linked list
+  const visited = new Set();
+
+  // Traverse first linked list
+  let current = headA;
+
+  while (current !== null) {
+    visited.add(current); // Store node reference
+    current = current.next;
+  }
+
+  // Traverse second linked list
+  current = headB;
+
+  while (current !== null) {
+    // If node already exists,
+    // we found the intersection.
+    if (visited.has(current)) {
+      return current;
+    }
+
+    current = current.next;
+  }
+
+  return null;
+}
+
+// ----------------------
+// Creating Y Linked List
+// ----------------------
+
+// Shared Part
+const node8 = new ListNode(8);
+const node10 = new ListNode(10);
+const node12 = new ListNode(12);
+
+node8.next = node10;
+node10.next = node12;
+
+// First Linked List
+const headA = new ListNode(1);
+headA.next = new ListNode(2);
+headA.next.next = new ListNode(3);
+headA.next.next.next = node8;
+
+// Second Linked List
+const headB = new ListNode(5);
+headB.next = new ListNode(6);
+headB.next.next = node8;
+
+// ----------------------
+// Test
+// ----------------------
+
+const answer = getIntersectionNode(headA, headB);
+
+console.log(answer ? answer.value : null);

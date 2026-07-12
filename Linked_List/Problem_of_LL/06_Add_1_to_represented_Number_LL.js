@@ -139,3 +139,10 @@ printList(head2);
 	Time	                    Space
 	O(2n because of reverse)	O(1)
 */
+
+// 2. BackTracking Approach
+
+// It does not reverse the linked list. Instead, recursion naturally takes us to the last node, and while returning (backtracking), we propagate the carry toward the head.
+
+// Time Complexity = O(n)
+// Space Complexity = O(n) (recursive call stack)

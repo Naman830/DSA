@@ -51,9 +51,8 @@ class ListNode {
 }
 
 // ----------------------
-// Function to find intersection
+// Function to find intersection [Hashing method]
 // ----------------------
-
 function getIntersectionNode(headA, headB) {
   // Stores nodes of first linked list
   const visited = new Set();
@@ -77,6 +76,56 @@ function getIntersectionNode(headA, headB) {
     }
 
     current = current.next;
+  }
+
+  return null;
+}
+
+// Helper of better approach
+function getLength(head) {
+  let length = 0;
+  let current = head;
+
+  while (current !== null) {
+    length++;
+    current = current.next;
+  }
+
+  return length;
+}
+
+function getIntersectionNodeBetter(headA, headB) {
+  const lengthA = getLength(headA);
+  const lengthB = getLength(headB);
+
+  let currentA = headA;
+  let currentB = headB;
+
+  // Difference in lengths
+  let difference = Math.abs(lengthA - lengthB);
+
+  // Move pointer of longer list
+  if (lengthA > lengthB) {
+    while (difference > 0) {
+      currentA = currentA.next;
+      difference--;
+    }
+  } else {
+    while (difference > 0) {
+      currentB = currentB.next;
+      difference--;
+    }
+  }
+
+  // Move both pointers together
+  while (currentA !== null && currentB !== null) {
+    // Compare node references
+    if (currentA === currentB) {
+      return currentA;
+    }
+
+    currentA = currentA.next;
+    currentB = currentB.next;
   }
 
   return null;
@@ -109,7 +158,7 @@ headB.next.next = node8;
 // Test
 // ----------------------
 
-const answer = getIntersectionNode(headA, headB);
+const answer = getIntersectionNodeBetter(headA, headB);
 
 console.log(answer ? answer.value : null);
 

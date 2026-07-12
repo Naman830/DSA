@@ -134,3 +134,8 @@ head2.next.next = new ListNode(9);
 printList(head2);
 head2 = addOne(head2);
 printList(head2);
+
+/*
+	Time	                    Space
+	O(2n because of reverse)	O(1)
+*/

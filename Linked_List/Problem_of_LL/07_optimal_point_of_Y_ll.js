@@ -133,3 +133,37 @@ headB.next.next = node8;
 const intersection = getIntersectionNode(headA, headB);
 
 console.log(intersection ? intersection.value : null);
+
+/*
+Dry Run (Table)
+
+Suppose:
+List A : 1 → 2 → 3 → 8 → 10 → 12
+
+List B : 5 → 6 → 8 → 10 → 12
+
+| Iteration | Pointer A | Pointer B |
+| --------- | --------- | --------- |
+| Start     | 1         | 5         |
+| 1         | 2         | 6         |
+| 2         | 3         | 8         |
+| 3         | 8         | 10        |
+| 4         | 10        | 12        |
+| 5         | 12        | null      |
+| 6         | null → 5  | 1         |
+| 7         | 6         | 2         |
+| 8         | 8         | 3         |
+| 9         | 10        | 8         |
+| 10        | 12        | 10        |
+| 11        | null      | 12        |
+| 12        | 1         | null → 5  |
+| ...       | ...       | ...       |
+
+
+| Case    | Time                               | Space    |
+| ------- | ---------------------------------- | -------- |
+| Best    | **O(1)** (heads already intersect) | **O(1)** |
+| Average | **O(N + M)**                       | **O(1)** |
+| Worst   | **O(N + M)**                       | **O(1)** |
+
+*/

@@ -30,3 +30,8 @@ right--
 Finished
 return true
 */
+
+/*
+Time : O(n)
+Space : O(n)
+*/

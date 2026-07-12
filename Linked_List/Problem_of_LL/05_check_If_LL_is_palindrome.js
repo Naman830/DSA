@@ -56,6 +56,32 @@ class Node {
 }
 
 class Solution {
+  isPalindromeBrute(head) {
+    // Step 1: Store all node values in an array
+    const arr = [];
+    let current = head;
+
+    while (current !== null) {
+      arr.push(current.val);
+      current = current.next;
+    }
+
+    // Step 2: Compare values from both ends
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left < right) {
+      if (arr[left] !== arr[right]) {
+        return false;
+      }
+
+      left++;
+      right--;
+    }
+
+    return true;
+  }
+
   isPalindrome(head) {
     // Empty list or single node is always a palindrome
     if (head === null || head.next === null) return true;
@@ -121,7 +147,7 @@ head.next.next = new Node(3);
 head.next.next.next = new Node(2);
 head.next.next.next.next = new Node(1);
 
-const ans = obj.isPalindrome(head);
+const ans = obj.isPalindromeBrute(head);
 
 console.log(ans);
 obj.print(head);

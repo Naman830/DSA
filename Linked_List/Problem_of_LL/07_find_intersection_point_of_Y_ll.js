@@ -30,6 +30,13 @@ Approach:
 3. If a node already exists inside the Set,
    that node is the intersection point.
 4. Otherwise return null.
+
+| Case    | Time     | Space |
+| ------- | -------- | ----- |
+| Best    | O(1)     | O(N)  |
+| Average | O(N + M) | O(N)  |
+| Worst   | O(N + M) | O(N)  |
+
 */
 
 // ----------------------

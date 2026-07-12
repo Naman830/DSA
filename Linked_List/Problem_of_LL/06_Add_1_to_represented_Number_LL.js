@@ -48,3 +48,10 @@ This lets us process digits from the end.
 Time: O(n)
 Space: O(n)
 */
+
+// There are 2 optimal Approach
+// 1. (Reverse Linked List)
+// Reverse the linked list so the last digit becomes the first.
+// Add 1 while traversing from the new head,
+// propagating any carry.
+// Finally, reverse the list again to restore the original orde

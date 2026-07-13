@@ -142,4 +142,11 @@ while fast != null AND fast.next != null
         return true
 
 return false
+
+| Case    | Time                                       | Space |
+| ------- | ------------------------------------------ | ----- |
+| Best    | O(1) *(very small cycle detected quickly)* | O(1)  |
+| Average | O(N)                                       | O(1)  |
+| Worst   | O(N)                                       | O(1)  |
+
 */

@@ -63,3 +63,13 @@ console.log(middleNode(head).val); // 4
 | Average | O(2N) | O(1)  |
 | Worst   | O(2N) | O(1)  |
 */
+
+// Approach 2 — Optimal (Slow & Fast Pointer)
+/*
+Instead of counting nodes, use two pointers.
+
+Slow pointer moves 1 step at a time.
+Fast pointer moves 2 steps at a time.
+
+Since the fast pointer moves twice as quickly, by the time it reaches the end of the list, the slow pointer will have covered only half the distance—placing it exactly at the middle.
+*/

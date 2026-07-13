@@ -46,6 +46,21 @@ function middleNode(head) {
   return temp;
 }
 
+function middleNodeOptimal(head) {
+  // Initialize both pointers at the head
+  let slow = head;
+  let fast = head;
+
+  // Move slow by 1 step and fast by 2 steps
+  while (fast !== null && fast.next !== null) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  // Slow now points to the middle node
+  return slow;
+}
+
 // Test
 let head = new ListNode(1);
 head.next = new ListNode(2);
@@ -54,7 +69,7 @@ head.next.next.next = new ListNode(4);
 head.next.next.next.next = new ListNode(5);
 head.next.next.next.next.next = new ListNode(6);
 
-console.log(middleNode(head).val); // 4
+console.log(middleNodeOptimal(head).val); // 4
 
 /*
 | Case    | Time | Space |

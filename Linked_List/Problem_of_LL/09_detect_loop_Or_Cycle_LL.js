@@ -25,3 +25,23 @@ If we never reach null, then we're moving in a circle.
 A node will eventually be visited again.
 Need to detect whether we're revisiting nodes.
 */
+
+// 1. Approach 1 — Brute Force (HashSet)
+// As we traverse the linked list, store every node's reference in a Set.
+// If we ever reach a node that already exists in the Set, we've found a cycle.
+
+/*
+Pseudocode
+Create empty Set
+
+while current != null
+
+    if current already exists
+        return true
+
+    add current into Set
+
+    current = current.next
+
+return false
+*/

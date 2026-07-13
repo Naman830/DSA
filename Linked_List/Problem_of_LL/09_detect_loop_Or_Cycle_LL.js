@@ -93,3 +93,15 @@ console.log(hasCycle(a)); // true
 | Average | O(N) | O(N)  |
 | Worst   | O(N) | O(N)  |
 */
+
+// Approach 2 — Optimal (Floyd's Cycle Detection / Tortoise and Hare)
+/*
+Instead of storing visited nodes, use two pointers:
+
+Slow moves 1 step at a time.
+Fast moves 2 steps at a time.
+
+If there is no cycle, fast reaches null.
+
+If there is a cycle, the fast pointer eventually catches the slow pointer inside the loop.
+*/

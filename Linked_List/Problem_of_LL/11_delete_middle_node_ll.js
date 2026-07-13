@@ -10,3 +10,11 @@ Once we get the previous node:
 prev.next = middle.next
 The middle node gets skipped (deleted).
 */
+
+// 1. Brute Force Approach
+/*
+First, count the total number of nodes.
+Then calculate the middle position.
+Traverse again until the node before the middle and remove the middle node.
+This requires two traversals.
+*/

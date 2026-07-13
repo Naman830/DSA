@@ -18,4 +18,10 @@ This is called a Cycle or Loop.
 
 Our task:
 Return true if a cycle exists, otherwise false.
+
+Key Observations (Short)
+Linked list normally ends at null.
+If we never reach null, then we're moving in a circle.
+A node will eventually be visited again.
+Need to detect whether we're revisiting nodes.
 */

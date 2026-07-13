@@ -71,6 +71,28 @@ function hasCycle(head) {
   return false;
 }
 
+// OPTIMAL SSOLUTION
+function hasCycleOptimal(head) {
+  let slow = head;
+  let fast = head;
+
+  while (fast !== null && fast.next !== null) {
+    // Move one step
+    slow = slow.next;
+
+    // Move two steps
+    fast = fast.next.next;
+
+    // Both meet -> cycle found
+    if (slow === fast) {
+      return true;
+    }
+  }
+
+  // Fast reached end -> no cycle
+  return false;
+}
+
 // Example (no cycle)
 let a = new ListNode(1);
 let b = new ListNode(2);
@@ -79,12 +101,12 @@ let c = new ListNode(3);
 a.next = b;
 b.next = c;
 
-console.log(hasCycle(a)); // false
+console.log(hasCycleOptimal(a)); // false
 
 // Example (cycle)
 c.next = b;
 
-console.log(hasCycle(a)); // true
+console.log(hasCycleOptimal(a)); // true
 
 /*
 | Case    | Time | Space |

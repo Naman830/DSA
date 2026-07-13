@@ -85,3 +85,11 @@ console.log(hasCycle(a)); // false
 c.next = b;
 
 console.log(hasCycle(a)); // true
+
+/*
+| Case    | Time | Space |
+| ------- | ---- | ----- |
+| Best    | O(1) | O(1)  |
+| Average | O(N) | O(N)  |
+| Worst   | O(N) | O(N)  |
+*/

@@ -92,3 +92,11 @@ console.log(lengthOfLoopOptimal(head)); // 3
 
 // 2. Optimal Approach (Floyd's Cycle Detection)
 // After they meet, we simply walk around the loop once and count the nodes.
+/*
+| Case    | Time                                     | Space |
+| ------- | ---------------------------------------- | ----- |
+| Best    | O(1) *(no nodes or immediate detection)* | O(1)  |
+| Average | O(N)                                     | O(1)  |
+| Worst   | O(N)                                     | O(1)  |
+
+*/

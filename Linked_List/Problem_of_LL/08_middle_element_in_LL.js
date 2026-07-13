@@ -54,4 +54,12 @@ head.next.next.next = new ListNode(4);
 head.next.next.next.next = new ListNode(5);
 head.next.next.next.next.next = new ListNode(6);
 
-console.log(middleNode(head).val); // 3
+console.log(middleNode(head).val); // 4
+
+/*
+| Case    | Time | Space |
+| ------- | ---- | ----- |
+| Best    | O(2N) | O(1)  |
+| Average | O(2N) | O(1)  |
+| Worst   | O(2N) | O(1)  |
+*/

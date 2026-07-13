@@ -105,3 +105,19 @@ If there is no cycle, fast reaches null.
 
 If there is a cycle, the fast pointer eventually catches the slow pointer inside the loop.
 */
+
+/*
+Pseudocode
+slow = head
+fast = head
+
+while fast != null AND fast.next != null
+
+    slow = slow.next
+    fast = fast.next.next
+
+    if slow == fast
+        return true
+
+return false
+*/

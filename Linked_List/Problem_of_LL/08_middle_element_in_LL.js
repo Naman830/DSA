@@ -87,4 +87,11 @@ Slow pointer moves 1 step at a time.
 Fast pointer moves 2 steps at a time.
 
 Since the fast pointer moves twice as quickly, by the time it reaches the end of the list, the slow pointer will have covered only half the distance—placing it exactly at the middle.
+
+| Case    | Time | Space |
+| ------- | ---- | ----- |
+| Best    | O(N) | O(1)  |
+| Average | O(N) | O(1)  |
+| Worst   | O(N) | O(1)  |
+
 */

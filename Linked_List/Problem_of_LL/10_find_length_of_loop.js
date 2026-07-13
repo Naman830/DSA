@@ -49,3 +49,12 @@ head.next.next.next.next = new Node(5);
 head.next.next.next.next.next = head.next.next;
 
 console.log(lengthOfLoop(head)); // 3
+
+/*
+| Case    | Time | Space |
+| ------- | ---- | ----- |
+| Best    | O(1) | O(1)  |
+| Average | O(N) | O(N)  |
+| Worst   | O(N) | O(N)  |
+
+*/

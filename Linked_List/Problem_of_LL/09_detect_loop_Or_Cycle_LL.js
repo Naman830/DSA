@@ -45,3 +45,43 @@ while current != null
 
 return false
 */
+
+class ListNode {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+function hasCycle(head) {
+  const visited = new Set();
+
+  let current = head;
+
+  while (current !== null) {
+    // Already visited
+    if (visited.has(current)) {
+      return true;
+    }
+
+    visited.add(current);
+    current = current.next;
+  }
+
+  return false;
+}
+
+// Example (no cycle)
+let a = new ListNode(1);
+let b = new ListNode(2);
+let c = new ListNode(3);
+
+a.next = b;
+b.next = c;
+
+console.log(hasCycle(a)); // false
+
+// Example (cycle)
+c.next = b;
+
+console.log(hasCycle(a)); // true

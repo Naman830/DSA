@@ -92,63 +92,23 @@ class LinkedList {
   // Space Complexity: O(1)
   // ===============================
   reverse() {
-    // 'prev' will become the previous node.
-    // Initially there is no previous node.
     let prev = null;
+    let curr = head;
 
-    // Start traversal from the head node.
-    let current = this.head;
+    while (curr !== null) {
+      // Save the next node
+      const next = curr.next;
 
-    // Traverse until all nodes are processed.
-    while (current !== null) {
-      // -----------------------------------
-      // Step 1:
-      // Save the next node before breaking
-      // the original link.
-      // -----------------------------------
-      let next = current.next;
+      // Reverse the current node's pointer
+      curr.next = prev;
 
-      // -----------------------------------
-      // Step 2:
-      // Reverse the current node's pointer.
-      //
-      // Before:
-      // current -> next
-      //
-      // After:
-      // current -> prev
-      // -----------------------------------
-      current.next = prev;
-
-      // -----------------------------------
-      // Step 3:
-      // Move 'prev' one step ahead.
-      //
-      // The current node is now the last
-      // node of the reversed portion.
-      // -----------------------------------
-      prev = current;
-
-      // -----------------------------------
-      // Step 4:
-      // Move 'current' to the next node
-      // saved earlier.
-      // -----------------------------------
-      current = next;
+      // Move pointers one step forward
+      prev = curr;
+      curr = next;
     }
 
-    // -----------------------------------
-    // After the loop:
-    //
-    // current = null
-    // prev points to the new head.
-    //
-    // Example:
-    // 50 -> 40 -> 30 -> 20 -> 10
-    // ^
-    // prev
-    // -----------------------------------
-    this.head = prev;
+    // 'prev' is the new head of the reversed list
+    return prev;
   }
 }
 

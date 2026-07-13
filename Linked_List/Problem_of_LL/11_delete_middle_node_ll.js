@@ -75,3 +75,11 @@ head.next.next.next.next = new ListNode(5);
 
 head = deleteMiddle(head);
 printList(head); // 1 -> 2 -> 4 -> 5
+
+/*
+| Case    | Time | Space |
+| ------- | ---- | ----- |
+| Best    | O(n) | O(1)  |
+| Average | O(n) | O(1)  |
+| Worst   | O(n) | O(1)  |
+*/

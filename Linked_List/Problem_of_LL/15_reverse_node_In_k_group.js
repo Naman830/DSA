@@ -181,6 +181,7 @@ function reverseKGroup(head, k) {
 
   return dummy.next;
 }
+
 // Helper: create linked list
 function createList(arr) {
   let dummy = new ListNode(0);
@@ -215,3 +216,6 @@ printList(ans);
 
 // Output:
 // 2 -> 1 -> 4 -> 3 -> 5
+
+// TC: O(N)
+// SC: O(1)

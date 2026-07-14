@@ -136,3 +136,8 @@ printLinkedList(head2);
 // SC: O(n)
 
 // Approach 2 — Better (Insertion Sort)
+/*
+Time
+Worst : O(n²)
+Space: O(1)
+*/

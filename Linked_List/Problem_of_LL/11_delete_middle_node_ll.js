@@ -56,6 +56,30 @@ function deleteMiddle(head) {
 
   return head;
 }
+
+function deleteMiddleOptimal(head) {
+  // If the list has only one node
+  if (head === null || head.next === null) {
+    return null;
+  }
+
+  let slow = head;
+  let fast = head;
+  let prev = null;
+
+  // Find the middle node
+  while (fast !== null && fast.next !== null) {
+    prev = slow;
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  // Delete the middle node
+  prev.next = slow.next;
+
+  return head;
+}
+
 // Helper function
 function printList(head) {
   let result = [];
@@ -73,7 +97,7 @@ head.next.next = new ListNode(3);
 head.next.next.next = new ListNode(4);
 head.next.next.next.next = new ListNode(5);
 
-head = deleteMiddle(head);
+head = deleteMiddleOptimal(head);
 printList(head); // 1 -> 2 -> 4 -> 5
 
 /*
@@ -82,4 +106,14 @@ printList(head); // 1 -> 2 -> 4 -> 5
 | Best    | O(n) | O(1)  |
 | Average | O(n) | O(1)  |
 | Worst   | O(n) | O(1)  |
+*/
+
+// Optimal Solution
+/*
+Problem:
+Delete the middle node of a singly linked list.
+
+Optimal Approach:
+Use slow and fast pointers to find the middle node
+in one traversal while keeping track of the previous node.
 */

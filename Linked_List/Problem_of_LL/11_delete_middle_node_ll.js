@@ -116,4 +116,11 @@ Delete the middle node of a singly linked list.
 Optimal Approach:
 Use slow and fast pointers to find the middle node
 in one traversal while keeping track of the previous node.
+
+| Case    | Time | Space |
+| ------- | ---- | ----- |
+| Best    | O(n) | O(1)  |
+| Average | O(n) | O(1)  |
+| Worst   | O(n) | O(1)  |
+
 */

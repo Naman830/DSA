@@ -61,3 +61,12 @@ function containDuplicatesOptimal(nums) {
 console.log(containDuplicatesOptimal([1, 2, 3, 1])); // true
 console.log(containDuplicatesOptimal([1, 2, 3, 4])); // false
 console.log(containDuplicatesOptimal([5, 5])); // true
+
+/*
+| Case    | Time                                         | Space |
+| ------- | -------------------------------------------- | ----- |
+| Best    | **O(1)** (first duplicate found immediately) | O(1)  |
+| Average | **O(n)**                                     | O(n)  |
+| Worst   | **O(n)**                                     | O(n)  |
+
+*/

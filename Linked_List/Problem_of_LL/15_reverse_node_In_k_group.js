@@ -73,3 +73,34 @@ curr = 4
 
 Repeat.
 */
+
+/*
+Pseudocode
+dummy -> head
+
+prevGroup = dummy
+curr = head
+
+while curr exists
+
+    kth = find kth node
+
+    if kth == null
+         break
+
+    nextGroup = kth.next
+
+    disconnect group
+
+    reverse group
+
+    connect previous group
+
+    connect reversed tail with nextGroup
+
+    move prevGroup
+
+    move curr
+
+return dummy.next
+*/

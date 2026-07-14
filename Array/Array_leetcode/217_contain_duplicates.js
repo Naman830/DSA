@@ -23,3 +23,12 @@ function containsDuplicate(nums) {
 console.log(containsDuplicate([1, 2, 3, 1])); // true
 console.log(containsDuplicate([1, 2, 3, 4])); // false
 console.log(containsDuplicate([1, 1])); // true
+
+/*
+| Case    | Time                                   | Space |
+| ------- | -------------------------------------- | ----- |
+| Best    | **O(1)** (duplicate found immediately) | O(1)  |
+| Average | O(n²)                                  | O(1)  |
+| Worst   | O(n²)                                  | O(1)  |
+
+*/

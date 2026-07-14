@@ -1,0 +1,5 @@
+/*
+You are given the head of a singly linked list.
+
+Your task is to sort the linked list in ascending order and return the new head.
+*/

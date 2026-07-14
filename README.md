@@ -8,10 +8,9 @@ Morning
 1 hour learning new dsa topic 
 
 Evening 
-20-40 min revision of new dsa learning topic
-1 hour new dsa topic 
+1 hour revision of new dsa learning topic
 
-Total estimated: 4 hour Dsa
+Total estimated: 3 hour Dsa
 
 Now I will increase my working pattern and more focus 
 Bettween 19 june to 28 june I did nothing good in dsa

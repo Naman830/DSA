@@ -28,3 +28,12 @@ Remaining nodes (< k) stay unchanged.
 Need to reconnect reversed groups.
 Linked list must remain connected after every reversal.
 */
+
+/*
+Brute Force
+Store nodes in an array.
+Reverse every k-sized portion.
+Rebuild the linked list.
+
+Uses extra space.
+*/

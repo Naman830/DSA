@@ -131,3 +131,6 @@ head2 = sortLinkedList(head2);
 
 console.log("After Sorting:");
 printLinkedList(head2);
+
+// TC: O(n log n)
+// SC: O(n)

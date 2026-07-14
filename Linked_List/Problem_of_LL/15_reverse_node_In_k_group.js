@@ -20,3 +20,11 @@ Explanation
 (5) -> less than k
 don't reverse
 */
+
+/*
+Key Observations
+Reverse only groups having exactly k nodes.
+Remaining nodes (< k) stay unchanged.
+Need to reconnect reversed groups.
+Linked list must remain connected after every reversal.
+*/

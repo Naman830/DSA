@@ -58,3 +58,7 @@ head.next.next.next.next = new ListNode(5);
 head.next.next.next.next.next = head.next.next;
 
 console.log(detectCycle(head).val); // 3
+
+// 2. Optimal Approach (Floyd's Cycle Detection)
+// step 1. Detect that there is a loop
+// step 2. Move the slow pointer to head and move one by one slow and fast and when they collide that is our starting point

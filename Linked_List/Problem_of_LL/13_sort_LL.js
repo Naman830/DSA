@@ -134,3 +134,5 @@ printLinkedList(head2);
 
 // TC: O(n log n)
 // SC: O(n)
+
+// Approach 2 — Better (Insertion Sort)

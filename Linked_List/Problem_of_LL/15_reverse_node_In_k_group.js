@@ -29,6 +29,10 @@ Need to reconnect reversed groups.
 Linked list must remain connected after every reversal.
 */
 
+// ===========================================================================
+// ===========================================================================
+// ===========================================================================
+
 /*
 Brute Force
 Store nodes in an array.
@@ -36,4 +40,36 @@ Reverse every k-sized portion.
 Rebuild the linked list.
 
 Uses extra space.
+*/
+
+// ===========================================================================
+// ===========================================================================
+// ===========================================================================
+
+// OPTIMAL SOLUTION
+// 1. Find k nodes.
+// 2. Reverse them.
+// 3. Connect previous group with current reversed group.
+
+/*
+Before reverse
+prevGroup
+    |
+    V
+
+1 → 2 → 3 → 4 → 5 → 6
+^         ^
+|         |
+curr    kthNode
+
+After reverse
+3 → 2 → 1 → 4 → 5 → 6
+
+Reconnect: prevGroup.next = 3
+1.next = 4
+
+Move
+curr = 4
+
+Repeat.
 */

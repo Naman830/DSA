@@ -91,3 +91,11 @@ console.log(detectCycleOptimal(head).val); // 3
 // 2. Optimal Approach (Floyd's Cycle Detection)
 // step 1. Detect that there is a loop
 // step 2. Move the slow pointer to head and move one by one slow and fast and when they collide that is our starting point
+/**
+ | Case    | Time                             | Space |
+| ------- | -------------------------------- | ----- |
+| Best    | O(1) (no nodes / immediate exit) | O(1)  |
+| Average | O(N)                             | O(1)  |
+| Worst   | O(N)                             | O(1)  |
+
+ */

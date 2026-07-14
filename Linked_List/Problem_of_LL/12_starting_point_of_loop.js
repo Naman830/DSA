@@ -14,6 +14,13 @@ We should solve it in O(N) time and O(1) space.
 Problem:
 Find the starting node of a loop in a linked list.
 Return null if no loop exists.
+
+| Case    | Time | Space |
+| ------- | ---- | ----- |
+| Best    | O(1) | O(1)  |
+| Average | O(N) | O(N)  |
+| Worst   | O(N) | O(N)  |
+
 */
 
 class ListNode {

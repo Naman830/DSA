@@ -99,3 +99,20 @@ printList(sortList(head1)); // 1 -> 2 -> 3 -> 4
 
 let head2 = createList([-1, 5, 3, 4, 0]);
 printList(sortList(head2)); // -1 -> 0 -> 3 -> 4 -> 5
+
+/*
+| Case    | Time           | Space                          |
+| ------- | -------------- | ------------------------------ |
+| Best    | **O(n log n)** | **O(log n)** (recursion stack) |
+| Average | **O(n log n)** | **O(log n)**                   |
+| Worst   | **O(n log n)** | **O(log n)**                   |
+
+Why O(n log n)?
+Each recursive level processes all n nodes once during the merge step, which takes O(n).
+
+The list is divided in half at every recursive call, creating log₂ n levels.
+
+Therefore:
+Total Time = O(n) × O(log n)
+           = O(n log n)
+*/

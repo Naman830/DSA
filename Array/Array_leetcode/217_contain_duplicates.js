@@ -32,3 +32,32 @@ console.log(containsDuplicate([1, 1])); // true
 | Worst   | O(n²)                                  | O(1)  |
 
 */
+
+/*
+LeetCode 217. Contains Duplicate
+
+Optimal Solution
+
+Using Hash Set
+*/
+
+function containDuplicatesOptimal(nums) {
+  let seen = new Set();
+
+  for (let num of nums) {
+    // Already exists?
+    if (seen.has(num)) {
+      return true;
+    }
+
+    // Store it
+    seen.add(num);
+  }
+
+  return false;
+}
+
+// Test Cases
+console.log(containDuplicatesOptimal([1, 2, 3, 1])); // true
+console.log(containDuplicatesOptimal([1, 2, 3, 4])); // false
+console.log(containDuplicatesOptimal([5, 5])); // true

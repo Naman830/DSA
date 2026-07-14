@@ -141,3 +141,19 @@ Time
 Worst : O(n²)
 Space: O(1)
 */
+
+// Approach 3 — Optimal (Merge Sort)
+/*
+Merge Sort has two properties:
+
+Divide
+Merge
+
+For Linked Lists,
+
+Finding the middle is easy using Slow & Fast Pointer.
+
+Merging two sorted lists is also easy.
+
+So Merge Sort becomes perfect.
+*/

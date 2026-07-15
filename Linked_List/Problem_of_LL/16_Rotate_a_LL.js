@@ -104,10 +104,10 @@ printList(ans);
 // 4 -> 5 -> 1 -> 2 -> 3
 
 /*
-| Case    | Time     | Space    |
-| ------- | -------- | -------- |
-| Best    | **O(n)** | **O(1)** |
-| Average | **O(n)** | **O(1)** |
-| Worst   | **O(n)** | **O(1)** |
-
+| Case    | Time     |
+| ------- | -------- |
+| Best    | O(n)     |
+| Average | O(n × k) |
+| Worst   | O(n × k) |
+SC: O(1)
  */

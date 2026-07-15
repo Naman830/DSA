@@ -18,3 +18,17 @@ Rotate twice:
 Output:
 4 → 5 → 1 → 2 → 3
 */
+
+// 1. Brute Force Approach
+/*
+Rotate the list one step at a time.
+
+For every rotation:
+
+Find the last node.
+Find the second last node.
+Disconnect the last node.
+Put it before the head.
+
+Repeat this k times.
+*/

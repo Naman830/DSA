@@ -111,3 +111,29 @@ printList(ans);
 | Worst   | O(n × k) |
 SC: O(1)
  */
+
+// 2. Optimal Approach
+// Instead of rotating one by one, first compute the list length. Connect the last node back to the head to form a circular linked list. Then find the new tail and break the circle at the correct position to get the rotated list.
+
+/*
+Pseudocode
+Find length
+
+k = k % length
+
+If k == 0
+
+    return head
+
+Connect last node to head
+
+Find newTail at
+
+length - k - 1
+
+newHead = newTail.next
+
+Break circle
+
+return newHead
+*/

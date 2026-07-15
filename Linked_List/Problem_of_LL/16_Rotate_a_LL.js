@@ -44,3 +44,61 @@ Repeat k times
 
     head = last
 */
+
+class ListNode {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+function rotateRight(head, k) {
+  if (!head || !head.next || k === 0) return head;
+
+  let length = 0;
+  let temp = head;
+
+  while (temp) {
+    length++;
+    temp = temp.next;
+  }
+
+  k = k % length;
+
+  while (k--) {
+    let previous = null;
+    let current = head;
+
+    while (current.next) {
+      previous = current;
+      current = current.next;
+    }
+
+    previous.next = null;
+    current.next = head;
+    head = current;
+  }
+  return head;
+}
+
+// ---------- Helper Functions ----------
+function printList(head) {
+  let result = [];
+  while (head) {
+    result.push(head.val);
+    head = head.next;
+  }
+  console.log(result.join(" -> "));
+}
+
+let head = new ListNode(1);
+head.next = new ListNode(2);
+head.next.next = new ListNode(3);
+head.next.next.next = new ListNode(4);
+head.next.next.next.next = new ListNode(5);
+
+let ans = rotateRight(head, 2);
+
+printList(ans);
+
+// Output:
+// 4 -> 5 -> 1 -> 2 -> 3

@@ -175,4 +175,11 @@ newHead = newTail.next
 Break circle
 
 return newHead
+
+| Case    | Time     | Space    |
+| ------- | -------- | -------- |
+| Best    | **O(n)** | **O(1)** |
+| Average | **O(n)** | **O(1)** |
+| Worst   | **O(n)** | **O(1)** |
+
 */

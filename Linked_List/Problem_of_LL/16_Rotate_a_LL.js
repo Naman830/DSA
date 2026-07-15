@@ -31,4 +31,16 @@ Disconnect the last node.
 Put it before the head.
 
 Repeat this k times.
+
+Pseudocode
+Repeat k times
+
+    Find last node
+    Find second last node
+
+    secondLast.next = null
+
+    last.next = head
+
+    head = last
 */

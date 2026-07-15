@@ -51,6 +51,7 @@ class ListNode {
     this.next = null;
   }
 }
+
 function rotateRight(head, k) {
   if (!head || !head.next || k === 0) return head;
 
@@ -80,6 +81,44 @@ function rotateRight(head, k) {
   return head;
 }
 
+function rotateRightOptimal(head, k) {
+  // Edge cases
+  if (!head || !head.next || k === 0) return head;
+
+  // Step 1: Find length and last node
+  let length = 1;
+  let tail = head;
+
+  while (tail.next) {
+    tail = tail.next;
+    length++;
+  }
+
+  // Step 2: Reduce unnecessary rotations
+  k = k % length;
+
+  if (k === 0) return head;
+
+  // Step 3: Make the list circular
+  tail.next = head;
+
+  // Step 4: Find the new tail
+  let stepsToNewTail = length - k - 1;
+  let newTail = head;
+
+  while (stepsToNewTail--) {
+    newTail = newTail.next;
+  }
+
+  // Step 5: New head is next node
+  let newHead = newTail.next;
+
+  // Step 6: Break the circle
+  newTail.next = null;
+
+  return newHead;
+}
+
 // ---------- Helper Functions ----------
 function printList(head) {
   let result = [];
@@ -96,7 +135,7 @@ head.next.next = new ListNode(3);
 head.next.next.next = new ListNode(4);
 head.next.next.next.next = new ListNode(5);
 
-let ans = rotateRight(head, 2);
+let ans = rotateRightOptimal(head, 2);
 
 printList(ans);
 

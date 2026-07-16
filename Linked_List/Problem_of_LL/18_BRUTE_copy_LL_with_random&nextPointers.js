@@ -14,3 +14,21 @@ next pointers are easy to copy.
 random pointers are difficult because they can point anywhere.
 We need a way to quickly find the copied version of any original node.
 */
+
+/*
+Pseudocode
+
+Create HashMap
+
+Traverse list
+    Create copy node
+    Store original -> copy in map
+
+Traverse again
+    copy = map[original]
+
+    copy.next = map[original.next]
+    copy.random = map[original.random]
+
+Return copy of head
+*/

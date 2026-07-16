@@ -31,6 +31,9 @@ Traverse again
     copy.random = map[original.random]
 
 Return copy of head
+
+TC: O(n)
+SC: O(n)
 */
 
 // Definition of Node

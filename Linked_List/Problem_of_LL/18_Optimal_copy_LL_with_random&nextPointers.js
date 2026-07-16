@@ -10,3 +10,17 @@ After inserting copied nodes
 
 Now every copied node is immediately after its original node.
 */
+
+/*
+Algorithm
+
+Insert copied node after every original node
+
+Traverse again
+    Connect random pointers
+
+Traverse again
+    Separate original and copied lists
+
+Return copied head
+*/

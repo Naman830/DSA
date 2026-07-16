@@ -33,7 +33,74 @@ class Node {
   }
 }
 
-function copyRandomList(head) {}
+function copyRandomList(head) {
+  // Edge case
+  if (head === null) return null;
+
+  //----------------------------------------------------
+  // Step 1: Insert copied nodes after original nodes
+  //----------------------------------------------------
+
+  let curr = head;
+
+  while (curr !== null) {
+    // Create copy node
+    const copy = new Node(curr.val);
+
+    // Insert copy after original
+    copy.next = curr.next;
+    curr.next = copy;
+
+    // Move to next original node
+    curr = copy.next;
+  }
+
+  //----------------------------------------------------
+  // Step 2: Assign random pointers
+  //----------------------------------------------------
+
+  curr = head;
+
+  while (curr !== null) {
+    // Current copy node
+    const copy = curr.next;
+
+    // If original has random pointer,
+    // copied random will be original.random.next
+    if (curr.random !== null) {
+      copy.random = curr.random.next;
+    }
+
+    // Move to next original node
+    curr = copy.next;
+  }
+
+  //----------------------------------------------------
+  // Step 3: Separate original and copied lists
+  //----------------------------------------------------
+
+  curr = head;
+
+  // Head of copied linked list
+  const copyHead = head.next;
+
+  while (curr !== null) {
+    const copy = curr.next;
+
+    // Restore original list
+    curr.next = copy.next;
+
+    // Connect copied list
+    if (copy.next !== null) {
+      copy.next = copy.next.next;
+    }
+
+    // Move to next original node
+    curr = curr.next;
+  }
+
+  return copyHead;
+}
 
 const n1 = new Node(1);
 const n2 = new Node(2);

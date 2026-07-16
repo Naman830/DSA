@@ -23,6 +23,14 @@ Traverse again
     Separate original and copied lists
 
 Return copied head
+
+
+| Case    | Time     | Space    |
+| ------- | -------- | -------- |
+| Best    | **O(n)** | **O(1)** |
+| Average | **O(n)** | **O(1)** |
+| Worst   | **O(n)** | **O(1)** |
+
 */
 
 class Node {

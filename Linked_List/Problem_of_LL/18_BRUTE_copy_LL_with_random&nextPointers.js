@@ -41,8 +41,53 @@ class Node {
     this.random = random;
   }
 }
+function copyRandomList(head) {
+  // Empty list
+  if (head === null) return null;
 
-function copyRandomList(head) {}
+  // HashMap:
+  // Key   -> Original Node
+  // Value -> Copied Node
+  const map = new Map();
+
+  // -----------------------------
+  // First Pass
+  // Create copy of every node
+  // -----------------------------
+  let curr = head;
+
+  while (curr !== null) {
+    // Create copied node
+    const copyNode = new Node(curr.val);
+
+    // Store mapping
+    map.set(curr, copyNode);
+
+    curr = curr.next;
+  }
+
+  // -----------------------------
+  // Second Pass
+  // Connect next and random
+  // -----------------------------
+  curr = head;
+
+  while (curr !== null) {
+    // Copied version of current node
+    const copyNode = map.get(curr);
+
+    // Connect next pointer
+    copyNode.next = curr.next ? map.get(curr.next) : null;
+
+    // Connect random pointer
+    copyNode.random = curr.random ? map.get(curr.random) : null;
+
+    curr = curr.next;
+  }
+
+  // Return copied head
+  return map.get(head);
+}
 
 let n1 = new Node(1);
 let n2 = new Node(2);

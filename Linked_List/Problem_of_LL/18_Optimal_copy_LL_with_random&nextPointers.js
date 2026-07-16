@@ -24,3 +24,30 @@ Traverse again
 
 Return copied head
 */
+
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+    this.random = null;
+  }
+}
+
+function copyRandomList(head) {}
+
+const n1 = new Node(1);
+const n2 = new Node(2);
+const n3 = new Node(3);
+
+n1.next = n2;
+n2.next = n3;
+
+n1.random = n3;
+n2.random = n1;
+n3.random = n2;
+
+const clonedHead = copyRandomList(n1);
+
+console.log(clonedHead.val); // 1
+console.log(clonedHead.random.val); // 3
+console.log(clonedHead.next.random.val); // 1

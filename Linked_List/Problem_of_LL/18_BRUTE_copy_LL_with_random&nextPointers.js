@@ -80,10 +80,18 @@ function copyRandomList(head) {
     const copyNode = map.get(curr);
 
     // Connect next pointer
-    copyNode.next = curr.next ? map.get(curr.next) : null;
+    if (curr.next !== null) {
+      copyNode.next = map.get(curr.next);
+    } else {
+      copyNode.next = null;
+    }
 
     // Connect random pointer
-    copyNode.random = curr.random ? map.get(curr.random) : null;
+    if (curr.random !== null) {
+      copyNode.random = map.get(curr.random);
+    } else {
+      copyNode.random = null;
+    }
 
     curr = curr.next;
   }

@@ -32,3 +32,31 @@ Traverse again
 
 Return copy of head
 */
+
+// Definition of Node
+class Node {
+  constructor(val, next = null, random = null) {
+    this.val = val;
+    this.next = next;
+    this.random = random;
+  }
+}
+
+function copyRandomList(head) {}
+
+let n1 = new Node(1);
+let n2 = new Node(2);
+let n3 = new Node(3);
+
+n1.next = n2;
+n2.next = n3;
+
+n1.random = n3;
+n2.random = n1;
+n3.random = null;
+
+const copiedHead = copyRandomList(n1);
+
+console.log(copiedHead.val); // 1
+console.log(copiedHead.random.val); // 3
+console.log(copiedHead.next.random.val); // 1

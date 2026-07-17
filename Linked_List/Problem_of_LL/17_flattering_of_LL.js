@@ -42,4 +42,11 @@ next →
 45
 |
 50
+
+
+1. Key Observations
+Every bottom list is already sorted.
+We need one final sorted list.
+This is very similar to Merge K Sorted Lists.
+Since each list is sorted, we can merge two sorted lists repeatedly.
 */

@@ -40,6 +40,53 @@ class Node {
     this.bottom = null;
   }
 }
+function merge(list1, list2) {
+  // Dummy node simplifies merging
+  const dummy = new Node(-1);
+  let tail = dummy;
+
+  while (list1 !== null && list2 !== null) {
+    if (list1.data <= list2.data) {
+      tail.bottom = list1;
+      list1 = list1.bottom;
+    } else {
+      tail.bottom = list2;
+      list2 = list2.bottom;
+    }
+
+    tail = tail.bottom;
+
+    // Remove next pointer because final list uses only bottom
+    tail.next = null;
+  }
+
+  // Attach remaining nodes
+  if (list1 !== null) {
+    tail.bottom = list1;
+  } else {
+    tail.bottom = list2;
+  }
+
+  return dummy.bottom;
+}
+
+/*
+Flatten Function
+*/
+function flatten(head) {
+  // Base Case
+  if (head === null || head.next === null) {
+    return head;
+  }
+
+  // Flatten all lists on the right
+  head.next = flatten(head.next);
+
+  // Merge current list with flattened right side
+  head = merge(head, head.next);
+
+  return head;
+}
 
 // Print Bottom Linked List
 function printBottom(head) {
@@ -52,7 +99,6 @@ function printBottom(head) {
 
   console.log();
 }
-
 /* ---------- Sample Input ---------- */
 // List 1
 let head = new Node(5);

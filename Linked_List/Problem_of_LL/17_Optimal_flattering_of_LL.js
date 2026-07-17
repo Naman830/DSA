@@ -31,3 +31,55 @@ attach remaining nodes
 
 return dummy.bottom
 */
+
+// Node Class
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+    this.bottom = null;
+  }
+}
+
+// Print Bottom Linked List
+function printBottom(head) {
+  let temp = head;
+
+  while (temp !== null) {
+    process.stdout.write(temp.data + " ");
+    temp = temp.bottom;
+  }
+
+  console.log();
+}
+
+/* ---------- Sample Input ---------- */
+// List 1
+let head = new Node(5);
+head.bottom = new Node(7);
+head.bottom.bottom = new Node(8);
+head.bottom.bottom.bottom = new Node(30);
+
+// List 2
+head.next = new Node(10);
+head.next.bottom = new Node(20);
+
+// List 3
+head.next.next = new Node(19);
+head.next.next.bottom = new Node(22);
+head.next.next.bottom.bottom = new Node(50);
+
+// List 4
+head.next.next.next = new Node(28);
+head.next.next.next.bottom = new Node(35);
+head.next.next.next.bottom.bottom = new Node(40);
+head.next.next.next.bottom.bottom.bottom = new Node(45);
+
+// Flatten
+const result = flatten(head);
+
+// Output
+printBottom(result);
+
+// Output:
+// 5 7 8 10 19 20 22 28 30 35 40 45 50

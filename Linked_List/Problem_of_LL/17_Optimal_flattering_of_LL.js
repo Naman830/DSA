@@ -2,7 +2,9 @@
 Instead of sorting everything,
 Since every bottom list is already sorted, we merge them just like Merge Sort.
 We recursively flatten from the right side.
+*/
 
+/*
 Pseudocode
 flatten(head)
 
@@ -15,6 +17,9 @@ head = merge(head, right)
 
 return head
 
+*/
+
+/*
 Merge Pseudocode
 merge(list1, list2)
 

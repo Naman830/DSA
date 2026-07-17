@@ -57,4 +57,13 @@ Traverse every linked list.
 Push all values into an array.
 Sort the array.
 Create a new bottom linked list.
+
+
+Time Complexity
+Collect nodes → O(N)
+Sorting → O(N log N)
+Creating list → O(N)
+
+Overall: O(N log N)
+Space: O(N)
 */

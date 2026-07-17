@@ -76,6 +76,34 @@ class Node {
   }
 }
 
+function flatten(head) {
+  const value = [];
+  let curr = head;
+
+  while (curr !== null) {
+    let temp = curr;
+
+    while (temp !== null) {
+      value.push(temp.data);
+      temp = temp.bottom;
+    }
+
+    curr = curr.next;
+  }
+
+  value.sort((a, b) => a - b);
+
+  const dummy = new Node(-1);
+  let tail = dummy;
+
+  for (const value of values) {
+    tail.bottom = new Node(value);
+    teil = tail.bottom;
+  }
+
+  return dummy.bottom;
+}
+
 /* ---------- Sample Input ---------- */
 
 // List 1

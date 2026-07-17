@@ -50,3 +50,11 @@ We need one final sorted list.
 This is very similar to Merge K Sorted Lists.
 Since each list is sorted, we can merge two sorted lists repeatedly.
 */
+
+// BRUTE FORCE SOLUTION
+/*
+Traverse every linked list.
+Push all values into an array.
+Sort the array.
+Create a new bottom linked list.
+*/

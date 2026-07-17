@@ -76,32 +76,53 @@ class Node {
   }
 }
 
+// Flatten Function
 function flatten(head) {
-  const value = [];
-  let curr = head;
+  // Array to store all node values
+  const values = [];
 
-  while (curr !== null) {
-    let temp = curr;
+  // Traverse all linked lists
+  let current = head;
 
+  while (current !== null) {
+    let temp = current;
+
+    // Traverse bottom list
     while (temp !== null) {
-      value.push(temp.data);
+      values.push(temp.data);
       temp = temp.bottom;
     }
 
-    curr = curr.next;
+    // Move to next list
+    current = current.next;
   }
 
-  value.sort((a, b) => a - b);
+  // Sort all values
+  values.sort((a, b) => a - b);
 
+  // Dummy node to build new list
   const dummy = new Node(-1);
   let tail = dummy;
 
-  for (const value of values) {
+  // Create new bottom linked list
+  for (let value of values) {
     tail.bottom = new Node(value);
-    teil = tail.bottom;
+    tail = tail.bottom;
   }
 
   return dummy.bottom;
+}
+
+// Print Bottom List
+function printBottom(head) {
+  let temp = head;
+
+  while (temp !== null) {
+    process.stdout.write(temp.data + " ");
+    temp = temp.bottom;
+  }
+
+  console.log();
 }
 
 /* ---------- Sample Input ---------- */

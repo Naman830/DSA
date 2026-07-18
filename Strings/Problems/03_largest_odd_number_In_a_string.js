@@ -1,6 +1,28 @@
 /*
 Your task is to return the largest-valued odd number that can be formed by taking a prefix (starting from index 0) of the string.
 
+let : 35427
+
+Possible cuts
+3
+35
+354
+3542
+35427
+
+Now check which are odd.
+3      ✅
+35     ✅
+354    ❌
+3542   ❌
+35427  ✅
+
+Among these,
+35427 is the biggest.
+
+Answer:
+35427
+
 Key observation 
 If no odd number exists, return an empty string "".
 A number is odd only if its last digit is odd.

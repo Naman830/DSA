@@ -49,3 +49,21 @@ See what happened?
 1000
 The last 1 disappeared.
 */
+
+function hammingDistance(x, y) {
+  let xor = x ^ y;
+  let distance = 0;
+
+  while (xor !== 0) {
+    distance++;
+
+    // Remove the rightmost set bit
+    xor = xor & (xor - 1);
+  }
+
+  return distance;
+}
+
+console.log(hammingDistance(1, 4)); // 2
+console.log(hammingDistance(3, 1)); // 1
+console.log(hammingDistance(7, 7)); // 0

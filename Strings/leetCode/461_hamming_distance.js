@@ -67,3 +67,5 @@ function hammingDistance(x, y) {
 console.log(hammingDistance(1, 4)); // 2
 console.log(hammingDistance(3, 1)); // 1
 console.log(hammingDistance(7, 7)); // 0
+
+// TC: O(1) && SC: O(1)

@@ -116,35 +116,38 @@ Given a valid parentheses string,
 remove the outermost parentheses from every primitive string.
 */
 
-let s = "(()())(())";
+function removeOuterParenthesesOptimal(s) {
+  let answer = "";
+  let depth = 0; // Number of currently open parentheses
 
-let answer = "";
-let depth = 0; // Number of currently open parentheses
+  for (let ch of s) {
+    // Opening parenthesis
+    if (ch === "(") {
+      // If depth > 0, we are already inside the primitive,
+      // so this is NOT the outermost '('
+      if (depth > 0) {
+        answer += ch;
+      }
 
-for (let ch of s) {
-  // Opening parenthesis
-  if (ch === "(") {
-    // If depth > 0, we are already inside the primitive,
-    // so this is NOT the outermost '('
-    if (depth > 0) {
-      answer += ch;
+      // Enter one level deeper
+      depth++;
     }
 
-    // Enter one level deeper
-    depth++;
-  }
+    // Closing parenthesis
+    else {
+      // Leave one level
+      depth--;
 
-  // Closing parenthesis
-  else {
-    // Leave one level
-    depth--;
-
-    // If depth is still > 0,
-    // then this ')' is NOT the outermost one
-    if (depth > 0) {
-      answer += ch;
+      // If depth is still > 0,
+      // then this ')' is NOT the outermost one
+      if (depth > 0) {
+        answer += ch;
+      }
     }
   }
+  return answer;
 }
 
-console.log(answer); // "()()()"
+let s = "(()())(())";
+
+console.log(removeOuterParenthesesOptimal(s)); // "()()()"

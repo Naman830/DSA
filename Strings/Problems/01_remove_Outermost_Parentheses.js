@@ -1,6 +1,8 @@
 /*
 You are given a valid parentheses string.
-Your task is to remove the outermost pair of parentheses from every primitive valid parentheses string.
+Your task is to remove the outermost pair of parentheses from every primitive valid parentheses string. [And it should be done only one time not mulitiple]
+
+prmitive means this :- () which has closing and opening tag in it 
 
 Example
 Input:  "(()())(())"

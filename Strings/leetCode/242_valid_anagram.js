@@ -57,3 +57,12 @@ console.log(isAnagram("rat", "car")); // false
 console.log(isAnagram("listen", "silent")); // true
 console.log(isAnagram("hello", "world")); // false
 console.log(isAnagram("aabb", "abab")); // true
+
+/*
+| Case    | Time     | Space    |
+| ------- | -------- | -------- |
+| Best    | **O(n)** | **O(k)** |
+| Average | **O(n)** | **O(k)** |
+| Worst   | **O(n)** | **O(k)** |
+
+*/

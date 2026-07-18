@@ -78,6 +78,18 @@ SC: O(n)
 
 // 2. Optimal Idea
 /*
+Whenever we see
+(
+we go one level deeper
+depth++;
+
+Whenever we see
+)
+we come one level back
+depth--;
+
+
+
 Dry Run
 
 Input
@@ -97,44 +109,42 @@ answer = ""
 | )         | 1            | Skip (outermost closing) | 0           | "()()" |
 
 */
+/*
+LeetCode 1021 - Remove Outermost Parentheses
 
-function removeOuterParenthesesOptimal(s) {
-  let depth = 0;
-  let result = "";
+Given a valid parentheses string,
+remove the outermost parentheses from every primitive string.
+*/
 
-  for (let ch of s) {
-    // Opening bracket
-    if (ch === "(") {
-      // If already inside another pair,
-      // keep this bracket
-      if (depth > 0) {
-        result += ch;
-      }
+let s = "(()())(())";
 
-      depth++;
+let answer = "";
+let depth = 0; // Number of currently open parentheses
+
+for (let ch of s) {
+  // Opening parenthesis
+  if (ch === "(") {
+    // If depth > 0, we are already inside the primitive,
+    // so this is NOT the outermost '('
+    if (depth > 0) {
+      answer += ch;
     }
 
-    // Closing bracket
-    else {
-      depth--;
-
-      // If still inside after decreasing,
-      // keep this bracket
-      if (depth > 0) {
-        result += ch;
-      }
-    }
+    // Enter one level deeper
+    depth++;
   }
 
-  return result;
+  // Closing parenthesis
+  else {
+    // Leave one level
+    depth--;
+
+    // If depth is still > 0,
+    // then this ')' is NOT the outermost one
+    if (depth > 0) {
+      answer += ch;
+    }
+  }
 }
 
-// Test Cases
-console.log(removeOuterParenthesesOptimal("(()())(())")); // "()()()"
-console.log(removeOuterParenthesesOptimal("(()())(())(()(()))")); // "()()()()(())"
-console.log(removeOuterParenthesesOptimal("()()")); // ""
-
-/*
-TC: O(n)
-SC: O(n)
-*/
+console.log(answer); // "()()()"

@@ -17,3 +17,12 @@ Ignore extra spaces.
 Final answer should have only one space between words.
 Don't worry about coding yet—first understand that you're simply rearranging whole words.
 */
+
+// OPTIMAL SOLUTION
+/*
+Trim the leading and trailing spaces.
+Split the string into words using split(/\s+/) so multiple spaces are treated as one separator.
+Reverse the array of words using the left and right pointers (or reverse()).
+Join the reversed words using a single space.
+Return the resulting string.
+*/

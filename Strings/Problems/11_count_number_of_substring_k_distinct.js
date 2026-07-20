@@ -117,3 +117,12 @@ console.log(countExactlyKDistinct("abc", 2)); // 2
 console.log(countExactlyKDistinct("pqpqs", 2)); // 7
 console.log(countExactlyKDistinct("aa", 1)); // 3
 console.log(countExactlyKDistinct("aba", 2)); // 3
+
+/*
+| Case    | Time     | Space |
+| ------- | -------- | ----- |
+| Best    | **O(n)** | O(k)  |
+| Average | **O(n)** | O(k)  |
+| Worst   | **O(n)** | O(k)  |
+
+*/

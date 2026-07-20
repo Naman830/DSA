@@ -64,5 +64,7 @@ console.log(longestCommonPrefix(["abc"])); // abc
 | Average | **O(n × m)** |
 | Worst   | **O(n × m)** |
 
+n = number of strings
+m = length of shortest string
 SC: O(1)
 */

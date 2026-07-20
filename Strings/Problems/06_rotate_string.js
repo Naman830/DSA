@@ -120,3 +120,23 @@ If doubled contains goal
 
 return false
  */
+
+function rotateString(s, goal) {
+  // Length must be equal
+  if (s.length !== goal.length) {
+    return false;
+  }
+
+  // Duplicate the original string
+  const doubled = s + s;
+
+  // Check whether goal exists inside it
+  return doubled.includes(goal);
+}
+
+// Test Cases
+console.log(rotateString("abcde", "cdeab")); // true
+console.log(rotateString("abcde", "abced")); // false
+console.log(rotateString("aaaa", "aaaa")); // true
+console.log(rotateString("water", "terwa")); // true
+console.log(rotateString("hello", "llohe")); // true

@@ -12,3 +12,17 @@ Same frequency can appear in any order.
 Uppercase and lowercase are different.
 Spaces and symbols are also characters if present.
 */
+
+/*
+Brute Force
+
+Idea:
+Count frequency.
+Compare every character with every other character.
+Arrange manually.
+
+This is slow because sorting manually using nested loops costs a lot.
+
+Time: O(n²)
+Not recommended.
+*/

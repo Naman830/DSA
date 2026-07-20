@@ -46,3 +46,45 @@ Why two maps?
 The first map ensures one character from s always maps to the same character in t.
 The second map ensures two different characters from s don't map to the same character in t.
  */
+
+function isIsomorphic(s, t) {
+  // Edge case check they have same length
+  if (s.length !== t.length) {
+    return false;
+  }
+
+  let mapST = new Map();
+  let mapTS = new Map();
+
+  for (let i = 0; i < s.length; i++) {
+    let charS = s[i];
+    let charT = t[i];
+
+    if (mapST.has(charS)) {
+      if (mapST.get(charS) !== charT) {
+        return false;
+      }
+    } else {
+      mapST.set(charS, charT);
+    }
+
+    if (mapTS.has(charT)) {
+      if (mapTS.get(charT) !== charS) {
+        return false;
+      }
+    } else {
+      mapTS.set(charT, charS);
+    }
+  }
+  return true;
+}
+
+/* ---------------- Test Cases ---------------- */
+console.log(isIsomorphic("egg", "add")); // true
+console.log(isIsomorphic("foo", "bar")); // false
+console.log(isIsomorphic("paper", "title")); // true
+console.log(isIsomorphic("bad", "bab")); // false
+console.log(isIsomorphic("ab", "aa")); // false
+console.log(isIsomorphic("aa", "ab")); // false
+console.log(isIsomorphic("abc", "xyz")); // true
+console.log(isIsomorphic("a", "z")); // true

@@ -124,5 +124,4 @@ console.log(countExactlyKDistinct("aba", 2)); // 3
 | Best    | **O(n)** | O(k)  |
 | Average | **O(n)** | O(k)  |
 | Worst   | **O(n)** | O(k)  |
-
 */

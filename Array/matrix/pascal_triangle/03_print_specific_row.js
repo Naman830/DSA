@@ -83,3 +83,12 @@ console.log(getRow(1)); // [1,1]
 console.log(getRow(3)); // [1,3,3,1]
 console.log(getRow(4)); // [1,4,6,4,1]
 console.log(getRow(5)); // [1,5,10,10,5,1]
+
+/*
+| Case    | Time | Space |
+| ------- | ---- | ----- |
+| Best    | O(n) | O(1)* |
+| Average | O(n) | O(1)* |
+| Worst   | O(n) | O(1)* |
+
+*/

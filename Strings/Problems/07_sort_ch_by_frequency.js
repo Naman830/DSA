@@ -26,3 +26,11 @@ This is slow because sorting manually using nested loops costs a lot.
 Time: O(n²)
 Not recommended.
 */
+
+// 1. Better Solution (HashMap + Sorting)
+/*
+Count the frequency of every character using a Map.
+Convert the map into an array of [character, frequency] pairs.
+Sort the array in descending order of frequency.
+Repeat each character according to its frequency and build the final string.
+*/

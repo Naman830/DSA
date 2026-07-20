@@ -17,3 +17,22 @@ If current value < next value
 Else
       add current
 */
+
+/*
+Pseudocode
+Create a map of Roman values
+
+answer = 0
+
+Loop through string
+
+    current = value of current character
+    next = value of next character
+
+    If current < next
+         subtract current
+    Else
+         add current
+
+Return answer
+*/

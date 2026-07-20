@@ -46,3 +46,17 @@ repeat until rowIndex
 
 return previous
 */
+
+// Approach 3 — Optimal (Using nCr Formula)
+/*
+Pseudocode
+answer = [1]
+
+current = 1
+
+for i = 0 to n-1
+    current = current * (n-i)/(i+1)
+    push current
+
+return answer
+*/

@@ -19,3 +19,18 @@ Rotation never changes characters.
 Only changes their positions.
 Every possible rotation should be checked.
 */
+
+// 1. Approach 1 — Brute Force
+/*
+Pseudocode
+If lengths are different
+    return false
+
+Repeat n times
+    if current string == goal
+        return true
+
+    rotate string
+
+return false
+*/

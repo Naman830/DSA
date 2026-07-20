@@ -34,3 +34,40 @@ Convert the map into an array of [character, frequency] pairs.
 Sort the array in descending order of frequency.
 Repeat each character according to its frequency and build the final string.
 */
+
+function frequencySort(str) {
+  // Step 1: Store frequency of each character
+  const frequencyMap = new Map();
+
+  for (const char of str) {
+    frequencyMap.set(char, (frequencyMap.get(char) || 0) + 1);
+  }
+
+  // Step 2: Convert Map into an array
+  // Example:
+  // [['t',1], ['r',1], ['e',2]]
+  const frequencyArray = [...frequencyMap.entries()];
+
+  // Step 3: Sort by frequency (Highest -> Lowest)
+  frequencyArray.sort((a, b) => b[1] - a[1]);
+
+  // Step 4: Build the answer string
+  let result = "";
+
+  for (const [char, frequency] of frequencyArray) {
+    // Repeat the character "frequency" times
+    result += char.repeat(frequency);
+  }
+
+  return result;
+}
+
+// -------------------------------
+// Test Cases
+// -------------------------------
+
+console.log(frequencySort("tree")); // "eetr" or "eert"
+console.log(frequencySort("cccaaa")); // "cccaaa" or "aaaccc"
+console.log(frequencySort("Aabb")); // "bbAa" or "bbaA"
+console.log(frequencySort("banana")); // "aaannb"
+console.log(frequencySort("programming")); // Possible: "rrggmmponai"

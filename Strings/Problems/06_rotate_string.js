@@ -68,3 +68,15 @@ console.log(rotateString("abcde", "cdeab")); // true
 console.log(rotateString("abcde", "abced")); // false
 console.log(rotateString("aaaa", "aaaa")); // true
 console.log(rotateString("water", "terwa")); // true
+
+/*
+| Case    | Time  | Space |
+| ------- | ----- | ----- |
+| Best    | O(n)  | O(n)  |
+| Average | O(n²) | O(n)  |
+| Worst   | O(n²) | O(n)  |
+
+Why O(n²)?
+There are n rotations.
+Every string comparison and new rotated string creation takes O(n).
+*/

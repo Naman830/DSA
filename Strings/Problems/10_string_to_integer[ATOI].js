@@ -39,3 +39,20 @@ then build the number digit by digit.
 After each digit, ensure the value stays within the 32-bit signed integer range.
 This solution runs in O(n) time and O(1) extra space.
 */
+
+/*
+Pseudocode
+Skip leading spaces
+
+Check + or -
+
+answer = 0
+
+While current character is digit
+    answer = answer * 10 + digit
+
+    if overflow
+        return INT_MAX or INT_MIN
+
+Return answer * sign
+*/

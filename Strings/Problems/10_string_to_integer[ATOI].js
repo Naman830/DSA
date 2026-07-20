@@ -56,3 +56,48 @@ While current character is digit
 
 Return answer * sign
 */
+function myAtoi(str) {
+  let i = 0;
+  const n = str.length;
+
+  // Step 1: Skip leading spaces
+  while (i < n && str[i] === " ") {
+    i++;
+  }
+
+  // Step 2: Check sign
+  let sign = 1;
+
+  if (i < n && (str[i] === "+" || str[i] === "-")) {
+    if (str[i] === "-") sign = -1;
+    i++;
+  }
+
+  // Step 3: Build the number
+  let result = 0;
+
+  while (i < n && str[i] >= "0" && str[i] <= "9") {
+    const digit = str[i].charCodeAt(0) - "0".charCodeAt(0);
+
+    result = result * 10 + digit;
+
+    // Step 4: Clamp to 32-bit signed integer range
+    if (sign * result > 2147483647) return 2147483647;
+    if (sign * result < -2147483648) return -2147483648;
+
+    i++;
+  }
+
+  return sign * result;
+}
+
+// Test Cases
+console.log(myAtoi("42")); // 42
+console.log(myAtoi("   -42")); // -42
+console.log(myAtoi("4193 with words")); // 4193
+console.log(myAtoi("words and 987")); // 0
+console.log(myAtoi("-91283472332")); // -2147483648
+console.log(myAtoi("91283472332")); // 2147483647
+console.log(myAtoi("+123")); // 123
+console.log(myAtoi("00000123")); // 123
+console.log(myAtoi("+-12")); // 0

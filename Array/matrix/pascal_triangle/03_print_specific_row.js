@@ -60,3 +60,26 @@ for i = 0 to n-1
 
 return answer
 */
+
+function getRow(rowIndex) {
+  const row = [];
+
+  let value = 1;
+
+  row.push(value);
+
+  for (let i = 0; i < rowIndex; i++) {
+    value = (value * (rowIndex - i)) / (i + 1);
+
+    row.push(value);
+  }
+
+  return row;
+}
+
+// Test Cases
+console.log(getRow(0)); // [1]
+console.log(getRow(1)); // [1,1]
+console.log(getRow(3)); // [1,3,3,1]
+console.log(getRow(4)); // [1,4,6,4,1]
+console.log(getRow(5)); // [1,5,10,10,5,1]

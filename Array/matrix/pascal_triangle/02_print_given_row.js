@@ -65,3 +65,12 @@ console.log(generate(6));
 //   [1,4,6,4,1],
 //   [1,5,10,10,5,1]
 // ]
+
+/*
+Time Complexity
+Best Case: O(n²)
+Average Case: O(n²)
+Worst Case: O(n²)
+Space Complexity
+O(n²) (for storing the entire Pascal's Triangle)
+*/

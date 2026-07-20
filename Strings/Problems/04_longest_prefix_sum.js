@@ -16,3 +16,43 @@ Compare that character with the same position in every other string.
 If any character is different or one string ends, stop.
 Whatever matched so far is the answer.
 */
+
+function longestCommonPrefix(strs) {
+  // Edge case: empty array
+  if (strs.length === 0) {
+    return "";
+  }
+
+  // This will store our final answer
+  let prefix = "";
+
+  // Pick the first string as reference
+  let firstWord = strs[0];
+
+  // Traverse every character of the first word
+  for (let i = 0; i < firstWord.length; i++) {
+    // Current character we want every string to have
+    let currentChar = firstWord[i];
+
+    // Compare this character with every other string
+    for (let j = 1; j < strs.length; j++) {
+      // If:
+      // 1. Current string ended
+      // 2. Characters don't match
+      if (i >= strs[j].length || strs[j][i] !== currentChar) {
+        return prefix;
+      }
+    }
+
+    // Character matched in every string
+    prefix += currentChar;
+  }
+
+  return prefix;
+}
+
+// Test Cases
+console.log(longestCommonPrefix(["flower", "flow", "flight"])); // fl
+console.log(longestCommonPrefix(["dog", "racecar", "car"])); // ""
+console.log(longestCommonPrefix(["apple", "app", "application"])); // app
+console.log(longestCommonPrefix(["abc"])); // abc

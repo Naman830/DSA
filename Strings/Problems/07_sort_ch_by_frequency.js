@@ -71,3 +71,16 @@ console.log(frequencySort("cccaaa")); // "cccaaa" or "aaaccc"
 console.log(frequencySort("Aabb")); // "bbAa" or "bbaA"
 console.log(frequencySort("banana")); // "aaannb"
 console.log(frequencySort("programming")); // Possible: "rrggmmponai"
+
+/*
+| Case    | Complexity         |
+| ------- | ------------------ |
+| Best    | **O(n + k log k)** |
+| Average | **O(n + k log k)** |
+| Worst   | **O(n + k log k)** |
+
+n = length of the string
+k = number of unique characters
+
+SC: O(k)
+*/

@@ -29,3 +29,20 @@ We only need one row, not the whole triangle.
 
 // 1. Brute Force (Generate Entire Triangle)
 // TC: O(n²) && SC: O(n²)
+
+// Approach 2 — Better (Store Only Previous Row)
+/*
+Instead of storing the entire triangle, keep only the previous row.
+
+Each new row is built from the previous row.
+
+Pseudocode
+previous = []
+
+repeat until rowIndex
+    create current row
+    fill using previous row
+    previous = current
+
+return previous
+*/

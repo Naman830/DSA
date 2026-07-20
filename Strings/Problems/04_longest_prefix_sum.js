@@ -56,3 +56,13 @@ console.log(longestCommonPrefix(["flower", "flow", "flight"])); // fl
 console.log(longestCommonPrefix(["dog", "racecar", "car"])); // ""
 console.log(longestCommonPrefix(["apple", "app", "application"])); // app
 console.log(longestCommonPrefix(["abc"])); // abc
+
+/*
+| Case    | Complexity   |
+| ------- | ------------ |
+| Best    | **O(n)**     |
+| Average | **O(n × m)** |
+| Worst   | **O(n × m)** |
+
+SC: O(1)
+*/

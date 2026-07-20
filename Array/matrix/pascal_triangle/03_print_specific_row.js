@@ -26,3 +26,6 @@ current[j] = previous[j-1] + previous[j]
 
 We only need one row, not the whole triangle.
 */
+
+// 1. Brute Force (Generate Entire Triangle)
+// TC: O(n²) && SC: O(n²)

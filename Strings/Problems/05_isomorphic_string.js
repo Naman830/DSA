@@ -88,3 +88,12 @@ console.log(isIsomorphic("ab", "aa")); // false
 console.log(isIsomorphic("aa", "ab")); // false
 console.log(isIsomorphic("abc", "xyz")); // true
 console.log(isIsomorphic("a", "z")); // true
+
+/*
+| Case    | Time Complexity | Space Complexity |
+| ------- | --------------- | ---------------- |
+| Best    | **O(n)**        | **O(n)**         |
+| Average | **O(n)**        | **O(n)**         |
+| Worst   | **O(n)**        | **O(n)**         |
+
+*/

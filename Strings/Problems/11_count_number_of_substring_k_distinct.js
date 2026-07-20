@@ -52,3 +52,5 @@ function countSubstringsBruteForce(s, k) {
 }
 console.log(countSubstringsBruteForce("abc", 2)); // 2
 console.log(countSubstringsBruteForce("pqpqs", 2)); // 7
+
+// TC: O(n²) && SC: O(1)

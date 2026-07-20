@@ -96,3 +96,56 @@ Traverse the buckets from highest frequency to lowest and build the answer.
 
 This removes the sorting step and achieves O(n) time complexit
 */
+
+/*
+Time Complexity: O(n)
+Space Complexity: O(n)
+*/
+
+function frequencySortOptimal(str) {
+  // Step 1: Count frequency
+  const frequencyMap = new Map();
+
+  for (const char of str) {
+    frequencyMap.set(char, (frequencyMap.get(char) || 0) + 1);
+  }
+
+  // Step 2: Create buckets
+  // Index = Frequency
+  // Example:
+  // buckets[3] -> ['a']
+  // buckets[2] -> ['n']
+  const buckets = Array.from({ length: str.length + 1 }, () => []);
+
+  // Step 3: Place characters
+  // into their frequency bucket
+  for (const [char, frequency] of frequencyMap) {
+    buckets[frequency].push(char);
+  }
+
+  // Step 4: Build answer
+  // Start from highest frequency
+  let result = "";
+
+  for (let frequency = buckets.length - 1; frequency > 0; frequency--) {
+    // Skip empty buckets
+    if (buckets[frequency].length === 0) continue;
+
+    // Add every character inside this bucket
+    for (const char of buckets[frequency]) {
+      result += char.repeat(frequency);
+    }
+  }
+
+  return result;
+}
+
+// -------------------------------
+// Test Cases
+// -------------------------------
+
+console.log(frequencySortOptimal("tree")); // "eetr" or "eert"
+console.log(frequencySortOptimal("cccaaa")); // "cccaaa" or "aaaccc"
+console.log(frequencySortOptimal("Aabb")); // "bbAa" or "bbaA"
+console.log(frequencySortOptimal("banana")); // "aaannb"
+console.log(frequencySortOptimal("programming")); // Possible: "rrggmmponai"

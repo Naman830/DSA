@@ -107,3 +107,16 @@ So instead of rotating multiple times, we simply check:
 Is goal a substring of s + s?
 If yes → it is a valid rotation.
 */
+
+/*
+Pseudocode
+If lengths are different
+    return false
+
+Create doubled = s + s
+
+If doubled contains goal
+    return true
+
+return false
+ */

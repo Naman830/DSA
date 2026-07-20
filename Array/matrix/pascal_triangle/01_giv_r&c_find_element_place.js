@@ -17,7 +17,7 @@ function findElement(row, col) {
 
   let result = 1;
 
-  // Calculate nCr efficiently
+  // Calculate nCr efficiently [using SHORTCUT]
   for (let i = 0; i < r; i++) {
     result = (result * (n - i)) / (i + 1);
   }

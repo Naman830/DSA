@@ -34,3 +34,15 @@ b ❤️ x
 
 Rule 3:     
 */
+
+/*
+Approach (Optimal)
+We use two HashMaps (Map):
+
+mapST → Stores mapping from string s to string t.
+mapTS → Stores mapping from string t to string s.
+
+Why two maps?
+The first map ensures one character from s always maps to the same character in t.
+The second map ensures two different characters from s don't map to the same character in t.
+ */

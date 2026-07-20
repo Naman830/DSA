@@ -80,3 +80,30 @@ Why O(n²)?
 There are n rotations.
 Every string comparison and new rotated string creation takes O(n).
 */
+
+// Approach 2 — Optimal
+/*
+This is the trick asked most often in interviews.
+
+Suppose
+s = "abcde"
+Duplicate it:
+
+abcdeabcde
+
+Now look carefully.
+Every possible rotation already exists as a substring.
+
+abcdeabcde
+abcde
+ bcdea
+  cdeab
+   deabc
+    eabcd
+
+Notice:
+Every rotation appears naturally inside the doubled string.
+So instead of rotating multiple times, we simply check:
+Is goal a substring of s + s?
+If yes → it is a valid rotation.
+*/

@@ -22,4 +22,11 @@ For example
 "words123"    → 0
 
 This is exactly what the C/C++ function atoi() does.
+
+Rules
+Ignore leading spaces.
+Check if the next character is + or -.
+Read digits until a non-digit appears.
+If no digit is found, return 0.
+If the number exceeds the 32-bit signed integer range:
 */

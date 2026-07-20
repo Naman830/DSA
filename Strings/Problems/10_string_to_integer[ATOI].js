@@ -38,6 +38,7 @@ determine the sign,
 then build the number digit by digit. 
 After each digit, ensure the value stays within the 32-bit signed integer range.
 This solution runs in O(n) time and O(1) extra space.
+Best O(1) (invalid first character after spaces)	
 */
 
 /*

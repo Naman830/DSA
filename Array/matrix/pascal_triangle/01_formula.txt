@@ -17,6 +17,22 @@ Where:
 - r = Column number (starting from 0)
 - ! = Factorial
 
+
+======================================================================
+SHORTCUT 
+======================================================================
+
+look if n factorial is like = 5 x 4 x 3 x 2 x 1
+and r factorial is like =     2 x 1
+and n - r factorial is reaming =      3 x 2 x 1
+
+You notice somthing that n - r factorial is equal to n so simple we can print minimum n factorial which is eqal to r factorial like this 
+
+n = 5 x 4
+r = 2 x 1
+
+ans = 10
+
 ======================================================================
 MORE EXPLANTAION
 =====================================================================

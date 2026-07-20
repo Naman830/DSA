@@ -84,3 +84,15 @@ k = number of unique characters
 
 SC: O(k)
 */
+
+// 2. Optimal Solution (Bucket Sort)
+/*
+Instead of sorting the frequencies, notice that the maximum possible frequency is the length of the string (n).
+
+Count the frequency of every character.
+Create n + 1 buckets.
+Put each character into the bucket corresponding to its frequency.
+Traverse the buckets from highest frequency to lowest and build the answer.
+
+This removes the sorting step and achieves O(n) time complexit
+*/

@@ -30,3 +30,25 @@ For each substring:
 Count distinct characters using a Set.
 If distinct count == k, increment answer.
 */
+
+function countSubstringsBruteForce(s, k) {
+  let count = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    const set = new Set();
+
+    for (let j = i; j < s.length; j++) {
+      set.add(s[j]);
+      if (set.size === k) {
+        count++;
+      }
+
+      if (set.size > k) {
+        break;
+      }
+    }
+  }
+  return count;
+}
+console.log(countSubstringsBruteForce("abc", 2)); // 2
+console.log(countSubstringsBruteForce("pqpqs", 2)); // 7

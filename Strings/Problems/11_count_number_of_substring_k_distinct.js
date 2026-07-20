@@ -21,3 +21,12 @@ Checking every substring is very slow.
 Sliding Window naturally finds at most K distinct characters.
 Finding exactly K directly is difficult.
 */
+
+// 1. Brute Force Approach
+/*
+Generate every possible substring.
+
+For each substring:
+Count distinct characters using a Set.
+If distinct count == k, increment answer.
+*/

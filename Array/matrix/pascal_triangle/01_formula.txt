@@ -1,0 +1,110 @@
+==========================================
+PASCAL'S TRIANGLE FORMULA
+==========================================
+
+Pascal's Triangle is built using the concept of combinations (nCr).
+Each element in the nth row is: nCr
+
+Formula:
+
+              n!
+nCr = --------------------
+      r! × (n - r)!
+
+Where:
+[ROW means stright line ------ and column is opposite]
+- n = Row number (starting from 0) 
+- r = Column number (starting from 0)
+- ! = Factorial
+
+======================================================================
+MORE EXPLANTAION
+=====================================================================
+
+------------------------------------------
+Factorial
+------------------------------------------
+
+n! = n × (n - 1) × (n - 2) × ... × 2 × 1
+
+Examples:
+0! = 1
+1! = 1
+3! = 3 × 2 × 1 = 6
+5! = 5 × 4 × 3 × 2 × 1 = 120
+
+------------------------------------------
+Finding an Element
+------------------------------------------
+
+Formula:
+Element = nCr
+
+Example:
+Find the 3rd element in the 5th row.
+
+Row = 5
+Column = 2
+
+5C2 = 5! / (2! × 3!)
+    = 120 / (2 × 6)
+    = 10
+
+Answer = 10
+
+------------------------------------------
+Efficient Formula (Without Factorials)
+------------------------------------------
+
+Instead of calculating factorials every time:
+
+          n × (n - 1) × (n - 2) × ...
+nCr = --------------------------------
+        1 × 2 × 3 × ... × r
+
+Example:
+
+5C2
+
+= (5 × 4) / (1 × 2)
+= 20 / 2
+= 10
+
+------------------------------------------
+Generating a Row Efficiently
+------------------------------------------
+
+First element is always 1.
+
+Next element:
+
+Next = Previous × (n - col) / (col + 1)
+
+Where:
+- n = Row number
+- col = Current column (starting from 0)
+
+Example (5th row):
+
+Start:
+1
+
+Next = 1 × (5 - 0) / (0 + 1) = 5
+Next = 5 × (5 - 1) / (1 + 1) = 10
+Next = 10 × (5 - 2) / (2 + 1) = 10
+Next = 10 × (5 - 3) / (3 + 1) = 5
+Next = 5 × (5 - 4) / (4 + 1) = 1
+
+Result:
+1 5 10 10 5 1
+
+------------------------------------------
+Important Points
+------------------------------------------
+
+1. Row numbering starts from 0.
+2. First and last element of every row is 1.
+3. Number of elements in row n = n + 1.
+4. Every element = Sum of the two elements above it.
+5. nth row can also be generated using nCr.
+6. Efficient row generation runs in O(n) time.

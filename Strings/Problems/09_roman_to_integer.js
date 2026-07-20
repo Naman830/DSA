@@ -82,3 +82,5 @@ console.log(romanToInteger("IX")); // 9
 console.log(romanToInteger("XL")); // 40
 console.log(romanToInteger("CD")); // 400
 console.log(romanToInteger("MMXXVI")); // 2026
+
+// TC: O(n) || SC: O(1)

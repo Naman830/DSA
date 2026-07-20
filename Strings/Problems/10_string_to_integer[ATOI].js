@@ -30,3 +30,12 @@ Read digits until a non-digit appears.
 If no digit is found, return 0.
 If the number exceeds the 32-bit signed integer range:
 */
+
+// 1. Optimal Approach
+/*
+Remove leading spaces, 
+determine the sign, 
+then build the number digit by digit. 
+After each digit, ensure the value stays within the 32-bit signed integer range.
+This solution runs in O(n) time and O(1) extra space.
+*/

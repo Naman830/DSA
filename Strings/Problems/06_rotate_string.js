@@ -140,3 +140,17 @@ console.log(rotateString("abcde", "abced")); // false
 console.log(rotateString("aaaa", "aaaa")); // true
 console.log(rotateString("water", "terwa")); // true
 console.log(rotateString("hello", "llohe")); // true
+
+/*
+| Case    | Time | Space |
+| ------- | ---- | ----- |
+| Best    | O(n) | O(n)  |
+| Average | O(n) | O(n)  |
+| Worst   | O(n) | O(n)  |
+
+1. Creating s + s takes O(n).
+
+2. includes() performs a substring search. In JavaScript engines, this is implemented efficiently (typically linear for practical purposes), so the overall time is treated as O(n) in interview settings.
+
+3. Extra space is O(n) because of the concatenated string.
+*/

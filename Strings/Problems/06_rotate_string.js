@@ -34,3 +34,37 @@ Repeat n times
 
 return false
 */
+
+/*
+Problem:
+Given two strings s and goal,
+return true if goal can be obtained by rotating s.
+Otherwise return false.
+*/
+
+function rotateString(s, goal) {
+  // Length must be same
+  if (s.length !== goal.length) {
+    return false;
+  }
+
+  // Check every possible rotation
+  for (let i = 0; i < s.length; i++) {
+    // If current rotation matches
+    if (s === goal) {
+      return true;
+    }
+
+    // Rotate once
+    // First character goes to the end
+    s = s.slice(1) + s[0];
+  }
+
+  return false;
+}
+
+// Test Cases
+console.log(rotateString("abcde", "cdeab")); // true
+console.log(rotateString("abcde", "abced")); // false
+console.log(rotateString("aaaa", "aaaa")); // true
+console.log(rotateString("water", "terwa")); // true

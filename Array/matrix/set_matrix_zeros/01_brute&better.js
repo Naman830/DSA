@@ -30,7 +30,13 @@ for each cell
 convert all markers to 0
 */
 
-// TC: O(n3) or O((mn)(m+n)) & SC: O(1)
+/*
+| Case    | Time         | Space |
+| ------- | ------------ | ----- |
+| Best    | O(M×N×(M+N)) | O(1)  |
+| Average | O(M×N×(M+N)) | O(1)  |
+| Worst   | O(M×N×(M+N)) | O(1)  |
+*/
 
 function setZeroesBrute(matrix) {
   const MARK = -Infinity;

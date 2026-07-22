@@ -82,11 +82,7 @@ SC: O(m + n) [But it take extra space due to creating row and column for mark]
 /*
 Pseudocode
 
-rows = []
-cols = []
 
-find all zeros
-mark rows and cols
 
 again traverse matrix
 set 0 where needed
@@ -96,10 +92,14 @@ function setZeroesBetter(matrix) {
   const m = matrix.length;
   const n = matrix[0].length;
 
+  // rows = [];
+  // cols = [];
+  // initally they are false
   const rows = new Array(m).fill(false);
   const cols = new Array(n).fill(false);
 
   for (let i = 0; i < m; i++) {
+    // FIND Zeros and mark it to true
     for (let j = 0; j < n; j++) {
       if (matrix[i][j] === 0) {
         rows[i] = true;
@@ -107,6 +107,7 @@ function setZeroesBetter(matrix) {
       }
     }
   }
+  // the mark true become zeros
   for (let i = 0; i < m; i++) {
     for (let j = 0; j < n; j++) {
       if (rows[i] || cols[j]) {

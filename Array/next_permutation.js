@@ -46,11 +46,14 @@ Very slow.
 Step 1
 Find the first number from the right that is smaller than its next element.
 or
-Greater number next is always small
-1 2 7 4 3 1
+Greater number next is always small and find the breakpoint which is between 2 and 7
+1 2  7 4 3 1
+    ^
 
-        ^
 Step 2
+Again move from the right and fint the greater number then 1 index 
+1 2 7 4 3 1
+          ^
 
 
 */

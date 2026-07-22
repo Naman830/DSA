@@ -60,12 +60,23 @@ function setZeroesBrute(matrix) {
   return matrix;
 }
 
+// ==================================================================================
+// ==================================================================================
+// ==================================================================================
+// ==================================================================================
+
 // 2. Better Solution
 /*
-We only need to know:
+In previous we are MARKING zeros and then converting it to zeros
 
-Which rows contain a zero
-Which columns contain a zero
+STEP 1 :- In this we create a ONE row and column outside of matrix and set it to 0 = No zero yet in matrix
+
+STEP 2 :- Then Iterate in matrix and find zero when we find zero simply row and column 0 = 1 which means marked
+
+STEP 3 :- All marked row and column will become zeros at end
+
+TC: O(m × n)
+SC: O(m + n) [But it take extra space due to creating row and column for mark]
 */
 
 /*
@@ -80,8 +91,6 @@ mark rows and cols
 again traverse matrix
 set 0 where needed
 */
-
-// TC: O(m × n) & SC: O(m + n)
 
 function setZeroesBetter(matrix) {
   const m = matrix.length;

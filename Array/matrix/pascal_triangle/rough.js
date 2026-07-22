@@ -1,15 +1,3 @@
-/*
-Problem:
-Given a row number (r) and column number (c),
-return the element present at that position in Pascal's Triangle.
-
-Formula:
-Element = (r - 1)C(c - 1)
-
-Time Complexity: O(c)
-Space Complexity: O(1)
-*/
-
 function findElement(row, col) {
   // Convert to 0-based indexing for nCr formula
   const rowIndex = row - 1;

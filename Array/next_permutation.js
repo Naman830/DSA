@@ -52,8 +52,18 @@ Greater number next is always small and find the breakpoint which is between 2 a
 
 Step 2
 Again move from the right and fint the greater number then 1 index 
-1 2 7 4 3 1
-          ^
+
+    |
+1 2 | 7 4 3 1
+  ^ |     ^   
+
+Step 3
+Reverse everything after the pivot or breakpoint
+
+    |[REVERSE]
+1 3 | 7 4 2 1
+    |        
+
 
 
 */

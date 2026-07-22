@@ -77,8 +77,30 @@ function nextPermutation(nums) {
     pivot--;
   }
 
+  // Step 2: If pivot exists, find the next greater element
   if (pivot >= 0) {
+    let nextGreater = n - 1;
+
+    while (nums[nextGreater] <= nums[pivot]) {
+      nextGreater--;
+    }
+
+    // Swap
+    [nums[pivot], nums[nextGreater]] = [nums[nextGreater], nums[pivot]];
   }
+
+  // Step 3: Reverse the suffix
+  let left = pivot + 1;
+  let right = n - 1;
+
+  while (left < right) {
+    [nums[left], nums[right]] = [nums[right], nums[left]];
+
+    left++;
+    right--;
+  }
+
+  return nums;
 }
 
 // Test Cases

@@ -89,8 +89,10 @@ console.log(
   ]),
 );
 
-// Output:
-// [[1,6],[8,10],[15,18]]
+// ==================================================================
+// ==================================================================
+// ==================================================================
+// ==================================================================
 
 // 2. Optimal Solution
 // Sorting + Interval Merging Pattern
@@ -108,38 +110,16 @@ Loop through remaining intervals.
 
 Step 4
 If overlap:
+
 currentStart <= lastEnd
+Merge: lastEnd = max(lastEnd,currentEnd)
 
-Merge:
-lastEnd = max(lastEnd,currentEnd)
 Step 5
-
 Otherwise push current interval.
-*/
-
-/*
-Pseudocode
-
-sort intervals
-
-result = [first interval]
-
-for each interval
-
-    last = result[last index]
-
-    if currentStart <= lastEnd
-
-        lastEnd = max(lastEnd,currentEnd)
-
-    else
-
-        add current interval
-
-return result
-*/
 
 // TC: O(n log n) & SC: O(n)
+*/
+
 function mergeIntervals(intervals) {
   // Edge case
   if (intervals.length <= 1) {

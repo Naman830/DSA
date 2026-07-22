@@ -109,3 +109,12 @@ console.log(nextPermutation([3, 2, 1])); // [1,2,3]
 console.log(nextPermutation([1, 1, 5])); // [1,5,1]
 console.log(nextPermutation([1, 3, 2])); // [2,1,3]
 console.log(nextPermutation([2, 3, 1])); // [3,1,2]
+
+/*
+| Case    | Time     | Space    |
+| ------- | -------- | -------- |
+| Best    | **O(N)** | **O(1)** |
+| Average | **O(N)** | **O(1)** |
+| Worst   | **O(N)** | **O(1)** |
+
+*/

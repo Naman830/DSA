@@ -10,10 +10,6 @@ Output:
 1 0 1
 0 0 0
 1 0 1
-
-Keep in Mind
-1. First identify rows/columns that should become zero.
-2. Then update the matrix.
 */
 
 // 1. Brute Force Solution
@@ -111,85 +107,3 @@ function setZeroesBetter(matrix) {
   }
   return matrix;
 }
-
-// 3. Optimal Solution (O(1) Space)
-/*
-Key Observation
-
-Instead of extra arrays:
-rows[]
-cols[]
-
-Use the matrix itself as storage.
-
-Specifically:
-First row → stores column markers
-First column → stores row markers
-
-
-Problem:
-
-Cell (0,0) belongs to:
-first row
-first column
-
-So we need an extra variable:
-col0 [to remember whether first column should become zero.]
-*/
-
-/*
-Pseudocode
-
-col0 = 1
-
-mark rows and columns
-
-traverse backwardfunction setZeroes(matrix) {
-
-if row marker or column marker is 0
-    make cell 0
-
-handle first column
-*/
-
-// TC: O(n * m) & SC: O(1)
-
-function setZeroesOptimal(matrix) {
-  const m = matrix.length;
-  const n = matrix[0].length;
-
-  let col0 = 1;
-
-  // Mark rows and columns
-  for (let i = 0; i < m; i++) {
-    if (matrix[i][0] === 0) col0 = 0;
-
-    for (let j = 1; j < n; j++) {
-      if (matrix[i][j] === 0) {
-        matrix[i][0] = 0;
-        matrix[0][j] = 0;
-      }
-    }
-  }
-
-  // Fill zeros from bottom-right
-  for (let i = m - 1; i >= 0; i--) {
-    for (let j = n - 1; j >= 1; j--) {
-      if (matrix[i][0] === 0 || matrix[0][j] === 0) {
-        matrix[i][j] = 0;
-      }
-    }
-
-    if (col0 === 0) matrix[i][0] = 0;
-  }
-  return matrix;
-}
-
-console.log(
-  setZeroesOptimal([
-    [1, 1, 1],
-    [1, 0, 1],
-    [1, 1, 0],
-    [0, 1, 1],
-  ]),
-);

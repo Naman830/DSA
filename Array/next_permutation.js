@@ -34,9 +34,23 @@ Idea
     Sort them.
     Find the current permutation.
     Return the next one.
-    
+
 Time Complexity
 O(N! × N)
 
 Very slow.
+*/
+
+// Optimal Approach
+/*
+Step 1
+Find the first number from the right that is smaller than its next element.
+or
+Greater number next is always small
+1 2 7 4 3 1
+
+        ^
+Step 2
+
+
 */

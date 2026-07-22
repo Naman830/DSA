@@ -26,3 +26,17 @@ So we return the first permutation.
 */
 
 // note:- DON'T WRITE BRUTE FORCE APPROACH IN INTERVIEW BECAUSE IT IS LONG BY USING RECURSSION AND NOT GOOD BECAUSE IT SHOW TIME LIMIT EXCEDEED ONLY TELL THINKING ABOUT BRUTE FORCE
+
+// Brute Force
+/*
+Idea
+    Generate all permutations.
+    Sort them.
+    Find the current permutation.
+    Return the next one.
+    
+Time Complexity
+O(N! × N)
+
+Very slow.
+*/

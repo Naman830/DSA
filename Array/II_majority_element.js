@@ -2,7 +2,7 @@
 Given an array of size n, find all elements that appear more than ⌊n/3⌋ times.
 Maximum 2 elements can appear more than n/3 times
 
-Input: [1,1,1,3,3,2,2,2]
+Input: [1,1,1, 3,3 ,2,2,2]
 Output: [1,2]
 
 
@@ -178,7 +178,6 @@ function majorityElementOptimal(nums) {
 }
 
 console.log(majorityElementOptimal([1, 1, 1, 3, 3, 2, 2, 2]));
-
 
 /*
 Boyer-Moore Voting Algorithm

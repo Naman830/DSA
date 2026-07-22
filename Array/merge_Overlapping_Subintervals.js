@@ -98,9 +98,11 @@ console.log(
 // Sorting + Interval Merging Pattern
 /* 
 Step-by-Step Algorithm
+[1, 3] , [8, 10], [2, 6], [15, 18],
 
 Step 1
 Sort intervals by start value.
+[1,3] ,[2,6], [8,10], [15,18],
 
 Step 2
 Push first interval into result.
@@ -111,8 +113,11 @@ Loop through remaining intervals.
 Step 4
 If overlap:
 
-currentStart <= lastEnd
-Merge: lastEnd = max(lastEnd,currentEnd)
+[1, 3 ] 
+  [ 2 , 6]
+{check 2 <= 3}
+
+extend itself [1, 6] and this iteration done again and again 
 
 Step 5
 Otherwise push current interval.
@@ -121,37 +126,40 @@ Otherwise push current interval.
 */
 
 function mergeIntervals(intervals) {
-  // Edge case
+  // If there are 0 or 1 intervals, nothing to merge
   if (intervals.length <= 1) {
     return intervals;
   }
 
-  // Sort intervals by start value
+  // Step 1: Sort intervals by starting value
   intervals.sort((a, b) => a[0] - b[0]);
 
-  const result = [];
+  const merged = [];
 
-  // Add first interval
-  result.push(intervals[0]);
+  // Step 2: Put the first interval into the answer
+  merged.push(intervals[0]);
 
-  // Process remaining intervals
+  // Step 3: Check every remaining interval
   for (let i = 1; i < intervals.length; i++) {
-    const current = intervals[i];
+    const currentInterval = intervals[i];
 
-    // Last merged interval
-    const last = result[result.length - 1];
+    // Last interval already stored in the answer
+    const lastMergedInterval = merged[merged.length - 1];
 
-    // Overlap exists
-    if (current[0] <= last[1]) {
-      // Extend the ending point
-      last[1] = Math.max(last[1], current[1]);
+    // If intervals overlap
+    if (currentInterval[0] <= lastMergedInterval[1]) {
+      // Extend the ending point if needed
+      lastMergedInterval[1] = Math.max(
+        lastMergedInterval[1],
+        currentInterval[1],
+      );
     } else {
-      // No overlap
-      result.push(current);
+      // No overlap, add it as a new interval
+      merged.push(currentInterval);
     }
   }
 
-  return result;
+  return merged;
 }
 
 console.log(

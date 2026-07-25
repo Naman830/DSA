@@ -49,6 +49,8 @@ Approach:
   If left value > right value,
   then all remaining elements in left half are also greater.
   So, add (mid - left + 1) inversions.
+
+  Inversion means one pair of i > j so we add + like a counter 
 */
 
 function mergeSort(arr, low, high) {

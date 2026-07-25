@@ -47,3 +47,5 @@ function maxProductBrute(nums) {
 console.log(maxProductBrute([2, 3, -2, 4])); // 6
 console.log(maxProductBrute([-2, 0, -1])); // 0
 console.log(maxProductBrute([-2, 3, -4])); // 24
+
+// TC: O(n²) & SC: O(1)

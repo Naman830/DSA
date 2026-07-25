@@ -72,3 +72,38 @@ Minimum product till current index.
 Whenever we see a negative number:
 Maximum and minimum swap their roles.
 */
+
+function maxProduct(nums) {
+  // Maximum and minimum product ending at current index
+  let currentMax = nums[0];
+  let currentMin = nums[0];
+
+  // Final answer
+  let maxProduct = nums[0];
+
+  for (let i = 1; i < nums.length; i++) {
+    // Current element
+    const currentNumber = nums[i];
+
+    // Negative number swaps the roles of max and min
+    if (currentNumber < 0) {
+      [currentMax, currentMin] = [currentMin, currentMax];
+    }
+
+    // Either start a new subarray or extend the previous one
+    currentMax = Math.max(currentNumber, currentMax * currentNumber);
+    currentMin = Math.min(currentNumber, currentMin * currentNumber);
+
+    // Update the overall maximum product
+    maxProduct = Math.max(maxProduct, currentMax);
+  }
+
+  return maxProduct;
+}
+
+// Test Cases
+console.log(maxProduct([2, 3, -2, 4])); // 6
+console.log(maxProduct([-2, 0, -1])); // 0
+console.log(maxProduct([-2, 3, -4])); // 24
+console.log(maxProduct([0, 2])); // 2
+console.log(maxProduct([-2])); // -2

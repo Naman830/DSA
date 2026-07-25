@@ -49,3 +49,26 @@ console.log(maxProductBrute([-2, 0, -1])); // 0
 console.log(maxProductBrute([-2, 3, -4])); // 24
 
 // TC: O(n²) & SC: O(1)
+
+// 1. Optimal Approach (Track Maximum & Minimum)
+/*
+Normally, we only keep the maximum value.
+But here negative numbers make things tricky.
+
+Example:
+Current Maximum = 5
+Multiply by -2
+Maximum becomes -10 ❌
+
+Now another negative comes.
+-10 × -3 = 30 ✅
+
+That negative maximum suddenly becomes the largest positive.
+
+So we must store:
+Maximum product till current index.
+Minimum product till current index.
+
+Whenever we see a negative number:
+Maximum and minimum swap their roles.
+*/

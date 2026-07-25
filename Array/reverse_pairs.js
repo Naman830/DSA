@@ -22,3 +22,20 @@ Normal nested loops work but are too slow.
 We need to compare elements on both sides efficiently.
 Merge Sort naturally divides the array into sorted halves, making counting much faster.
 */
+
+// 1. Brute Force
+// Check every possible pair (i, j).
+
+/*
+Pseudocode
+count = 0
+
+for i = 0 to n-1
+    for j = i+1 to n-1
+        if nums[i] > 2 * nums[j]
+            count++
+
+return count
+*/
+
+// Time Complexity: O(n²) && Space Complexity: O(n)

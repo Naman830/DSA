@@ -47,21 +47,96 @@ return count
 
 // 2. Optimal Solution (Merge Sort)
 /*
-Just like Count Inversions, we use Merge Sort.
-When Merge Sort divides the array:
+Approach:
+1. Use Merge Sort.
+2. Before merging two sorted halves, count reverse pairs.
+3. Merge both halves.
 
-Left Half  -> sorted
-Right Half -> sorted
+Time Complexity:
+Best    : O(n log n)
+Average : O(n log n)
+Worst   : O(n log n)
 
-Before merging them, we count reverse pairs.
-
-Because both halves are sorted:
-We don't restart checking every time.
-A pointer only moves forward.
-Total counting becomes linear for each merge.
-
-Overall:
-Divide
-→ Count reverse pairs
-→ Merge
+Space Complexity:
+O(n)
 */
+
+var reversePairs = function (nums) {
+  return mergeSort(nums, 0, nums.length - 1);
+};
+
+function mergeSort(nums, left, right) {
+  if (left >= right) return 0;
+
+  const mid = Math.floor((left + right) / 2);
+
+  let count = 0;
+
+  // Count in left half
+  count += mergeSort(nums, left, mid);
+
+  // Count in right half
+  count += mergeSort(nums, mid + 1, right);
+
+  // Count reverse pairs between both halves
+  count += countPairs(nums, left, mid, right);
+
+  // Merge both sorted halves
+  merge(nums, left, mid, right);
+
+  return count;
+}
+
+// Count reverse pairs before merging
+function countPairs(nums, left, mid, right) {
+  let count = 0;
+  let j = mid + 1;
+
+  for (let i = left; i <= mid; i++) {
+    while (j <= right && nums[i] > 2 * nums[j]) {
+      j++;
+    }
+
+    count += j - (mid + 1);
+  }
+
+  return count;
+}
+
+// Standard Merge Sort merge
+function merge(nums, left, mid, right) {
+  const temp = [];
+
+  let i = left;
+  let j = mid + 1;
+
+  while (i <= mid && j <= right) {
+    if (nums[i] <= nums[j]) {
+      temp.push(nums[i]);
+      i++;
+    } else {
+      temp.push(nums[j]);
+      j++;
+    }
+  }
+
+  while (i <= mid) {
+    temp.push(nums[i]);
+    i++;
+  }
+
+  while (j <= right) {
+    temp.push(nums[j]);
+    j++;
+  }
+
+  for (let k = left; k <= right; k++) {
+    nums[k] = temp[k - left];
+  }
+}
+
+// Test Cases
+console.log(reversePairs([1, 3, 2, 3, 1])); // 2
+console.log(reversePairs([2, 4, 3, 5, 1])); // 3
+console.log(reversePairs([5, 4, 3, 2, 1])); // 4
+console.log(reversePairs([1, 2, 3, 4])); // 0

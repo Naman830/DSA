@@ -39,3 +39,29 @@ return count
 */
 
 // Time Complexity: O(n²) && Space Complexity: O(n)
+
+// -=====================================================================================
+// -=====================================================================================
+// -=====================================================================================
+// -=====================================================================================
+
+// 2. Optimal Solution (Merge Sort)
+/*
+Just like Count Inversions, we use Merge Sort.
+When Merge Sort divides the array:
+
+Left Half  -> sorted
+Right Half -> sorted
+
+Before merging them, we count reverse pairs.
+
+Because both halves are sorted:
+We don't restart checking every time.
+A pointer only moves forward.
+Total counting becomes linear for each merge.
+
+Overall:
+Divide
+→ Count reverse pairs
+→ Merge
+*/

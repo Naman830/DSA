@@ -51,11 +51,10 @@ Approach:
   So, add (mid - left + 1) inversions.
 */
 
-function countInversions(arr) {
-  return mergeSort(arr, 0, arr.length - 1);
-}
-
 function mergeSort(arr, low, high) {
+  low = 0;
+  high - arr.length - 1;
+
   // Base case
   if (low >= high) return 0;
 

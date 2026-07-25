@@ -15,4 +15,10 @@ Pairs:
 (3,1) → another 3 > 2×1 ✅
 
 Output: 2
+
+Key Observations (Short)
+i must come before j.
+Normal nested loops work but are too slow.
+We need to compare elements on both sides efficiently.
+Merge Sort naturally divides the array into sorted halves, making counting much faster.
 */

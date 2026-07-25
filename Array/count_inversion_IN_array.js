@@ -6,49 +6,37 @@ arr[i] > arr[j]
 
 In simple words:
 If a bigger number appears before a smaller number, it forms an inversion.
+
+like arr[5,4,3,2,1]
+(5,4), (5,3), (5,2) like this
+
+not (4,5)
 */
 
 // 1. Brute Force Solution
 // Generate every possible pair.
 
-/*
-Loop through every element.
-Compare with all elements after it.
-If greater, increment count.
-
-Pseudocode
-
-count = 0
-
-for i = 0 to n-1
-    for j = i+1 to n-1
-
-        if arr[i] > arr[j]
-            count++
-
-return count
-*/
-
 // TC: O(n²) & SC: O(1)
 
 function countInversions(arr) {
-    let count = 0;
+  let count = 0;
 
-    for (let i = 0; i < arr.length; i++) {
-        // Compare current element with all elements after it
-        for (let j = i + 1; j < arr.length; j++) {
-            if (arr[i] > arr[j]) {
-                count++;
-            }
-        }
+  // Loop through every element.
+  for (let i = 0; i < arr.length; i++) {
+    // Compare current element with all elements after it
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] > arr[j]) {
+        count++;
+      }
     }
+  }
 
-    return count;
+  return count;
 }
 
 console.log(countInversions([5, 3, 2, 4, 1])); // 8
 
-// Optimal Solution (Merge Sort)
+// 2. Optimal Solution (Merge Sort)
 // mid - leftPointer + 1 [key trick]
 
 /*
@@ -82,71 +70,71 @@ return count
 
 // TC: (n log n) & SC: O(1)
 function countInversions(arr) {
-    return mergeSort(arr, 0, arr.length - 1);
+  return mergeSort(arr, 0, arr.length - 1);
 }
 
 function mergeSort(arr, low, high) {
-    // Base case: single element has 0 inversions
-    if (low >= high) return 0;
+  // Base case: single element has 0 inversions
+  if (low >= high) return 0;
 
-    const mid = Math.floor((low + high) / 2);
+  const mid = Math.floor((low + high) / 2);
 
-    let count = 0;
+  let count = 0;
 
-    // Count inversions in left half
-    count += mergeSort(arr, low, mid);
+  // Count inversions in left half
+  count += mergeSort(arr, low, mid);
 
-    // Count inversions in right half
-    count += mergeSort(arr, mid + 1, high);
+  // Count inversions in right half
+  count += mergeSort(arr, mid + 1, high);
 
-    // Count cross inversions while merging
-    count += merge(arr, low, mid, high);
+  // Count cross inversions while merging
+  count += merge(arr, low, mid, high);
 
-    return count;
+  return count;
 }
 
 function merge(arr, low, mid, high) {
-    const temp = [];
+  const temp = [];
 
-    let left = low;
-    let right = mid + 1;
-    let count = 0;
+  let left = low;
+  let right = mid + 1;
+  let count = 0;
 
-    while (left <= mid && right <= high) {
-        if (arr[left] <= arr[right]) {
-            temp.push(arr[left]);
-            left++;
-        } else {
-            temp.push(arr[right]);
+  while (left <= mid && right <= high) {
+    if (arr[left] <= arr[right]) {
+      temp.push(arr[left]);
+      left++;
+    } else {
+      temp.push(arr[right]);
 
-            // arr[left] > arr[right]
-            // Since left half is sorted,
-            // all elements from left to mid
-            // will form inversions with arr[right]
-            count += (mid - left + 1);
+      // arr[left] > arr[right]
+      // Since left half is sorted,
+      // all elements from left to mid
+      // will form inversions with arr[right]
+      count += mid - left + 1;
 
-            right++;
-        }
+      right++;
     }
+  }
 
-    // Add remaining elements from left half
-    while (left <= mid) {
-        temp.push(arr[left]);
-        left++;
-    }
+  // Add remaining elements from left half
+  while (left <= mid) {
+    temp.push(arr[left]);
+    left++;
+  }
 
-    // Add remaining elements from right half
-    while (right <= high) {
-        temp.push(arr[right]);
-        right++;
-    }
+  // Add remaining elements from right half
+  while (right <= high) {
+    temp.push(arr[right]);
+    right++;
+  }
 
-    // Copy merged elements back to original array
-    for (let i = low; i <= high; i++) {
-        arr[i] = temp[i - low];
-    }
+  // Copy merged elements back to original array
+  for (let i = low; i <= high; i++) {
+    arr[i] = temp[i - low];
+  }
 
-    return count;
+  return count;
 }
 
 console.log(countInversions([5, 3, 2, 4, 1])); // 8

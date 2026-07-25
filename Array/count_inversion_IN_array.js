@@ -36,61 +36,43 @@ function countInversions(arr) {
 
 console.log(countInversions([5, 3, 2, 4, 1])); // 8
 
+// ===========================================================================
+// ===========================================================================
+// ===========================================================================
+// ===========================================================================
+
 // 2. Optimal Solution (Merge Sort)
-// mid - leftPointer + 1 [key trick]
-
 /*
-Merge Sort already divides array into sorted halves.
-
-While merging:
-Left Half  -> Sorted
-Right Half -> Sorted
-
-We can efficiently count inversions.
-Eventually all inversions are counted during merge operations.
+Approach:
+- Use Merge Sort.
+- While merging two sorted halves:
+  If left value > right value,
+  then all remaining elements in left half are also greater.
+  So, add (mid - left + 1) inversions.
 */
 
-/*
-Pseudocode
-
-mergeSort(low, high)
-
-    if low >= high
-        return 0
-
-    mid
-
-    count =
-        mergeSort(left)
-      + mergeSort(right)
-      + merge(left,right)
-
-return count
-*/
-
-// TC: (n log n) & SC: O(1)
 function countInversions(arr) {
   return mergeSort(arr, 0, arr.length - 1);
 }
 
 function mergeSort(arr, low, high) {
-  // Base case: single element has 0 inversions
+  // Base case
   if (low >= high) return 0;
 
   const mid = Math.floor((low + high) / 2);
 
-  let count = 0;
+  let inversions = 0;
 
   // Count inversions in left half
-  count += mergeSort(arr, low, mid);
+  inversions += mergeSort(arr, low, mid);
 
   // Count inversions in right half
-  count += mergeSort(arr, mid + 1, high);
+  inversions += mergeSort(arr, mid + 1, high);
 
-  // Count cross inversions while merging
-  count += merge(arr, low, mid, high);
+  // Count inversions while merging
+  inversions += merge(arr, low, mid, high);
 
-  return count;
+  return inversions;
 }
 
 function merge(arr, low, mid, high) {
@@ -98,43 +80,44 @@ function merge(arr, low, mid, high) {
 
   let left = low;
   let right = mid + 1;
-  let count = 0;
+  let inversions = 0;
 
+  // Merge two sorted halves
   while (left <= mid && right <= high) {
     if (arr[left] <= arr[right]) {
       temp.push(arr[left]);
       left++;
     } else {
       temp.push(arr[right]);
-
-      // arr[left] > arr[right]
-      // Since left half is sorted,
-      // all elements from left to mid
-      // will form inversions with arr[right]
-      count += mid - left + 1;
-
       right++;
+
+      // All remaining left elements form inversions
+      inversions += mid - left + 1;
     }
   }
 
-  // Add remaining elements from left half
+  // Add remaining left elements
   while (left <= mid) {
     temp.push(arr[left]);
     left++;
   }
 
-  // Add remaining elements from right half
+  // Add remaining right elements
   while (right <= high) {
     temp.push(arr[right]);
     right++;
   }
 
-  // Copy merged elements back to original array
+  // Copy merged array back
   for (let i = low; i <= high; i++) {
     arr[i] = temp[i - low];
   }
 
-  return count;
+  return inversions;
 }
 
+// Test Cases
 console.log(countInversions([5, 3, 2, 4, 1])); // 8
+console.log(countInversions([2, 4, 1, 3, 5])); // 3
+console.log(countInversions([1, 2, 3, 4, 5])); // 0
+console.log(countInversions([5, 4, 3, 2, 1])); // 10

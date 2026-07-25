@@ -107,3 +107,11 @@ console.log(maxProduct([-2, 0, -1])); // 0
 console.log(maxProduct([-2, 3, -4])); // 24
 console.log(maxProduct([0, 2])); // 2
 console.log(maxProduct([-2])); // -2
+
+/*
+| Case    | Time | Space |
+| ------- | ---- | ----- |
+| Best    | O(n) | O(1)  |
+| Average | O(n) | O(1)  |
+| Worst   | O(n) | O(1)  |
+*/

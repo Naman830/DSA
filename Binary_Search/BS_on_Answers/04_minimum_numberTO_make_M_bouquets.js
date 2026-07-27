@@ -13,13 +13,15 @@ Find the minimum number of days needed to make exactly m bouquets.
 
 If impossible, return -1.
 
+// ===============================================================
+// ===============================================================
+// ===============================================================
 
-OBSERVATIONNNNNNNNNNNNNNNNNNN
+EXAMPLE
 Suppose day = 3
 
 Flowers bloomed:
-[1,10,3,10,2]
-↓
+[   1     10      3     10     2]
 [Bloomed, Not, Bloomed, Not, Bloomed]
 Can make 3 bouquets.
 

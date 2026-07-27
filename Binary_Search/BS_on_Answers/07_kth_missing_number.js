@@ -52,6 +52,8 @@ function missingKBinary(vec, k) {
     }
   }
 
+  // low = number of elements present before the answer
+  // k = number of missing elements before the answer
   return low + k; // Compute final result
 }
 

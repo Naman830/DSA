@@ -35,7 +35,7 @@ function shipWithinDays(weights, d) {
   // Iterate from minimum to maximum capacity
   for (let capacity = left; capacity <= right; capacity++) {
     // Calculate days needed for current capacity
-    let needed = this.daysNeeded(weights, capacity);
+    let needed = daysNeeded(weights, capacity);
     // If days needed are less than or equal to d, return capacity
     if (needed <= d) {
       return capacity;

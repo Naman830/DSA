@@ -159,8 +159,8 @@ function canMakeBouquets(day, bloomDay, m, k) {
 }
 
 let bloomDay = [1, 10, 3, 10, 2];
-let m = 3;
-let k = 1;
+let m = 3; // How many bouquet
+let k = 1; // size of bouquet
 
 console.log(minDays(bloomDay, m, k)); // 3
 

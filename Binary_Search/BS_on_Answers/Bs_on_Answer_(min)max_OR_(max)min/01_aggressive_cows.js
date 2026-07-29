@@ -1,3 +1,5 @@
+// This similar question on leetCode is :- 1552. Magnetic Force Between Two Balls
+
 /*
 You are given:
 An array of stall positions.

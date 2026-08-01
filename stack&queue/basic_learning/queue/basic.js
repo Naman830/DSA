@@ -33,3 +33,18 @@ Enqueue(30)
 Front       Rear
 [10]  [20]  [30]
 */
+
+/*
+2. Dequeue (Remove)
+
+Before
+Front       Rear
+[10]  [20]  [30]
+
+Dequeue() [FIRST IN FIRST OUT]
+Removed = 10
+
+After 
+Front   Rear
+[20]    [30]
+*/

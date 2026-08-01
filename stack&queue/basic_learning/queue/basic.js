@@ -13,3 +13,23 @@ Front       Rear
 Front = Where people leave.
 Rear = Where new people join.
 */
+
+/*
+1. Enqueue (Insert)
+
+Empty Queue
+Front      Rear
+[]
+
+Enqueue(10)
+Front Rear
+[10]
+
+Enqueue(20)
+Front      Rear
+[10]       [20]
+
+Enqueue(30)
+Front       Rear
+[10]  [20]  [30]
+*/

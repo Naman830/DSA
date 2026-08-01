@@ -76,3 +76,14 @@ stack.print(); // [10, 20]
 
 console.log(stack.size()); // 2
 console.log(stack.isEmpty()); // false
+
+/*
+| Operation | Best | Average | Worst |
+| --------- | ---- | ------- | ----- |
+| push()    | O(1) | O(1)    | O(1)  |
+| pop()     | O(1) | O(1)    | O(1)  |
+| peek()    | O(1) | O(1)    | O(1)  |
+| isEmpty() | O(1) | O(1)    | O(1)  |
+| size()    | O(1) | O(1)    | O(1)  |
+
+*/

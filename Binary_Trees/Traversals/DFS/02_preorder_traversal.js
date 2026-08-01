@@ -49,3 +49,11 @@ root.right.right = new TreeNode(6);
 // Test Cases
 console.log(preorderTraversal(root)); // [1, 2, 4, 5, 3, 6]
 console.log(preorderTraversal(null)); // []
+
+/*
+| Case    | Time     | Space    |
+| ------- | -------- | -------- |
+| Best    | **O(n)** | **O(h)** |
+| Average | **O(n)** | **O(h)** |
+| Worst   | **O(n)** | **O(n)** |
+*/

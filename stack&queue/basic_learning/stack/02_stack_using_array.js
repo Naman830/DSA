@@ -85,5 +85,4 @@ console.log(stack.isEmpty()); // false
 | peek()    | O(1) | O(1)    | O(1)  |
 | isEmpty() | O(1) | O(1)    | O(1)  |
 | size()    | O(1) | O(1)    | O(1)  |
-
 */

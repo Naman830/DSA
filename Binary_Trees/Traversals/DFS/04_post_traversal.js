@@ -56,3 +56,12 @@ root.right = new TreeNode(3);
 
 // Test
 console.log(postorderTraversal(root)); // [4, 5, 2, 3, 1]
+
+/*
+| Case    | Time     | Space    |
+| ------- | -------- | -------- |
+| Best    | **O(n)** | **O(h)** |
+| Average | **O(n)** | **O(h)** |
+| Worst   | **O(n)** | **O(n)** |
+
+*/

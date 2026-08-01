@@ -69,3 +69,20 @@ Example:
 Index : 0  1  2  3  4   5     6
 Value :10  5 15  2  7 null   20
 */
+
+/*
+Time & Space Complexity
+Node Representation
+
+| Operation      | Best | Average | Worst |
+| -------------- | ---- | ------- | ----- |
+| Create Node    | O(1) | O(1)    | O(1)  |
+| Connect Nodes  | O(1) | O(1)    | O(1)  |
+| Space per Node | O(1) | O(1)    | O(1)  |
+
+Array Representation
+| Operation       | Best | Average | Worst |
+| --------------- | ---- | ------- | ----- |
+| Access by Index | O(1) | O(1)    | O(1)  |
+| Space           | O(n) | O(n)    | O(n)  |
+*/

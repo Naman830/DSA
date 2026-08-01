@@ -48,3 +48,19 @@ After
 Front   Rear
 [20]    [30]
 */
+
+/*
+3. Front / Peek
+Returns the first element.
+Front = 20
+
+4. isEmpty()
+Checks if the queue is empty.
+
+Where is Queue Used?
+1. Printer queue
+2. CPU scheduling
+3. Ticket booking systems
+4. Breadth First Search (BFS)
+5. Task scheduling
+*/

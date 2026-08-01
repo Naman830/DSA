@@ -54,3 +54,12 @@ root.right.left = new treeNode(6);
 root.right.right = new treeNode(7);
 
 console.log(inorderTraversal(root)); // [4, 2, 5, 1, 6, 3, 7]
+
+/*
+| Case    | Time     | Space    |
+| ------- | -------- | -------- |
+| Best    | **O(n)** | **O(h)** |
+| Average | **O(n)** | **O(h)** |
+| Worst   | **O(n)** | **O(n)** |
+
+*/

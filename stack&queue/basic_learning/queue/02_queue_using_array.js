@@ -70,3 +70,14 @@ q.print(); // [20, 30]
 
 console.log(q.size()); // 2
 console.log(q.isEmpty()); // false
+
+/*
+| Operation | Best | Average | Worst |
+| --------- | ---- | ------- | ----- |
+| enqueue() | O(1) | O(1)    | O(1)  |
+| dequeue() | O(n) | O(n)    | O(n)  |
+| front()   | O(1) | O(1)    | O(1)  |
+| size()    | O(1) | O(1)    | O(1)  |
+| isEmpty() | O(1) | O(1)    | O(1)  |
+
+*/

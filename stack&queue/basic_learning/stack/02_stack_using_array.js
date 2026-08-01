@@ -14,52 +14,49 @@ Operations:
 
 class Stack {
   constructor() {
-    // Array to store stack elements
-    this.items = [];
+    this.stack = [];
   }
 
-  // Add an element to the top
+  // Add element to top
   push(value) {
-    this.items.push(value);
+    this.stack.push(value);
   }
 
-  // Remove the top element
+  // Remove top element
   pop() {
     if (this.isEmpty()) {
-      console.log("Stack Underflow");
-      return;
+      return "Stack Underflow";
     }
 
-    return this.items.pop();
+    return this.stack.pop();
   }
 
-  // Return the top element without removing it
+  // Return top element
   peek() {
     if (this.isEmpty()) {
-      console.log("Stack is Empty");
-      return;
+      return "Stack is Empty";
     }
 
-    return this.items[this.items.length - 1];
+    return this.stack[this.stack.length - 1];
   }
 
-  // Check whether stack is empty
+  // Check if stack is empty
   isEmpty() {
-    return this.items.length === 0;
+    return this.stack.length === 0;
   }
 
-  // Return the number of elements
+  // Number of elements
   size() {
-    return this.items.length;
+    return this.stack.length;
   }
 
-  // Print all elements
+  // Print stack
   print() {
-    console.log(this.items);
+    console.log(this.stack);
   }
 }
 
-// Testing ============================================================
+// ---------------- Test ----------------
 
 const stack = new Stack();
 
@@ -76,7 +73,6 @@ stack.print(); // [10, 20]
 
 console.log(stack.size()); // 2
 console.log(stack.isEmpty()); // false
-
 /*
 | Operation | Best | Average | Worst |
 | --------- | ---- | ------- | ----- |

@@ -44,3 +44,28 @@ root.right.right = new TreeNode(20);
 
 // Testing
 console.log(root);
+
+/*
+Representation 2 — Using an Array
+This representation is mainly used for Complete Binary Trees (like Heaps).
+
+        10
+       /  \
+      5    15
+     / \     \
+    2   7     20
+*/
+
+const tree = [10, 5, 15, 2, 7, null, 20];
+
+/*
+For a node at index i:
+
+Left Child → 2 * i + 1
+Right Child → 2 * i + 2
+Parent → Math.floor((i - 1) / 2)
+
+Example:
+Index : 0  1  2  3  4   5     6
+Value :10  5 15  2  7 null   20
+*/

@@ -27,3 +27,13 @@ Operations in Stack
 3. Peek / Top           [Returns the top element without removing it.]
 4. isEmpty()            [Checks whether the stack is empty.]
 */
+
+/*
+Where is Stack Used?
+
+1. Function calls (Recursion)
+2. Undo feature (Ctrl + Z)
+3. Browser Back button
+4. Expression evaluation
+5. DFS Traversal
+*/

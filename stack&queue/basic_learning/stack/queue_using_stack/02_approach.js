@@ -53,3 +53,5 @@ q.display();
 console.log(q.dequeue()); // 20
 
 q.display();
+
+// TC: O(n) && SC: O(n)

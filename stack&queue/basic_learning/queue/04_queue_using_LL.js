@@ -1,5 +1,6 @@
 /*
 2. Key Observations (Short)
+
 Queue follows FIFO.
 Keep two pointers:
 front → First node

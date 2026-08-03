@@ -95,3 +95,9 @@ console.log(minStack.top()); // 8
 
 console.log(minStack.pop()); // 8
 console.log(minStack.getMin()); // 2
+
+/*
+| Operation | Best     | Average  | Worst    |
+| --------- | -------- | -------- | -------- |
+| getMin    | **O(1)** | **O(1)** | **O(1)** |
+*/

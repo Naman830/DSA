@@ -84,9 +84,8 @@ console.log(queue.dequeue()); // 40
 console.log(queue.isEmpty()); // true
 
 /*
-| Case        | Time                                                         | Space |
-| ----------- | ------------------------------------------------------------ | ----- |
-| **Enqueue** | Best: **O(1)** Average: **O(1)** Worst: **O(1)**             | O(1)  |
-| **Dequeue** | Best: **O(1)** Average (Amortized): **O(1)** Worst: **O(n)** | O(n)  |
-
+| Case    | Time                                             | Space |
+|-------- | ------------------------------------------------ | ----- |
+| Enqueue | Best: O(1) Average: O(1) Worst: O(1)             | O(1)  |
+| Dequeue | Best: O(1) Average (Amortized): O(1) Worst: O(n) | O(n)  |
 */

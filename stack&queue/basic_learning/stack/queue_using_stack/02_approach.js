@@ -45,8 +45,42 @@ q.enqueue(30);
 q.enqueue(40);
 
 q.display();
-
 console.log(q.dequeue()); // 10
+
+/*
+STEP 1:-
+
+Stack
+      TOP
+   ┌──────┐
+   │ 30   │
+   ├──────┤
+   │ 20   │
+   ├──────┤
+   │ 10   │
+   └──────┘
+
+Recursion is holding
+40
+
+STEP 2:- REMOVE ONE BY ONE TILL LAST ONE ELEMNT LEFT 
+
+TOP
+┌──────┐
+│ 10   │
+└──────┘
+
+STEP 3:- Now recursion starts returning.
+        TOP
+      ┌──────┐
+      │  40  │
+      ├──────┤
+      │  30  │
+      ├──────┤
+      │  20  │
+      └──────┘
+       BOTTOM
+*/
 
 q.display();
 

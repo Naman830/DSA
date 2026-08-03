@@ -26,3 +26,60 @@
    Since we always keep the latest element at the front,
    the queue behaves exactly like a stack.
 */
+
+class Mystack {
+  constructor() {
+    this.queue = [];
+  }
+
+  push(x) {
+    this.queue.push(x);
+    let size = this.queue.length;
+
+    while (size > 1) {
+      this.queue.push(this.queue.shift());
+      size--;
+    }
+  }
+
+  pop() {
+    if (this.empty()) {
+      return "Stack Underflow";
+    }
+
+    return this.queue.shift();
+  }
+
+  top() {
+    if (this.empty()) {
+      return "stack is empty";
+    }
+
+    return this.queue[0];
+  }
+
+  empty() {
+    return this.queue.length === 0;
+  }
+}
+
+// ------------------ Test ------------------
+
+const stack = new MyStack();
+
+stack.push(10);
+stack.push(20);
+stack.push(30);
+
+console.log(stack.top()); // 30
+
+console.log(stack.pop()); // 30
+console.log(stack.pop()); // 20
+
+console.log(stack.top()); // 10
+
+console.log(stack.empty()); // false
+
+console.log(stack.pop()); // 10
+
+console.log(stack.empty()); // true

@@ -74,3 +74,12 @@ console.log(isBalanced("([)]")); // false
 console.log(isBalanced("(((")); // false
 console.log(isBalanced("{[]}")); // true
 console.log(isBalanced("")); // true
+
+/*
+| Case    | Time                        | Space    |
+| ------- | --------------------------- | -------- |
+| Best    | **O(1)** *(first mismatch)* | **O(1)** |
+| Average | **O(n)**                    | **O(n)** |
+| Worst   | **O(n)**                    | **O(n)** |
+
+ */

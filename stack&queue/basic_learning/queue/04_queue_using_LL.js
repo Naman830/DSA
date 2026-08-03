@@ -1,3 +1,24 @@
+/*
+2. Key Observations (Short)
+Queue follows FIFO.
+Keep two pointers:
+front → First node
+rear → Last node
+Enqueue → Insert at rear.
+Dequeue → Remove from front.
+All operations take O(1) time.
+*/
+
+/*
+Front
+  |
+  v
+  10 → 20 → 30
+             ^
+             |
+            Rear
+*/
+
 class Node {
   constructor(data) {
     this.data = data;

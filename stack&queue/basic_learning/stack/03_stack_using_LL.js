@@ -13,8 +13,11 @@ class Stack {
   }
 
   push(data) {
+    // We make new node
     const newNode = new Node(data);
+    // insert it before null NEWNODE --> NULL
     newNode.next = this.top;
+    // iif we add new node NEWNODE ---> OLDNODE ---> NULL
     this.top = newNode;
 
     this.length++;
@@ -29,6 +32,7 @@ class Stack {
     this.top = this.top.next;
 
     this.length--;
+    return removed;
   }
 
   peek() {

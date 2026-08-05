@@ -20,15 +20,21 @@ class Queue {
       return "QUEUE IS EMPTY";
     }
 
+    // Keep removing the top element until only one element is left.
+    // That last element is actually the front of the queue.
     if (this.stack.length === 1) {
       return this.stack.pop();
     }
 
+    // Remove the current top and recursively reach the front element.
     const top = this.stack.pop();
     const front = this.dequeue();
 
+    // Restore the removed element back onto the stack.
     this.stack.push(top);
-    return top;
+
+    // Return the original front element.
+    return front;
   }
 
   // Show queue

@@ -27,7 +27,7 @@
    the queue behaves exactly like a stack.
 */
 
-class Mystack {
+class MyStack {
   constructor() {
     this.queue = [];
   }
@@ -54,7 +54,8 @@ class Mystack {
     if (this.empty()) {
       return "stack is empty";
     }
-
+    // After every push, we rotate the queue so the newest element
+    // (the stack's top) is always at the front of the queue.
     return this.queue[0];
   }
 

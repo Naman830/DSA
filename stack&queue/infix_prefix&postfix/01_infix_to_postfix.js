@@ -1,0 +1,21 @@
+/*
+a + b * ( c ^ d - c )
+
+
+| Step | Scan | Action                                               | Stack        | Postfix     |
+| ---- | ---- | ---------------------------------------------------- | ------------ | ----------- |
+| 1    | `a`  | Operand → Add to postfix                             |              | `a`         |
+| 2    | `+`  | Stack empty → Push                                   | `+`          | `a`         |
+| 3    | `b`  | Operand → Add to postfix                             | `+`          | `ab`        |
+| 4    | `*`  | `*` has higher priority than `+` → Push              | `+  *`       | `ab`        |
+| 5    | `(`  | Push `(`                                             | `+  *  (`    | `ab`        |
+| 6    | `c`  | Operand → Add to postfix                             | `+  *  (`    | `abc`       |
+| 7    | `^`  | Top is `(` → Push                                    | `+  *  (  ^` | `abc`       |
+| 8    | `d`  | Operand → Add to postfix                             | `+  *  (  ^` | `abcd`      |
+| 9    | `-`  | `^` has higher priority → **Pop `^`**, then push `-` | `+  *  (  -` | `abcd^`     |
+| 10   | `c`  | Operand → Add to postfix                             | `+  *  (  -` | `abcd^c`    |
+| 11   | `)`  | Pop until `(`                                        | `+  *`       | `abcd^c-`   |
+| 12   | End  | Pop `*`                                              | `+`          | `abcd^c-*`  |
+| 13   | End  | Pop `+`                                              |              | `abcd^c-*+` |
+
+*/

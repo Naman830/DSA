@@ -12,4 +12,18 @@ A * B	    A, B
 x / y	    x, y
 
 Numbers or variables = Operands
+
+
+What is an Operator?
+An operator is the symbol that tells us what operation to perform.
+
+Operator    Meaning
++	        Addition
+-	        Subtraction
+*	        Multiplication
+/	        Division
+%	        Modulus (Remainder)
+
+Rule:
+Symbols like +, -, *, / = Operators
 */

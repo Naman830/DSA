@@ -16,6 +16,17 @@ a + b * ( c ^ d - c )
 | 11   | `)`  | Pop until `(`                                        | `+  *`       | `abcd^c-`   |
 | 12   | End  | Pop `*`                                              | `+`          | `abcd^c-*`  |
 | 13   | End  | Pop `+`                                              |              | `abcd^c-*+` |
+
+
+Time Complexity:
+Best    : O(n)
+Average : O(n)
+Worst   : O(n)
+
+Space Complexity:
+Best    : O(1)
+Average : O(n)
+Worst   : O(n)
 */
 
 function precedence(ch) {

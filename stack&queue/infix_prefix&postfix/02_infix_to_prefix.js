@@ -24,6 +24,7 @@ Algorithm
 Done
 */
 
+// Returns priority of operators
 function precedence(ch) {
   if (ch === "^") return 3;
   if (ch === "*" || ch === "/") return 2;
@@ -31,35 +32,46 @@ function precedence(ch) {
   return 0;
 }
 
+// Converts Infix expression to Postfix
 function infixToPostfix(expression) {
   let stack = [];
   let postfix = "";
 
   for (const ch of expression) {
+    // If character is an operand, add it to postfix
     if ((ch >= "a" && ch <= "z") || (ch >= "A" && ch <= "Z")) {
-      //CONTION-1
       postfix += ch;
-    } else if (ch === "(") {
-      // CONDITON-2
+    }
+
+    // If opening bracket, push into stack
+    else if (ch === "(") {
       stack.push(ch);
-    } else if (ch === ")") {
-      // CONTION-3
+    }
+
+    // If closing bracket, pop until opening bracket
+    else if (ch === ")") {
       while (stack.length && stack[stack.length - 1] !== "(") {
         postfix += stack.pop();
       }
-      stack.pop();
-    } else {
-      // LAST CONDITION
+      stack.pop(); // Remove '('
+    }
+
+    // If operator
+    else {
+      // Pop operators with higher or equal priority
       while (
         stack.length &&
-        precedence(stack[stack.length - 1] >= precedence(ch))
+        precedence(stack[stack.length - 1]) >= precedence(ch)
       ) {
         postfix += stack.pop();
       }
+
+      // Push current operator
       stack.push(ch);
     }
   }
 
+  // Add remaining operators
   while (stack.length) {
     postfix += stack.pop();
   }
@@ -67,9 +79,12 @@ function infixToPostfix(expression) {
   return postfix;
 }
 
+// Converts Infix expression to Prefix
 function infixToPrefix(expression) {
+  // Reverse the expression
   let reversed = expression.split("").reverse().join("");
 
+  // Swap opening and closing brackets
   let swapped = "";
 
   for (const ch of reversed) {
@@ -78,11 +93,14 @@ function infixToPrefix(expression) {
     else swapped += ch;
   }
 
+  // Convert swapped expression to postfix
   let postfix = infixToPostfix(swapped);
 
+  // Reverse postfix to get prefix
   return postfix.split("").reverse().join("");
 }
 
+// Test cases
 console.log(infixToPrefix("A+B*C")); // +A*BC
 console.log(infixToPrefix("(A+B)*C")); // *+ABC
 console.log(infixToPrefix("A+B*C-D")); // -+A*BCD

@@ -25,22 +25,72 @@ function precedence(ch) {
   return 0;
 }
 
-function infixToPostix(expression) {
-  const stack = [];
+// Return priority of operators
+function precedence(ch) {
+  if (ch === "^") return 3;
+  if (ch === "*" || ch === "/") return 2;
+  if (ch === "+" || ch === "-") return 1;
+  return 0;
+}
+
+function infixToPostfix(expression) {
+  let stack = [];
   let postfix = "";
 
-  for (const ch of expression) {
+  // Check every character
+  for (let ch of expression) {
+    // Skip spaces
     if (ch === " ") continue;
 
+    // If operand, add to postfix
     if ((ch >= "a" && ch <= "z") || (ch >= "A" && ch <= "Z")) {
       postfix += ch;
-    } else if (ch === "(") {
+    }
+
+    // Push opening bracket
+    else if (ch === "(") {
       stack.push(ch);
-    } else if (ch === ")") {
+    }
+
+    // Pop until '('
+    else if (ch === ")") {
       while (stack[stack.length - 1] !== "(") {
-        postfix += stack.pop;
+        postfix += stack.pop();
       }
+
+      // Remove '('
       stack.pop();
     }
+
+    // If operator
+    else {
+      // Pop higher priority operators
+      while (
+        stack.length > 0 &&
+        stack[stack.length - 1] !== "(" &&
+        // Higher priority
+        (precedence(stack[stack.length - 1]) > precedence(ch) ||
+          // Same priority (except '^')
+          (precedence(stack[stack.length - 1]) === precedence(ch) &&
+            ch !== "^"))
+      ) {
+        postfix += stack.pop();
+      }
+
+      // Push current operator
+      stack.push(ch);
+    }
   }
+
+  // Pop remaining operators
+  while (stack.length > 0) {
+    postfix += stack.pop();
+  }
+
+  return postfix;
 }
+
+console.log(infixToPostfix("a+b*(c^d-c)")); // abcd^c-*+
+console.log(infixToPostfix("(a+b)*c")); // ab+c*
+console.log(infixToPostfix("a+b*c")); // abc*+
+console.log(infixToPostfix("a^b^c")); // abc^^

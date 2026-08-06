@@ -23,3 +23,46 @@ Algorithm
 4. Reverse postfix
 Done
 */
+
+function precedence(ch) {
+  if (ch === "^") return 3;
+  if (ch === "*" || ch === "/") return 2;
+  if (ch === "+" || ch === "-") return 1;
+  return 0;
+}
+
+function infixToPostfix(expression) {
+  let stack = [];
+  let postfix = "";
+
+  for (const ch of expression) {
+    if ((ch >= "a" && ch <= "z") || (ch >= "A" && ch <= "Z")) {
+      //CONTION-1
+      postfix += ch;
+    } else if (ch === "(") {
+      // CONDITON-2
+      stack.push(ch);
+    } else if (ch === ")") {
+      // CONTION-3
+      while (stack.length && stack[stack.length - 1] !== "(") {
+        postfix += stack.pop();
+      }
+      stack.pop();
+    } else {
+      // LAST CONDITION
+      while (
+        stack.length &&
+        precedence(stack[stack.length - 1] >= precedence(ch))
+      ) {
+        postfix += stack.pop();
+      }
+      stack.push(ch);
+    }
+  }
+
+  while (stack.length) {
+    postfix += stack.pop();
+  }
+
+  return postfix;
+}

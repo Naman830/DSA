@@ -13,6 +13,7 @@ x / y	    x, y
 
 Numbers or variables = Operands
 
+==============================================================================================
 
 What is an Operator?
 An operator is the symbol that tells us what operation to perform.
@@ -26,4 +27,31 @@ Operator    Meaning
 
 Rule:
 Symbols like +, -, *, / = Operators
+*/
+
+// ==============================================================================================
+// ==============================================================================================
+// ==============================================================================================
+// ==============================================================================================
+
+/*
+Let's take one expression: A + B
+| Type        | Formula                  | Example |
+| ----------- | ------------------------ | ------- |
+| Infix       | Operand Operator Operand | A + B   |
+| Prefix      | Operator Operand Operand | + A B   |
+| Postfix     | Operand Operand Operator | A B +   |
+
+
+1. Infix
+Operator is IN the middle. 
+Used by humans because it's easy to read and write.
+
+2. Prefix
+Operator comes before both operands.
+Used by compilers/parsers because it doesn't need parentheses and is easy to evaluate.
+
+3. Postfix
+Operator comes after both operands.
+Used by stacks, calculators (RPN), and compilers because it is very easy to evaluate using a stack.
 */

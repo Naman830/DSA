@@ -66,3 +66,23 @@ function infixToPostfix(expression) {
 
   return postfix;
 }
+
+function infixToPrefix(expression) {
+  let reversed = expression.split("").reverse().join("");
+
+  let swapped = "";
+
+  for (const ch of reversed) {
+    if (ch === "(") swapped += ")";
+    else if (ch === ")") swapped += "(";
+    else swapped += ch;
+  }
+
+  let postfix = infixToPostfix(swapped);
+
+  return postfix.split("").reverse().join("");
+}
+
+console.log(infixToPrefix("A+B*C")); // +A*BC
+console.log(infixToPrefix("(A+B)*C")); // *+ABC
+console.log(infixToPrefix("A+B*C-D")); // -+A*BCD

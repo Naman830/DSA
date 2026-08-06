@@ -22,6 +22,8 @@ Algorithm
 3. Convert to postfix
 4. Reverse postfix
 Done
+
+TC: O(n) && SC: O(n)
 */
 
 // Returns priority of operators

@@ -82,3 +82,21 @@ const graph = [
 ];
 
 console.log(countConnectedComponents(graph)); // 3
+
+/*
+TC:-
+
+| Case    | Complexity   |
+| ------- | ------------ |
+| Best    | **O(V + E)** |
+| Average | **O(V + E)** |
+| Worst   | **O(V + E)** |
+
+SC:-
+
+| Case    | Complexity   |
+| ------- | ------------ |
+| Best    | **O(V + E)** |
+| Average | **O(V + E)** |
+| Worst   | **O(V + E)** |
+*/

@@ -43,3 +43,42 @@ Simple Algorithm or way
     Increase the component count.
 Every new DFS/BFS means we found a new connected component.
 */
+
+function dfs(node, graph, visited) {
+  visited[node] = true;
+
+  // Visit all unvisited neighbors
+  for (const neighbor of graph[node]) {
+    if (!visited[neighbor]) {
+      dfs(neighbor, graph, visited);
+    }
+  }
+}
+
+function countConnectedComponents(graph) {
+  const n = graph.length;
+  const visited = new Array(n).fill(false);
+
+  let components = 0;
+
+  // Check every node
+  for (let i = 0; i < n; i++) {
+    if (!visited[i]) {
+      dfs(i, graph, visited);
+      components++;
+    }
+  }
+
+  return components;
+}
+
+// Example Graph
+const graph = [
+  [1], // 0
+  [0], // 1
+  [3], // 2
+  [2], // 3
+  [], // 4
+];
+
+console.log(countConnectedComponents(graph)); // 3

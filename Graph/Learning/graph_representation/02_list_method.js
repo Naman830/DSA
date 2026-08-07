@@ -48,3 +48,14 @@ Adjacency List
 2 → [3]
 3 → []
 */
+
+const VD = 4;
+
+const graphD = Array.from({ length: VD }, () => []);
+
+// Only one direction
+graphD[0].push(1);
+graphD[0].push(2);
+graphD[2].push(3);
+
+console.log(graphD);

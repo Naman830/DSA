@@ -31,5 +31,11 @@ D → 1
 
 In undirected graph it is called undirected graph degree
 Property always 
-Total Degree = 2 x edges [every word contain two edges]
+Total Degree = 2 x edges [every word contain two edges
+
+Cyclic graph means start and end at same node [undirect graph is alwars undirect cyclic graph]
+A -------B 
+|        | 
+|        |
+C ------ D
 */

@@ -75,4 +75,15 @@ Cost
 
 Example:
 Google Maps
+
+
+Unweighted Graph
+Every edge has the same cost. and there default cost we take = 1
+
+A ---- B
+|
+|
+C
+
+No numbers on edges.
 */

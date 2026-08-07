@@ -57,3 +57,22 @@ Edges have directions.
     Out-degree(B) = 1
 
 */
+
+/*
+Weighted Graph
+Each edge has a cost or weight.
+
+A ----5---- B
+ \          /
+  2        3
+   \      /
+      C
+
+Weight may represent:
+Distance
+Time
+Cost
+
+Example:
+Google Maps
+*/

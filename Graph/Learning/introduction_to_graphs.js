@@ -39,3 +39,21 @@ A -------B
 |        |
 C ------ D
 */
+
+/*
+Directed Graph (Digraph)
+Edges have directions.
+
+          A
+        ↙   ↘
+      ↓      ↘ 
+     B -----→ C
+     ↑        |
+     |        ↓ ---> this is directed asyclic grpah(dag)
+     D ←----- E
+
+    There are two type of degree to mention it directed graph
+    In-degree (B) = 2
+    Out-degree(B) = 1
+
+*/

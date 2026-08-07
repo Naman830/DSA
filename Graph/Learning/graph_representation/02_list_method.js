@@ -35,3 +35,16 @@ graph[2].push(3);
 graph[3].push(2);
 
 console.log(graph);
+
+/*
+Directed Graph Representation
+0 → 1
+↓
+2 → 3
+
+Adjacency List
+0 → [1,2]
+1 → []
+2 → [3]
+3 → []
+*/

@@ -25,3 +25,11 @@ Components are:
 
 Answer = 3 Connected Components
 */
+
+/*
+.Key Observations
+Works for Undirected Graphs.
+Every node belongs to exactly one connected component.
+If the graph has only one connected component, the graph is Connected.
+If it has more than one, it is Disconnected.
+*/

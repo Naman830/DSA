@@ -1,66 +1,153 @@
 /*
-A Graph is a non-linear data structure that represents connections (relationships) between different objects.
+===========================================================
+GRAPH - INTRODUCTION
+===========================================================
+
+A Graph is a non-linear data structure that represents
+connections (relationships) between different objects.
 
 The objects are called Vertices (Nodes).
 The connections between them are called Edges.
 
-Alice -------- Bob ---> this is NODE/VERTEX
-  |              | ---> this is edge
+Example:
+
+Alice -------- Bob
+  |              |
   |              |
 Charlie ------ David
 
-Alice, Bob, Charlie, David → Vertices (Nodes)
-Friendship between them → Edges
+Vertices (Nodes):
+Alice, Bob, Charlie, David
+
+Edges:
+Friendship (connections) between them.
 */
 
 /*
-This is undirected graph Edges work in both directions.
+===========================================================
+UNDIRECTED GRAPH
+===========================================================
+
+In an Undirected Graph, edges work in both directions.
+
       A
-     / \ 
+     / \
     B---C
      \
       D
 
-Vertex (Node) = A, B, C, D
+Vertices (Nodes):
+A, B, C, D
 
 Degree = Number of edges connected to a vertex.
-A → 2
-B → 3
-C → 2
-D → 1
 
-In undirected graph it is called undirected graph degree
-Property always 
-Total Degree = 2 x edges [every word contain two edges
+Degree(A) = 2
+Degree(B) = 3
+Degree(C) = 2
+Degree(D) = 1
 
-Cyclic graph means start and end at same node [undirect graph is alwars undirect cyclic graph]
-A -------B 
-|        | 
-|        |
-C ------ D
+Property:
+Total Degree = 2 × Number of Edges
+
+Reason:
+Each edge is connected to two vertices,
+so every edge is counted twice.
 */
 
 /*
-Directed Graph (Digraph)
-Edges have directions.
+===========================================================
+CYCLE IN UNDIRECTED GRAPH
+===========================================================
+
+A cycle means you start from a node and can return
+to the same node without repeating an edge.
+
+Example:
+
+A ------- B
+|         |
+|         |
+C ------- D
+
+One possible cycle:
+A → B → D → C → A
+
+Note:
+An undirected graph is NOT always cyclic.
+
+Example of an Acyclic Undirected Graph (Tree):
+
+    A
+   / \
+  B   C
+      |
+      D
+
+This graph has no cycle.
+*/
+
+/*
+===========================================================
+DIRECTED GRAPH (DIGRAPH)
+===========================================================
+
+In a Directed Graph, every edge has a direction.
 
           A
         ↙   ↘
-      ↓      ↘ 
-     B -----→ C
-     ↑        |
-     |        ↓ ---> this is directed asyclic grpah(dag)
-     D ←----- E
+      ↓      ↘
+     B -----> C
+     ↑
+     |
+     D
 
-    There are two type of degree to mention it directed graph
-    In-degree (B) = 2
-    Out-degree(B) = 1
+For Directed Graphs, there are two types of degree.
 
+In-degree  = Number of incoming edges.
+Out-degree = Number of outgoing edges.
+
+Example:
+
+A → B
+C → B
+B → D
+
+For vertex B:
+
+In-degree(B) = 2
+Out-degree(B) = 1
 */
 
 /*
-Weighted Graph
-Each edge has a cost or weight.
+===========================================================
+DIRECTED ACYCLIC GRAPH (DAG)
+===========================================================
+
+A DAG (Directed Acyclic Graph) is a Directed Graph
+that contains NO cycles.
+
+Example:
+
+A → B → C
+ \      ↓
+  → D → E
+
+There is no path that starts from a node
+and comes back to the same node.
+
+Common Uses:
+- Task Scheduling
+- Course Prerequisites
+- Build Systems
+- Dependency Graphs
+*/
+
+/*
+===========================================================
+WEIGHTED GRAPH
+===========================================================
+
+Each edge has a cost (weight).
 
 A ----5---- B
  \          /
@@ -68,22 +155,30 @@ A ----5---- B
    \      /
       C
 
-Weight may represent:
-Distance
-Time
-Cost
+The weight can represent:
+
+- Distance
+- Time
+- Cost
 
 Example:
 Google Maps
+*/
 
+/*
+===========================================================
+UNWEIGHTED GRAPH
+===========================================================
 
-Unweighted Graph
-Every edge has the same cost. and there default cost we take = 1
+Every edge has the same weight.
+
+By default, we usually assume
+every edge has a weight of 1.
 
 A ---- B
 |
 |
 C
 
-No numbers on edges.
+No weights are written on the edges.
 */

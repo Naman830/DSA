@@ -1,4 +1,14 @@
 /*
+| Feature            | Adjacency Matrix | Adjacency List |
+| ------------------ | ---------------- | -------------- |
+| Space              | O(V²)            | O(V + E) ✅     |
+| Add Edge           | O(1)             | O(1)           |
+| Check Edge         | O(1)             | O(degree)      |
+| Traverse Neighbors | O(V)             | O(degree) ✅    |
+| Best For           | Dense Graph      | Sparse Graph ✅ |
+*/
+
+/*
 Adjacency List (Most Important)
 
 Instead of storing all possible edges, store only the neighbors of each vertex.

@@ -47,6 +47,12 @@ Time: O((m × n)²) in the worst case.
 Why BFS?
 Because BFS explores nodes based on their [distance] from the starting points.
 Here: Distance = Time
+
+| Case    |       Time |      Space |
+| ------- | ---------: | ---------: |
+| Best    | `O(m × n)` | `O(m × n)` |
+| Average | `O(m × n)` | `O(m × n)` |
+| Worst   | `O(m × n)` | `O(m × n)` |
 */
 
 function orangesRotting(grid) {

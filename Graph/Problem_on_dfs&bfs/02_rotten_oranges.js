@@ -31,3 +31,13 @@ After 2 minutes:
 2 2 0
 0 1 1
 */
+
+// 1. Brute Force
+/*
+Scan entire matrix
+Find fresh oranges next to rotten oranges
+Make them rotten
+Repeat
+
+Time: O((m × n)²) in the worst case.
+*/

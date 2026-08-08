@@ -16,3 +16,12 @@ example:-
 Province 1 → {1, 2, 5}
 Province 2 → {3, 4}
 */
+
+/*
+1. Key Observations
+This is a Graph Traversal problem.
+Each city is a node.
+A connection between two cities is an edge.
+We need to count the number of connected components.
+We can solve it using DFS or BFS.
+*/

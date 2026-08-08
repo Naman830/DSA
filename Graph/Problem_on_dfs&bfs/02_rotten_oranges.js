@@ -68,17 +68,18 @@ function orangesRotting(grid) {
     }
   }
 
-  let minute = 0;
+  let minutes = 0;
   let front = 0;
 
   // Four possible directions: up, down, left, right
-  const direction = [
+  const directions = [
     [-1, 0],
     [1, 0],
     [0, -1],
     [0, 1],
   ];
 
+  // BFS
   while (front < queue.length && fresh > 0) {
     // Current queue size represents one minute.
     const size = queue.length - front;
@@ -87,7 +88,7 @@ function orangesRotting(grid) {
       const [r, c] = queue[front++];
 
       // Check all 4 neighboring cells.
-      for (const [dr, dc] of direction) {
+      for (const [dr, dc] of directions) {
         const nr = r + dr;
         const nc = c + dc;
 
@@ -97,7 +98,7 @@ function orangesRotting(grid) {
           nr < rows &&
           nc >= 0 &&
           nc < cols &&
-          grid[nc][nr] === 1
+          grid[nr][nc] === 1
         ) {
           // Make the fresh orange rotten.
           grid[nr][nc] = 2;
@@ -109,6 +110,7 @@ function orangesRotting(grid) {
         }
       }
     }
+
     // One complete BFS level = one minute.
     minutes++;
   }

@@ -31,8 +31,8 @@ exact pattern under a timer.
 
 | # | Problem | Amazon OA Name | Difficulty | Pattern | LeetCode Link | Status |
 |---|---------|-----------------|------------|---------|----------------|--------|
-| 1 | Number of Islands | Number of Islands | Medium | Grid BFS/DFS | https://leetcode.com/problems/number-of-islands/ | ⬜ |
-| 2 | Rotting Oranges | Zombie in Matrix | Medium | Multi-source BFS | https://leetcode.com/problems/rotting-oranges/ | ⬜ |
+| 1 | Number of Islands | Number of Islands | Medium | Grid BFS/DFS | https://leetcode.com/problems/number-of-islands/ | ✅ |
+| 2 | Rotting Oranges | Zombie in Matrix | Medium | Multi-source BFS | https://leetcode.com/problems/rotting-oranges/ | ✅ |
 | 3 | Pairs of Songs With Total Durations Divisible by 60 | Music Pairs | Medium | HashMap / remainder counting | https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/ | ⬜ |
 | 4 | Top K Frequent Elements | Top K Frequently Mentioned Keywords | Medium | Heap / HashMap | https://leetcode.com/problems/top-k-frequent-elements/ | ⬜ |
 | 5 | Merge Intervals | Merge Intervals | Medium | Sort + Greedy | https://leetcode.com/problems/merge-intervals/ | ⬜ |

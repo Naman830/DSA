@@ -73,3 +73,11 @@ console.log(bfs(graph, 0));
 
 // Output:
 // [0, 1, 2, 3, 4, 5]
+
+/*
+| Case    |     Time | Space |
+| ------- | -------: | ----: |
+| Best    | O(V + E) |  O(V) |
+| Average | O(V + E) |  O(V) |
+| Worst   | O(V + E) |  O(V) |
+*/

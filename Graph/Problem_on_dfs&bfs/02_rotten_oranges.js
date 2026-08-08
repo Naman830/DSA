@@ -41,3 +41,10 @@ Repeat
 
 Time: O((m × n)²) in the worst case.
 */
+
+// 2. Optimal Approach — Multi-Source BFS
+/*
+Why BFS?
+Because BFS explores nodes based on their [distance] from the starting points.
+Here: Distance = Time
+*/

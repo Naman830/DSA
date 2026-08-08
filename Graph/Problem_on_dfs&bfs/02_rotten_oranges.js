@@ -78,6 +78,43 @@ function orangesRotting(grid) {
     [0, -1],
     [0, 1],
   ];
+
+  while (front < queue.length && fresh > 0) {
+    // Current queue size represents one minute.
+    const size = queue.length - front;
+
+    for (let i = 0; i < size; i++) {
+      const [r, c] = queue[front++];
+
+      // Check all 4 neighboring cells.
+      for (const [dr, dc] of direction) {
+        const nr = r + dr;
+        const nc = c + dc;
+
+        // Check boundaries and whether the orange is fresh.
+        if (
+          nr >= 0 &&
+          nr < rows &&
+          nc >= 0 &&
+          nc < cols &&
+          grid[nc][nr] === 1
+        ) {
+          // Make the fresh orange rotten.
+          grid[nr][nc] = 2;
+
+          fresh--;
+
+          // Add the newly rotten orange to the queue.
+          queue.push([nr, nc]);
+        }
+      }
+    }
+    // One complete BFS level = one minute.
+    minutes++;
+  }
+
+  // If fresh oranges are still left, they cannot be reached.
+  return fresh === 0 ? minutes : -1;
 }
 
 // Test Case 1

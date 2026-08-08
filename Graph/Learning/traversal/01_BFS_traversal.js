@@ -23,3 +23,53 @@ How traversal work
 4. Add those neighbors to queue
 5. Repeat until queue is empty
 */
+
+function bfs(graph, start) {
+  // Queue stores nodes waiting to be visited
+  const queue = [start];
+
+  // Set keeps track of visited nodes
+  const visited = new Set([start]);
+
+  // Stores the BFS traversal result
+  const result = [];
+
+  // Pointer for the front of the queue
+  let front = 0;
+
+  // Process nodes until the queue is empty
+  while (front < queue.length) {
+    // Get the front node
+    const node = queue[front++];
+
+    // Add node to the result
+    result.push(node);
+
+    // Check all neighbors of the current node
+    for (const neighbor of graph[node]) {
+      // Visit only unvisited neighbors
+      if (!visited.has(neighbor)) {
+        visited.add(neighbor);
+        queue.push(neighbor);
+      }
+    }
+  }
+
+  return result;
+}
+
+// Graph represented using an adjacency list
+const graph = {
+  0: [1, 2],
+  1: [0, 3, 4],
+  2: [0, 5],
+  3: [1],
+  4: [1],
+  5: [2],
+};
+
+// Start BFS from node 0
+console.log(bfs(graph, 0));
+
+// Output:
+// [0, 1, 2, 3, 4, 5]

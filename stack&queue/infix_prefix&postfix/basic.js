@@ -55,3 +55,21 @@ Used by compilers/parsers because it doesn't need parentheses and is easy to eva
 Operator comes after both operands.
 Used by stacks, calculators (RPN), and compilers because it is very easy to evaluate using a stack.
 */
+
+// ==============================================================================================
+// ==============================================================================================
+// ==============================================================================================
+// ==============================================================================================
+
+/*
+the operator precedence (priority)
+
+| **Priority**       | **Operator** | **What it does** |
+| ------------------ | ------------ | ---------------- |
+|    🥇 3 — Highest  | `^`          | Power            |
+|    🥈 2 — Medium   | `*`          | Multiply         |
+|    🥈 2 — Medium   | `/`          | Divide           |
+|    🥈 2 — Medium   | `%`          | Remainder        |
+|    🥉 1 — Lowest   | `+`          | Add              |
+|    🥉 1 — Lowest   | `-`          | Subtract         |
+*/

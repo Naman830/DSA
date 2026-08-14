@@ -15,3 +15,20 @@ Example:-
 | 4    | `+`       | `[C, (A+B)]` | Pop A, B → `(A+B)` |
 | 5    | `*`       | `[(A+B)*C]`  | Pop `(A+B)`, C     |
 */
+
+/*
+Pattern:-
+Scan:       RIGHT → LEFT
+Data:       STACK
+
+Operand → PUSH
+
+Operator:
+    ↓
+POP left
+POP right
+    ↓
+(left operator right)
+    ↓
+PUSH back
+*/

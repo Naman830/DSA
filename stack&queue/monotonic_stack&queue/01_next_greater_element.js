@@ -6,10 +6,13 @@ Input:
 
 Output:
 [5, 10, 10, -1, -1]
+
+Time:  O(N²)
+Space: O(N)
 */
 
 // 1. Brute Force Approach
-// For every element, look to its right until you find a greater element. */
+// For every element, look to its right until you find a greater element.
 
 function nextGreaterElement(arr) {
   const result = [];

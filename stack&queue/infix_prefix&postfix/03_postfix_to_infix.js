@@ -23,6 +23,14 @@ Approach:
    - Create (left operator right).
    - Push the new expression back into the stack.
 4. The final stack element is the infix expression.
+
+EASY FORMULA
+right = pop()
+left  = pop()
+
+expression = (left operator right)
+
+push(expression)
 */
 
 function postfixToInfix(postfix) {

@@ -1,4 +1,23 @@
 /*
+The Big Picture
+                 MONOTONIC
+                     │
+          ┌──────────┴──────────┐
+          ↓                     ↓
+   Monotonic Stack        Monotonic Queue
+          │                     │
+          ↓                     ↓
+ Next Greater Element    Sliding Window
+ Next Smaller Element    Maximum / Minimum
+ Stock Span
+ Daily Temperatures
+
+Monotonic = maintain order
+Monotonic Stack = maintain order using a stack
+Next Greater Element = usually use a monotonic decreasing stack 
+*/
+
+/*
 Monotonic simply means:
 Something keeps moving in one direction — increasing or decreasing — without breaking the order.
 

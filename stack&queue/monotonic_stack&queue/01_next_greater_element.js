@@ -36,3 +36,20 @@ function nextGreaterElement(arr) {
 
 console.log(nextGreaterElement([4, 5, 2, 10, 8]));
 // [5, 10, 10, -1, -1]
+
+// 2. Optimal Approach — Monotonic Stack
+/*
+For every element:
+1. Remove elements from the stack that are smaller than or equal to the current element.
+2. The remaining top element is the Next Greater Element.
+3. Push the current element into the stack.
+
+Current
+   ↓
+[ 4 ] [ 5 ] [ 2 ] [ 10 ] [ 8 ]
+                              ↑
+                         start here
+                              |
+                              ↓
+                       Monotonic Stack
+*/

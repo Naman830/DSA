@@ -53,3 +53,38 @@ Current
                               ↓
                        Monotonic Stack
 */
+
+function nextGreaterElementOptimal(arr) {
+  const stack = [];
+  const result = new Array(arr.length).fill(-1);
+
+  // Traverse from right to left
+  for (let i = arr.length - 1; i >= 0; i--) {
+    // Remove elements that cannot be the answer
+    // because they are smaller than or equal to current.
+    while (stack.length > 0 && stack[stack.length - 1] <= arr[i]) {
+      stack.pop();
+    }
+
+    // If stack is not empty, its top is the
+    // Next Greater Element.
+    if (stack.length > 0) {
+      result[i] = stack[stack.length - 1];
+    }
+
+    // Current element can be the greater element
+    // for elements on its left.
+    stack.push(arr[i]);
+  }
+
+  return result;
+}
+
+console.log(nextGreaterElementOptimal([4, 5, 2, 10, 8]));
+// [5, 10, 10, -1, -1]
+
+console.log(nextGreaterElementOptimal([1, 3, 2, 4]));
+// [3, 4, 4, -1]
+
+console.log(nextGreaterElementOptimal([5, 4, 3, 2, 1]));
+// [-1, -1, -1, -1, -1]

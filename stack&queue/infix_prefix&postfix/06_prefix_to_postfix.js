@@ -17,4 +17,9 @@ Easy way to remember:-
     second + first + operator
              ↓
            PUSH
+
+| Approach    | Idea                                           |     Time |    Space |
+| ----------- | ---------------------------------------------- | -------: | -------: |
+| Brute Force | Repeatedly find operators and combine operands |    O(n²) |     O(n) |
+| Optimal     | Stack + right-to-left traversal                | **O(n)** | **O(n)** |
 */

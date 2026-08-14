@@ -24,3 +24,32 @@ Approach:
    - Push the new expression back into the stack.
 4. The final stack element is the infix expression.
 */
+
+function postfixToInfix(postfix) {
+  const stack = [];
+
+  for (const ch of postfix) {
+    // If character is an operand, push it into the stack
+    if (/[a-zA-Z0-9]/.test(ch)) {
+      stack.push(ch);
+    } else {
+      // First popped = right operand
+      const right = stack.pop();
+
+      // Second popped = left operand
+      const left = stack.pop();
+
+      // Create infix expression and push it back
+      stack.push(`(${left}${ch}${right})`);
+    }
+  }
+
+  // The final element is the complete infix expression
+  return stack[0];
+}
+
+console.log(postfixToInfix("AB+C*"));
+// ((A+B)*C)
+
+console.log(postfixToInfix("AB-CD+*"));
+// ((A-B)*(C+D))

@@ -34,3 +34,40 @@ PUSH back
 
 TC: O(n) && SC: O(n)
 */
+
+function prefixToInfix(str) {
+  const stack = [];
+
+  // Scan Prefix expression from right to left
+  for (let i = str.length - 1; i >= 0; i--) {
+    const ch = str[i];
+
+    // If character is an operand, push it into the stack
+    if (/[A-Za-z0-9]/.test(ch)) {
+      stack.push(ch);
+    }
+    // If character is an operator
+    else {
+      // First popped element becomes the left operand
+      const left = stack.pop();
+
+      // Second popped element becomes the right operand
+      const right = stack.pop();
+
+      // Create the infix expression
+      const expression = `(${left} ${ch} ${right})`;
+
+      // Push the new expression back
+      stack.push(expression);
+    }
+  }
+
+  // The stack contains the final infix expression
+  return stack[0];
+}
+
+console.log(prefixToInfix("*+ABC"));
+// ((A + B) * C)
+
+console.log(prefixToInfix("-A*BC"));
+// (A - (B * C))

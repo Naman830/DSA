@@ -23,3 +23,39 @@ It's especially useful for problems involving:
 Sliding Window Maximum
 Sliding Window Minimum
 */
+
+/*
+=================================================================================
+Monotonic time Complexity
+=================================================================================
+Why is it O(N), not O(N²)
+This is the most important benefit of the monotonic stack.
+You might think:
+
+
+for (let i = 0; i < array.length; i++) {
+    while () {
+ 
+    }
+}
+
+"There is a while loop inside a for loop, so isn't it O(N²)?"
+
+No.
+
+Every element is:
+Pushed → once
+Popped → at most once
+
+So across the entire algorithm:
+
+N pushes
++
+N pops
+=
+2N operations
+
+Therefore:
+Time = O(N)
+Space = O(N)
+*/

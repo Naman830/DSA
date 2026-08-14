@@ -95,5 +95,4 @@ console.log(nextGreaterElementOptimal([5, 4, 3, 2, 1]));
 | Best    | O(N) |  O(N) |
 | Average | O(N) |  O(N) |
 | Worst   | O(N) |  O(N) |
-
 */

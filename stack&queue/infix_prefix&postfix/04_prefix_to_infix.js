@@ -31,4 +31,6 @@ POP right
 (left operator right)
     ↓
 PUSH back
+
+TC: O(n) && SC: O(n)
 */

@@ -88,3 +88,12 @@ console.log(nextGreaterElementOptimal([1, 3, 2, 4]));
 
 console.log(nextGreaterElementOptimal([5, 4, 3, 2, 1]));
 // [-1, -1, -1, -1, -1]
+
+/*
+| Case    | Time | Space |
+| ------- | ---: | ----: |
+| Best    | O(N) |  O(N) |
+| Average | O(N) |  O(N) |
+| Worst   | O(N) |  O(N) |
+
+*/

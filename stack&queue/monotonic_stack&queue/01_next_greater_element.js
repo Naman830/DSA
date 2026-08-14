@@ -9,4 +9,12 @@ A monotonic stack is just a normal stack with one extra rule:
 | Monotonic Increasing Stack | Small → Large |
 | Monotonic Decreasing Stack | Large → Small |
 
+What is a Monotonic Queue?
+A monotonic queue maintains elements in either:
+
+Increasing order or Decreasing order
+
+It's especially useful for problems involving:
+Sliding Window Maximum
+Sliding Window Minimum
 */

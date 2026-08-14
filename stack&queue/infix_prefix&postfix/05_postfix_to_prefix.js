@@ -16,7 +16,7 @@ Pop B → first
 Pop A → second
 
 Prefix:
-operator + second + first
+operator + second + first   ---> most important rule
 
        +
       / \
@@ -36,4 +36,6 @@ First part: +AB
     +AB  C
 
 → *+ABC
+
+TC: O(n) && SC: O(n)
 */

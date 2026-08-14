@@ -24,13 +24,15 @@ Approach:
    - Push the new expression back into the stack.
 4. The final stack element is the infix expression.
 
-EASY FORMULA
+Easy Formula:-
 right = pop()
 left  = pop()
 
 expression = (left operator right)
 
 push(expression)
+
+TC: O(n) && SC: O(n)
 */
 
 function postfixToInfix(postfix) {

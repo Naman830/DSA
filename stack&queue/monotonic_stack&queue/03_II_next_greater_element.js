@@ -40,6 +40,7 @@ Space: O(1) excluding result
 // 2. Better / Optimal Approach: Monotonic Stack
 // Instead of actually creating: [1, 2, 1, 1, 2, 1]
 // we simply loop from: 2n - 1 → 0 [i % n]
+// TC: O(n) && SC: O(n)
 
 function nextGreaterElements(nums) {
   const n = nums.length;

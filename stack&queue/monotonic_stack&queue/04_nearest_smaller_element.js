@@ -26,3 +26,8 @@ Complexity
 Time: O(n²)
 Space: O(1) excluding the answer array
 */
+
+// 2. Optimal — Monotonic Stack
+// Remove elements from the stack that are greater than or equal to arr[i].
+// The remaining stack top is the next smaller element.
+// Push arr[i] into the stack.

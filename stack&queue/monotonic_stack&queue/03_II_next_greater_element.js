@@ -32,3 +32,7 @@ next index = (2 + 1) % 3 = 0
 
 // 1. Brute Force
 // For every element, keep moving right and check elements one by one.
+/*
+Time: O(n²)
+Space: O(1) excluding result
+*/

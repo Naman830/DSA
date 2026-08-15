@@ -1,6 +1,7 @@
 // Problem:
 // Given an array height where height[i] represents the height of a bar,
 // calculate how much rainwater can be trapped after raining.
+// Time: O(n²) && Space: O(1)
 
 function trap(height) {
   let totalWater = 0;

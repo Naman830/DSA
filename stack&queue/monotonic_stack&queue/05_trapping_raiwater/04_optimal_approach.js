@@ -11,10 +11,9 @@ left                         right
 
 At every step, compare:
 height[left] vs height[right]
+
+TC: O(n) && SC: O(1)
 */
-// Problem:
-// Given an array height where height[i] represents the height of a bar,
-// calculate how much rainwater can be trapped after raining.
 
 function trap(height) {
   let left = 0;

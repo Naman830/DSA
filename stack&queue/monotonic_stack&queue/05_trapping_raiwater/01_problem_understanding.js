@@ -23,3 +23,18 @@ Water can get trapped between taller bars.
     ─────────────────
 The ~ represents trapped water.
 */
+
+/*
+Observation:-
+
+1. For water to stay somewhere, it needs: 
+
+LEFT WALL       WATER       RIGHT WALL
+   █             ~~~            █
+   █             ~~~            █
+   █             ~~~            █
+
+Water gets trapped between a left boundary and a right boundary.
+
+2. For every position, we need to know how high the water can rise.
+*/

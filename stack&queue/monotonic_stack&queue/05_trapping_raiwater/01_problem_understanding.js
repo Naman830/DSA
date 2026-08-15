@@ -1,40 +1,71 @@
 /*
-Explanation:-
+Trapping Rain Water
 
-You are given an array where each number represents the height of a vertical bar.
-height = [4, 2, 0, 3, 2, 5]
+Explanation:
+- Each number represents the height of a vertical bar.
 
-5                 █
-4   █             █
-3   █       █     █
-2   █   █   █ █   █
-1   █   █   █ █   █
-    ─────────────────
-    4   2   0 3 2 5
+  height = [4, 2, 0, 3, 2, 5]
 
-Now imagine rain falls from above.
-Water can get trapped between taller bars.
+  5                 █
+  4   █             █
+  3   █       █     █
+  2   █   █   █ █   █
+  1   █   █   █ █   █
+      ─────────────────
+      4   2   0 3 2 5
 
-5                 █
-4   █~~~~~~~~~~~~~█
-3   █~~~~~~~█~~~~~█
-2   █~~~█~~~█~█~~~█
-1   █~~~█~~~█~█~~~█
-    ─────────────────
-The ~ represents trapped water.
+- When it rains, water can get trapped between taller bars.
+
+  5                 █
+  4   █~~~~~~~~~~~~~█
+  3   █~~~~~~~█~~~~~█
+  2   █~~~█~~~█~█~~~█
+  1   █~~~█~~~█~█~~~█
+
+- '~' represents trapped water.
 */
 
+//=================================================================================================
+//=================================================================================================
+//=================================================================================================
+
 /*
-Observation:-
+Key Observation:
 
-1. For water to stay somewhere, it needs: 
+1. Water can be trapped only when there is a boundary
+   on both the left and right.
 
-LEFT WALL       WATER       RIGHT WALL
-   █             ~~~            █
-   █             ~~~            █
-   █             ~~~            █
+       LEFT WALL       RIGHT WALL
+          █               █
+          █~~~~~~~water~~~█
+          █~~~~~~~water~~~█
 
-Water gets trapped between a left boundary and a right boundary.
+2. For every position, we need to know:
+   - Tallest wall on the left
+   - Tallest wall on the right
+   - Height of the current bar
+*/
 
-2. For every position, we need to know how high the water can rise.
+//=================================================================================================
+//=================================================================================================
+//=================================================================================================
+
+/*
+Thinking Process:
+
+       LEFT MAX       RIGHT MAX
+          ↓              ↓
+          █~~~~~~~~~~~~~~█  ← water level
+          █~~~~~~█~~~~~~~█
+          █~~~~~~█~~~~~~~█
+                 ↑
+            current bar
+
+Ask for every position:
+
+1. What is the tallest wall on my left?
+2. What is the tallest wall on my right?
+3. What is my current bar height?
+
+The shorter boundary decides how high the water can rise.
 */

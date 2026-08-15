@@ -31,6 +31,7 @@ Space: O(1) excluding the answer array
 // Remove elements from the stack that are greater than or equal to arr[i].
 // The remaining stack top is the next smaller element.
 // Push arr[i] into the stack.
+// TC: O(n) && SC: O(n)
 
 function nextSmallerElement(arr) {
   const n = arr.length;

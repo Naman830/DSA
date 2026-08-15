@@ -13,6 +13,8 @@ rightMax:
 
 So we can directly calculate:
 water[i] = min(leftMax[i], rightMax[i]) - height[i]
+
+TC: O(n) && SC: O(n)
 */
 
 function trap(height) {

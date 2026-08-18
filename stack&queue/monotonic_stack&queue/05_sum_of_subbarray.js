@@ -156,3 +156,11 @@ function sumSubarrayMinsOptimal(arr) {
 console.log(sumSubarrayMinsOptimal([3, 1, 2, 4])); // 17
 console.log(sumSubarrayMinsOptimal([11, 81, 94, 43, 3])); // 444
 console.log(sumSubarrayMinsOptimal([1, 1, 1])); // 6
+
+/*
+| Case    | Time | Space |
+| ------- | ---: | ----: |
+| Best    | O(n) |  O(n) |
+| Average | O(n) |  O(n) |
+| Worst   | O(n) |  O(n) |
+*/

@@ -26,6 +26,7 @@ ANS = 17
 
 // 1. Brute Force
 // Generate every subarray and keep track of its minimum while expanding the right side.
+// TC: O(n2) && SC: O(1)
 
 function sumSubarrayMins(arr) {
   const MOD = 1e9 + 7;

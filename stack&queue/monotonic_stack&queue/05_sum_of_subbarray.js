@@ -49,3 +49,36 @@ function sumSubarrayMins(arr) {
 
 console.log(sumSubarrayMins([3, 1, 2, 4])); // 17
 console.log(sumSubarrayMins([11, 81, 94, 43, 3])); // 444
+
+// =========================================================================================
+// Optimal Approach — Monotonic Stack
+// =========================================================================================
+
+/*
+Suppose:
+arr = [3, 1, 2, 4]
+          ↑
+          1
+
+For 1:
+Previous smaller = none
+Next smaller = none
+
+Therefore 1 can extend:
+
+← ← ← 1 → → →
+
+Number of left choices:
+2
+
+Number of right choices:
+3
+
+Therefore:
+
+contribution = arr[i] × left × right
+contribution = 1 × 2 × 3 
+             = 6
+
+Exactly the 6 subarrays we found earlier.
+*/

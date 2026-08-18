@@ -163,4 +163,19 @@ console.log(sumSubarrayMinsOptimal([1, 1, 1])); // 6
 | Best    | O(n) |  O(n) |
 | Average | O(n) |  O(n) |
 | Worst   | O(n) |  O(n) |
+
+                 arr[i]
+                   │
+          ┌────────┴────────┐
+          ↓                 ↓
+ Previous Smaller      Next Smaller
+          │                 │
+          ↓                 ↓
+    left choices       right choices
+          │                 │
+          └────────┬────────┘
+                   ↓
+        arr[i] × left × right
+                   ↓
+             contribution
 */

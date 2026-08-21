@@ -58,8 +58,21 @@ Instead of processing each subarray:        MAX contribution - MIN contribution
 
 So we can independently calculate:
 
-Sum of Subarray Maximums and Sum of Subarray Minimums
+ Sum of Subarray Maximums and Sum of Subarray Minimums
 
 Then:
 Answer = Maximum Sum - Minimum Sum
+*/
+
+// 2. Optimal Approach — Monotonic Stack
+/*
+1. For minimum contribution
+Previous Smaller Element
+Next Smaller Element
+
+2. For maximum contribution
+Previous Greater Element
+Next Greater Element
+
+forumla:- contribution = nums[i] × left × right
 */

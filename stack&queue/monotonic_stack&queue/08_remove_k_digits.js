@@ -13,3 +13,12 @@ Remove 4, 3, and 2:
 
 Answer: 1219
 */
+
+/*
+1. Brute Force
+Try every possible way of removing k digits and choose the smallest result.
+Problem: the number of possibilities becomes huge.
+
+Time: roughly O(2^n)
+Space: O(n)
+*/

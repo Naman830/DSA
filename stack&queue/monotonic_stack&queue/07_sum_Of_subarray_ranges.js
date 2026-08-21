@@ -48,6 +48,10 @@ function subArrayRanges(nums) {
 console.log(subArrayRanges([1, 2, 3])); // 4
 console.log(subArrayRanges([1, 3, 2])); // 5
 
+// ======================================================================================
+// 2. OPTIMAL SOLUTION
+// ======================================================================================
+
 // Problem: Sum of Subarray Ranges
 // Return the sum of (maximum - minimum) for every subarray.
 //
@@ -57,3 +61,127 @@ console.log(subArrayRanges([1, 3, 2])); // 5
 //
 // We use monotonic stacks to calculate the contribution
 // of every element as a minimum and as a maximum.
+// TC: O(n) && SC: O(n)
+
+function subArrayRanges(nums) {
+  const n = nums.length;
+
+  // Find the sum of all subarray minimums
+  const sumMin = getSumOfMinimums(nums);
+
+  // Find the sum of all subarray maximums
+  const sumMax = getSumOfMaximums(nums);
+
+  return sumMax - sumMin;
+}
+
+// --------------------------------------------------
+// Sum of Subarray Minimums
+// --------------------------------------------------
+
+function getSumOfMinimums(nums) {
+  const n = nums.length;
+
+  const left = new Array(n);
+  const right = new Array(n);
+
+  const stack = [];
+
+  // Find previous smaller element
+  for (let i = 0; i < n; i++) {
+    while (stack.length > 0 && nums[stack[stack.length - 1]] > nums[i]) {
+      stack.pop();
+    }
+
+    if (stack.length === 0) {
+      left[i] = i + 1;
+    } else {
+      left[i] = i - stack[stack.length - 1];
+    }
+
+    stack.push(i);
+  }
+
+  stack.length = 0;
+
+  // Find next smaller OR equal element
+  for (let i = n - 1; i >= 0; i--) {
+    while (stack.length > 0 && nums[stack[stack.length - 1]] >= nums[i]) {
+      stack.pop();
+    }
+
+    if (stack.length === 0) {
+      right[i] = n - i;
+    } else {
+      right[i] = stack[stack.length - 1] - i;
+    }
+
+    stack.push(i);
+  }
+
+  let sum = 0;
+
+  for (let i = 0; i < n; i++) {
+    sum += nums[i] * left[i] * right[i];
+  }
+
+  return sum;
+}
+
+// --------------------------------------------------
+// Sum of Subarray Maximums
+// --------------------------------------------------
+
+function getSumOfMaximums(nums) {
+  const n = nums.length;
+
+  const left = new Array(n);
+  const right = new Array(n);
+
+  const stack = [];
+
+  // Find previous greater element
+  for (let i = 0; i < n; i++) {
+    while (stack.length > 0 && nums[stack[stack.length - 1]] < nums[i]) {
+      stack.pop();
+    }
+
+    if (stack.length === 0) {
+      left[i] = i + 1;
+    } else {
+      left[i] = i - stack[stack.length - 1];
+    }
+
+    stack.push(i);
+  }
+
+  stack.length = 0;
+
+  // Find next greater OR equal element
+  for (let i = n - 1; i >= 0; i--) {
+    while (stack.length > 0 && nums[stack[stack.length - 1]] <= nums[i]) {
+      stack.pop();
+    }
+
+    if (stack.length === 0) {
+      right[i] = n - i;
+    } else {
+      right[i] = stack[stack.length - 1] - i;
+    }
+
+    stack.push(i);
+  }
+
+  let sum = 0;
+
+  for (let i = 0; i < n; i++) {
+    sum += nums[i] * left[i] * right[i];
+  }
+
+  return sum;
+}
+
+// Test cases
+console.log(subArrayRanges([1, 2, 3])); // 4
+console.log(subArrayRanges([1, 3, 2])); // 5
+console.log(subArrayRanges([1, 3, 3])); // 4

@@ -47,3 +47,19 @@ function subArrayRanges(nums) {
 
 console.log(subArrayRanges([1, 2, 3])); // 4
 console.log(subArrayRanges([1, 3, 2])); // 5
+
+/*
+Better Understanding — Contribution Technique
+
+Suppose: nums =                             [1, 3, 2]
+For every subarray, we need:                MAX - MIN
+
+Instead of processing each subarray:        MAX contribution - MIN contribution
+
+So we can independently calculate:
+
+Sum of Subarray Maximums and Sum of Subarray Minimums
+
+Then:
+Answer = Maximum Sum - Minimum Sum
+*/

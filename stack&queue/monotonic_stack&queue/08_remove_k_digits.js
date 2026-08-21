@@ -22,3 +22,11 @@ Problem: the number of possibilities becomes huge.
 Time: roughly O(2^n)
 Space: O(n)
 */
+
+/*
+2. Optimal Approach — Monotonic Stack
+
+i. Given a string num representing a non-negative integer and an integer k,
+ii. remove exactly k digits from num so that the resulting number is the smallest possible.
+iii. Return the resulting number as a string.
+*/

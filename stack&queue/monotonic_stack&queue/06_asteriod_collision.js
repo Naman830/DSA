@@ -22,3 +22,11 @@ Only then can they collide.
 // 1. Brute Force
 // The problem is that after every collision, we may need to scan the array again.
 // Time:  O(n²) && Space: O(n)
+
+// 2. Optimal Approach — Monotonic Stack
+/*
+For every asteroid:-
+
+1. If there is no possible collision, simply push it.
+2. If there is a collision compare their sizes.
+*/

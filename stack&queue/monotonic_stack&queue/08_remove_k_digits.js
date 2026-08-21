@@ -29,6 +29,8 @@ Space: O(n)
 i. Given a string num representing a non-negative integer and an integer k,
 ii. remove exactly k digits from num so that the resulting number is the smallest possible.
 iii. Return the resulting number as a string.
+
+TC: O(n) && SC: O(n)
 */
 
 function removeKdigits(num, k) {

@@ -85,3 +85,11 @@ console.log(asteroidCollision([-2, -1, 1, 2]));
 
 console.log(asteroidCollision([5, 10, -15]));
 // []
+
+/*
+| Case    |   Time |  Space |
+| ------- | -----: | -----: |
+| Best    | `O(n)` | `O(n)` |
+| Average | `O(n)` | `O(n)` |
+| Worst   | `O(n)` | `O(n)` |
+*/

@@ -48,31 +48,12 @@ function subArrayRanges(nums) {
 console.log(subArrayRanges([1, 2, 3])); // 4
 console.log(subArrayRanges([1, 3, 2])); // 5
 
-/*
-Better Understanding — Contribution Technique
-
-Suppose: nums =                             [1, 3, 2]
-For every subarray, we need:                MAX - MIN
-
-Instead of processing each subarray:        MAX contribution - MIN contribution
-
-So we can independently calculate:
-
- Sum of Subarray Maximums and Sum of Subarray Minimums
-
-Then:
-Answer = Maximum Sum - Minimum Sum
-*/
-
-// 2. Optimal Approach — Monotonic Stack
-/*
-1. For minimum contribution
-Previous Smaller Element
-Next Smaller Element
-
-2. For maximum contribution
-Previous Greater Element
-Next Greater Element
-
-forumla:- contribution = nums[i] × left × right
-*/
+// Problem: Sum of Subarray Ranges
+// Return the sum of (maximum - minimum) for every subarray.
+//
+// Approach:
+// Sum of ranges
+// = Sum of subarray maximums - Sum of subarray minimums
+//
+// We use monotonic stacks to calculate the contribution
+// of every element as a minimum and as a maximum.

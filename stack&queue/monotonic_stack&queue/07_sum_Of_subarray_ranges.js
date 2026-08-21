@@ -63,6 +63,22 @@ console.log(subArrayRanges([1, 3, 2])); // 5
 // of every element as a minimum and as a maximum.
 // TC: O(n) && SC: O(n)
 
+/*
+Mental Model
+                    Sum of Subarray Ranges
+                             │
+              ┌──────────────┴──────────────┐
+              ↓                             ↓
+       Sum of Maximums                Sum of Minimums
+              │                             │
+       Previous Greater              Previous Smaller
+       Next Greater                  Next Smaller
+              │                             │
+              └──────────────┬──────────────┘
+                             ↓
+                   Maximum Sum - Minimum Sum
+*/
+
 function subArrayRanges(nums) {
   const n = nums.length;
 

@@ -33,6 +33,22 @@ Space: O(1) excluding the answer array
 // Push arr[i] into the stack.
 // TC: O(n) && SC: O(n)
 
+/*
+          current
+             ↓
+       ┌───────────┐
+       │ Stack Top │
+       └───────────┘
+             │
+       Is top < current?
+          /        \
+        YES         NO
+         ↓           ↓
+      answer       POP
+       = top         ↓
+                  check again
+*/
+
 function nextSmallerElement(arr) {
   const n = arr.length;
   const result = new Array(n).fill(-1);

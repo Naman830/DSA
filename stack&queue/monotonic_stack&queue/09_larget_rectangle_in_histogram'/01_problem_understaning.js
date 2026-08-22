@@ -1,6 +1,8 @@
 /*
-Explanation:-
+Explanation:- 
 For each bar, find how far it can extend left and right.
+
+Formula:- Rectangle Area = height × width
 
 Example:-
 heights = [2, 1, 5, 6, 2, 3]

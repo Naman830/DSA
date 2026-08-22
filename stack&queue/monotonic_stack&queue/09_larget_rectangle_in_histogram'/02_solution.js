@@ -27,6 +27,7 @@ This takes O(n) space and O(n) time.
 */
 
 // 3. Optimal Approach [Intution is written in problem understanding.js]
+// TC: O(n) && SC: O(n)
 
 function largestRectangleArea(heights) {
   const stack = [];

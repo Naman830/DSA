@@ -26,27 +26,29 @@ The answer is 10:
 */
 
 /*
-Largest Rectangle in Histogram — Intuition
+Largest Rectangle in Histogram — Intuition [Optimal Solution]
 
 1. For every bar, find:
    → Previous Smaller Element (PSE)
    → Next Smaller Element (NSE)
 
-2. These smaller bars tell us where our current bar
-   can STOP extending.
+2. These smaller bars tell us where the current bar
+   can stop extending.
 
    PSE ← current bar → NSE
 
-3. So the width of the rectangle is:
+3. So the maximum width for the current bar is:
 
    width = NSE - PSE - 1
 
-4. Then:
+4. Rectangle area is:
 
    area = height × width
 
    area = currentElement × (NSE - PSE - 1)
 
-5. We use a monotonic increasing stack to find
+5. Use a monotonic increasing stack to find
    PSE/NSE efficiently.
+
+6. Find the maximum area among all bars.
 */

@@ -1,6 +1,10 @@
 /*
 The Next Smaller Element (NSE) problem asks us to find, for every element, the first element to its right that is smaller than it.
 
+==============================================================================
+For solving the previous smaller element start just from LEFT ---> RIGHT
+==============================================================================
+
 arr = [4, 8, 5, 2, 25]
 
 Next Smaller: We need to look to the right and find the first smaller element.

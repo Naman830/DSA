@@ -1,6 +1,10 @@
 /*
 For every element, find the first element on its right that is greater than it.
 
+==============================================================================
+For solving the previous smaller element start just from LEFT ---> RIGHT
+==============================================================================
+
 Input:
 [4, 5, 2, 10, 8]
 

@@ -60,7 +60,33 @@ console.log(maxSlidingWindow([1, -1], 1));
 console.log(maxSlidingWindow([9, 8, 7, 6], 2));
 // [9, 8, 7]
 
-/*
+/*==================================================================================================
 shift() is technically O(n) because JavaScript arrays shift all remaining elements.
 For a truly optimal O(n) implementation, use a pointer instead of shift():
-*/
+==================================================================================================*/
+
+function maxSlidingWindowOptimal(nums, k) {
+  const deque = [];
+  let front = 0;
+  let result = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    while (front < deque.length && deque[front] <= i - k) {
+      front++;
+    }
+
+    while (deque.length > front && nums[deque[deque.length - 1]] <= nums[i]) {
+      deque.pop();
+    }
+
+    deque.push(i);
+
+    if (i >= k - 1) {
+      result.push(nums[deque[front]]);
+    }
+  }
+  return result;
+}
+
+console.log(maxSlidingWindowOptimal([1, 3, -1, -3, 5, 3, 6, 7], 3));
+// [3, 3, 5, 5, 6, 7]

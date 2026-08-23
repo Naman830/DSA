@@ -27,3 +27,46 @@ For each person i:
     Check row i → should contain no 1
     Check column i → should contain 1 from everyone else
 */
+
+function findCelebrity(knows) {
+  const n = knows.length;
+
+  for (let i = 0; i < n; i++) {
+    let isCelebrity = true;
+
+    for (let j = 0; j < n; j++) {
+      if (i !== j) {
+        // Celebrity should know nobody
+        if (knows[i][j] === 1) {
+          isCelebrity = false;
+          break;
+        }
+
+        // Everybody should know celebrity
+        if (knows[j][i] === 0) {
+          isCelebrity = false;
+          break;
+        }
+      }
+    }
+
+    if (isCelebrity) return i;
+  }
+
+  return -1;
+}
+
+console.log(
+  findCelebrity([
+    [0, 1, 0],
+    [0, 0, 0],
+    [1, 1, 0],
+  ]),
+); // 1
+
+console.log(
+  findCelebrity([
+    [0, 1],
+    [1, 0],
+  ]),
+); // -1

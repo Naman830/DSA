@@ -16,4 +16,6 @@ Example:
 Person 1 is celebrity because:
 Person 1 knows nobody → row 1 = [0,0,0]
 Everybody knows person 1 → column 1 = [1,0,1]
+
+Key Observation:- There should be only ONE celebrity
 */

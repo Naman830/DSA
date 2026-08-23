@@ -32,4 +32,23 @@ After:
         MRU
 
 A becomes recently used, so it moves to the MRU position.
+
+=============================================================================
+Now cache is full
+=============================================================================
+Suppose: [ B, C, A ]
+
+We insert D.
+Who should be removed?
+
+B ← least recently used
+
+So:
+[ B, C, A ]
+    ↓
+remove B
+
+[ C, A, D ]
+
+That's the core idea of LRU.
 */

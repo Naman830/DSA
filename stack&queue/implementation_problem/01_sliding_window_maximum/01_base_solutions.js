@@ -17,6 +17,8 @@ Windows:
 Answer = [3, 3, 5, 5, 6, 7]
 */
 
+// ========================================================================================
+
 /*
 1. BRUTE FORCE
 For every window, simply scan all k elements and find the maximum.
@@ -29,6 +31,8 @@ Space: O(1)
 
 This is too slow when n and k are large.
 */
+
+// ========================================================================================
 
 /*
 2. Better Approach — Max Heap

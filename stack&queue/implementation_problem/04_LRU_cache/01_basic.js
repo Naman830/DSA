@@ -72,3 +72,23 @@ Add/update A
 Mark it as recently used
 If cache exceeds capacity → remove the least recently used item
 */
+
+/*
+=============================================================================
+=============================================================================
+The important part: Why HashMap + Doubly Linked List?
+=============================================================================
+=============================================================================
+
+For the optimal O(1) solution, we use:
+HashMap + Doubly Linked List
+
+They Provide US:-
+i. HashMap: key → node [So we can find any key in O(1).]
+
+ii. Doubly Linked List -> Maintains the usage order:
+
+LRU                         MRU
+ ↓                           ↓
+[ A ] ⇄ [ B ] ⇄ [ C ] ⇄ [ D ]
+ */

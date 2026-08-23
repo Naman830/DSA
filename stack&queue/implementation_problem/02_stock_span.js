@@ -58,6 +58,8 @@ i. Remove prices from stack that are <= current price.
 ii. The stack top is now the Previous Greater Element.
 iii. Calculate the span.
 iv. Push current index.
+
+TC: O(n) && SC: O(n)
 */
 
 function stockSpan(prices) {

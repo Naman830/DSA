@@ -52,3 +52,23 @@ remove B
 
 That's the core idea of LRU.
 */
+
+/*
+=============================================================================
+=============================================================================
+What operations do we need?
+=============================================================================
+=============================================================================
+*/
+
+/*
+1. get(key) ---> get(A)
+If A exists → return its value
+Mark A as recently used
+If it doesn't exist → return -1
+
+2. put(key, value) ---> put(A, 10)
+Add/update A
+Mark it as recently used
+If cache exceeds capacity → remove the least recently used item
+*/

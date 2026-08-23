@@ -70,3 +70,54 @@ console.log(
     [1, 0],
   ]),
 ); // -1
+
+// ===============================================================================
+// 2. Optimal — Elimination + Verification
+// ===============================================================================
+
+function findCelebrityOptimal(knows) {
+  const n = knows.length;
+
+  // Step 1: Find the only possible candidate
+  let candidate = 0;
+
+  for (let i = 1; i < n; i++) {
+    // If candidate knows i,
+    // candidate cannot be the celebrity.
+    if (knows[candidate][i] === 1) {
+      candidate = i;
+    }
+  }
+
+  // Step 2: Verify the candidate
+  for (let i = 0; i < n; i++) {
+    if (i === candidate) continue;
+
+    // Celebrity knows nobody
+    if (knows[candidate][i] === 1) {
+      return -1;
+    }
+
+    // Everybody knows celebrity
+    if (knows[i][candidate] === 0) {
+      return -1;
+    }
+  }
+
+  return candidate;
+}
+
+console.log(
+  findCelebrityOptimal([
+    [0, 1, 0],
+    [0, 0, 0],
+    [1, 1, 0],
+  ]),
+); // 1
+
+console.log(
+  findCelebrityOptimal([
+    [0, 1],
+    [1, 0],
+  ]),
+); // -1

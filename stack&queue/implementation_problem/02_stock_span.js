@@ -59,3 +59,35 @@ ii. The stack top is now the Previous Greater Element.
 iii. Calculate the span.
 iv. Push current index.
 */
+
+function stockSpan(prices) {
+  const stack = [];
+  const span = new Array(prices.length);
+
+  for (let i = 0; i < prices.length; i++) {
+    // Remove all smaller or equal prices
+    while (stack.length > 0 && prices[stack[stack.length - 1]] <= prices[i]) {
+      stack.pop();
+    }
+
+    // No previous greater element
+    if (stack.length === 0) {
+      span[i] = i + 1;
+    }
+    // Previous greater element exists
+    else {
+      span[i] = i - stack[stack.length - 1];
+    }
+
+    // Store current index
+    stack.push(i);
+  }
+
+  return span;
+}
+
+console.log(stockSpan([100, 80, 60, 70, 60, 75, 85]));
+// [1, 1, 1, 2, 1, 4, 6]
+
+console.log(stockSpan([10, 4, 5, 90, 120, 80]));
+// [1, 1, 2, 4, 5, 1]

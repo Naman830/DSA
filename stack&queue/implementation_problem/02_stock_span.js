@@ -22,3 +22,24 @@ ii. If there is no greater element:     span = i + 1
 
 So Stock Span is basically a Previous Greater Element problem.
 */
+
+// 1. Brute Force
+// Time: O(N²) && Space: O(1)
+
+function stockSpanBrute(prices) {
+  const n = prices.length;
+  const span = new Array(n).fill(1);
+
+  for (let i = 0; i < n; i++) {
+    let j = i - 1;
+
+    while (j >= 0 && prices[j] <= prices[i]) {
+      span[i]++;
+      j--;
+    }
+  }
+  return span;
+}
+
+console.log(stockSpanBrute([100, 80, 60, 70, 60, 75, 85]));
+// [1, 1, 1, 2, 1, 4, 6]

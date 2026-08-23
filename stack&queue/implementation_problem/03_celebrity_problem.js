@@ -74,7 +74,7 @@ console.log(
 // ===============================================================================
 // 2. Optimal — Elimination + Verification
 // ===============================================================================
-
+// TC: O(n) && SC: (1)
 function findCelebrityOptimal(knows) {
   const n = knows.length;
 

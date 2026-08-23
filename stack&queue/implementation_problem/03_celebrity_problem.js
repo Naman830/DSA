@@ -19,3 +19,11 @@ Everybody knows person 1 → column 1 = [1,0,1]
 
 Key Observation:- There should be only ONE celebrity
 */
+
+/*
+1. Brute Force — O(n²)
+
+For each person i:
+    Check row i → should contain no 1
+    Check column i → should contain 1 from everyone else
+*/

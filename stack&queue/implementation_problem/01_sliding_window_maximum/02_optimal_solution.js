@@ -1,18 +1,9 @@
 /*
 Optimal — Monotonic Deque
 
-A Deque (Double-Ended Queue) is a data structure where you can add and remove elements from both ends.
-
-        ← remove / add
-      ┌───────────────┐
-Front │  1  2  3  4  │ Rear
-      └───────────────┘
-        add / remove →
-Main operations
-pushFront() → add at front
-pushBack() → add at back
-popFront() → remove from front
-popBack() → remove from back
-
-Think: Deque = Queue + ability to work from both ends
+1. We don't want to search all k elements again.
+2. Use a Monotonic Decreasing Deque.
+3. The deque stores indices, and their values are always decreasing:    
+10 → 8 → 5 → 2
+The front always contains the maximum.
 */

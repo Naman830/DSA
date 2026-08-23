@@ -43,3 +43,19 @@ function stockSpanBrute(prices) {
 
 console.log(stockSpanBrute([100, 80, 60, 70, 60, 75, 85]));
 // [1, 1, 1, 2, 1, 4, 6]
+
+// ===============================================================================
+// 2. Optimal Monotonic Stack
+// ===============================================================================
+/*
+We can solve it using a monotonic decreasing stack.
+
+The stack stores indices of useful previous greater elements.
+
+For every i:
+
+i. Remove prices from stack that are <= current price.
+ii. The stack top is now the Previous Greater Element.
+iii. Calculate the span.
+iv. Push current index.
+*/

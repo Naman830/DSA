@@ -59,3 +59,8 @@ console.log(maxSlidingWindow([1, -1], 1));
 
 console.log(maxSlidingWindow([9, 8, 7, 6], 2));
 // [9, 8, 7]
+
+/*
+shift() is technically O(n) because JavaScript arrays shift all remaining elements.
+For a truly optimal O(n) implementation, use a pointer instead of shift():
+*/

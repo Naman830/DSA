@@ -90,3 +90,11 @@ function maxSlidingWindowOptimal(nums, k) {
 
 console.log(maxSlidingWindowOptimal([1, 3, -1, -3, 5, 3, 6, 7], 3));
 // [3, 3, 5, 5, 6, 7]
+
+/*
+| Approach            |         Time |    Space |
+| ------------------- | -----------: | -------: |
+| Brute Force         |   `O(n × k)` |   `O(1)` |
+| Max Heap            | `O(n log k)` |   `O(k)` |
+| **Monotonic Deque** |     **O(n)** | **O(k)** |
+*/

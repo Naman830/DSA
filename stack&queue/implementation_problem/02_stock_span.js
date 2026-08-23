@@ -13,4 +13,12 @@ For 75:
 80 > 75 ❌ stop
 
 Span = 4
+
+Key observation:-
+We need to find the Previous Greater Element (PGE).
+
+i. If PGE exists at index j:            span = i - j
+ii. If there is no greater element:     span = i + 1
+
+So Stock Span is basically a Previous Greater Element problem.
 */

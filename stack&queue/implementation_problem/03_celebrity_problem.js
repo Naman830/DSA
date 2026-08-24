@@ -8,7 +8,7 @@ Celebrity knows nobody → their entire row is 0.
 Everybody knows the celebrity → their entire column is 1 except themselves.
 
 Example:
-      0  1  2
+      0  1  1
 0     0  1  0
 1     0  0  0
 2     1  1  0

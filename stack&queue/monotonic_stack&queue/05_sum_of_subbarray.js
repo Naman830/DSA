@@ -28,7 +28,7 @@ ANS = 17
 // Generate every subarray and keep track of its minimum while expanding the right side.
 // TC: O(n2) && SC: O(1)
 
-function sumSubarrayMinsOptimal(arr) {
+function sumSubarrayMins(arr) {
   const MOD = 1e9 + 7;
   let sum = 0;
 
@@ -47,8 +47,8 @@ function sumSubarrayMinsOptimal(arr) {
   return sum;
 }
 
-console.log(sumSubarrayMinsOptimal([3, 1, 2, 4])); // 17
-console.log(sumSubarrayMinsOptimal([11, 81, 94, 43, 3])); // 444
+console.log(sumSubarrayMins([3, 1, 2, 4])); // 17
+console.log(sumSubarrayMins([11, 81, 94, 43, 3])); // 444
 
 // =========================================================================================
 // Optimal Approach — Monotonic Stack

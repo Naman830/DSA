@@ -15,6 +15,9 @@ The Big Picture
 Monotonic = maintain order
 Monotonic Stack = maintain order using a stack
 Next Greater Element = usually use a monotonic decreasing stack 
+
+stack[stack.length - 1]  →  2        // index
+nums[stack[stack.length - 1]] → 30   // value
 */
 
 /*

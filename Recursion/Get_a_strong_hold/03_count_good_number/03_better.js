@@ -8,6 +8,9 @@ even index → 5 choices
 odd index  → 4 choices
 
 So we simply multiply the number of choices for every position.
+
+Time  : O(n)
+Space : O(1)
 */
 
 function countGoodNumbersBetter(n) {

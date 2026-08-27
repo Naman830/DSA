@@ -4,6 +4,7 @@ even positions = ceil(n / 2)
 odd positions  = floor(n / 2)
 
 How can we calculate x^n efficiently?
+TC: O( log n ) && SC: O(1)
 */
 
 function countGoodNumbers(n) {

@@ -20,23 +20,23 @@ myPow(2, -2)   → 0.25 ----> if number is negative  1 / x
 // Simply multiply x by itself n times.
 
 function myPowBrute(x, n) {
-  // Base case 1:- If our n value is equal to 0 or 1 return 1
-  if (n === 0 || n === 1) return 1;
+  // Base case: any number to the power of 0 is 1
+  if (n === 0 || x === 1.0) return 1;
 
-  // Check does number is negative
-  let temp = n;
+  let temp = n; // to avoid integer overflow
+
+  // Handle negative exponents
   if (n < 0) {
     x = 1 / x;
     temp = -n;
   }
 
-  // Simply now multiply the x by itself and return it
   let ans = 1;
 
-  for (let i = 0; i < n.length; i++) {
+  for (let i = 0; i < temp; i++) {
+    // Multiply ans by x for n times
     ans *= x;
   }
-
   return ans;
 }
 

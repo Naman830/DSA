@@ -1,45 +1,33 @@
-// Brute Force
-// Generate every possible n-digit string and check whether it is good.
-/*
-Time  : O(10^n)
-Space : O(n)   // recursion/string
-*/
 
 function countGoodNumbersBrute(n) {
   let count = 0;
 
   // Recursively generate every possible good number
   function generate(index) {
-    // We created all n positions
+    // create all n position
     if (index === n) {
       count++;
       return;
     }
 
-    // Even index → 5 possible digits
-    if (index % 2 === 0) {
+    // check if the number is positive
+    if (n % 2 === 0) {
       const evenDigits = [0, 2, 4, 6, 8];
 
       for (let digit of evenDigits) {
         generate(index + 1);
       }
-    }
+    } else {
+      let oddDigtis = [2, 3, 5, 7];
 
-    // Odd index → 4 possible prime digits
-    else {
-      const primeDigits = [2, 3, 5, 7];
-
-      for (let digit of primeDigits) {
+      for (let digit of oddDigtis) {
         generate(index + 1);
       }
     }
   }
-
   generate(0);
-
   return count;
 }
-
 console.log(countGoodNumbersBrute(1)); // 5
 console.log(countGoodNumbersBrute(2)); // 20
-console.log(countGoodNumbersBrute(4)); // 400
+console.log(countGoodNumbersBrute(4)); // 40

@@ -66,3 +66,40 @@ n = 1
 ↓
 n = 0
 */
+
+// Recursive Binary Exponentiation
+function myPow(x, n) {
+  // Negative exponent:
+  // x^(-n) = 1 / x^n
+  if (n < 0) {
+    return 1 / power(x, -n);
+  }
+
+  return power(x, n);
+}
+
+function power(x, n) {
+  // Base case
+  if (n === 0) {
+    return 1;
+  }
+
+  // Solve smaller problem
+  const half = power(x, Math.floor(n / 2));
+
+  // If exponent is even:
+  // x^n = (x^(n/2))²
+  if (n % 2 === 0) {
+    return half * half;
+  }
+
+  // If exponent is odd:
+  // x^n = x * (x^(n/2))²
+  return x * half * half;
+}
+
+// Test cases
+console.log(myPow(2, 10)); // 1024
+console.log(myPow(2.1, 3)); // 9.261
+console.log(myPow(2, -2)); // 0.25
+console.log(myPow(5, 0)); // 1

@@ -14,7 +14,7 @@ Space : O(1)
 */
 
 function countGoodNumbersBetter(n) {
-  const MOD = 1e7 + 7;
+  const MOD = 1e9 + 7;
 
   let answer = 1;
 

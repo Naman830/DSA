@@ -57,3 +57,19 @@ function printOne(index, arr, current, sum, target) {
 
 // Test case
 printOne(0, [2, 1, 3], [], 0, 3);
+
+/*
+TIME COMPLEXITY:-
+| Case    |      Time |
+| ------- | --------: |
+| Best    |  **O(n)** |
+| Average | **O(2ⁿ)** |
+| Worst   | **O(2ⁿ)** |
+
+SPACE COMPLEXITY:-
+| Case    |    Space |
+| ------- | -------: |
+| Best    | **O(n)** |
+| Average | **O(n)** |
+| Worst   | **O(n)** |
+*/

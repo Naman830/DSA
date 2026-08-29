@@ -1,8 +1,9 @@
 function printAllSubsequences(arr) {
+  let result = [];
   function solve(index, current) {
     // Base case
     if (index === arr.length) {
-      console.log(current);
+      result.push([...current]);
       return;
     }
 
@@ -18,9 +19,10 @@ function printAllSubsequences(arr) {
   }
 
   solve(0, []);
+  return result;
 }
 
-printAllSubsequences([3, 1]);
+console.log(printAllSubsequences([3, 1]));
 
 /*
 | Complexity                 | Print All   |

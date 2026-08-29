@@ -61,3 +61,11 @@ console.log(subsetsWithDup([1, 2, 2, 3]));
 
 // Test case 3
 console.log(subsetsWithDup([2, 2, 2]));
+
+/*
+| Case    |                   Time |             Space |
+| ------- | ---------------------: | ----------------: |
+| Best    |       `O(n log n + n)` | `O(n)` auxiliary* |
+| Average | `O(n log n + n × 2^n)` | `O(n)` auxiliary* |
+| Worst   | `O(n log n + n × 2^n)` | `O(n)` auxiliary* |
+*/

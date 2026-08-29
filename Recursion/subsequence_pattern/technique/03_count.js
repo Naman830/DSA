@@ -1,15 +1,19 @@
 /*
 Number of answers = answers when we TAKE + answers when we DON'T TAKE
-                 COUNT
-                /     \
-             TAKE    NOT TAKE
-               ↓         ↓
-             count     count
-                \       /
-                 \     /
+                  PROBLEM
+                     |
+              Make a choice
+              /           \
+           TAKE          DON'T TAKE
+             |               |
+          solve()          solve()
+             |               |
+          count 1          count 2
+              \             /
+               \           /
                 ADD THEM
-                   ↓
-             final count
+                   |
+             count 1 + count 2
 */
 
 function countSubsets(index, arr, sum, target) {

@@ -10,3 +10,13 @@ Before:        After:
    4              4
   ---            ---
 */
+
+/*
+Recusion Approach:-
+
+If the stack is empty, stop.
+Remove the top element of the stack.
+Sort the remaining stack recursively.
+Insert the removed element back into the stack while maintaining descending order.
+Use a helper function to place the element in its correct position.
+*/

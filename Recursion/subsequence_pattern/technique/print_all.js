@@ -41,4 +41,33 @@ Example:
 N = 2  →  2² = 4 possibilities
 N = 3  →  2³ = 8 possibilities
 
+
+=========================================================
+THE 4 IMPORTANT STEPS
+=========================================================
+
+1. TAKE
+   → Add the current element.
+
+2. RECURSE
+   → Move to the next element.
+
+3. UNDO / BACKTRACK
+   → Remove the element we added.
+
+4. DON'T TAKE
+   → Move to the next element without adding it.
+
+
+PATTERN TO REMEMBER:
+
+        TAKE
+          ↓
+       RECURSE
+          ↓
+       BACKTRACK
+          ↓
+       DON'T TAKE
+
+
 */

@@ -19,6 +19,9 @@ Remove the top element of the stack.
 Sort the remaining stack recursively.
 Insert the removed element back into the stack while maintaining descending order.
 Use a helper function to place the element in its correct position.
+
+Time Complexity: O(n2)
+Space Complexity: O(n)
 */
 
 function insert(stack, temp) {

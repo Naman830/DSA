@@ -70,4 +70,49 @@ PATTERN TO REMEMBER:
        DON'T TAKE
 
 
+=========================================================
+WHY DO WE BACKTRACK?
+=========================================================
+
+Suppose we take 3:
+
+    current = [3]
+
+We explore all possibilities starting with 3.
+
+After finishing that branch:
+
+    current.pop()
+
+Now:
+
+    current = []
+
+We can explore the branch where 3 was NOT taken.
+
+
+=========================================================
+RECURSION TEMPLATE
+=========================================================
+
+function solve(index, current) {
+
+    Base case
+    if (index === arr.length) {
+        Print / store answer
+        return;
+    }
+
+    1. TAKE
+    current.push(arr[index]);
+
+    2. RECURSE
+    solve(index + 1, current);
+
+    3. BACKTRACK
+    current.pop();
+
+    4. DON'T TAKE
+    solve(index + 1, current);
+}
 */

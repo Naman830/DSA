@@ -163,3 +163,11 @@ function printAllSubsequences(index, arr, current) {
 
 // Test
 printAllSubsequences(0, [3, 1], []);
+
+/*
+| Complexity                 | Print All   |
+| -------------------------- | ----------- |
+| **Time**                   | `O(n × 2ⁿ)` |
+| **Space**                  | `O(n)`      |
+| **If storing all answers** | `O(n × 2ⁿ)` |
+*/

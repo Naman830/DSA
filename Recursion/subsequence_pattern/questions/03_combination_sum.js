@@ -30,11 +30,13 @@ After picking a number, we stay at the same index because we are allowed to pick
 */
 
 //==============================================================================================
-// Brute Force =====> generate all possible combination =====> TC: O(n2) && SC: O(1)
+// Brute Force =====> generate all possible combination =====> TC: O(c x k) && SC: O(c x k)
 //==============================================================================================
 
 /*
+==============================================================================================
 Better → Backtracking
+==============================================================================================
 
                  [ ]
                   |
@@ -47,6 +49,11 @@ Better → Backtracking
         PICK again      move index
             |
           [2,2]
+
+
+TC: O(C × K) worst case, but explores fewer useless paths
+SC: O(T / minCandidate + M × K)
+
 */
 
 function combinationSum(candidates, target) {
@@ -110,3 +117,7 @@ console.log(combinationSum([2, 3, 5], 8));
 
 console.log(combinationSum([2], 1));
 // []
+
+//==============================================================================================
+// Optimal Approach
+//==============================================================================================

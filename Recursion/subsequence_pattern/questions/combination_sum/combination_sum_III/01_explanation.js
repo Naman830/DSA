@@ -40,3 +40,11 @@ OPTIMAL APPROACH
 | Average | `O(C(9,k) × k)` | `O(k)` |
 | Worst   | `O(C(9,k) × k)` | `O(k)` |
 */
+
+/*
+| Approach                             |      Time Complexity | Space Complexity |
+| ------------------------------------ | -------------------: | ---------------: |
+| **Brute Force**                      | `O(2⁹ × 9)` → `O(1)` |  `O(9)` → `O(1)` |
+| **Better — Backtracking**            |      `O(C(9,k) × k)` |           `O(k)` |
+| **Optimal — Backtracking + Pruning** |     `O(C(9,k) × k)`* |           `O(k)` |
+*/

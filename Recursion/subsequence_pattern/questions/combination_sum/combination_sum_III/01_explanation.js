@@ -15,3 +15,19 @@ Output:
 Because:
 1 + 2 + 4 = 7
 */
+
+/*
+2. Key observations
+
+The important conditions are:
+
+Numbers can only be 1 → 9.
+We need exactly k numbers.
+Numbers must be distinct.
+Order does not matter:
+[1,2,4] and [4,2,1] are the same combination.
+Therefore, we should move forward using a start index.
+
+The biggest idea:
+Pick a number → recurse → backtrack → move to the next number.
+*/

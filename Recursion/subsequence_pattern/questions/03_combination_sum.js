@@ -28,3 +28,7 @@ If sum > target → stop exploring that path.
 The most important idea is:
 After picking a number, we stay at the same index because we are allowed to pick it again.
 */
+
+//==============================================================================================
+// Brute Force =====> generate all possible combination =====> TC: O(n2) && SC: O(1)
+//==============================================================================================

@@ -31,3 +31,12 @@ Therefore, we should move forward using a start index.
 The biggest idea:
 Pick a number → recurse → backtrack → move to the next number.
 */
+
+/*
+OPTIMAL APPROACH 
+| Case    |            Time |  Space |
+| ------- | --------------: | -----: |
+| Best    |          `O(1)` | `O(k)` |
+| Average | `O(C(9,k) × k)` | `O(k)` |
+| Worst   | `O(C(9,k) × k)` | `O(k)` |
+*/

@@ -9,3 +9,12 @@ Each number can be used at most once.
 The array can contain duplicates.
 The answer must contain unique combinations.
 */
+
+/*
+| Approach    |     Best |    Average |          Worst |
+| ----------- | -------: | ---------: | -------------: |
+| Brute Force | `O(2^n)` |   `O(2^n)` |   `O(2^n · n)` |
+| Better      | `O(2^n)` |   `O(2^n)` |   `O(2^n · n)` |
+| **Optimal** | `O(2^n)` |   `O(2^n)` | **O(2^n · n)** |
+| Space       |   `O(n)` | `O(n + K)` |     `O(n + K)` |
+*/

@@ -24,6 +24,14 @@ So the recursion tree looks like:
         ad ae af  bd be bf  cd ce cf
 */
 
+/*
+| Case        | Time Complexity | Space Complexity |
+| ----------- | --------------: | ---------------: |
+| **Best**    |    `O(3^n × n)` |     `O(3^n × n)` |
+| **Average** |    `O(k^n × n)` |     `O(k^n × n)` |
+| **Worst**   |    `O(4^n × n)` |     `O(4^n × n)` |
+*/
+
 function letterCombinations(digits) {
   // If there are no digits, there are no combinations.
   if (digits.length === 0) {

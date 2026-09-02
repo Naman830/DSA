@@ -2,7 +2,9 @@
 Explanation:-
 1. Given n pairs of parentheses, generate all valid combinations.
 2. The important part is that every ( must eventually have a matching ) and the parentheses must never become invalid.
+*/
 
+/*
 Key Observations:- 
 For n = 3:
 
@@ -22,6 +24,26 @@ For example:
 But:
 "()" ✅ is valid.
 */
+
+/*
+Recursion Tree for n = 2
+                    ""
+                   /  \
+                 "("
+                /   \
+             "(("   "()"
+              |      |
+            "(()"   "()("
+              |       |
+           "(())"   "()()"
+
+| Case    |          Time |            Space |
+| ------- | ------------: | ---------------: |
+| Best    | `O(C(n) × n)` | `O(n)` recursion |
+| Average | `O(C(n) × n)` | `O(n)` recursion |
+| Worst   | `O(C(n) × n)` | `O(n)` recursion |
+*/
+
 function generateParenthesis(n) {
   const result = [];
 

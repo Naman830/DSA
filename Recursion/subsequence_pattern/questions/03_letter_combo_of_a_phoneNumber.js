@@ -23,3 +23,78 @@ So the recursion tree looks like:
           / | \    / | \    / | \
         ad ae af  bd be bf  cd ce cf
 */
+
+function letterCombinations(digits) {
+  // If there are no digits, there are no combinations.
+  if (digits.length === 0) {
+    return [];
+  }
+
+  // Mapping of each phone digit to its corresponding letters.
+  const phone = {
+    2: "abc",
+    3: "def",
+    4: "ghi",
+    5: "jkl",
+    6: "mno",
+    7: "pqrs",
+    8: "tuv",
+    9: "wxyz",
+  };
+
+  // Stores all final combinations.
+  const result = [];
+
+  /*
+    backtrack:
+    index   → current digit we are processing
+    current → combination we have built so far
+    */
+  function backtrack(index, current) {
+    // Base case:
+    // We have processed every digit.
+    if (index === digits.length) {
+      result.push(current);
+      return;
+    }
+
+    // Get the letters corresponding to the current digit.
+    const letters = phone[digits[index]];
+
+    // Try every possible letter for this digit.
+    for (const letter of letters) {
+      // Choose
+      current += letter;
+
+      // Explore
+      backtrack(index + 1, current);
+
+      // Backtrack
+      // Remove the letter we just added.
+      current = current.slice(0, -1);
+    }
+  }
+
+  // Start recursion from the first digit.
+  backtrack(0, "");
+
+  return result;
+}
+
+// Test cases
+console.log(letterCombinations("23"));
+// ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+
+console.log(letterCombinations("2"));
+// ["a","b","c"]
+
+console.log(letterCombinations("79"));
+// [
+//   "pw", "px", "py", "pz",
+//   "qw", "qx", "qy", "qz",
+//   "rw", "rx", "ry", "rz",
+//   "sw", "sx", "sy", "sz"
+// ]
+
+console.log(letterCombinations(""));
+// []

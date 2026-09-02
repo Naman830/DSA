@@ -12,3 +12,14 @@ When all digits are processed, we have one complete answer.
 After exploring one choice, we backtrack and try the next choice.
 If digits === "", return [].
 */
+
+/*
+digits = "23"
+So the recursion tree looks like:
+
+                    ""
+             /       |       \
+            a        b        c
+          / | \    / | \    / | \
+        ad ae af  bd be bf  cd ce cf
+*/

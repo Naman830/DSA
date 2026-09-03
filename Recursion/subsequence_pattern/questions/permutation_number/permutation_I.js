@@ -19,27 +19,15 @@ If n is the array length, there are exactly n! permutations.
 n <= 6, so at most 6! = 720 answers.
 */
 
-// Optimal — Backtracking
-// "Which unused number should I put here?" mark everytime when we take a number for combos
-
 /*
-LeetCode 46. Permutations
+Optimal — Backtracking
+"Which unused number should I put here?" mark everytime when we take a number for combos
 
-Given an array nums of distinct integers, return all the
-possible permutations.
-
-Example:
-Input:  [1, 2, 3]
-
-Output:
-[
-  [1, 2, 3],
-  [1, 3, 2],
-  [2, 1, 3],
-  [2, 3, 1],
-  [3, 1, 2],
-  [3, 2, 1]
-]
+| Case    |        Time | Extra Space* |
+| ------- | ----------: | -----------: |
+| Best    | `O(n × n!)` |       `O(n)` |
+| Average | `O(n × n!)` |       `O(n)` |
+| Worst   | `O(n × n!)` |       `O(n)` |
 */
 
 function permute(nums) {

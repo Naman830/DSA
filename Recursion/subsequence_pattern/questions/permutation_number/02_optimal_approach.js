@@ -14,6 +14,14 @@ After generating all permutations starting with 2, we must restore:
 This is called backtracking
 */
 
+/*
+| Case    |      Time | Extra Space* |
+| ------- | --------: | -----------: |
+| Best    | O(n × n!) |         O(n) |
+| Average | O(n × n!) |         O(n) |
+| Worst   | O(n × n!) |         O(n) |
+*/
+
 function permute(nums) {
   const result = [];
   function backtrack(index) {

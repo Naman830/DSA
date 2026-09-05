@@ -21,3 +21,12 @@ k = 4
 
 Answer = "231"
 */
+
+/*
+Key observations
+
+There are n! total permutations.
+We don't need to generate all permutations.
+The important idea is to determine which number should come at each position.
+We use factorial blocks to directly find the k-th permutation.
+*/

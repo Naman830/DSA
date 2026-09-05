@@ -41,7 +41,10 @@ function ratInMaze(maze) {
   ];
 
   function backtrack(row, col, path) {
-    // STEP 1: CHECK IF CURRENT CELL IS VALID
+    // If the cell is outside the maze, stop
+    if (row < 0 || col < 0 || row >= n || col >= n) {
+      return;
+    }
     // Cannot move through blocked or already visited cells
     if (maze[row][col] === 0 || visited[row][col]) {
       return;

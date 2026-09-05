@@ -39,3 +39,22 @@ So the pattern is:
 Choose → Check palindrome → Recurse → Undo
 This is Backtracking.
 */
+
+/*
+Complexity
+Let n = s.length.
+
+Time :- The number of possible partitions can be exponential, so:
+| Case    | Complexity    |
+| ------- | ------------- |
+| Best    | **O(n · 2ⁿ)** |
+| Average | **O(n · 2ⁿ)** |
+| Worst   | **O(n · 2ⁿ)** |
+
+Space
+| Case    | Complexity                                      |
+| ------- | ----------------------------------------------- |
+| Best    | **O(n)** recursion/path space, excluding output |
+| Average | **O(n)** recursion/path space, excluding output |
+| Worst   | **O(n)** recursion/path space, excluding output |
+*/

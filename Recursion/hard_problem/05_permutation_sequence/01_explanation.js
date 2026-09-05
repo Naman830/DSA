@@ -33,6 +33,7 @@ We use factorial blocks to directly find the k-th permutation.
 
 /*
 Example:-
+
 Suppose:
 
 n = 4
@@ -60,4 +61,15 @@ Then repeat the same process.
 
 Why k - 1?
 Because indexes are 0-based.
+*/
+
+/*
+Complexity:-
+
+| Case    |  Time | Space |
+| ------- | ----: | ----: |
+| Best    | O(n²) |  O(n) |
+| Average | O(n²) |  O(n) |
+| Worst   | O(n²) |  O(n) |
+The O(n²) comes mainly from repeatedly calculating factorials and using splice().
 */

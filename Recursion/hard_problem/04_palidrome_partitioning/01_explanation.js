@@ -16,6 +16,20 @@ Answer:
   ["a", "a", "b"],
   ["aa", "b"]
 ]
+
+TREE:-
+                  "aab"
+                    ""
+             /       |       \
+            a       aa       aab
+           /         |         X
+          a           b
+         /
+        b
+
+Answers:
+[a, a, b]
+[aa, b]
 */
 
 /*

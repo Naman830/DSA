@@ -1,0 +1,102 @@
+# DSA Progress Tracker
+Goal: Improve intuition → code implementation.
+
+## 📅 Daily Log
+
+Date: YYYY-MM-DD
+
+### 🌅 Morning
+Skeleton Drills:
+- 
+- 
+- 
+
+New Topic:
+- Topic:
+- Problems:
+- Result:
+
+❄️ Freeze Log:
+- 
+- 
+- 
+
+⏱️ Time:
+- First line:
+- Working solution:
+
+
+
+
+### 🌤️ Afternoon
+Blind Re-solve:
+- Problem:
+  - Time:
+  - Result:
+  - Hint: Yes / No
+
+- Problem:
+  - Time:
+  - Result:
+  - Hint: Yes / No
+
+Spaced Revision:
+- Topic:
+- Remembered:
+- Forgot:
+
+🔁 Tomorrow's Skeleton Drills:
+- 
+- 
+
+## 📊 Weekly Review
+Week: YYYY-MM-DD → YYYY-MM-DD
+
+- Problems solved:
+- Solved blind:
+- Needed hints:
+- Avg. first line:
+- Avg. solution time:
+
+Freeze Points:
+- 
+- 
+
+Needs More Practice:
+- 
+- 
+
+Improved:
+- 
+- 
+
+Next Week:
+- 
+- 
+
+
+## 🧠 Skeleton Checklist
+- [ ] Two Pointers
+- [ ] Sliding Window
+- [ ] Binary Search
+- [ ] Fast / Slow Pointers
+- [ ] BFS
+- [ ] DFS
+- [ ] Backtracking
+- [ ] DP 1D
+- [ ] DP 2D
+- [ ] Monotonic Stack
+- [ ] Tree — Recursive
+- [ ] Tree — Iterative
+
+
+## 🎯 Main Rule
+Blank Page
+↓
+Recall Pattern
+↓
+Write Skeleton
+↓
+Build Solution
+
+Generation > Recognition

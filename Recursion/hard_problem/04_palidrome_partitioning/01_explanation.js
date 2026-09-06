@@ -18,14 +18,39 @@ Answer:
 ]
 
 TREE:-
-                  "aab"
-                    ""
-             /       |       \
-            a       aa       aab
-           /         |         X
-          a           b
-         /
-        b
+                    "aab"
+                      |
+          Try every substring starting at index 0
+                      |
+          ┌───────────┼───────────┐
+          ↓           ↓           ↓
+         "a"         "aa"        "aab"
+       palindrome   palindrome   ❌ not palindrome
+          |           |
+          ↓           ↓
+         "ab"         "b"
+          |            |
+     ┌────┴────┐       ↓
+     ↓         ↓      "b" ✓
+    "a"       "ab"    |
+     ✓          ❌     ↓
+     |                 ["aa","b"]
+     ↓
+    ["a"]
+     |
+     ↓
+   remaining = "ab"
+     |
+     ├── "a" ✓
+     │    |
+     │    ↓
+     │   "b" ✓
+     │    |
+     │    ↓
+     │ ["a","a","b"]
+     |
+     └── "ab" ❌
+
 
 Answers:
 [a, a, b]

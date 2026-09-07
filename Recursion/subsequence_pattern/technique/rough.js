@@ -6,7 +6,23 @@ function printONE(index, path) {
   }
 
   // try all possible chosises
-
   for (const choice of choices) {
+    // add a one current element
+    path.push(choice);
+
+    // find the path is available oir not
+    if (printONE(index + 1, path)) {
+      return true;
+    }
+
+    // undo if choice is not correct
+    path.pop();
   }
+
+  return false;
 }
+
+// Start recursion
+const found = printONE(0, []);
+// Print something after recursion finishes
+console.log("Answer found:", found);

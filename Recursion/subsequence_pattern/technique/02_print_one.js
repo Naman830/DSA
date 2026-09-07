@@ -29,48 +29,29 @@ solve()
           └── choice 3
 */
 
-function solve(index, path) {
-  // ==========================================
-  // 1. BASE CASE
-  // ==========================================
+function solve(index, arr) {
+  // Base case
+  if (index === arr.length) {
+    // Print the first valid answer
+    console.log(arr);
 
-  // We have reached a complete solution.
-  if (isValid(path)) {
-    console.log(path);
-
-    // Return true to tell the previous recursive
-    // call that an answer has already been found.
+    // Tell every previous recursive call:
+    // "Answer found, stop recursion."
     return true;
   }
 
-  // ==========================================
-  // 2. TRY ALL POSSIBLE CHOICES
-  // ==========================================
-
   for (const choice of choices) {
-    // Make the choice
-    path.push(choice);
+    arr.push(choice);
 
-    // ==========================================
-    // 3. RECURSE
-    // ==========================================
-
-    // If the recursive call found an answer,
-    // immediately stop this function too.
-    if (solve(index + 1, path)) {
+    // If answer found, stop everything
+    if (solve(index + 1, arr)) {
       return true;
     }
 
-    // ==========================================
-    // 4. BACKTRACK
-    // ==========================================
-
-    // The choice did not lead to an answer,
-    // so undo it and try the next choice.
-    path.pop();
+    // Backtrack
+    arr.pop();
   }
 
-  // No valid answer was found from this state.
   return false;
 }
 

@@ -39,6 +39,14 @@ BFS (Breadth First Search) visits a binary tree level by level, starting from th
        queue is empty
 */
 
+/*
+| Case    | Time | Space |
+| ------- | ---- | ----- |
+| Best    | O(N) | O(N)  |
+| Average | O(N) | O(N)  |
+| Worst   | O(N) | O(N)  |
+*/
+
 // ============================================================================================
 // LEVEL ORDER TRAVERSAL
 // ============================================================================================

@@ -3,13 +3,13 @@ Goal: Improve intuition → code implementation.
 
 ## 📅 Daily Log
 
-Date: YYYY-MM-DD
+Date: 2026-07-07
 
 ### 🌅 Morning
-Skeleton Drills:
-- 
-- 
-- 
+Skeleton Drills: need more practice
+- Recursive(print all) 
+- Recursive(print one)
+- Recursive(count)
 
 New Topic:
 - Topic:

@@ -11,53 +11,68 @@ Possible subsets include:
 We only want: [2, 1]
 So once we find it, we return true and stop.
 */
+// Find and print the FIRST valid answer.
+// Once an answer is found, stop all further recursion.
 
-function printOne(index, arr, current, sum, target) {
-  // Base case:
-  // If we reached the end of the array
-  if (index === arr.length) {
-    // Check whether current subset has target sum
-    if (sum === target) {
-      console.log(current);
-      return true; // Found ONE answer
+/*
+solve()
+   │
+   ├── valid? ── YES → print → return true 🛑
+   │
+   └── try choices
+          │
+          ├── choice 1
+          │      └── solve()
+          │             └── true → return true 🛑
+          │
+          ├── choice 2
+          └── choice 3
+*/
+
+function solve(index, path) {
+  // ==========================================
+  // 1. BASE CASE
+  // ==========================================
+
+  // We have reached a complete solution.
+  if (isValid(path)) {
+    console.log(path);
+
+    // Return true to tell the previous recursive
+    // call that an answer has already been found.
+    return true;
+  }
+
+  // ==========================================
+  // 2. TRY ALL POSSIBLE CHOICES
+  // ==========================================
+
+  for (const choice of choices) {
+    // Make the choice
+    path.push(choice);
+
+    // ==========================================
+    // 3. RECURSE
+    // ==========================================
+
+    // If the recursive call found an answer,
+    // immediately stop this function too.
+    if (solve(index + 1, path)) {
+      return true;
     }
 
-    return false; // No answer on this path
+    // ==========================================
+    // 4. BACKTRACK
+    // ==========================================
+
+    // The choice did not lead to an answer,
+    // so undo it and try the next choice.
+    path.pop();
   }
 
-  // --------------------------------
-  // 1. TAKE the current element
-  // --------------------------------
-
-  current.push(arr[index]);
-
-  if (printOne(index + 1, arr, current, sum + arr[index], target)) {
-    // If answer was found,
-    // immediately stop recursion
-    return true;
-  }
-
-  // Backtrack:
-  // Remove the element we took
-  current.pop();
-
-  // --------------------------------
-  // 2. DON'T TAKE the current element
-  // --------------------------------
-
-  if (printOne(index + 1, arr, current, sum, target)) {
-    // If answer was found,
-    // immediately stop recursion
-    return true;
-  }
-
-  // No answer found on either path
+  // No valid answer was found from this state.
   return false;
 }
-
-// Test case
-printOne(0, [2, 1, 3], [], 0, 3);
-
 /*
 TIME COMPLEXITY:-
 | Case    |      Time |

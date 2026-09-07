@@ -1,32 +1,12 @@
-function printAllSubsequences(index, arr, current) {
-  // Base case:
-  // We have processed all elements.
-  if (index === arr.length) {
-    console.log(current);
-    return;
+function printONE(index, path) {
+  // add a base condtition that if it meet so our recursion call is completed
+  if (isValid(path)) {
+    console.log(path);
+    return true;
   }
 
-  // --------------------------------
-  // 1. TAKE the current element
-  // --------------------------------
-  current.push(arr[index]);
+  // try all possible chosises
 
-  // 2. RECURSE
-  // Move to the next element
-  printAllSubsequences(index + 1, arr, current);
-
-  // --------------------------------
-  // 3. BACKTRACK / UNDO
-  // --------------------------------
-  // Remove the element so that we
-  // can explore the "don't take" branch.
-  current.pop();
-
-  // --------------------------------
-  // 4. DON'T TAKE the current element
-  // --------------------------------
-  printAllSubsequences(index + 1, arr, current);
+  for (const choice of choices) {
+  }
 }
-
-// Test
-printAllSubsequences(0, [3, 1], []);

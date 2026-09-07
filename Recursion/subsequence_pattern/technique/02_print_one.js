@@ -73,6 +73,12 @@ function solve(index, path) {
   // No valid answer was found from this state.
   return false;
 }
+
+// Start recursion
+const found = solve(0, []);
+// Print something after recursion finishes
+console.log("Answer found:", found);
+
 /*
 TIME COMPLEXITY:-
 | Case    |      Time |

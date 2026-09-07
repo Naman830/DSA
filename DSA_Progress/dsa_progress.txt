@@ -12,18 +12,14 @@ Skeleton Drills: need more practice
 - Recursive(count)
 
 New Topic:
-- Topic:
-- Problems:
-- Result:
+- Topic: DSA traversal pre order, inorder, postorder
+- Problems: 11 
+- Result: 7
 
 ❄️ Freeze Log:
+- Problem is occuring in inOrder mostly i did silly mistakes
 - 
 - 
-- 
-
-⏱️ Time:
-- First line:
-- Working solution:
 
 
 

@@ -17,9 +17,9 @@ Visual Representation
      ▼
     [10]
    /   \
-  5     15
+  5     15 ----> children of 10
  / \      \
-2  7      20
+2  7      20 ----> leaf node
 
 */
 

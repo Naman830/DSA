@@ -15,6 +15,30 @@ BFS (Breadth First Search) visits a binary tree level by level, starting from th
 1 → 2 → 3 → 4 → 5 → 6 → 7
 */
 
+/*
+            ROOT
+             ↓
+          put in Queue
+             ↓
+       ┌─────────────┐
+       │   QUEUE     │
+       └─────────────┘
+             ↓
+        remove front
+             ↓
+          visit node
+             ↓
+      ┌──────┴──────┐
+      ↓             ↓
+    LEFT          RIGHT
+      ↓             ↓
+   add queue     add queue
+      └──────┬──────┘
+             ↓
+       repeat until
+       queue is empty
+*/
+
 // ============================================================================================
 // LEVEL ORDER TRAVERSAL
 // ============================================================================================

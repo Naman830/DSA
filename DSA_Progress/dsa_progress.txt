@@ -13,15 +13,16 @@ Skeleton Drills: need more practice
 
 New Topic:
 - Topic: DSA traversal pre order, inorder, postorder
-- Problems: 11 [digram], also do js code of them which is very easy 
+- Problems: 
+- 11 [digram]
+- Do js code of these traversal which is very easy 
+- Do js code of bfs which is ddifferent in leetcode solution
 - Result: 7
 
 ❄️ Freeze Log:
 - Problem is occuring in inOrder mostly i did silly mistakes
+- stuck in leetcode solution of bfs
 - 
-- 
-
-
 
 
 ### 🌤️ Afternoon

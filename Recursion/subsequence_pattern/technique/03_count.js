@@ -15,39 +15,44 @@ Number of answers = answers when we TAKE + answers when we DON'T TAKE
                    |
              count 1 + count 2
 */
+function count(index, arr) {
+  // ==========================================
+  // BASE CASE
+  // ==========================================
 
-function countSubsets(index, arr, sum, target) {
-  // Base case:
-  // We have processed every element
+  // One complete answer is formed.
   if (index === arr.length) {
-    // If current subset has target sum,
-    // count this as ONE valid answer
-    if (sum === target) {
-      return 1;
-    }
-
-    // This path does not give a valid answer
-    return 0;
+    return 1;
   }
 
-  // -------------------------
-  // 1. TAKE current element
-  // -------------------------
+  // ==========================================
+  // TAKE
+  // ==========================================
 
-  let take = countSubsets(index + 1, arr, sum + arr[index], target);
+  arr.push(index);
 
-  // -------------------------
-  // 2. DON'T TAKE current element
-  // -------------------------
+  // Count all answers possible after TAKE.
+  const take = count(index + 1, arr);
 
-  let notTake = countSubsets(index + 1, arr, sum, target);
+  // Backtrack
+  arr.pop();
 
-  // Total answers from both choices
+  // ==========================================
+  // DON'T TAKE
+  // ==========================================
+
+  // Count all answers possible after DON'T TAKE.
+  const notTake = count(index + 1, arr);
+
+  // ==========================================
+  // TOTAL
+  // ==========================================
+
+  // Total answers = TAKE + DON'T TAKE
   return take + notTake;
 }
 
-// Test
-console.log(countSubsets(0, [1, 2, 3], 0, 3));
+// Start counting
+const total = count(0, []);
 
-// Output:
-// 2
+console.log("Total answers:", total);

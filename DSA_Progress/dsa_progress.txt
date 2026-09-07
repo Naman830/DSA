@@ -13,7 +13,7 @@ Skeleton Drills: need more practice
 
 New Topic:
 - Topic: DSA traversal pre order, inorder, postorder
-- Problems: 11 
+- Problems: 11 [digram], also do js code of them which is very easy 
 - Result: 7
 
 ❄️ Freeze Log:

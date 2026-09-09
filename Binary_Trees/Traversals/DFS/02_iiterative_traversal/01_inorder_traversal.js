@@ -8,6 +8,10 @@ When no left node → pop, visit, then go right.
 
 Remember:
 Go Left → Push → Pop & Visit → Go Right
+
+Complexity:-
+TC: O(n)
+SC: O(n)
 */
 
 class TreeNode {

@@ -19,4 +19,12 @@ lastVisited tells us whether the right subtree of the current node is already pr
     4   5
 
 Postorder: 4 → 5 → 2 → 3 → 1
+
+🔑 Easy Pattern to Remember
+Go Left → Push
+       ↓
+Check Right
+       ↓
+Right not processed → Go Right
+Right processed      → Pop + Visit
 */

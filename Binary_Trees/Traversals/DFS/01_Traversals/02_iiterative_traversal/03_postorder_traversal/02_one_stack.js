@@ -32,6 +32,31 @@ TC: O(n)
 SC: O(n)
 */
 
+/*
+Step 1: 1 → 2 → 4
+        Stack: [1, 2, 4]
+
+Step 2: Visit 4
+        Stack: [1, 2]
+        Result: [4]
+
+Step 3: Visit 5
+        Stack: [1, 2, 5]
+        Result: [4, 5]
+
+Step 4: Visit 2
+        Stack: [1]
+        Result: [4, 5, 2]
+
+Step 5: Visit 3
+        Stack: [1, 3]
+        Result: [4, 5, 2, 3]
+
+Step 6: Visit 1
+        Stack: []
+        Result: [4, 5, 2, 3, 1]
+*/
+
 // Create a Binary Tree Node
 class TreeNode {
   constructor(val) {

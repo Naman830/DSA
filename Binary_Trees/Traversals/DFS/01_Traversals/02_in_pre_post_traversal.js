@@ -102,3 +102,11 @@ let [pre, ino, post] = allTraversals(root);
 console.log("Preorder:", pre);
 console.log("Inorder:", ino);
 console.log("Postorder:", post);
+
+/*
+| Case    | Time Complexity | Space Complexity |
+| ------- | --------------- | ---------------- |
+| Best    | O(n)            | O(n)             |
+| Average | O(n)            | O(n)             |
+| Worst   | O(n)            | O(n)             |
+*/

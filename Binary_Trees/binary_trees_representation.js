@@ -66,7 +66,7 @@ Right Child → 2 * i + 2
 Parent → Math.floor((i - 1) / 2)
 
 Example:
-Index : 0  1  2  3  4   5     6
+In  dex : 0  1  2  3  4   5     6
 Value :10  5 15  2  7 null   20
 */
 

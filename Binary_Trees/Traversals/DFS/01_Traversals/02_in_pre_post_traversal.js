@@ -19,3 +19,28 @@ Postorder = 3rd time we see the node
 
 we use: [node, state]
 */
+
+class TreeNode {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+// Create tree
+let root = new TreeNode(1);
+
+root.left = new TreeNode(2);
+root.right = new TreeNode(3);
+
+root.left.left = new TreeNode(4);
+root.left.right = new TreeNode(5);
+
+// Run all traversals
+let [pre, ino, post] = allTraversals(root);
+
+// Print results
+console.log("Preorder:", pre);
+console.log("Inorder:", ino);
+console.log("Postorder:", post);

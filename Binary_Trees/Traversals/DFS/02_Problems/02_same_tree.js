@@ -36,6 +36,15 @@ Otherwise, compare their left subtrees and right subtrees.
 The main idea: We need to verify both the values and the structure.
 */
 
+// Optimal — Recursive DFS
+/*
+| Complexity              | Recursive DFS |
+| ----------------------- | ------------- |
+| Time                    | **O(N + M)**  |
+| Auxiliary Space         | **O(H)**      |
+| Worst-case Space        | **O(N + M)**  |
+*/
+
 class TreeNode {
   constructor(val = 0, left = null, right = null) {
     this.val = val;

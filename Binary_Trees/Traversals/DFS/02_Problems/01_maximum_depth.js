@@ -23,6 +23,10 @@ depth(node) = 1 + max(depth(left), depth(right))
 */
 
 // Solution 1: Brute Force — Recursive DFS
+// Time Complexity: O(n)
+// Space Complexity: O(h) — The recursion stack stores at most the height of the tree.
+// In the worst case, O(n).
+
 class TreeNode {
   constructor(val = 0, left = null, right = null) {
     this.val = val;

@@ -31,3 +31,5 @@ Both are null.
 Neither is null, and their values are equal.
 Their opposite children are also mirrors.
 */
+
+// Ease:- This question is similar as same tree just we have not to take main root we have to make both left and right side childeren as a root and then compare them

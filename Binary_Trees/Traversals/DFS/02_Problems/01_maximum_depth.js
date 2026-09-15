@@ -22,7 +22,7 @@ The main formula is:
 depth(node) = 1 + max(depth(left), depth(right))
 */
 
-// Solution 1: Brute Force — Recursive DFS
+// Solution 1: Recursive DFS
 // Time Complexity: O(n)
 // Space Complexity: O(h) — The recursion stack stores at most the height of the tree.
 // In the worst case, O(n).

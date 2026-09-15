@@ -32,12 +32,19 @@ class TreeNode {
 }
 
 function maxDepth(root) {
-  if (root === null) return 0;
+  // Base case: Empty tree has depth 0
+  if (root === null) {
+    return 0;
+  }
 
+  // Calculate the depth of the left subtree
   const leftDepth = maxDepth(root.left);
+
+  // Calculate the depth of the right subtree
   const rightDepth = maxDepth(root.right);
 
-  return 1 + Math.max(leftDepth + rightDepth);
+  // Current node adds 1 to the deeper subtree
+  return 1 + Math.max(leftDepth, rightDepth);
 }
 
 // Create the binary tree

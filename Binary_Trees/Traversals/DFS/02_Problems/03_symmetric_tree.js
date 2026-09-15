@@ -33,6 +33,15 @@ Their opposite children are also mirrors.
 */
 
 // Ease:- This question is similar as same tree just we have not to take main root we have to make both left and right side childeren as a root and then compare them
+
+// Optimal — Recursive DFS
+/*
+| Complexity              | Recursive DFS |
+| ----------------------- | ------------- |
+| Time                    | **O(N + M)**  |
+| Auxiliary Space         | **O(H)**      |
+| Worst-case Space        | **O(N + M)**  |
+*/
 class TreeNode {
   constructor(val = 0, left = null, right = null) {
     this.val = val;

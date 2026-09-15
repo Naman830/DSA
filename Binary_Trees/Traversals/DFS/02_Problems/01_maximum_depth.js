@@ -21,3 +21,22 @@ We can solve the problem using recursion or by traversing the tree level by leve
 The main formula is:
 depth(node) = 1 + max(depth(left), depth(right))
 */
+
+// Solution 1: Brute Force — Recursive DFS
+class TreeNode {
+  constructor(val = 0, left = null, right = null) {
+    this.val = val;
+    this.left = left;
+    this.right = right;
+  }
+}
+
+// Create the binary tree
+const root = new TreeNode(
+  1,
+  new TreeNode(2, new TreeNode(4), null),
+  new TreeNode(3),
+);
+
+// Call the function
+console.log("Maximum Depth:", maxDepth(root));

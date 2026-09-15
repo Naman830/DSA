@@ -1,9 +1,12 @@
 # DSA Progress Tracker
 Goal: Improve intuition → code implementation.
 
-## 📅 Daily Log
 
-Date: 2026-07-07
+===============================================================================================
+===============================================================================================
+===============================================================================================
+## 📅 Daily Log
+Date: 2026-09-07
 
 ### 🌅 Morning
 Skeleton Drills: need more practice
@@ -23,6 +26,27 @@ New Topic:
 - Problem is occuring in inOrder mostly i did silly mistakes
 - stuck in leetcode solution of bfs
 - 
+
+===============================================================================================
+===============================================================================================
+===============================================================================================
+## 📅 Daily Log
+Date: 2026-09-13
+
+### 🌅 Morning
+Skeleton Drills: need more practice
+- DFS Traversals [all]
+
+New Topic:
+- Topic: max depth, same tree, symetric tree1
+- Problems: 
+- Build intution but confused after doing it a long time
+
+❄️ Freeze Log:
+- I can't think more after doing these 3 question i got stuck in 4th question 
+===============================================================================================
+===============================================================================================
+===============================================================================================
 
 
 ### 🌤️ Afternoon

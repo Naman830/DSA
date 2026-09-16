@@ -1,1 +1,0 @@
- map.set(prefix, (map.get(prefix) || 0) + 1)

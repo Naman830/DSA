@@ -26,3 +26,13 @@ If a subtree is unbalanced, there is no need to calculate further.
 The optimal approach combines height calculation + balance checking in one DFS traversal.
 We return -1 whenever an unbalanced subtree is found.
 */
+
+/*
+1. Brute Force — Height separately for every node
+Time: O(n²) in the worst case
+Space: O(h) recursion stack
+
+2. Better — Store heights
+Time: O(n)
+Space: O(n) for the height map + O(h) recursion stack
+*/

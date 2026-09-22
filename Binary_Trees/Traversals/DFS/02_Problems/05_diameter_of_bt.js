@@ -41,3 +41,18 @@ A. Brute Force
 
 The problem is that height() gets called repeatedly for the same subtrees.
 */
+
+/*
+Optimal Solution
+
+              node
+             /    \
+            /      \
+     leftHeight   rightHeight
+            \      /
+             \    /
+            diameter
+
+Time  : O(N)
+Space : O(H)
+*/

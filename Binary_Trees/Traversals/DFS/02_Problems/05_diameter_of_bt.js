@@ -30,3 +30,14 @@ We calculate the height of every subtree.
 While calculating height, we simultaneously keep track of the maximum diameter.
 The optimal solution avoids repeatedly calculating subtree heights.
 */
+
+/*
+A. Brute Force
+
+| Complexity | Value                    |
+| ---------- | ------------------------ |
+| Time       | **O(N²)** worst case     |
+| Space      | **O(N)** recursion stack |
+
+The problem is that height() gets called repeatedly for the same subtrees.
+*/

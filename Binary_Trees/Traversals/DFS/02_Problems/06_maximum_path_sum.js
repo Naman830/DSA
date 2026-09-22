@@ -79,3 +79,86 @@ Space: O(H) recursion stack
 Time: O(N)
 Space: O(H)
 */
+
+// 3. Optimal Solution
+class TreeNode {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function maxPathSum(root) {
+  // Stores the maximum path sum found anywhere in the tree
+  let maxSum = -Infinity;
+
+  function dfs(node) {
+    // Base case
+    if (node === null) {
+      return 0;
+    }
+
+    /*
+      Get the maximum contribution from the left subtree.
+
+      If the contribution is negative,
+      we simply don't take that subtree.
+    */
+    const leftGain = Math.max(0, dfs(node.left));
+
+    /*
+      Same for the right subtree.
+    */
+    const rightGain = Math.max(0, dfs(node.right));
+
+    /*
+      A path can pass through the current node
+      and take BOTH left and right sides.
+
+             left
+               \
+                node
+               /
+             right
+
+      So calculate the complete path through this node.
+    */
+    const currentPath = leftGain + node.val + rightGain;
+
+    // Update the global maximum answer
+    maxSum = Math.max(maxSum, currentPath);
+
+    /*
+      When returning to the parent,
+      we can take ONLY ONE side.
+
+      Otherwise the path would branch.
+    */
+    return node.val + Math.max(leftGain, rightGain);
+  }
+
+  // Start DFS from root
+  dfs(root);
+
+  return maxSum;
+}
+
+// -------------------------
+// Create Binary Tree
+// -------------------------
+
+const root = new TreeNode(1);
+
+root.left = new TreeNode(2);
+
+root.right = new TreeNode(3);
+
+root.right.left = new TreeNode(4);
+root.right.right = new TreeNode(5);
+
+// -------------------------
+// Output
+// -------------------------
+
+console.log(maxPathSum(root)); // 12

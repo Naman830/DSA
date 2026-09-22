@@ -21,3 +21,51 @@ Sum:
 
 So the answer is 12.
 */
+
+// ======================================================================================
+// ======================================================================================
+
+/*
+1. Key Observation
+At every node, there are two different things we need to calculate:
+
+=================================================
+A. Value returned to the parent
+=================================================
+
+A node can give its parent only one side:
+
+       node
+      /    \
+    left   right
+
+The parent cannot take both branches because that would create a branching path.
+
+So we return:
+node.val + max(leftGain, rightGain)
+
+=================================================
+B. Maximum path passing THROUGH the current node
+=================================================
+
+Here we can take both sides:
+
+        node
+       /    \
+    left    right
+
+path = left + node + right
+
+So:
+
+leftGain + node.val + rightGain
+We keep a global maxSum to store the best path found anywhere in the tree.
+
+Important
+If a subtree gives a negative contribution, we don't need it:
+Math.max(0, gain)
+
+So:
+leftGain  = max(0, left subtree gain)
+rightGain = max(0, right subtree gain)
+*/

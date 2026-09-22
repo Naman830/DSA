@@ -97,3 +97,11 @@ root.left.right = new TreeNode(5);
 
 // Check balance
 console.log(isBalanced(root)); // true
+
+/*
+| Complexity      | Value  |
+| --------------- | ------ |
+| **Time**        | `O(n)` |
+| **Space**       | `O(h)` |
+| Recursion stack | `O(h)` |
+*/

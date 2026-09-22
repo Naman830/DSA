@@ -20,3 +20,13 @@ So the diameter is:
 3 edges
 Important: Diameter is usually measured in number of edges, not number of nodes.
 */
+
+/*
+Key observation
+
+For every node, the longest path passing through that node is:
+height(left subtree) + height(right subtree)
+We calculate the height of every subtree.
+While calculating height, we simultaneously keep track of the maximum diameter.
+The optimal solution avoids repeatedly calculating subtree heights.
+*/

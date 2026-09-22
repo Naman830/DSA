@@ -69,3 +69,13 @@ So:
 leftGain  = max(0, left subtree gain)
 rightGain = max(0, right subtree gain)
 */
+
+/*
+1. Brute Force
+Time: O(N²) in the worst case
+Space: O(H) recursion stack
+
+2. Better Solution
+Time: O(N)
+Space: O(H)
+*/

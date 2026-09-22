@@ -81,6 +81,12 @@ Space: O(H)
 */
 
 // 3. Optimal Solution
+/*
+| Complexity | Value  |
+| ---------- | ------ |
+| Time       | `O(N)` |
+| Space      | `O(H)` |
+*/
 class TreeNode {
   constructor(val) {
     this.val = val;

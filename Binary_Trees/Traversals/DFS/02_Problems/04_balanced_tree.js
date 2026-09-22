@@ -36,3 +36,64 @@ Space: O(h) recursion stack
 Time: O(n)
 Space: O(n) for the height map + O(h) recursion stack
 */
+
+// 3. Optimal — Single DFS
+class TreeNode {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function isBalanced(root) {
+  // Returns height if balanced
+  // Returns -1 if unbalanced
+  function dfs(node) {
+    // Empty tree has height 0
+    if (node === null) {
+      return 0;
+    }
+
+    // Calculate left subtree height
+    const leftHeight = dfs(node.left);
+
+    // If left subtree is unbalanced,
+    // propagate -1 immediately
+    if (leftHeight === -1) {
+      return -1;
+    }
+
+    // Calculate right subtree height
+    const rightHeight = dfs(node.right);
+
+    // If right subtree is unbalanced,
+    // propagate -1 immediately
+    if (rightHeight === -1) {
+      return -1;
+    }
+
+    // Check balance condition
+    if (Math.abs(leftHeight - rightHeight) > 1) {
+      return -1;
+    }
+
+    // Return height of current subtree
+    return Math.max(leftHeight, rightHeight) + 1;
+  }
+
+  // If dfs returns -1, tree is unbalanced
+  return dfs(root) !== -1;
+}
+
+// Create tree
+const root = new TreeNode(1);
+
+root.left = new TreeNode(2);
+root.right = new TreeNode(3);
+
+root.left.left = new TreeNode(4);
+root.left.right = new TreeNode(5);
+
+// Check balance
+console.log(isBalanced(root)); // true

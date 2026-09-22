@@ -16,3 +16,13 @@ Example of a balanced tree:
 
 At every node, the left and right subtree heights differ by at most 1.
 */
+
+/*
+Key observation
+
+We need the height of each subtree.
+While calculating height, we can also check whether the subtree is balanced.
+If a subtree is unbalanced, there is no need to calculate further.
+The optimal approach combines height calculation + balance checking in one DFS traversal.
+We return -1 whenever an unbalanced subtree is found.
+*/

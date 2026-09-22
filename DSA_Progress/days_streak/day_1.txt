@@ -1,0 +1,18 @@
+# DSA Progress Tracker
+
+===============================================================================================
+## 📅 Daily Log
+Date: 2026-09-22
+===============================================================================================
+
+### 🌅 Morning
+Skeleton Drills: need more practice
+- Traversals of BT
+
+New Topic:
+- Topic: Balanced bt, diamete of bt, max path
+- Problems: 
+- I build intution but can't write code effectively
+
+❄️ Freeze Log:
+- Stuck in what to return to parent element

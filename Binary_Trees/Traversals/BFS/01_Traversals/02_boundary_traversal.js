@@ -82,6 +82,21 @@ function boundaryTraversalOptimal(root) {
       }
     }
   }
+
+  // -----------------------------------------
+  // Add all leaves [inorder traversal]
+  // -----------------------------------------
+  function addLeaves(node) {
+    if (node === null) return;
+
+    if (isLeaf(node)) {
+      result.push(node.val);
+      return;
+    }
+
+    addLeaves(node.left);
+    addLeaves(node.right);
+  }
 }
 
 // -------------------------

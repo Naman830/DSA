@@ -43,3 +43,68 @@ Right boundary → move right first, otherwise left.
 Right boundary is added bottom → top.
 Leaf nodes are added left → right.
 */
+
+class TreeNode {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function boundaryTraversalOptimal(root) {
+  if (root === null) return [];
+
+  const result = [];
+
+  // Check whether node is a leaf
+  function isLeaf(node) {
+    return node.left === null && node.right === null;
+  }
+
+  // -----------------------------------------
+  // Add left boundary
+  // -----------------------------------------
+  function addLeftBoundary(node) {
+    let current = node.left;
+
+    while (current !== null) {
+      // Exclude leaves
+      if (!isLeaf(current)) {
+        result.push(current.val);
+      }
+
+      // Prefer left child
+      if (current.left !== null) {
+        current = current.left;
+      } else {
+        current = current.right;
+      }
+    }
+  }
+}
+
+// -------------------------
+// Create Binary Tree
+// -------------------------
+
+const root = new TreeNode(1);
+
+root.left = new TreeNode(2);
+root.right = new TreeNode(7);
+
+root.left.left = new TreeNode(3);
+root.left.right = new TreeNode(4);
+
+root.left.right.left = new TreeNode(5);
+root.left.right.right = new TreeNode(6);
+
+root.right.left = new TreeNode(8);
+root.right.right = new TreeNode(9);
+
+// -------------------------
+// Output
+// -------------------------
+
+console.log(boundaryTraversalOptimal(root));
+// [1, 2, 3, 5, 6, 8, 9, 7]

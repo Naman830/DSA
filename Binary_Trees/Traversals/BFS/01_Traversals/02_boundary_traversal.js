@@ -44,6 +44,14 @@ Right boundary is added bottom → top.
 Leaf nodes are added left → right.
 */
 
+/*
+|             |     Time | Auxiliary Space |
+| ----------- | -------: | --------------: |
+| Brute       |     O(N) |            O(N) |
+| Better      |     O(N) |            O(N) |
+| **Optimal** | **O(N)** |        **O(H)** |
+*/
+
 class TreeNode {
   constructor(val) {
     this.val = val;

@@ -17,3 +17,18 @@ Example:
 
 So the tree satisfies the property.
 */
+
+/*
+:- Key Observation
+We only need to check non-leaf nodes.
+
+For every node:
+left value = 0 if left child doesn't exist.
+right value = 0 if right child doesn't exist.
+
+Check:
+node.val === left.val + right.val
+
+We must check this for every node, so a tree traversal is required.
+Once any node violates the property, we can immediately return false.
+*/

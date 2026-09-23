@@ -21,3 +21,25 @@ Example
 Boundary traversal:
 1 → 2 → 3 → 5 → 6 → 8 → 9 → 7
 */
+
+/*
+:- Key Observation
+
+The easiest way to remember it:
+        ROOT
+          ↓
+   LEFT BOUNDARY [go left left if left not right]
+          ↓
+      ALL LEAVES [inorder]
+          ↓
+   RIGHT BOUNDARY [go right righ if right not left]
+      (REVERSE)
+
+Important rules:
+
+Don't add a leaf twice.
+Left boundary → move left first, otherwise right.
+Right boundary → move right first, otherwise left.
+Right boundary is added bottom → top.
+Leaf nodes are added left → right.
+*/

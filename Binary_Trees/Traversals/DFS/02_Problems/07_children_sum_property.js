@@ -36,6 +36,12 @@ After fixing the children, update the current node to exactly left + right.
 */
 
 // OPTIMAL SOLUTION
+/*
+| Complexity |    Value | Why                                   |
+| ---------- | -------: | ------------------------------------- |
+| **Time**   | **O(n)** | Every node is visited once            |
+| **Space**  | **O(h)** | Recursion stack; `h` = height of tree |
+*/
 class TreeNode {
   constructor(val) {
     this.val = val;

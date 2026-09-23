@@ -97,6 +97,35 @@ function boundaryTraversalOptimal(root) {
     addLeaves(node.left);
     addLeaves(node.right);
   }
+
+  // -----------------------------------------
+  // Add right boundary
+  // -----------------------------------------
+  function addRightBoundary(node) {
+    if (node === null) return;
+
+    if (node.right !== null) {
+      addRightBoundary(node.right);
+    } else {
+      addRightBoundary(node.left);
+    }
+
+    result.push(node.val);
+  }
+
+  // 1. Root
+  result.push(root.val);
+
+  // 2. Left boundary
+  addLeftBoundary(root);
+
+  // 3. Leaves
+  addLeaves(root);
+
+  // 4. Right boundary in reverse
+  addRightBoundary(root);
+
+  return result;
 }
 
 // -------------------------

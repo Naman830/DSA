@@ -49,6 +49,15 @@ left → right
 ...
 */
 
+/*
+OPTIMAL SOLUTION 
+
+| Complexity | Cost     |
+| ---------- | -------- |
+| **Time**   | **O(N)** |
+| **Space**  | **O(N)** |
+*/
+
 class TreeNode {
   constructor(val) {
     this.val = val;

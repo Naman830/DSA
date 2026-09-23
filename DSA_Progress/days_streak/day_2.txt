@@ -17,3 +17,8 @@ New Topic:
 
 ❄️ Freeze Log:
 - Mistake i did i build the intution but i didn't do dry run, dry run is very important
+
+Practice: these are easy took me total 13 min to solve
+- Max depth
+- same tree
+- balanced tree 

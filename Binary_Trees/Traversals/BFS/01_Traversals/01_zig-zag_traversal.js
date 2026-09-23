@@ -48,3 +48,67 @@ left → right
       ↓
 ...
 */
+
+class TreeNode {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function zigZagTraversal(root) {
+  if (root === null) return [];
+
+  const queue = [root];
+  const result = [];
+
+  let front = 0;
+  let leftToRight = true;
+
+  while (front < queue.length) {
+    const levelSize = queue.length - front;
+
+    // Create array for current level
+    const level = new Array(levelSize);
+
+    for (let i = 0; i < levelSize; i++) {
+      const node = queue[front++];
+
+      // Decide where to put the node
+      const index = leftToRight ? i : levelSize - 1 - i;
+
+      level[index] = node.val;
+
+      // Add children for next level
+      if (node.left !== null) {
+        queue.push(node.left);
+      }
+
+      if (node.right !== null) {
+        queue.push(node.right);
+      }
+    }
+
+    result.push(level);
+
+    // Change direction
+    leftToRight = !leftToRight;
+  }
+
+  return result;
+}
+
+// Create tree
+const root = new TreeNode(1);
+
+root.left = new TreeNode(2);
+root.right = new TreeNode(3);
+
+root.left.left = new TreeNode(4);
+root.left.right = new TreeNode(5);
+
+root.right.left = new TreeNode(6);
+root.right.right = new TreeNode(7);
+
+console.log(zigZagTraversal(root));

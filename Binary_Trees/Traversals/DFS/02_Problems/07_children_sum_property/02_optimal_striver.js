@@ -26,6 +26,11 @@ Then recursively fix the left subtree.
 Eventually, after processing everything, the values are adjusted so every parent satisfies:
 
 parent = left + right
+
+| Complexity | Value    |
+| ---------- | -------- |
+| **Time**   | **O(n)** |
+| **Space**  | **O(h)** |
 */
 
 class TreeNode {

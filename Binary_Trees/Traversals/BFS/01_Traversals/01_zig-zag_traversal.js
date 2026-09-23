@@ -25,3 +25,26 @@ So the answer becomes:
   [4, 5, 6, 7]
 ]
 */
+
+/*
+:- Key Observation
+
+We still process the tree level by level, so BFS is useful.
+Use a queue to process each level.
+Keep a boolean such as leftToRight.
+
+For every level:
+
+If leftToRight = true, put values normally.
+Otherwise, reverse the level.
+
+After processing a level, toggle the direction.
+
+left → right
+      ↓
+right → left
+      ↓
+left → right
+      ↓
+...
+*/

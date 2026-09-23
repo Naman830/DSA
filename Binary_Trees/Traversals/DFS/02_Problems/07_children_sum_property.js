@@ -20,15 +20,19 @@ So the tree satisfies the property.
 
 /*
 :- Key Observation
-We only need to check non-leaf nodes.
 
-For every node:
-left value = 0 if left child doesn't exist.
-right value = 0 if right child doesn't exist.
+For every non-leaf node, we need:
+node.val = left.val + right.val
 
-Check:
-node.val === left.val + right.val
+But we are not allowed to decrease values.
 
-We must check this for every node, so a tree traversal is required.
-Once any node violates the property, we can immediately return false.
+So:
+
+If left + right > node.val → increase node.val.
+If node.val > left + right → push the extra value into one child.
+
+Recursively do the same for both subtrees.
+After fixing the children, update the current node to exactly left + right.
 */
+
+// Optimal Solution

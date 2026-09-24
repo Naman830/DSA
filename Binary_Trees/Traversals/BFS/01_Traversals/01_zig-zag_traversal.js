@@ -73,23 +73,52 @@ function zigZagTraversal(root) {
   const result = [];
 
   let front = 0;
+
+  // true  = store current level from LEFT → RIGHT
+  // false = store current level from RIGHT → LEFT
   let leftToRight = true;
 
   while (front < queue.length) {
+    /*
+      Number of nodes in the CURRENT level.
+
+      queue.length = total nodes currently inside queue
+      front        = nodes we have already processed
+
+      So:
+
+      levelSize = queue.length - front
+
+      IMPORTANT:
+      We calculate this BEFORE processing the level because
+      new children will be added to the queue while looping.
+    */
     const levelSize = queue.length - front;
 
-    // Create array for current level
+    // Create an array to store only the current level
     const level = new Array(levelSize);
 
     for (let i = 0; i < levelSize; i++) {
+      // Get the next node and move front forward
       const node = queue[front++];
 
-      // Decide where to put the node
+      /*
+        Decide WHERE to store the value.
+
+        LEFT → RIGHT:
+        Store normally.
+
+        RIGHT → LEFT:
+        Store in reverse positions.
+
+        Reverse index formula:
+        levelSize - 1 - i
+      */
       const index = leftToRight ? i : levelSize - 1 - i;
 
+      // Put the current node's value at the correct position
       level[index] = node.val;
 
-      // Add children for next level
       if (node.left !== null) {
         queue.push(node.left);
       }
@@ -99,16 +128,26 @@ function zigZagTraversal(root) {
       }
     }
 
+    // Current level is complete, so add it to final result
     result.push(level);
 
-    // Change direction
+    /*
+      Flip direction for the next level.
+
+      true  → false
+      false → true
+
+      LEFT → RIGHT
+      RIGHT → LEFT
+      LEFT → RIGHT
+      ...
+    */
     leftToRight = !leftToRight;
   }
 
   return result;
 }
 
-// Create tree
 const root = new TreeNode(1);
 
 root.left = new TreeNode(2);

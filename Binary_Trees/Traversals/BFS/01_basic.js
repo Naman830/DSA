@@ -88,6 +88,10 @@ function levelOrder(root) {
   // Queue starts with root
   const queue = [root];
 
+  /*
+    'front' tells us which node we should process next.
+    Instead of using queue.shift(), we move this pointer forward.
+  */
   let front = 0;
 
   while (front < queue.length) {

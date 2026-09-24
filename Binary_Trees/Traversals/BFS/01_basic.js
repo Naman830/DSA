@@ -47,6 +47,24 @@ BFS (Breadth First Search) visits a binary tree level by level, starting from th
 | Worst   | O(N) | O(N)  |
 */
 
+/*
+        A
+       / \
+      B   C
+     / \   \
+    D   E   F
+       /
+      G
+
+
+BFS:
+A → B → C → D → E → F → G
+
+│   └─────┘   └─────────┘   │
+│    Level 1     Level 2     │
+Level 0                    Level 3
+*/
+
 // ============================================================================================
 // LEVEL ORDER TRAVERSAL
 // ============================================================================================

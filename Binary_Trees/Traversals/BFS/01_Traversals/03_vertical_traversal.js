@@ -39,6 +39,11 @@ Store nodes based on their column.
 For the same column, sort by row first, then by node value when rows are also equal.
 BFS makes it easy to visit every node while tracking coordinates.
 */
+
+/*
+Time: O(n log n)
+Space: O(n)
+*/
 class TreeNode {
   constructor(val, left = null, right = null) {
     this.val = val;

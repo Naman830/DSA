@@ -28,3 +28,14 @@ Now imagine vertical lines passing through the tree:
     4              |            6   5           |             7
     |              |              |             |             |
 */
+
+/*
+:-Key Observation
+We need to track both row and column of every node.
+Root starts at (row = 0, col = 0).
+Left child becomes (row + 1, col - 1).
+Right child becomes (row + 1, col + 1).
+Store nodes based on their column.
+For the same column, sort by row first, then by node value when rows are also equal.
+BFS makes it easy to visit every node while tracking coordinates.
+*/

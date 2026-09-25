@@ -26,3 +26,15 @@ Right child → HD + 1
 
 For each horizontal distance, the first node encountered from the top belongs to the top view.
 */
+
+/*
+:- Key observation / intuition
+Root starts at HD = 0.
+Going left decreases HD by 1.
+Going right increases HD by 1.
+
+We need only one node per horizontal distance.
+If multiple nodes have the same HD, we want the topmost one.
+Therefore, BFS / Level Order Traversal is ideal because it visits nodes level by level.
+Store a value in the Map only the first time an HD appears.
+*/

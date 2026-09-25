@@ -26,3 +26,15 @@ So the bottom view can be:
 
 [2, 5, 3]
 */
+
+/*
+:- Key Observation
+We need to group nodes according to their horizontal distance.
+Use BFS (Level Order Traversal) so we process nodes level by level.
+
+Store horizontalDistance -> node.val inside a Map.
+
+If another node comes at the same horizontal distance, overwrite the previous value.
+Because BFS processes upper levels before lower levels, deeper nodes naturally replace upper nodes.
+Finally, sort the horizontal distances from left to right and return their values.
+*/

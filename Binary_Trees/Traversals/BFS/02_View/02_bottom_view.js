@@ -39,6 +39,11 @@ Because BFS processes upper levels before lower levels, deeper nodes naturally r
 Finally, sort the horizontal distances from left to right and return their values.
 */
 
+/*
+Time: O(n + k log k) → worst case O(n log n) because of sorting.
+Space: O(n).
+*/
+
 // Node structure for Binary Tree
 class TreeNode {
   constructor(val) {

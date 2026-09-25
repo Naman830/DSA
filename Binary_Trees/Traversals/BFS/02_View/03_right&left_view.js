@@ -40,6 +40,14 @@ Root → Right → Left
 Root → Left → Right
 */
 
+/*
+| Complexity      |    Value | Why?                            |
+| --------------- | -------: | ------------------------------- |
+| Time            | **O(N)** | Each node is visited once       |
+| Auxiliary Space | **O(H)** | Recursive call stack            |
+| Output Space    | **O(H)** | One visible node per tree level |
+*/
+
 // Optimal Right View
 class TreeNode {
   constructor(val) {

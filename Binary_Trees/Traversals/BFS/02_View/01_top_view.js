@@ -38,3 +38,81 @@ If multiple nodes have the same HD, we want the topmost one.
 Therefore, BFS / Level Order Traversal is ideal because it visits nodes level by level.
 Store a value in the Map only the first time an HD appears.
 */
+class TreeNode {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function topView(root) {
+  if (root === null) return [];
+
+  // Map: horizontalDistance -> node value
+  const map = new Map();
+
+  // Queue stores:
+  // [node, horizontalDistance]
+  const queue = [[root, 0]];
+
+  // Avoid queue.shift() because it can be O(N)
+  let index = 0;
+
+  let minHD = 0;
+  let maxHD = 0;
+
+  while (index < queue.length) {
+    const [node, hd] = queue[index++];
+
+    // Because BFS goes level by level,
+    // the first node at this HD is the topmost node.
+    if (!map.has(hd)) {
+      map.set(hd, node.val);
+    }
+
+    // Keep track of leftmost and rightmost HD
+    minHD = Math.min(minHD, hd);
+    maxHD = Math.max(maxHD, hd);
+
+    // Left child → HD - 1
+    if (node.left !== null) {
+      queue.push([node.left, hd - 1]);
+    }
+
+    // Right child → HD + 1
+    if (node.right !== null) {
+      queue.push([node.right, hd + 1]);
+    }
+  }
+
+  const result = [];
+
+  // No sorting needed.
+  // Simply go from minimum HD to maximum HD.
+  for (let hd = minHD; hd <= maxHD; hd++) {
+    if (map.has(hd)) {
+      result.push(map.get(hd));
+    }
+  }
+
+  return result;
+}
+
+// --------------------
+// Example
+// --------------------
+
+const root = new TreeNode(1);
+
+root.left = new TreeNode(2);
+root.right = new TreeNode(3);
+
+root.left.right = new TreeNode(4);
+root.right.left = new TreeNode(5);
+root.right.right = new TreeNode(6);
+
+console.log(topView(root));
+
+// Output:
+// [2, 1, 3, 6]

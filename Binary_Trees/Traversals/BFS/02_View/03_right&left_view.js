@@ -18,3 +18,18 @@ Right View = [1, 3, 6, 7]
 
 The key idea is that we need exactly one node from every level.
 */
+
+/*
+:- Key Observation
+Every depth/level contributes only one node.
+For Left View, we want the first node encountered at each level.
+For Right View, we want the last node encountered at each level.
+BFS level-order traversal makes this straightforward.
+
+DFS can do it with less code:
+Right view → visit right before left.
+Left view → visit left before right.
+If result.length === level, we have reached that level for the first time.
+*/
+
+

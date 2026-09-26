@@ -35,6 +35,14 @@ This is the important pattern: [WE WILL FOLLOW THE INORDER TRAVERSAL FOR FAST & 
 Choose → Explore → Undo
 */
 
+/*
+| Complexity      | Value    | Reason                                            |
+| --------------- | -------- | ------------------------------------------------- |
+| Time            | **O(N)** | In the worst case, every node is visited once     |
+| Auxiliary Space | **O(H)** | Recursive call stack                              |
+| Output path     | **O(H)** | Root-to-target path can contain at most `H` nodes |
+*/
+
 // Optimal Solution — DFS + Backtracking
 class TreeNode {
   constructor(val) {

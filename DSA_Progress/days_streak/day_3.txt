@@ -1,0 +1,16 @@
+# DSA Progress Tracker
+
+===============================================================================================
+## 📅 Daily Log
+Date: 2026-09-26
+===============================================================================================
+
+### 🌅 Morning
+Skeleton Drills: I am getting better in bfs traversals
+- BFS traversal
+- Practice previous traversals and views 
+
+New Topic:
+- Topic: root to node path
+- Problems: 
+- can't build intution mind is frustrated

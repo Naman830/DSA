@@ -1,0 +1,20 @@
+# DSA Progress Tracker
+
+===============================================================================================
+## 📅 Daily Log
+Date: 2026-09-27
+===============================================================================================
+
+### 🌅 Morning
+Skeleton Drills: I am getting better in bfs traversals
+- BFS Both traversals and view
+- Great everything just stuck in some parts of view traversal due to less understanding in map but it is improving now
+
+New Topic:
+- Topic: Maximum width of bt, lowest common ancestor
+- Problems: 
+- only build inutuion of lca but can't build maximum width of bt
+- binary tress question are bit complicated
+
+freeze log:- still freezing in building intution but improve then previous
+improvement:- I am getting better in writing js code from inutuion too

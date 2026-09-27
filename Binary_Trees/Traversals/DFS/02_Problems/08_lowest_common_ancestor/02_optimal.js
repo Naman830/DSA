@@ -1,4 +1,12 @@
 // Recursive DFS
+/*
+| Complexity    |              Value | Reason                                      |
+| ------------- | -----------------: | ------------------------------------------- |
+| Time          |           **O(N)** | In the worst case, we visit every node      |
+| Space         |           **O(H)** | Recursive call stack depends on tree height |
+| Balanced tree | **O(log N)** space | Height is approximately `log N`             |
+| Skewed tree   |     **O(N)** space | Height can become `N`                       |
+*/
 class TreeNode {
   constructor(val) {
     this.val = val;

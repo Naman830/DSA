@@ -3,6 +3,12 @@ Optimal Solution — BFS + normalized indexing
 
 Instead of carrying huge indices, subtract the first index of the current level:
 currentIndex = index - minimumIndex
+
+| Complexity       | Value  | Why?                                 |
+| ---------------- | ------ | ------------------------------------ |
+| **Time**         | `O(N)` | Every node is processed exactly once |
+| **Space**        | `O(W)` | BFS queue stores nodes of a level    |
+| Worst-case space | `O(N)` | A level can contain `O(N)` nodes     |
 */
 class TreeNode {
   constructor(val, left = null, right = null) {

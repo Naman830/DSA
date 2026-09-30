@@ -10,6 +10,12 @@ distance 2 → neighbors of those nodes
 distance 3 → ...
 
 That's exactly what BFS does.
+
+| Part             |     Time |    Space |
+| ---------------- | -------: | -------: |
+| Build parent map |   `O(n)` |   `O(n)` |
+| BFS              |   `O(n)` |   `O(n)` |
+| **Total**        | **O(n)** | **O(n)** |
 */
 class TreeNode {
   constructor(val) {

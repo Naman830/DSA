@@ -27,3 +27,31 @@ Then:
 Nodes at distance 2 from 5 are:
 7, 4, 1
 */
+
+/*
+Key observation
+The important problem is that a binary tree normally lets us move only:
+parent → child
+
+But from the target, we need to move in three directions:
+             parent
+                ↑
+                |
+left ←──────── target ───────→ right
+
+So we need a way to move back to the parent.
+
+Main idea
+Store the parent of every node.
+Start BFS from the target.
+
+From every node, we can move to:
+left
+right
+parent
+
+BFS naturally processes nodes level by level.
+
+Therefore, when we reach distance k, all nodes in that level are our answer.
+Use a Set to prevent going back and forth between nodes.
+*/

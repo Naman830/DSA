@@ -55,3 +55,14 @@ BFS naturally processes nodes level by level.
 Therefore, when we reach distance k, all nodes in that level are our answer.
 Use a Set to prevent going back and forth between nodes.
 */
+
+/*
+Brute Force — Find distance for every node
+
+For every node:
+Find the distance between that node and target.
+If the distance is k, add it to the answer.
+
+Time: O(n²)
+Space: O(h) recursion stack
+*/

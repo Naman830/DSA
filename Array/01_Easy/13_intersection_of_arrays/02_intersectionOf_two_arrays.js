@@ -66,3 +66,8 @@ function intersectionBetter(arr1, arr2) {
 
 console.log(intersectionBetter([1, 2, 2, 3, 4], [2, 3, 4, 5]));
 // [2, 3, 4]
+
+/*
+- Time: \(O(n+m)\) average.
+- Auxiliary space: \(O(m+k)\), where \(k\) is the number of distinct common elements.
+*/

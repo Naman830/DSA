@@ -44,3 +44,25 @@ Complexity
 
 The nested loops take \(O(nm)\); includes() adds the extra \(O(k^2)\) worst-case work.
 */
+
+/*
+Approach 2: Better — use a Set for the second array
+Store the elements of the second array in a Set. Then check each element of the first array against it.
+*/
+
+function intersectionBetter(arr1, arr2) {
+  const set2 = new Set(arr2);
+  const result = new Set();
+
+  // Check which elements of arr1 also exist in set2
+  for (const num of arr1) {
+    if (set2.has(num)) {
+      result.add(num); // Set automatically removes duplicates
+    }
+  }
+
+  return [...result];
+}
+
+console.log(intersectionBetter([1, 2, 2, 3, 4], [2, 3, 4, 5]));
+// [2, 3, 4]

@@ -6,3 +6,32 @@ Key observations
 - To avoid duplicate elements in the result, use another Set or check whether the result already contains the element.
 - If both arrays are sorted, a two-pointer approach can solve the problem efficiently.
 */
+
+/*
+Approach 1: Brute force — nested loops
+For every element in the first array, search for the same element in the second array. Add it to the result only if it is not already present.
+*/
+
+function intersection(arr1, arr2) {
+  const result = [];
+
+  // Check each element of the first array
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      // If the element exists in both arrays
+      if (arr1[i] === arr2[j]) {
+        // Avoid duplicates in the result
+        if (!result.includes(arr1[i])) {
+          result.push(arr1[i]);
+        }
+
+        break;
+      }
+    }
+  }
+
+  return result;
+}
+
+console.log(intersection([1, 2, 2, 3, 4], [2, 3, 4, 5]));
+// [2, 3, 4]

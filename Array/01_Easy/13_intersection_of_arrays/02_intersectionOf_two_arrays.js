@@ -35,3 +35,12 @@ function intersection(arr1, arr2) {
 
 console.log(intersection([1, 2, 2, 3, 4], [2, 3, 4, 5]));
 // [2, 3, 4]
+
+/*
+Complexity
+
+- Time: \(O(nm + k^2)\), where \(n,m\) are the array lengths and \(k\) is the number of distinct common elements.
+- Auxiliary space: \(O(k)\) for the result.
+
+The nested loops take \(O(nm)\); includes() adds the extra \(O(k^2)\) worst-case work.
+*/

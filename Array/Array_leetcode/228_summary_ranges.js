@@ -54,3 +54,10 @@ console.log(summaryRanges([]));
 // ["0->2", "4->5", "7"]
 // ["1", "3", "5", "7"]
 // []
+
+/*
+Complexity	Result	Reason
+Time	O(n)	Every element is processed once.
+Auxiliary space	O(1)	Only a few variables are used, excluding output.
+Output space	O(n)	In the worst case, every number forms its own range.
+*/

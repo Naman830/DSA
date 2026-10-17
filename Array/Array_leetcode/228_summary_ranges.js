@@ -10,3 +10,12 @@ Key observation
 - When the consecutive sequence ends, create a range.
 - Continue from the next unprocessed number.
 */
+
+/*
+Brute-force solution
+
+For each number, search the remaining array for its next consecutive number using indexOf(). Continue until the sequence ends.
+
+Time: O(n^2) — indexOf() can scan the array repeatedly.
+Auxiliary space: O(1), excluding the output array.
+*/

@@ -3,7 +3,7 @@
 /*
 Time Complexity: (O(log x))
 Space Complexity: (O(1)
- */
+*/
 
 function mySqrt(x) {
   let low = 0;

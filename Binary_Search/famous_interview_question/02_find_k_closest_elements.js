@@ -69,3 +69,37 @@ function findClosestElementsTWOPOINTER(arr, k, x) {
 
 console.log(findClosestElementsTWOPOINTER([1, 2, 3, 4, 5], 4, 3));
 // Output: [1, 2, 3, 4]
+
+/*
+Approach 3: Optimal — Binary Search + Sliding Window
+*/
+function findClosestElements(arr, k, x) {
+  let low = 0;
+  let high = arr.length - k;
+
+  // Binary search for the starting index
+  while (low < high) {
+    const mid = Math.floor((low + high) / 2);
+
+    // Compare the elements outside the candidate window
+    if (x - arr[mid] > arr[mid + k] - x) {
+      // Right side is closer, move the window right
+      low = mid + 1;
+    } else {
+      // Left side is closer or equally close
+      high = mid;
+    }
+  }
+
+  // Return k consecutive elements from the answer index
+  return arr.slice(low, low + k);
+}
+
+console.log(findClosestElements([1, 2, 3, 4, 5], 4, 3));
+// Output: [1, 2, 3, 4]
+
+console.log(findClosestElements([1, 2, 3, 4, 5], 4, -1));
+// Output: [1, 2, 3, 4]
+
+console.log(findClosestElements([1, 2, 3, 4, 5], 4, 6));
+// Output: [2, 3, 4, 5]

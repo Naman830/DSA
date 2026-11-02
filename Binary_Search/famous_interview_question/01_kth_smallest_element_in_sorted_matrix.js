@@ -29,3 +29,56 @@ ntuition: Put all matrix elements into a single array, sort them, and return the
 Time: O(n² log(n²)) = O(n² log n)
 Space: O(n²) for the flattened array.
 */
+
+/*
+Optimal solution: Binary Search on Answer
+Instead of searching for an element's position, we binary search on the possible answer values.
+*/
+function kthSmallest(matrix, k) {
+  const n = matrix.length;
+
+  // Minimum and maximum possible answers
+  let low = matrix[0][0];
+  let high = matrix[n - 1][n - 1];
+
+  while (low < high) {
+    const mid = Math.floor((low + high) / 2);
+
+    let count = 0;
+
+    // Start from bottom-left
+    let row = n - 1;
+    let col = 0;
+
+    // Count elements <= mid
+    while (row >= 0 && col < n) {
+      if (matrix[row][col] <= mid) {
+        // All elements to the left in this row
+        // are also <= mid
+        count += row + 1;
+
+        col++;
+      } else {
+        // Current element is too large
+        row--;
+      }
+    }
+
+    // Binary search decision
+    if (count < k) {
+      low = mid + 1;
+    } else {
+      high = mid;
+    }
+  }
+
+  return low;
+}
+
+const matrix = [
+  [1, 5, 9],
+  [10, 11, 13],
+  [12, 13, 15],
+];
+
+console.log(kthSmallest(matrix, 8)); // 13

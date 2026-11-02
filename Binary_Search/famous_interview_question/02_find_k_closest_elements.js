@@ -72,6 +72,13 @@ console.log(findClosestElementsTWOPOINTER([1, 2, 3, 4, 5], 4, 3));
 
 /*
 Approach 3: Optimal — Binary Search + Sliding Window
+
+Complexity	        Value	           Explanation
+Time	            O(log(n-k) + k)	    Binary search + returning k elements
+Auxiliary space	    O(1)                Only pointers and variables
+Output space	    O(k)	            Result returned by slice
+
+The binary search itself takes O(log(n-k+1)) time.
 */
 function findClosestElements(arr, k, x) {
   let low = 0;

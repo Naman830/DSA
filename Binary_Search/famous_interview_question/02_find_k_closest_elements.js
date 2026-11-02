@@ -31,3 +31,9 @@ Key observations
 - Our possible starting indices range from 0 to n - k.
 - Compare the two elements just outside the current window to decide which direction to move.
 */
+
+/*
+Approach 1: Brute Force — Sorting by distance
+TC: O(n log n)	Sorting all elements
+sc: O(n) copying the array and comparing 
+ */

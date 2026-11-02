@@ -40,6 +40,11 @@ sc: O(n) copying the array and comparing
 
 /*
 Approach 2: Better — Two Pointers
+
+Complexity	            Value	        Reason
+Time	                O(n - k)	    Remove n-k elements
+Auxiliary space	        O(1)	        Only two pointers
+Output space	        O(k)	        Result array
 */
 function findClosestElementsTWOPOINTER(arr, k, x) {
   let left = 0;

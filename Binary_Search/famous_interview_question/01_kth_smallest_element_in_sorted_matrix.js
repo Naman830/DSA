@@ -33,6 +33,10 @@ Space: O(n²) for the flattened array.
 /*
 Optimal solution: Binary Search on Answer
 Instead of searching for an element's position, we binary search on the possible answer values.
+
+Complexity	Value	                       Reason
+Time	    O(n × log(max-min+1))	       Binary search × staircase traversal
+Space   	O(1)	                       Only a few variables
 */
 function kthSmallest(matrix, k) {
   const n = matrix.length;

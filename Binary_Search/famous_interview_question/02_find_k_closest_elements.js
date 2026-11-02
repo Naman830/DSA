@@ -36,4 +36,31 @@ Key observations
 Approach 1: Brute Force — Sorting by distance
 TC: O(n log n)	Sorting all elements
 sc: O(n) copying the array and comparing 
- */
+*/
+
+/*
+Approach 2: Better — Two Pointers
+*/
+function findClosestElementsTWOPOINTER(arr, k, x) {
+  let left = 0;
+  let right = arr.length - 1;
+
+  // Remove elements until only k elements remain
+  while (right - left + 1 > k) {
+    const leftDiff = Math.abs(arr[left] - x);
+    const rightDiff = Math.abs(arr[right] - x);
+
+    // Remove the element farther from x
+    if (leftDiff > rightDiff) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+
+  // Return the remaining k elements
+  return arr.slice(left, right + 1);
+}
+
+console.log(findClosestElementsTWOPOINTER([1, 2, 3, 4, 5], 4, 3));
+// Output: [1, 2, 3, 4]

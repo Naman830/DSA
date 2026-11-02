@@ -22,3 +22,12 @@ Both have the same total distance. We choose the smaller elements when there's a
 Answer:
 [1, 2, 3, 4]
 */
+
+/*
+Key observations
+- The array is already sorted.
+- We need exactly k consecutive elements in the sorted array.
+- Instead of checking every possible combination, we can binary search for the starting index of our answer.
+- Our possible starting indices range from 0 to n - k.
+- Compare the two elements just outside the current window to decide which direction to move.
+*/

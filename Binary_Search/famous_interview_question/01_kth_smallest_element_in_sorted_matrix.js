@@ -86,3 +86,36 @@ const matrix = [
 ];
 
 console.log(kthSmallest(matrix, 8)); // 13
+
+/*
+VISUAL EXPLANATION OF SOLUTION
+low = 1;
+high = 15;
+mid = Math.floor((1 + 15) / 2);
+
+mid = 8
+Counting
+
+     C0    C1    C2
+
+R0    1     5     9
+      ↑
+
+R1   10    11    13
+      ↑
+
+R2   12    13    15
+      ↑
+
+
+Traversal from bottom-left
+1. 12 > 8 → Move UP.
+2. 10 > 8 → Move UP.
+3. 1 <= 8 → count += 1.
+4. 5 <= 8 → count += 1.
+5. 9 > 8 → Move UP, traversal ends.
+   
+Total count 2
+   
+Elements: 1, 5
+*/

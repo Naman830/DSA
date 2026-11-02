@@ -21,3 +21,11 @@ Key observations
 - We don't necessarily need to sort the entire matrix.
 - We can exploit the sorted property to optimize our solution.
 */
+
+/*
+Brute force: Flatten and sort
+ntuition: Put all matrix elements into a single array, sort them, and return the element at index k - 1.
+
+Time: O(n² log(n²)) = O(n² log n)
+Space: O(n²) for the flattened array.
+*/

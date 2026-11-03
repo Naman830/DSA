@@ -28,6 +28,23 @@ Algorithm
 8. Return low.
 */
 
+/*
+Let:
+- V = rows × cols
+- D = maximum adjacent height difference.
+
+Operation	                            Time complexity
+Find maximum adjacent difference	    O(V)
+One BFS traversal	                    O(V)
+Binary Search iterations	            O(log(D+1)
+
+Therefore:
+Time Complexity: O(Vlog(D+1)
+Space Complexity: O(V)
+
+Because BFS uses a visited matrix and queue, both requiring at most O(V) space.
+*/
+
 function minimumEffortPath(heights) {
   const rows = heights.length;
   const cols = heights[0].length;

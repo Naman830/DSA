@@ -42,3 +42,12 @@ Its maximum difference is 2.
 
 Therefore, the minimum possible effort is 2.
 */
+
+/*
+Key observations
+1. We can move in four directions from every cell.
+2. The cost of moving between two adjacent cells is the absolute difference between their heights.
+3. We don't need the path with the minimum sum of differences.
+4. We need the path with the minimum maximum difference.
+5. This is a graph shortest-path problem, which can be solved optimally using Dijkstra's algorithm.
+*/

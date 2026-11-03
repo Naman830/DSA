@@ -20,3 +20,12 @@ const searchWord = "mouse";
   ["mouse", "mousepad"]
 ]
 */
+
+/*
+Key observation
+- Sort the products lexicographically first.
+- Build the search prefix one character at a time.
+- For each prefix, find products that start with it.
+- Return at most three matching products.
+- Sorting ensures that the first three matching products are lexicographically smallest.
+*/

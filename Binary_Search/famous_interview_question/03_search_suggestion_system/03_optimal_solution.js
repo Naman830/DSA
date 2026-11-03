@@ -52,3 +52,13 @@ const products = ["mobile", "mouse", "moneypot", "monitor", "mousepad"];
 const searchWord = "mouse";
 
 console.log(suggestedProducts(products, searchWord));
+
+/*
+Operation	                                        Time complexity
+Sort products                                       O(N log N × L)
+Binary search for each prefix                       O(M × log N × L)
+Check up to three suggestions per prefix	        O(M × L)
+Total	                                            O(N log N × L + M log N × L)
+
+The auxiliary space for the search is O(1), excluding sorting implementation details and the returned output. The output itself requires space proportional to the total size of the suggestions.
+*/

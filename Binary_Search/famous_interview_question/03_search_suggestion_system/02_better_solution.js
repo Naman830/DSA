@@ -36,3 +36,8 @@ const products = ["mobile", "mouse", "moneypot", "monitor", "mousepad"];
 const searchWord = "mouse";
 
 console.log(suggestedProducts(products, searchWord));
+
+/*
+Time :- O(N log N + M × N × L) 
+Auxiliary space :- O(1) for the search itself, excluding the output and sorting implementation 
+*/

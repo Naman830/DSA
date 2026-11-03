@@ -29,3 +29,15 @@ Key observation
 - Return at most three matching products.
 - Sorting ensures that the first three matching products are lexicographically smallest.
 */
+
+/*
+1. Brute-force solution
+Check every product to find those starting with the prefix.
+
+N = number of products.
+M = length of the search word.
+L = maximum length of a product.
+
+TC: Approximately O(M × (N × L + N log N × L))
+SC: O(N X L)
+*/

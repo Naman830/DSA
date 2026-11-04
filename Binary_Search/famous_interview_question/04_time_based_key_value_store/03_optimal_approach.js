@@ -1,5 +1,6 @@
 /*
-
+Optimal – HashMap + Binary Search
+SET: O(1) && GET: O(log n)	SPACE: O(N)
 */
 class TimeMap {
   constructor() {

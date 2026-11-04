@@ -1,16 +1,14 @@
 /*
-Approach 1: Brute Force
-Store all timestamp-value pairs in a HashMap.
+Since timestamps are already sorted, we can use Binary Search instead of traversing the entire array.
 
-For every get() operation, traverse the entire history and find the largest timestamp that is less than or equal to the requested timestamp.
+Find the rightmost timestamp that is less than or equal to the given timestamp.
 
+Operation	Time
+set()	:- O(1)
+get()	:- O(log n)
 
-TC & SC:-
-
-set()	O(1)
-get()	O(n)
-- Time: get() takes O(n), where n is the number of timestamps for that key.
-- Space: O(N), where N is the total number of stored entries.
+- Time: O(log n) for get().
+- Space: O(N) for storing all entries.
 */
 
 class TimeMap {

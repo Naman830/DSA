@@ -21,3 +21,12 @@ get("foo", 5); // "bar2"
 
 Notice that get("foo", 3) returns "bar" because timestamp 1 is the largest timestamp less than or equal to 3
 */
+
+/*
+Key observations
+- One key can have multiple values at different timestamps.
+- Timestamps for each key are provided in increasing order.
+- We need the closest timestamp that is less than or equal to the requested timestamp.
+- This is a classic Binary Search (Upper Bound) problem.
+- A HashMap allows us to access a key's timestamp-value history efficiently.
+*/

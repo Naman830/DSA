@@ -30,3 +30,11 @@ Key observations
 - This is a classic Binary Search (Upper Bound) problem.
 - A HashMap allows us to access a key's timestamp-value history efficiently.
 */
+
+/*
+BRUTE FORCE:-
+For every get() operation, traverse the entire history and find the largest timestamp that is less than or equal to the requested timestamp.
+
+Time: get() takes O(n), where n is the number of timestamps for that key.
+Space: O(N), where N is the total number of stored entries.
+*/

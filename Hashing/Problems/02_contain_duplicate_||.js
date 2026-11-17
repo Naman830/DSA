@@ -53,6 +53,9 @@ function containsNearbyDuplicate(nums, k) {
 /*
 Approach 3: Optimal — Sliding Window + Set
 Maintain a sliding window containing at most k previous elements.
+
+Time Complexity: O(n) — Set operations take O(1) average time.
+Space Complexity: O(min(n, k)) — Set maintains at most k elements.
 */
 
 function containsNearbyDuplicateOptimal(nums, k) {

@@ -14,3 +14,11 @@ Key observations
 - A duplicate is valid only when its index distance is <= k.
 - A Set or Map can help us solve this efficiently.
 */
+
+/*
+Approach 1: Brute Force
+Check every element against the next elements within the allowed distance k.
+
+Time Complexity: O(n * min(n, k))
+Space Complexity: O(1)
+*/

@@ -47,5 +47,52 @@ function isHappy(n) {
   return true;
 }
 
-console.log(isHappy(19)); // true
-console.log(isHappy(2)); // false
+// Approach 2: Better – Using Floyd's Cycle Detection
+
+/*
+Slow pointer moves one step at a time.
+Fast pointer moves two steps at a time.
+If both pointers meet before reaching 1, a cycle exists.
+
+TC: O(K × D) && SC: O(1)
+*/
+
+function getNext(n) {
+  let sum = 0;
+
+  while (n > 0) {
+    let digit = n % 10;
+
+    sum += digit * digit;
+
+    n = Math.floor(n / 10);
+  }
+
+  return sum;
+}
+
+function isHappyOptimal(n) {
+  let slow = n;
+  let fast = n;
+
+  while (true) {
+    // Slow moves one step
+    slow = getNext(slow);
+
+    // Fast moves two steps
+    fast = getNext(getNext(fast));
+
+    // If fast reaches 1, number is happy
+    if (fast === 1) {
+      return true;
+    }
+
+    // Cycle detected
+    if (slow === fast) {
+      return false;
+    }
+  }
+}
+
+console.log(isHappyOptimal(19)); // true
+console.log(isHappyOptimal(2)); // false

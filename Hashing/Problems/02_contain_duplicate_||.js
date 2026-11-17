@@ -50,5 +50,32 @@ function containsNearbyDuplicate(nums, k) {
   return false;
 }
 
-console.log(containsNearbyDuplicate([1, 2, 3, 1], 3)); // true
-console.log(containsNearbyDuplicate([1, 2, 3, 1, 2, 3], 2)); // false
+/*
+Approach 3: Optimal — Sliding Window + Set
+Maintain a sliding window containing at most k previous elements.
+*/
+
+function containsNearbyDuplicateOptimal(nums, k) {
+  const set = new Set();
+
+  for (let i = 0; i < nums.length; i++) {
+    // Check if current element already exists
+    // in our sliding window
+    if (set.has(nums[i])) {
+      return true;
+    }
+
+    // Add current element
+    set.add(nums[i]);
+
+    // Maintain window size of at most k
+    if (set.size > k) {
+      set.delete(nums[i - k]);
+    }
+  }
+
+  return false;
+}
+
+console.log(containsNearbyDuplicateOptimal([1, 2, 3, 1], 3)); // true
+console.log(containsNearbyDuplicateOptimal([1, 2, 3, 1, 2, 3], 2)); // false

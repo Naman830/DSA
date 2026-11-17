@@ -22,3 +22,33 @@ Check every element against the next elements within the allowed distance k.
 Time Complexity: O(n * min(n, k))
 Space Complexity: O(1)
 */
+
+/*
+Approach 2: Better — HashMap
+- Time Complexity: O(n) — one traversal.
+- Space Complexity: O(n) — Map can store up to n elements.
+*/
+
+function containsNearbyDuplicate(nums, k) {
+  const map = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    // Check if the element already exists
+    if (map.has(nums[i])) {
+      // Calculate distance from previous occurrence
+      const distance = i - map.get(nums[i]);
+
+      if (distance <= k) {
+        return true;
+      }
+    }
+
+    // Store or update the latest index
+    map.set(nums[i], i);
+  }
+
+  return false;
+}
+
+console.log(containsNearbyDuplicate([1, 2, 3, 1], 3)); // true
+console.log(containsNearbyDuplicate([1, 2, 3, 1, 2, 3], 2)); // false
